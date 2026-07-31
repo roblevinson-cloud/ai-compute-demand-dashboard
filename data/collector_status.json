@@ -3,60 +3,58 @@
     "collector": "openrouter_rankings",
     "status": "error",
     "rows": 0,
-    "at": "2026-07-31T21:59:59Z",
-    "detail": "OPENROUTER_API_KEY is not configured"
+    "at": "2026-07-31T22:19:31Z",
+    "detail": "Command '['node', 'scripts/fetch_openrouter.mjs']' returned non-zero exit status 1."
   },
   {
     "collector": "openrouter_models",
     "status": "ok",
     "rows": 672,
-    "at": "2026-07-31T22:00:00Z"
+    "at": "2026-07-31T22:19:31Z"
   },
   {
     "collector": "artificial_analysis",
     "status": "error",
     "rows": 0,
-    "at": "2026-07-31T22:00:00Z",
+    "at": "2026-07-31T22:19:31Z",
     "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
   },
   {
     "collector": "vast_offers",
-    "status": "error",
-    "rows": 0,
-    "at": "2026-07-31T22:00:00Z",
-    "detail": "VAST_API_KEY is not configured"
+    "status": "ok",
+    "rows": 4,
+    "at": "2026-07-31T22:19:32Z"
   },
   {
     "collector": "vast_market_metrics",
     "status": "error",
     "rows": 0,
-    "at": "2026-07-31T22:00:00Z",
+    "at": "2026-07-31T22:19:32Z",
     "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
   },
   {
     "collector": "eia_grid",
     "status": "error",
     "rows": 0,
-    "at": "2026-07-31T22:00:00Z",
+    "at": "2026-07-31T22:19:32Z",
     "detail": "EIA_API_KEY is not configured"
   },
   {
     "collector": "weather",
-    "status": "error",
-    "rows": 0,
-    "at": "2026-07-31T22:00:02Z",
-    "detail": "503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=32.7767&longitude=-96.797&hourly=temperature_2m&past_days=30&forecast_days=1&timezone=UTC"
+    "status": "ok",
+    "rows": 2232,
+    "at": "2026-07-31T22:19:35Z"
   },
   {
     "collector": "epoch",
     "status": "ok",
     "rows": 535,
-    "at": "2026-07-31T22:00:03Z"
+    "at": "2026-07-31T22:19:35Z"
   },
   {
     "collector": "mlperf",
     "status": "ok",
     "rows": 1,
-    "at": "2026-07-31T22:00:03Z"
+    "at": "2026-07-31T22:19:35Z"
   }
 ]
