@@ -2,7 +2,7 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Observed workload, estimated accelerator consumption, market tightness and physical capacity",
-    "generated_at_utc": "2026-07-31T19:16:20Z",
+    "generated_at_utc": "2026-07-31T19:22:55Z",
     "demo_mode": false,
     "methodology_version": "0.1.0",
     "latest_openrouter_date": null
@@ -2844,39 +2844,39 @@
     {
       "source": "epoch",
       "latest_observation": "2026-07-31T00:00:00+00:00",
-      "last_collection": "2026-07-31T19:16:19+00:00",
-      "age_hours": 0.0004451355555555556,
+      "last_collection": "2026-07-31T19:22:54+00:00",
+      "age_hours": 0.00028107249999999995,
       "status": "live",
       "rows": 469
     },
     {
       "source": "mlperf",
       "latest_observation": "2026-07-31T00:00:00+00:00",
-      "last_collection": "2026-07-31T19:16:19+00:00",
-      "age_hours": 0.0004451355555555556,
+      "last_collection": "2026-07-31T19:22:54+00:00",
+      "age_hours": 0.00028107249999999995,
       "status": "live",
       "rows": 1
     },
     {
       "source": "open_meteo",
       "latest_observation": "2026-07-31T23:00:00+00:00",
-      "last_collection": "2026-07-31T19:16:19+00:00",
-      "age_hours": 0.0004451355555555556,
+      "last_collection": "2026-07-31T19:22:54+00:00",
+      "age_hours": 0.00028107249999999995,
       "status": "live",
       "rows": 2232
     },
     {
       "source": "openrouter_catalog",
       "latest_observation": "2026-07-31T00:00:00+00:00",
-      "last_collection": "2026-07-31T19:16:19+00:00",
-      "age_hours": 0.0004451355555555556,
+      "last_collection": "2026-07-31T19:22:54+00:00",
+      "age_hours": 0.00028107249999999995,
       "status": "live",
       "rows": 672
     },
     {
       "source": "openrouter_rankings",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:16:16Z",
+      "last_collection": "2026-07-31T19:22:51Z",
       "age_hours": null,
       "status": "error",
       "rows": 0,
@@ -2885,7 +2885,7 @@
     {
       "source": "artificial_analysis",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:16:16Z",
+      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
       "status": "error",
       "rows": 0,
@@ -2894,7 +2894,7 @@
     {
       "source": "vast_offers",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:16:16Z",
+      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
       "status": "error",
       "rows": 0,
@@ -2903,7 +2903,7 @@
     {
       "source": "vast_market_metrics",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:16:16Z",
+      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
       "status": "error",
       "rows": 0,
@@ -2912,7 +2912,7 @@
     {
       "source": "eia_grid",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:16:16Z",
+      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
       "status": "error",
       "rows": 0,
