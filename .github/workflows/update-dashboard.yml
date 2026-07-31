@@ -1,0 +1,74 @@
+name: Update AI compute dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ai-compute-dashboard
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - run: pip install -e .
+
+      - run: npm install --ignore-scripts
+
+      - name: Collect data and build dashboard
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
+          VAST_API_KEY: ${{ secrets.VAST_API_KEY }}
+          VAST_HOST_API_KEY: ${{ secrets.VAST_HOST_API_KEY }}
+          BACKFILL_DAYS: "30"
+        run: |
+          python -m ai_compute_dashboard.pipeline collect || true
+          python -m ai_compute_dashboard.pipeline build
+
+      - name: Commit refreshed history
+        run: |
+          git config user.name "ai-compute-dashboard-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/observations.csv data/collector_status.json docs/index.html docs/data/dashboard.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh AI compute dashboard"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
