@@ -2,7 +2,7 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Observed workload, estimated accelerator consumption, market tightness and physical capacity",
-    "generated_at_utc": "2026-07-31T19:22:55Z",
+    "generated_at_utc": "2026-07-31T21:25:51Z",
     "demo_mode": false,
     "methodology_version": "0.1.0",
     "latest_openrouter_date": null
@@ -2845,7 +2845,7 @@
       "source": "epoch",
       "latest_observation": "2026-07-31T00:00:00+00:00",
       "last_collection": "2026-07-31T19:22:54+00:00",
-      "age_hours": 0.00028107249999999995,
+      "age_hours": 2.0492978127777777,
       "status": "live",
       "rows": 469
     },
@@ -2853,7 +2853,7 @@
       "source": "mlperf",
       "latest_observation": "2026-07-31T00:00:00+00:00",
       "last_collection": "2026-07-31T19:22:54+00:00",
-      "age_hours": 0.00028107249999999995,
+      "age_hours": 2.0492978127777777,
       "status": "live",
       "rows": 1
     },
@@ -2861,7 +2861,7 @@
       "source": "open_meteo",
       "latest_observation": "2026-07-31T23:00:00+00:00",
       "last_collection": "2026-07-31T19:22:54+00:00",
-      "age_hours": 0.00028107249999999995,
+      "age_hours": 2.0492978127777777,
       "status": "live",
       "rows": 2232
     },
@@ -2869,53 +2869,53 @@
       "source": "openrouter_catalog",
       "latest_observation": "2026-07-31T00:00:00+00:00",
       "last_collection": "2026-07-31T19:22:54+00:00",
-      "age_hours": 0.00028107249999999995,
+      "age_hours": 2.0492978127777777,
       "status": "live",
       "rows": 672
     },
     {
-      "source": "openrouter_rankings",
+      "source": "openrouter",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:22:51Z",
       "age_hours": null,
-      "status": "error",
       "rows": 0,
+      "last_collection": "2026-07-31T19:22:51Z",
+      "status": "failed",
       "detail": "OPENROUTER_API_KEY is not configured"
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
-      "status": "error",
       "rows": 0,
+      "last_collection": "2026-07-31T19:22:52Z",
+      "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
     {
-      "source": "vast_offers",
+      "source": "vast",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
-      "status": "error",
       "rows": 0,
+      "last_collection": "2026-07-31T19:22:52Z",
+      "status": "failed",
       "detail": "VAST_API_KEY is not configured"
     },
     {
-      "source": "vast_market_metrics",
+      "source": "vast_market",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
-      "status": "error",
       "rows": 0,
+      "last_collection": "2026-07-31T19:22:52Z",
+      "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     },
     {
-      "source": "eia_grid",
+      "source": "eia",
       "latest_observation": null,
-      "last_collection": "2026-07-31T19:22:52Z",
       "age_hours": null,
-      "status": "error",
       "rows": 0,
+      "last_collection": "2026-07-31T19:22:52Z",
+      "status": "failed",
       "detail": "EIA_API_KEY is not configured"
     }
   ]

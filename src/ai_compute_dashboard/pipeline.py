@@ -20,6 +20,74 @@ from .site import build_site
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger(__name__)
 
+DEMO_SOURCE_BY_METRIC = {
+    "tokens_total": "openrouter",
+    "h100_equivalent_hours": "derived",
+    "gpu_price_median": "vast",
+    "gpu_units_available": "vast",
+    "ttft": "artificial_analysis",
+    "output_speed": "artificial_analysis",
+    "operational_h100_equivalents": "epoch",
+    "operational_ai_datacenter_power": "epoch",
+    "grid_load": "eia",
+    "temperature": "open_meteo",
+    "training_compute": "epoch",
+}
+
+COLLECTOR_SOURCE = {
+    "openrouter_rankings": "openrouter",
+    "openrouter_models": "openrouter_catalog",
+    "artificial_analysis": "artificial_analysis",
+    "vast_offers": "vast",
+    "vast_market_metrics": "vast_market",
+    "eia_grid": "eia",
+    "weather": "open_meteo",
+    "epoch": "epoch",
+    "mlperf": "mlperf",
+}
+
+
+def _prepare_render_observations(df: pd.DataFrame) -> tuple[pd.DataFrame, bool]:
+    """Exclude demo rows from live builds and remap demo-only rows without copying."""
+    has_demo = bool(df.source.eq("demo").any())
+    has_live = bool(df.source.ne("demo").any())
+    if has_live:
+        return df[df.source.ne("demo")].copy(), False
+
+    render = df.copy()
+    demo_rows = render.source.eq("demo")
+    mapped_sources = render.loc[demo_rows, "metric"].map(DEMO_SOURCE_BY_METRIC)
+    render.loc[demo_rows, "source"] = mapped_sources.fillna("demo")
+    render.loc[demo_rows, "quality"] = "synthetic_demo"
+    render.loc[demo_rows, "is_estimate"] = True
+    return render, has_demo
+
+
+def _merge_collector_status(data: dict, statuses: list[dict]) -> None:
+    """Overlay latest collector failures onto observation-based source health."""
+    health = data.setdefault("source_health", [])
+    by_source = {item.get("source"): item for item in health}
+    for item in statuses:
+        if item.get("status") == "ok":
+            continue
+        collector = item.get("collector")
+        source = COLLECTOR_SOURCE.get(collector, collector)
+        current = by_source.get(source)
+        if current is None:
+            current = {
+                "source": source,
+                "latest_observation": None,
+                "age_hours": None,
+                "rows": 0,
+            }
+            health.append(current)
+            by_source[source] = current
+        current.update({
+            "last_collection": item.get("at"),
+            "status": "failed",
+            "detail": item.get("detail"),
+        })
+
 
 def collect(config: dict, observations_path: str) -> int:
     raw_dir = Path("data/raw") / utc_now()[:10]
@@ -48,38 +116,15 @@ def build(config: dict, observations_path: str) -> None:
     df = read_observations(observations_path)
     if df.empty:
         raise RuntimeError("No observations exist. Run the demo or configure at least one collector.")
-    # Once any real source exists, bundled demo rows are ignored rather than blended into live history.
-    has_live = bool((df.source != "demo").any())
-    render = df[df.source != "demo"].copy() if has_live else df.copy()
-    # Demo data uses demo source names. Mirror into expected metric source names only during rendering.
-    if (render.source == "demo").any():
-        mapping = {
-            "tokens_total": "openrouter", "h100_equivalent_hours": "derived",
-            "gpu_price_median": "vast", "gpu_units_available": "vast",
-            "ttft": "artificial_analysis", "output_speed": "artificial_analysis",
-            "operational_h100_equivalents": "epoch", "operational_ai_datacenter_power": "epoch",
-            "grid_load": "eia", "temperature": "open_meteo", "training_compute": "epoch",
-        }
-        copies=[]
-        for metric, source in mapping.items():
-            x=render[(render.source=="demo") & (render.metric==metric)].copy(); x["source"]=source; copies.append(x)
-        render=pd.concat([render,*copies],ignore_index=True)
+    render, demo_mode = _prepare_render_observations(df)
     data = build_dashboard_data(render, config, "config/model_weights.csv")
-    data["meta"]["demo_mode"] = not has_live and bool((df.source == "demo").any())
+    data["meta"]["demo_mode"] = demo_mode
     # Surface collectors that failed before producing observations.
     status_path = Path("data/collector_status.json")
     if status_path.exists():
         try:
             statuses = json.loads(status_path.read_text(encoding="utf-8"))
-            present = {x.get("source") for x in data.get("source_health", [])}
-            for item in statuses:
-                name = item.get("collector")
-                if item.get("status") != "ok" and name not in present:
-                    data.setdefault("source_health", []).append({
-                        "source": name, "latest_observation": None,
-                        "last_collection": item.get("at"), "age_hours": None,
-                        "status": "error", "rows": 0, "detail": item.get("detail"),
-                    })
+            _merge_collector_status(data, statuses)
         except Exception as exc:
             LOG.warning("Could not merge collector status: %s", exc)
     build_site(data, "docs/index.html")

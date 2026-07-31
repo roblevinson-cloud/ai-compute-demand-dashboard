@@ -40,8 +40,21 @@ def _weights(path: str | Path) -> pd.DataFrame:
     return pd.read_csv(path)
 
 
+def _demo_rows(df: pd.DataFrame) -> pd.Series:
+    """Identify original and source-remapped synthetic demo observations."""
+    source = df.get("source", pd.Series("", index=df.index)).astype(str)
+    quality = df.get("quality", pd.Series("", index=df.index)).astype(str)
+    return source.eq("demo") | quality.str.contains("demo", case=False, na=False)
+
+
 def derive_compute_observations(df: pd.DataFrame, weights_path: str | Path, output_share: float) -> pd.DataFrame:
-    tok = df[(df["source"] == "openrouter") & (df["metric"] == "tokens_total")].copy()
+    # Bundled demo data already includes a synthetic H100-hour series. Demo token rows
+    # are source-remapped for chart reuse, but must not create a second compute estimate.
+    tok = df[
+        (df["source"] == "openrouter")
+        & (df["metric"] == "tokens_total")
+        & ~_demo_rows(df)
+    ].copy()
     if tok.empty:
         return pd.DataFrame(columns=df.columns)
     w = _weights(weights_path)
@@ -162,6 +175,9 @@ def build_dashboard_data(df: pd.DataFrame, config: dict[str, Any], weights_path:
     training_events = []
     if not training_rows.empty:
         training_rows["date"] = pd.to_datetime(training_rows.observed_at_utc, utc=True, errors="coerce").dt.date.astype(str)
+        training_rows = training_rows.drop_duplicates(
+            subset=["date", "dimension", "value"], keep="last"
+        )
         training_events = [{"date": r.date, "model": r.dimension, "flop": float(r.value), "source": r.source} for _, r in training_rows.sort_values("date").iterrows()]
 
     # Manual global anchors.
@@ -182,7 +198,8 @@ def build_dashboard_data(df: pd.DataFrame, config: dict[str, Any], weights_path:
         collected = pd.to_datetime(g.collected_at_utc, utc=True, errors="coerce").max()
         age = (now - collected).total_seconds()/3600 if pd.notna(collected) else None
         status = "live" if age is not None and age <= float(dashboard_cfg.get("stale_after_hours", 36)) else "stale"
-        if source == "demo": status = "demo"
+        if _demo_rows(g).any():
+            status = "demo"
         health.append({"source": source, "latest_observation": None if pd.isna(obs) else obs.isoformat(), "last_collection": None if pd.isna(collected) else collected.isoformat(), "age_hours": age, "status": status, "rows": len(g)})
 
     latest = frame.dropna(how="all").tail(1)
@@ -198,7 +215,7 @@ def build_dashboard_data(df: pd.DataFrame, config: dict[str, Any], weights_path:
         "meta": {
             "title": dashboard_cfg["title"], "subtitle": dashboard_cfg["subtitle"],
             "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-            "demo_mode": bool((df.source == "demo").any()),
+            "demo_mode": bool(_demo_rows(df).any()),
             "methodology_version": "0.1.0",
             "latest_openrouter_date": latest_token_date,
         },
