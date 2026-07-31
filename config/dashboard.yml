@@ -1,0 +1,49 @@
+dashboard:
+  title: "AI Compute Demand Monitor"
+  subtitle: "Observed workload, estimated accelerator consumption, market tightness and physical capacity"
+  base_period_days: 28
+  stale_after_hours: 36
+  assumed_output_token_share: 0.25
+  minimum_days_for_grid_model: 60
+
+sources:
+  openrouter_rankings:
+    enabled: true
+    node_script: scripts/fetch_openrouter.mjs
+  openrouter_models:
+    enabled: true
+    url: https://openrouter.ai/api/v1/models
+  artificial_analysis:
+    enabled: true
+    url: https://artificialanalysis.ai/api/v2/language/models/free
+  vast_offers:
+    enabled: true
+    url: https://console.vast.ai/api/v0/bundles
+    gpu_names: [H100_SXM, H100_PCIE, H200_SXM, B200]
+    limit: 500
+  vast_market_metrics:
+    enabled: true
+    current_url: https://console.vast.ai/api/v0/metrics/gpu/current/
+    history_url: https://console.vast.ai/api/v0/metrics/gpu/history/
+  eia_grid:
+    enabled: true
+    url: https://api.eia.gov/v2/electricity/rto/region-data/data/
+    respondents: [DOM, ERCO, PACE]
+  weather:
+    enabled: true
+    url: https://api.open-meteo.com/v1/forecast
+    regions:
+      DOM: {latitude: 39.0438, longitude: -77.4874, label: "Northern Virginia / Dominion proxy"}
+      ERCO: {latitude: 32.7767, longitude: -96.7970, label: "Dallas / ERCOT proxy"}
+      PACE: {latitude: 40.7608, longitude: -111.8910, label: "Utah / PacifiCorp East proxy"}
+  epoch:
+    enabled: true
+    data_centers_csv: https://epoch.ai/data/data_centers/data_centers.csv
+    data_centers_zip: https://epoch.ai/data/data_centers/data_centers.zip
+    models_csv: https://epoch.ai/data/notable_ai_models.csv
+  mlperf:
+    enabled: true
+    summary_url: https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/main/summary_results.json
+
+manual:
+  global_token_estimates: data/manual/global_token_estimates.csv

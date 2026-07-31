@@ -1,0 +1,9 @@
+{
+  "name": "ai-compute-demand-dashboard-collectors",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@openrouter/sdk": "0.9.11"
+  }
+}

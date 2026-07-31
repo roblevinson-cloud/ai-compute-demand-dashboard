@@ -1,0 +1,6 @@
+pattern,category,input_h100_seconds_per_million_tokens,output_h100_seconds_per_million_tokens,reasoning_multiplier,confidence,notes
+(?i)(reason|thinking|o1|o3|o4|r1),reasoning,300,6500,2.5,low,Reasoning multiplier approximates hidden/repeated compute
+(?i)(nano|mini|small|7b|8b|9b),small,25,500,1.0,low,Starter assumption; recalibrate with serving benchmarks
+(?i)(flash|haiku|14b|20b|22b|27b|32b),medium,70,1500,1.0,low,Starter assumption; recalibrate with serving benchmarks
+(?i)(70b|72b|large|pro),large,180,4200,1.0,low,Starter assumption; recalibrate with serving benchmarks
+.*,default,120,3000,1.0,low,Fallback for unclassified models
