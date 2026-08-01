@@ -55,9 +55,13 @@ def collect_openrouter_rankings(cfg: dict[str, Any], raw_dir: Path) -> list[Obse
         raise RuntimeError("OPENROUTER_API_KEY is not configured")
     script = cfg["node_script"]
     proc = subprocess.run(
-        ["node", script], check=True, capture_output=True, text=True,
+        ["node", script], check=False, capture_output=True, text=True,
         env={**os.environ, "OPENROUTER_API_KEY": key}, timeout=TIMEOUT,
     )
+    if proc.returncode:
+        detail = (proc.stderr or proc.stdout or f"exit code {proc.returncode}").strip()
+        detail = detail.replace(key, "[REDACTED]")[-2000:]
+        raise RuntimeError(f"OpenRouter rankings script failed: {detail}")
     payload = json.loads(proc.stdout)
     (raw_dir / "openrouter_rankings.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
     rows = _find_rows(payload)

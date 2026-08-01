@@ -4,6 +4,6 @@
   "version": "0.1.0",
   "type": "module",
   "dependencies": {
-    "@openrouter/sdk": "0.9.11"
+    "@openrouter/sdk": "1.2.3"
   }
 }
