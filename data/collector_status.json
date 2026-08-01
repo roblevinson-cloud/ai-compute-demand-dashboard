@@ -3,57 +3,56 @@
     "collector": "openrouter_rankings",
     "status": "ok",
     "rows": 1530,
-    "at": "2026-08-01T01:38:31Z"
+    "at": "2026-08-01T01:43:33Z"
   },
   {
     "collector": "openrouter_models",
     "status": "ok",
     "rows": 672,
-    "at": "2026-08-01T01:38:31Z"
+    "at": "2026-08-01T01:43:33Z"
   },
   {
     "collector": "artificial_analysis",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-01T01:38:31Z",
+    "at": "2026-08-01T01:43:33Z",
     "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
   },
   {
     "collector": "vast_offers",
     "status": "ok",
     "rows": 4,
-    "at": "2026-08-01T01:38:31Z"
+    "at": "2026-08-01T01:43:33Z"
   },
   {
     "collector": "vast_market_metrics",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-01T01:38:31Z",
+    "at": "2026-08-01T01:43:33Z",
     "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
   },
   {
     "collector": "eia_grid",
-    "status": "error",
-    "rows": 0,
-    "at": "2026-08-01T01:38:32Z",
-    "detail": "403 Client Error: Forbidden for url: https://api.eia.gov/v2/electricity/rto/region-data/data/?api_key=552574167f9cc57461c33714d107bd6d&frequency=hourly&data%5B0%5D=value&facets%5Btype%5D%5B%5D=D&start=2026-07-02T01&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&length=5000&facets%5Brespondent%5D%5B%5D=DOM&facets%5Brespondent%5D%5B%5D=ERCO&facets%5Brespondent%5D%5B%5D=PACE&offset=0"
+    "status": "ok",
+    "rows": 1440,
+    "at": "2026-08-01T01:43:35Z"
   },
   {
     "collector": "weather",
     "status": "ok",
     "rows": 2232,
-    "at": "2026-08-01T01:38:34Z"
+    "at": "2026-08-01T01:43:37Z"
   },
   {
     "collector": "epoch",
     "status": "ok",
     "rows": 536,
-    "at": "2026-08-01T01:38:34Z"
+    "at": "2026-08-01T01:43:37Z"
   },
   {
     "collector": "mlperf",
     "status": "ok",
     "rows": 1,
-    "at": "2026-08-01T01:38:34Z"
+    "at": "2026-08-01T01:43:37Z"
   }
 ]
