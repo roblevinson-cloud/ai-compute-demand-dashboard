@@ -2,21 +2,21 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Observed workload, estimated accelerator consumption, market tightness and physical capacity",
-    "generated_at_utc": "2026-08-01T21:17:18Z",
+    "generated_at_utc": "2026-08-02T08:59:14Z",
     "demo_mode": false,
     "methodology_version": "0.1.0",
-    "latest_openrouter_date": "2026-07-31"
+    "latest_openrouter_date": "2026-08-01"
   },
   "kpis": {
-    "workload_index": 103.33515103130806,
-    "physical_compute_index": 103.43586901423004,
-    "tightness_index": 78.40665841091528,
-    "capacity_index": 100.96601629831088,
-    "efficiency_index": 99.45900543701511,
-    "tokens": 8296221899663.0,
-    "h100_hours": 1608731.0529553273,
-    "token_growth_28d": 45.16842767888618,
-    "compute_growth_28d": 55.322138738441076
+    "workload_index": 88.0236045302584,
+    "physical_compute_index": 84.90990497092024,
+    "tightness_index": 169.646377624225,
+    "capacity_index": 101.12201946450024,
+    "efficiency_index": 103.20672451024615,
+    "tokens": 7066940419625.0,
+    "h100_hours": 1320597.9911225298,
+    "token_growth_28d": 21.65501549407498,
+    "compute_growth_28d": 25.178293044448253
   },
   "series": [
     {
@@ -728,7 +728,7 @@
       "latency": null,
       "capacity_h100_eq": null,
       "datacenter_power_mw": null,
-      "grid_load_mw": 40561.270833333336,
+      "grid_load_mw": 40572.125,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 103.65540675622502,
@@ -753,17 +753,17 @@
       "latency": null,
       "capacity_h100_eq": 12536299.73182134,
       "datacenter_power_mw": 11862.8,
-      "grid_load_mw": 40836.979166666664,
+      "grid_load_mw": 40862.666666666664,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 103.33515103130806,
       "physical_compute_index": 103.43586901423004,
-      "capacity_index": 99.03398370168914,
+      "capacity_index": 98.47839341488766,
       "efficiency_index": 99.45900543701511,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 258.335765831509,
+      "tightness_index": 211.3743411262826,
       "token_growth_28d": 18.655995242058054,
       "compute_growth_28d": 27.688718030299796,
       "token_growth_yoy": null,
@@ -771,26 +771,51 @@
     },
     {
       "date": "2026-08-01",
-      "tokens": 8296221899663.0,
-      "h100_hours": 1608731.0529553273,
+      "tokens": 7066940419625.0,
+      "h100_hours": 1320597.9911225298,
       "gpu_price": 6.690755208333332,
       "gpu_units": 484.0,
       "latency": null,
       "capacity_h100_eq": 12780867.69543933,
       "datacenter_power_mw": 11967.8,
-      "grid_load_mw": 38743.59523809524,
+      "grid_load_mw": 39616.1875,
       "output_speed": null,
       "api_output_price": null,
-      "workload_index": 103.33515103130806,
-      "physical_compute_index": 103.43586901423004,
-      "capacity_index": 100.96601629831088,
-      "efficiency_index": 99.45900543701511,
+      "workload_index": 88.0236045302584,
+      "physical_compute_index": 84.90990497092024,
+      "capacity_index": 100.39958712061213,
+      "efficiency_index": 103.20672451024615,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 78.40665841091528,
-      "token_growth_28d": 45.16842767888618,
-      "compute_growth_28d": 55.322138738441076,
+      "tightness_index": 72.00997119284834,
+      "token_growth_28d": 23.65829188573201,
+      "compute_growth_28d": 27.503042859791215,
+      "token_growth_yoy": null,
+      "compute_growth_yoy": null
+    },
+    {
+      "date": "2026-08-02",
+      "tokens": 7066940419625.0,
+      "h100_hours": 1320597.9911225298,
+      "gpu_price": 6.6877604166666655,
+      "gpu_units": 89.0,
+      "latency": null,
+      "capacity_h100_eq": 12872833.334651051,
+      "datacenter_power_mw": 12047.8,
+      "grid_load_mw": 38690.72222222222,
+      "output_speed": null,
+      "api_output_price": null,
+      "workload_index": 88.0236045302584,
+      "physical_compute_index": 84.90990497092024,
+      "capacity_index": 101.12201946450024,
+      "efficiency_index": 103.20672451024615,
+      "api_speed_index": null,
+      "api_latency_index": null,
+      "api_price_index": null,
+      "tightness_index": 169.646377624225,
+      "token_growth_28d": 21.65501549407498,
+      "compute_growth_28d": 25.178293044448253,
       "token_growth_yoy": null,
       "compute_growth_yoy": null
     }
@@ -798,63 +823,63 @@
   "model_mix": [
     {
       "model": "deepseek/deepseek-v4-flash-20260423",
-      "tokens": 1014960283911.0,
-      "share": 0.12234005987137694
+      "tokens": 814919754746.0,
+      "share": 0.1153143660986522
     },
     {
       "model": "xiaomi/mimo-v2.5-20260422",
-      "tokens": 735096620219.0,
-      "share": 0.0886061907588152
+      "tokens": 590225803299.0,
+      "share": 0.08351928391244591
     },
     {
       "model": "tencent/hy3-20260706",
-      "tokens": 724961260849.0,
-      "share": 0.08738450702222039
-    },
-    {
-      "model": "other",
-      "tokens": 641967083670.0,
-      "share": 0.0773806548853373
+      "tokens": 580174036708.0,
+      "share": 0.08209691921228711
     },
     {
       "model": "openai/gpt-5.6-luna-20260709",
-      "tokens": 474951223217.0,
-      "share": 0.05724909831983797
+      "tokens": 560663670927.0,
+      "share": 0.07933612534358271
     },
     {
-      "model": "deepseek/deepseek-v4-pro-20260423",
-      "tokens": 460175049982.0,
-      "share": 0.05546802575286622
+      "model": "deepseek/deepseek-v4-flash-20260731",
+      "tokens": 492645891678.0,
+      "share": 0.06971134075361878
     },
     {
-      "model": "z-ai/glm-5.2-20260616",
-      "tokens": 358663790641.0,
-      "share": 0.043232183875839825
+      "model": "other",
+      "tokens": 491666845309.0,
+      "share": 0.06957280182292662
     },
     {
       "model": "nvidia/nemotron-3-ultra-550b-a55b-20260604:free",
-      "tokens": 306414043153.0,
-      "share": 0.036934166763963584
+      "tokens": 339579464679.0,
+      "share": 0.04805183636980761
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro-20260423",
+      "tokens": 317995703025.0,
+      "share": 0.04499764879040456
+    },
+    {
+      "model": "z-ai/glm-5.2-20260616",
+      "tokens": 251517720283.0,
+      "share": 0.035590751491908934
     },
     {
       "model": "minimax/minimax-m3-20260531",
-      "tokens": 276309326282.0,
-      "share": 0.03330544067212377
+      "tokens": 234733554985.0,
+      "share": 0.03321572576629363
     },
     {
       "model": "poolside/laguna-s-2.1-20260720:free",
-      "tokens": 246144672814.0,
-      "share": 0.029669490014966767
+      "tokens": 211339334301.0,
+      "share": 0.02990535107868003
     },
     {
       "model": "moonshotai/kimi-k3-20260715",
-      "tokens": 217494749833.0,
-      "share": 0.026216120116294723
-    },
-    {
-      "model": "stepfun/step-3.7-flash-20260528",
-      "tokens": 202112542879.0,
-      "share": 0.02436199818705548
+      "tokens": 194010709319.0,
+      "share": 0.027453282155914225
     }
   ],
   "grid_residuals": [
@@ -1041,7 +1066,13 @@
     {
       "date": "2026-08-01",
       "region": "ERCO",
-      "grid_load_mw": 70371.09523809524,
+      "grid_load_mw": 71875.0,
+      "grid_residual_mw": null
+    },
+    {
+      "date": "2026-08-02",
+      "region": "ERCO",
+      "grid_load_mw": 69760.33333333333,
       "grid_residual_mw": null
     },
     {
@@ -1215,19 +1246,25 @@
     {
       "date": "2026-07-30",
       "region": "PACE",
-      "grid_load_mw": 7108.375,
+      "grid_load_mw": 7130.083333333333,
       "grid_residual_mw": null
     },
     {
       "date": "2026-07-31",
       "region": "PACE",
-      "grid_load_mw": 7277.833333333333,
+      "grid_load_mw": 7329.208333333333,
       "grid_residual_mw": null
     },
     {
       "date": "2026-08-01",
       "region": "PACE",
-      "grid_load_mw": 7116.0952380952385,
+      "grid_load_mw": 7357.375,
+      "grid_residual_mw": null
+    },
+    {
+      "date": "2026-08-02",
+      "region": "PACE",
+      "grid_load_mw": 7621.111111111111,
       "grid_residual_mw": null
     }
   ],
@@ -1325,7 +1362,7 @@
     {
       "date": "1987-06-06",
       "model": "model",
-      "flop": 27664065000.0,
+      "flop": 28328002560.0,
       "source": "epoch"
     },
     {
@@ -1349,7 +1386,7 @@
     {
       "date": "1989-11-27",
       "model": "model",
-      "flop": 181440000000.0,
+      "flop": 7485696000.0,
       "source": "epoch"
     },
     {
@@ -1415,7 +1452,7 @@
     {
       "date": "1994-12-02",
       "model": "model",
-      "flop": 80828280.0,
+      "flop": 18621900000000.0,
       "source": "epoch"
     },
     {
@@ -1457,13 +1494,13 @@
     {
       "date": "1999-06-02",
       "model": "model",
-      "flop": 8013600000000.0,
+      "flop": 3864000000000.0,
       "source": "epoch"
     },
     {
       "date": "2000-11-28",
       "model": "model",
-      "flop": 6339000000000000.0,
+      "flop": 51810000000000.0,
       "source": "epoch"
     },
     {
@@ -1475,7 +1512,7 @@
     {
       "date": "2003-03-15",
       "model": "model",
-      "flop": 1666869200000000.0,
+      "flop": 132076260000000.0,
       "source": "epoch"
     },
     {
@@ -1511,7 +1548,7 @@
     {
       "date": "2007-06-22",
       "model": "model",
-      "flop": 7.7303808e+17,
+      "flop": 1.4494464e+18,
       "source": "epoch"
     },
     {
@@ -1535,7 +1572,7 @@
     {
       "date": "2009-11-22",
       "model": "model",
-      "flop": 3295150080000000.0,
+      "flop": 2452090060800000.0,
       "source": "epoch"
     },
     {
@@ -1553,7 +1590,7 @@
     {
       "date": "2010-09-15",
       "model": "model",
-      "flop": 1221124128768000.0,
+      "flop": 1456277227200000.0,
       "source": "epoch"
     },
     {
@@ -1577,7 +1614,7 @@
     {
       "date": "2011-09-18",
       "model": "model",
-      "flop": 5.2e+16,
+      "flop": 2.6e+16,
       "source": "epoch"
     },
     {
@@ -1589,7 +1626,7 @@
     {
       "date": "2012-06-03",
       "model": "model",
-      "flop": 6039370800000000.0,
+      "flop": 4268700000000000.0,
       "source": "epoch"
     },
     {
@@ -1613,7 +1650,7 @@
     {
       "date": "2012-12-03",
       "model": "model",
-      "flop": 3.114e+17,
+      "flop": 4.78e+17,
       "source": "epoch"
     },
     {
@@ -1637,7 +1674,7 @@
     {
       "date": "2013-10-01",
       "model": "model",
-      "flop": 9331200000000000.0,
+      "flop": 1.422e+16,
       "source": "epoch"
     },
     {
@@ -1703,7 +1740,7 @@
     {
       "date": "2014-09-04",
       "model": "model",
-      "flop": 1.2291e+19,
+      "flop": 1.1e+19,
       "source": "epoch"
     },
     {
@@ -1799,7 +1836,7 @@
     {
       "date": "2015-12-10",
       "model": "model",
-      "flop": 7.004e+18,
+      "flop": 1.041408e+19,
       "source": "epoch"
     },
     {
@@ -1835,7 +1872,7 @@
     {
       "date": "2016-09-26",
       "model": "model",
-      "flop": 6.620000000001e+21,
+      "flop": 7490000000000000.0,
       "source": "epoch"
     },
     {
@@ -1859,7 +1896,7 @@
     {
       "date": "2016-11-05",
       "model": "model",
-      "flop": 2.2e+21,
+      "flop": 3.4686144e+18,
       "source": "epoch"
     },
     {
@@ -1925,7 +1962,7 @@
     {
       "date": "2017-08-07",
       "model": "model",
-      "flop": 2.97e+17,
+      "flop": 2.065392e+18,
       "source": "epoch"
     },
     {
@@ -2003,7 +2040,7 @@
     {
       "date": "2018-02-01",
       "model": "model",
-      "flop": 3300100000000010.0,
+      "flop": 6.8866472e+17,
       "source": "epoch"
     },
     {
@@ -2057,7 +2094,7 @@
     {
       "date": "2018-07-10",
       "model": "model",
-      "flop": 2.46048e+17,
+      "flop": 4.290048e+17,
       "source": "epoch"
     },
     {
@@ -2105,7 +2142,7 @@
     {
       "date": "2018-11-05",
       "model": "model",
-      "flop": 6.84288e+19,
+      "flop": 1.617408e+20,
       "source": "epoch"
     },
     {
@@ -2237,19 +2274,19 @@
     {
       "date": "2019-09-17",
       "model": "model",
-      "flop": 2.2e+22,
+      "flop": 9.1e+21,
       "source": "epoch"
     },
     {
       "date": "2019-10-02",
       "model": "model",
-      "flop": 8.89344e+17,
+      "flop": 1.24416e+19,
       "source": "epoch"
     },
     {
       "date": "2019-10-23",
       "model": "model",
-      "flop": 9.0000000001e+21,
+      "flop": 3.3e+22,
       "source": "epoch"
     },
     {
@@ -2273,7 +2310,7 @@
     {
       "date": "2019-11-10",
       "model": "model",
-      "flop": 8.3e+20,
+      "flop": 2.3504093e+19,
       "source": "epoch"
     },
     {
@@ -2297,13 +2334,13 @@
     {
       "date": "2019-12-05",
       "model": "model",
-      "flop": 5.8298782e+16,
+      "flop": 1.938e+17,
       "source": "epoch"
     },
     {
       "date": "2019-12-13",
       "model": "model",
-      "flop": 6.7e+22,
+      "flop": 1.3e+22,
       "source": "epoch"
     },
     {
@@ -2441,7 +2478,7 @@
     {
       "date": "2020-10-20",
       "model": "model",
-      "flop": 7.6e+21,
+      "flop": 8.2e+22,
       "source": "epoch"
     },
     {
@@ -2453,7 +2490,7 @@
     {
       "date": "2020-10-22",
       "model": "model",
-      "flop": 4.262e+21,
+      "flop": 3.87072e+21,
       "source": "epoch"
     },
     {
@@ -2501,7 +2538,7 @@
     {
       "date": "2021-01-05",
       "model": "model",
-      "flop": 1.05e+22,
+      "flop": 4.7e+22,
       "source": "epoch"
     },
     {
@@ -2543,7 +2580,7 @@
     {
       "date": "2021-03-05",
       "model": "model",
-      "flop": 1.449e+22,
+      "flop": 5.5e+21,
       "source": "epoch"
     },
     {
@@ -2555,7 +2592,7 @@
     {
       "date": "2021-05-04",
       "model": "model",
-      "flop": 3.9e+22,
+      "flop": 1.8704498688e+22,
       "source": "epoch"
     },
     {
@@ -2573,7 +2610,7 @@
     {
       "date": "2021-05-26",
       "model": "model",
-      "flop": 2.68e+22,
+      "flop": 2.40576e+19,
       "source": "epoch"
     },
     {
@@ -2591,7 +2628,7 @@
     {
       "date": "2021-06-09",
       "model": "model",
-      "flop": 4.27e+22,
+      "flop": 1.91e+21,
       "source": "epoch"
     },
     {
@@ -2603,13 +2640,13 @@
     {
       "date": "2021-06-11",
       "model": "model",
-      "flop": 2.598670000001e+22,
+      "flop": 7.840125000000001e+19,
       "source": "epoch"
     },
     {
       "date": "2021-06-21",
       "model": "model",
-      "flop": 2.42784e+21,
+      "flop": 1.70208e+21,
       "source": "epoch"
     },
     {
@@ -2645,7 +2682,7 @@
     {
       "date": "2021-07-27",
       "model": "model",
-      "flop": 5.54e+21,
+      "flop": 2.412e+22,
       "source": "epoch"
     },
     {
@@ -2663,7 +2700,7 @@
     {
       "date": "2021-08-11",
       "model": "model",
-      "flop": 3.7e+23,
+      "flop": 8.016e+20,
       "source": "epoch"
     },
     {
@@ -2741,7 +2778,7 @@
     {
       "date": "2021-11-01",
       "model": "model",
-      "flop": 1.56e+21,
+      "flop": 1.05e+19,
       "source": "epoch"
     },
     {
@@ -2843,7 +2880,7 @@
     {
       "date": "2022-02-10",
       "model": "model",
-      "flop": 3.55e+23,
+      "flop": 6.5e+19,
       "source": "epoch"
     },
     {
@@ -2963,7 +3000,7 @@
     {
       "date": "2022-05-27",
       "model": "model",
-      "flop": 8.9280922e+20,
+      "flop": 7.24e+21,
       "source": "epoch"
     },
     {
@@ -3083,7 +3120,7 @@
     {
       "date": "2022-10-20",
       "model": "model",
-      "flop": 2.540000000001e+24,
+      "flop": 2.53e+24,
       "source": "epoch"
     },
     {
@@ -3317,7 +3354,7 @@
     {
       "date": "2023-07-06",
       "model": "model",
-      "flop": 9.984e+23,
+      "flop": 6.2e+23,
       "source": "epoch"
     },
     {
@@ -3329,7 +3366,7 @@
     {
       "date": "2023-07-18",
       "model": "model",
-      "flop": 8.1e+23,
+      "flop": 8.4e+22,
       "source": "epoch"
     },
     {
@@ -3431,13 +3468,13 @@
     {
       "date": "2023-11-08",
       "model": "model",
-      "flop": 2.6e+19,
+      "flop": 2.162688e+18,
       "source": "epoch"
     },
     {
       "date": "2023-11-13",
       "model": "model",
-      "flop": 3.04e+22,
+      "flop": 4.56e+22,
       "source": "epoch"
     },
     {
@@ -3491,7 +3528,7 @@
     {
       "date": "2023-12-14",
       "model": "model",
-      "flop": 6.707e+22,
+      "flop": 3.87e+23,
       "source": "epoch"
     },
     {
@@ -3647,7 +3684,7 @@
     {
       "date": "2024-07-29",
       "model": "model",
-      "flop": 4.5126e+23,
+      "flop": 4.3e+24,
       "source": "epoch"
     },
     {
@@ -3677,7 +3714,7 @@
     {
       "date": "2024-09-19",
       "model": "model",
-      "flop": 7.8516e+24,
+      "flop": 7.8e+24,
       "source": "epoch"
     },
     {
@@ -3719,7 +3756,7 @@
     {
       "date": "2024-10-22",
       "model": "model",
-      "flop": 3.02e+24,
+      "flop": 3.0398181e+24,
       "source": "epoch"
     },
     {
@@ -3809,7 +3846,7 @@
     {
       "date": "2025-04-05",
       "model": "model",
-      "flop": 5.18400000000001e+25,
+      "flop": 4.08e+24,
       "source": "epoch"
     },
     {
@@ -3875,7 +3912,7 @@
     {
       "date": "2025-08-05",
       "model": "model",
-      "flop": 5.49e+23,
+      "flop": 4.42e+24,
       "source": "epoch"
     },
     {
@@ -3947,7 +3984,7 @@
     {
       "date": "2025-12-31",
       "model": "model",
-      "flop": 1.52e+24,
+      "flop": 1.3999999999999998e+24,
       "source": "epoch"
     },
     {
@@ -3989,7 +4026,7 @@
     {
       "date": "2026-04-24",
       "model": "model",
-      "flop": 2.496e+24,
+      "flop": 9.702e+24,
       "source": "epoch"
     },
     {
@@ -4033,74 +4070,74 @@
   "source_health": [
     {
       "source": "derived",
-      "latest_observation": "2026-07-31T00:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:16+00:00",
-      "age_hours": 0.0005574491666666666,
+      "latest_observation": "2026-08-01T00:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 1530
+      "rows": 1581
     },
     {
       "source": "eia",
-      "latest_observation": "2026-08-01T20:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:17+00:00",
-      "age_hours": 0.0002796713888888889,
+      "latest_observation": "2026-08-02T08:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 1480
+      "rows": 1504
     },
     {
       "source": "epoch",
-      "latest_observation": "2026-08-01T00:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:17+00:00",
-      "age_hours": 0.0002796713888888889,
+      "latest_observation": "2026-08-02T00:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 474
+      "rows": 478
     },
     {
       "source": "mlperf",
-      "latest_observation": "2026-08-01T00:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:17+00:00",
-      "age_hours": 0.0002796713888888889,
+      "latest_observation": "2026-08-02T00:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 2
+      "rows": 3
     },
     {
       "source": "open_meteo",
-      "latest_observation": "2026-08-01T23:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:17+00:00",
-      "age_hours": 0.0002796713888888889,
+      "latest_observation": "2026-08-02T23:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 2304
+      "rows": 2376
     },
     {
       "source": "openrouter",
-      "latest_observation": "2026-07-31T00:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:16+00:00",
-      "age_hours": 0.0005574491666666666,
+      "latest_observation": "2026-08-01T00:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 1530
+      "rows": 1581
     },
     {
       "source": "openrouter_catalog",
-      "latest_observation": "2026-08-01T00:00:00+00:00",
-      "last_collection": "2026-08-01T21:17:16+00:00",
-      "age_hours": 0.0005574491666666666,
+      "latest_observation": "2026-08-02T00:00:00+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 1346
+      "rows": 2020
     },
     {
       "source": "vast",
-      "latest_observation": "2026-08-01T21:17:11+00:00",
-      "last_collection": "2026-08-01T21:17:16+00:00",
-      "age_hours": 0.0005574491666666666,
+      "latest_observation": "2026-08-02T08:59:08+00:00",
+      "last_collection": "2026-08-02T08:59:13+00:00",
+      "age_hours": 0.0004554063888888889,
       "status": "live",
-      "rows": 28
+      "rows": 32
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-01T21:17:11Z",
+      "last_collection": "2026-08-02T08:59:08Z",
       "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
@@ -4109,7 +4146,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-01T21:17:11Z",
+      "last_collection": "2026-08-02T08:59:08Z",
       "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     }
