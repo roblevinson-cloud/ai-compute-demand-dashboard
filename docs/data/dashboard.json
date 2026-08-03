@@ -2,7 +2,7 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Observed workload, estimated accelerator consumption, market tightness and physical capacity",
-    "generated_at_utc": "2026-08-03T12:42:51Z",
+    "generated_at_utc": "2026-08-03T21:54:34Z",
     "demo_mode": false,
     "methodology_version": "0.1.0",
     "latest_openrouter_date": "2026-08-02"
@@ -10,7 +10,7 @@
   "kpis": {
     "workload_index": 90.08007027497446,
     "physical_compute_index": 86.07649965425993,
-    "tightness_index": 180.0088928767295,
+    "tightness_index": 117.4954277694614,
     "capacity_index": 100.8391607117441,
     "efficiency_index": 104.18646899023243,
     "tokens": 7232042961954.0,
@@ -763,7 +763,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 232.44889842184438,
+      "tightness_index": 250.69130815158553,
       "token_growth_28d": 18.655995242058054,
       "compute_growth_28d": 27.688718030299796,
       "token_growth_yoy": null,
@@ -788,7 +788,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 76.89112050197616,
+      "tightness_index": 79.10394686562209,
       "token_growth_28d": 23.65829188573201,
       "compute_growth_28d": 27.503042859791215,
       "token_growth_yoy": null,
@@ -813,7 +813,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 86.99405224510808,
+      "tightness_index": 90.62306623169228,
       "token_growth_28d": 24.497200534912157,
       "compute_growth_28d": 26.89814341037675,
       "token_growth_yoy": null,
@@ -823,12 +823,12 @@
       "date": "2026-08-03",
       "tokens": 7232042961954.0,
       "h100_hours": 1338741.9590824544,
-      "gpu_price": 5.937847222222223,
-      "gpu_units": 89.0,
+      "gpu_price": 6.094270833333334,
+      "gpu_units": 187.0,
       "latency": null,
       "capacity_h100_eq": 12872833.334651051,
       "datacenter_power_mw": 12047.8,
-      "grid_load_mw": 36761.583333333336,
+      "grid_load_mw": 38019.77272727273,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 90.08007027497446,
@@ -838,7 +838,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 180.0088928767295,
+      "tightness_index": 117.4954277694614,
       "token_growth_28d": 1.0998087738946394,
       "compute_growth_28d": 1.727666037903064,
       "token_growth_yoy": null,
@@ -1103,7 +1103,7 @@
     {
       "date": "2026-08-03",
       "region": "ERCO",
-      "grid_load_mw": 66521.66666666667,
+      "grid_load_mw": 68948.27272727272,
       "grid_residual_mw": null
     },
     {
@@ -1301,7 +1301,7 @@
     {
       "date": "2026-08-03",
       "region": "PACE",
-      "grid_load_mw": 7001.5,
+      "grid_load_mw": 7091.272727272727,
       "grid_residual_mw": null
     }
   ],
@@ -1777,7 +1777,7 @@
     {
       "date": "2014-09-04",
       "model": "model",
-      "flop": 1.2291e+19,
+      "flop": 1.1e+19,
       "source": "epoch"
     },
     {
@@ -2179,7 +2179,7 @@
     {
       "date": "2018-11-05",
       "model": "model",
-      "flop": 6.84288e+19,
+      "flop": 1.617408e+20,
       "source": "epoch"
     },
     {
@@ -2647,7 +2647,7 @@
     {
       "date": "2021-05-26",
       "model": "model",
-      "flop": 2.68e+22,
+      "flop": 2.40576e+19,
       "source": "epoch"
     },
     {
@@ -3391,7 +3391,7 @@
     {
       "date": "2023-07-06",
       "model": "model",
-      "flop": 9.984e+23,
+      "flop": 6.2e+23,
       "source": "epoch"
     },
     {
@@ -3793,7 +3793,7 @@
     {
       "date": "2024-10-22",
       "model": "model",
-      "flop": 3.02e+24,
+      "flop": 3.0398181e+24,
       "source": "epoch"
     },
     {
@@ -4108,73 +4108,73 @@
     {
       "source": "derived",
       "latest_observation": "2026-08-02T00:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
       "rows": 1632
     },
     {
       "source": "eia",
-      "latest_observation": "2026-08-03T11:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "latest_observation": "2026-08-03T21:00:00+00:00",
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
-      "rows": 1558
+      "rows": 1578
     },
     {
       "source": "epoch",
       "latest_observation": "2026-08-03T00:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
       "rows": 482
     },
     {
       "source": "mlperf",
       "latest_observation": "2026-08-03T00:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
       "rows": 4
     },
     {
       "source": "open_meteo",
       "latest_observation": "2026-08-03T23:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
       "rows": 2448
     },
     {
       "source": "openrouter",
       "latest_observation": "2026-08-02T00:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
       "rows": 1632
     },
     {
       "source": "openrouter_catalog",
       "latest_observation": "2026-08-03T00:00:00+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
-      "rows": 2694
+      "rows": 2696
     },
     {
       "source": "vast",
-      "latest_observation": "2026-08-03T12:42:45+00:00",
-      "last_collection": "2026-08-03T12:42:50+00:00",
-      "age_hours": 0.0005020097222222222,
+      "latest_observation": "2026-08-03T21:54:27+00:00",
+      "last_collection": "2026-08-03T21:54:33+00:00",
+      "age_hours": 0.0004073613888888889,
       "status": "live",
-      "rows": 44
+      "rows": 48
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-03T12:42:45Z",
+      "last_collection": "2026-08-03T21:54:27Z",
       "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
@@ -4183,7 +4183,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-03T12:42:45Z",
+      "last_collection": "2026-08-03T21:54:27Z",
       "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     }
