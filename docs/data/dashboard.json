@@ -2,21 +2,21 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Observed workload, estimated accelerator consumption, market tightness and physical capacity",
-    "generated_at_utc": "2026-08-02T21:14:18Z",
+    "generated_at_utc": "2026-08-03T12:42:51Z",
     "demo_mode": false,
     "methodology_version": "0.1.0",
-    "latest_openrouter_date": "2026-08-01"
+    "latest_openrouter_date": "2026-08-02"
   },
   "kpis": {
-    "workload_index": 88.0236045302584,
-    "physical_compute_index": 84.90990497092024,
-    "tightness_index": 93.80706425546762,
-    "capacity_index": 101.12201946450024,
-    "efficiency_index": 103.20672451024615,
-    "tokens": 7066940419625.0,
-    "h100_hours": 1320597.9911225298,
-    "token_growth_28d": 21.65501549407498,
-    "compute_growth_28d": 25.178293044448253
+    "workload_index": 90.08007027497446,
+    "physical_compute_index": 86.07649965425993,
+    "tightness_index": 180.0088928767295,
+    "capacity_index": 100.8391607117441,
+    "efficiency_index": 104.18646899023243,
+    "tokens": 7232042961954.0,
+    "h100_hours": 1338741.9590824544,
+    "token_growth_28d": 1.0998087738946394,
+    "compute_growth_28d": 1.727666037903064
   },
   "series": [
     {
@@ -703,7 +703,7 @@
       "latency": null,
       "capacity_h100_eq": null,
       "datacenter_power_mw": null,
-      "grid_load_mw": 40579.083333333336,
+      "grid_load_mw": 40579.291666666664,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 102.09560952343675,
@@ -728,7 +728,7 @@
       "latency": null,
       "capacity_h100_eq": null,
       "datacenter_power_mw": null,
-      "grid_load_mw": 40572.125,
+      "grid_load_mw": 40568.833333333336,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 103.65540675622502,
@@ -753,17 +753,17 @@
       "latency": null,
       "capacity_h100_eq": 12536299.73182134,
       "datacenter_power_mw": 11862.8,
-      "grid_load_mw": 40862.666666666664,
+      "grid_load_mw": 40867.041666666664,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 103.33515103130806,
       "physical_compute_index": 103.43586901423004,
-      "capacity_index": 98.47839341488766,
+      "capacity_index": 98.20292941918947,
       "efficiency_index": 99.45900543701511,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 268.7992268073178,
+      "tightness_index": 232.44889842184438,
       "token_growth_28d": 18.655995242058054,
       "compute_growth_28d": 27.688718030299796,
       "token_growth_yoy": null,
@@ -778,17 +778,17 @@
       "latency": null,
       "capacity_h100_eq": 12780867.69543933,
       "datacenter_power_mw": 11967.8,
-      "grid_load_mw": 39621.104166666664,
+      "grid_load_mw": 39623.3125,
       "output_speed": null,
       "api_output_price": null,
       "workload_index": 88.0236045302584,
       "physical_compute_index": 84.90990497092024,
-      "capacity_index": 100.39958712061213,
+      "capacity_index": 100.11874915732228,
       "efficiency_index": 103.20672451024615,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 80.80068075327732,
+      "tightness_index": 76.89112050197616,
       "token_growth_28d": 23.65829188573201,
       "compute_growth_28d": 27.503042859791215,
       "token_growth_yoy": null,
@@ -796,26 +796,51 @@
     },
     {
       "date": "2026-08-02",
-      "tokens": 7066940419625.0,
-      "h100_hours": 1320597.9911225298,
+      "tokens": 7232042961954.0,
+      "h100_hours": 1338741.9590824544,
       "gpu_price": 6.251302083333333,
       "gpu_units": 312.0,
       "latency": null,
       "capacity_h100_eq": 12872833.334651051,
       "datacenter_power_mw": 12047.8,
-      "grid_load_mw": 36607.357142857145,
+      "grid_load_mw": 37805.291666666664,
       "output_speed": null,
       "api_output_price": null,
-      "workload_index": 88.0236045302584,
-      "physical_compute_index": 84.90990497092024,
-      "capacity_index": 101.12201946450024,
-      "efficiency_index": 103.20672451024615,
+      "workload_index": 90.08007027497446,
+      "physical_compute_index": 86.07649965425993,
+      "capacity_index": 100.8391607117441,
+      "efficiency_index": 104.18646899023243,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 93.80706425546762,
-      "token_growth_28d": 21.65501549407498,
-      "compute_growth_28d": 25.178293044448253,
+      "tightness_index": 86.99405224510808,
+      "token_growth_28d": 24.497200534912157,
+      "compute_growth_28d": 26.89814341037675,
+      "token_growth_yoy": null,
+      "compute_growth_yoy": null
+    },
+    {
+      "date": "2026-08-03",
+      "tokens": 7232042961954.0,
+      "h100_hours": 1338741.9590824544,
+      "gpu_price": 5.937847222222223,
+      "gpu_units": 89.0,
+      "latency": null,
+      "capacity_h100_eq": 12872833.334651051,
+      "datacenter_power_mw": 12047.8,
+      "grid_load_mw": 36761.583333333336,
+      "output_speed": null,
+      "api_output_price": null,
+      "workload_index": 90.08007027497446,
+      "physical_compute_index": 86.07649965425993,
+      "capacity_index": 100.8391607117441,
+      "efficiency_index": 104.18646899023243,
+      "api_speed_index": null,
+      "api_latency_index": null,
+      "api_price_index": null,
+      "tightness_index": 180.0088928767295,
+      "token_growth_28d": 1.0998087738946394,
+      "compute_growth_28d": 1.727666037903064,
       "token_growth_yoy": null,
       "compute_growth_yoy": null
     }
@@ -823,63 +848,63 @@
   "model_mix": [
     {
       "model": "deepseek/deepseek-v4-flash-20260423",
-      "tokens": 814919754746.0,
-      "share": 0.1153143660986522
-    },
-    {
-      "model": "xiaomi/mimo-v2.5-20260422",
-      "tokens": 590225803299.0,
-      "share": 0.08351928391244591
-    },
-    {
-      "model": "tencent/hy3-20260706",
-      "tokens": 580174036708.0,
-      "share": 0.08209691921228711
-    },
-    {
-      "model": "openai/gpt-5.6-luna-20260709",
-      "tokens": 560663670927.0,
-      "share": 0.07933612534358271
+      "tokens": 817317462750.0,
+      "share": 0.1130133583345268
     },
     {
       "model": "deepseek/deepseek-v4-flash-20260731",
-      "tokens": 492645891678.0,
-      "share": 0.06971134075361878
+      "tokens": 706786292625.0,
+      "share": 0.0977298249392639
+    },
+    {
+      "model": "tencent/hy3-20260706",
+      "tokens": 631248510132.0,
+      "share": 0.0872849502488914
+    },
+    {
+      "model": "openai/gpt-5.6-luna-20260709",
+      "tokens": 610764858788.0,
+      "share": 0.08445260378029884
+    },
+    {
+      "model": "xiaomi/mimo-v2.5-20260422",
+      "tokens": 587831444143.0,
+      "share": 0.08128151992949112
     },
     {
       "model": "other",
-      "tokens": 491666845309.0,
-      "share": 0.06957280182292662
+      "tokens": 444596072774.0,
+      "share": 0.06147586167738641
     },
     {
       "model": "nvidia/nemotron-3-ultra-550b-a55b-20260604:free",
-      "tokens": 339579464679.0,
-      "share": 0.04805183636980761
+      "tokens": 333118241994.0,
+      "share": 0.046061430185972786
     },
     {
       "model": "deepseek/deepseek-v4-pro-20260423",
-      "tokens": 317995703025.0,
-      "share": 0.04499764879040456
-    },
-    {
-      "model": "z-ai/glm-5.2-20260616",
-      "tokens": 251517720283.0,
-      "share": 0.035590751491908934
-    },
-    {
-      "model": "minimax/minimax-m3-20260531",
-      "tokens": 234733554985.0,
-      "share": 0.03321572576629363
+      "tokens": 266752661366.0,
+      "share": 0.03688482808651997
     },
     {
       "model": "poolside/laguna-s-2.1-20260720:free",
-      "tokens": 211339334301.0,
-      "share": 0.02990535107868003
+      "tokens": 235714278119.0,
+      "share": 0.0325930417392478
+    },
+    {
+      "model": "z-ai/glm-5.2-20260616",
+      "tokens": 230143654685.0,
+      "share": 0.03182277205704241
+    },
+    {
+      "model": "minimax/minimax-m3-20260531",
+      "tokens": 215099253838.0,
+      "share": 0.029742529872898195
     },
     {
       "model": "moonshotai/kimi-k3-20260715",
-      "tokens": 194010709319.0,
-      "share": 0.027453282155914225
+      "tokens": 175413168947.0,
+      "share": 0.024254995423811165
     }
   ],
   "grid_residuals": [
@@ -1072,7 +1097,13 @@
     {
       "date": "2026-08-02",
       "region": "ERCO",
-      "grid_load_mw": 66070.28571428571,
+      "grid_load_mw": 68230.625,
+      "grid_residual_mw": null
+    },
+    {
+      "date": "2026-08-03",
+      "region": "ERCO",
+      "grid_load_mw": 66521.66666666667,
       "grid_residual_mw": null
     },
     {
@@ -1240,31 +1271,37 @@
     {
       "date": "2026-07-29",
       "region": "PACE",
-      "grid_load_mw": 7512.833333333333,
+      "grid_load_mw": 7513.25,
       "grid_residual_mw": null
     },
     {
       "date": "2026-07-30",
       "region": "PACE",
-      "grid_load_mw": 7130.083333333333,
+      "grid_load_mw": 7123.5,
       "grid_residual_mw": null
     },
     {
       "date": "2026-07-31",
       "region": "PACE",
-      "grid_load_mw": 7329.208333333333,
+      "grid_load_mw": 7337.958333333333,
       "grid_residual_mw": null
     },
     {
       "date": "2026-08-01",
       "region": "PACE",
-      "grid_load_mw": 7367.208333333333,
+      "grid_load_mw": 7371.625,
       "grid_residual_mw": null
     },
     {
       "date": "2026-08-02",
       "region": "PACE",
-      "grid_load_mw": 7144.428571428572,
+      "grid_load_mw": 7379.958333333333,
+      "grid_residual_mw": null
+    },
+    {
+      "date": "2026-08-03",
+      "region": "PACE",
+      "grid_load_mw": 7001.5,
       "grid_residual_mw": null
     }
   ],
@@ -4070,74 +4107,74 @@
   "source_health": [
     {
       "source": "derived",
-      "latest_observation": "2026-08-01T00:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-02T00:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 1581
+      "rows": 1632
     },
     {
       "source": "eia",
-      "latest_observation": "2026-08-02T20:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-03T11:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 1528
+      "rows": 1558
     },
     {
       "source": "epoch",
-      "latest_observation": "2026-08-02T00:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-03T00:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 478
+      "rows": 482
     },
     {
       "source": "mlperf",
-      "latest_observation": "2026-08-02T00:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-03T00:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 3
+      "rows": 4
     },
     {
       "source": "open_meteo",
-      "latest_observation": "2026-08-02T23:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-03T23:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 2376
+      "rows": 2448
     },
     {
       "source": "openrouter",
-      "latest_observation": "2026-08-01T00:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-02T00:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 1581
+      "rows": 1632
     },
     {
       "source": "openrouter_catalog",
-      "latest_observation": "2026-08-02T00:00:00+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-03T00:00:00+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 2020
+      "rows": 2694
     },
     {
       "source": "vast",
-      "latest_observation": "2026-08-02T21:14:13+00:00",
-      "last_collection": "2026-08-02T21:14:17+00:00",
-      "age_hours": 0.00040906,
+      "latest_observation": "2026-08-03T12:42:45+00:00",
+      "last_collection": "2026-08-03T12:42:50+00:00",
+      "age_hours": 0.0005020097222222222,
       "status": "live",
-      "rows": 40
+      "rows": 44
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-02T21:14:12Z",
+      "last_collection": "2026-08-03T12:42:45Z",
       "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
@@ -4146,7 +4183,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-02T21:14:13Z",
+      "last_collection": "2026-08-03T12:42:45Z",
       "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     }
