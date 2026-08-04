@@ -3,56 +3,56 @@
     "collector": "openrouter_rankings",
     "status": "ok",
     "rows": 1530,
-    "at": "2026-08-04T10:17:59Z"
+    "at": "2026-08-04T18:18:01Z"
   },
   {
     "collector": "openrouter_models",
     "status": "ok",
     "rows": 676,
-    "at": "2026-08-04T10:17:59Z"
+    "at": "2026-08-04T18:18:01Z"
   },
   {
     "collector": "artificial_analysis",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-04T10:17:59Z",
+    "at": "2026-08-04T18:18:01Z",
     "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
   },
   {
     "collector": "vast_offers",
     "status": "ok",
     "rows": 4,
-    "at": "2026-08-04T10:18:00Z"
+    "at": "2026-08-04T18:18:02Z"
   },
   {
     "collector": "vast_market_metrics",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-04T10:18:00Z",
+    "at": "2026-08-04T18:18:02Z",
     "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
   },
   {
     "collector": "eia_grid",
     "status": "ok",
     "rows": 1440,
-    "at": "2026-08-04T10:18:01Z"
+    "at": "2026-08-04T18:18:41Z"
   },
   {
     "collector": "weather",
     "status": "ok",
     "rows": 2232,
-    "at": "2026-08-04T10:18:04Z"
+    "at": "2026-08-04T18:18:43Z"
   },
   {
     "collector": "epoch",
     "status": "ok",
     "rows": 536,
-    "at": "2026-08-04T10:18:04Z"
+    "at": "2026-08-04T18:18:43Z"
   },
   {
     "collector": "mlperf",
     "status": "ok",
     "rows": 1,
-    "at": "2026-08-04T10:18:04Z"
+    "at": "2026-08-04T18:18:43Z"
   }
 ]
