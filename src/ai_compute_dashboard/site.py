@@ -2,20 +2,33 @@ from __future__ import annotations
 
 import html
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
 
 def build_site(data: dict[str, Any], output: str | Path = "docs/index.html") -> None:
-    p = Path(output); p.parent.mkdir(parents=True, exist_ok=True)
+    destination = Path(output)
+    destination.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(data, separators=(",", ":"), default=str).replace("</", "<\\/")
     title = html.escape(data["meta"]["title"])
     subtitle = html.escape(data["meta"]["subtitle"])
-    page = TEMPLATE.replace("__TITLE__", title).replace("__SUBTITLE__", subtitle).replace("__DATA__", payload)
-    p.write_text(page, encoding="utf-8")
-    data_path = p.parent / "data" / "dashboard.json"
+    page = (
+        TEMPLATE.replace("__TITLE__", title)
+        .replace("__SUBTITLE__", subtitle)
+        .replace("__DATA__", payload)
+    )
+    destination.write_text(page, encoding="utf-8")
+
+    data_path = destination.parent / "data" / "dashboard.json"
     data_path.parent.mkdir(parents=True, exist_ok=True)
     data_path.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
+
+    source_assets = Path(__file__).with_name("static")
+    destination_assets = destination.parent / "assets"
+    destination_assets.mkdir(parents=True, exist_ok=True)
+    for asset in ("dashboard.css", "dashboard.js"):
+        shutil.copyfile(source_assets / asset, destination_assets / asset)
 
 
 TEMPLATE = r'''<!doctype html>
@@ -23,82 +36,141 @@ TEMPLATE = r'''<!doctype html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI compute demand, capacity, market tightness, and interactive infrastructure economics." />
+  <meta property="og:title" content="AI Compute Demand & Infrastructure Economics" />
+  <meta property="og:description" content="An audit-friendly dashboard for AI workload, capacity, and project-level infrastructure returns." />
+  <meta property="og:image" content="https://roblevinson-cloud.github.io/ai-compute-demand-dashboard/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>__TITLE__</title>
   <script src="assets/plotly.min.js"></script>
-  <style>
-    :root{--bg:#07111f;--panel:#0e1b2d;--panel2:#12243a;--text:#ecf3fb;--muted:#9eb0c5;--line:#263b54;--cyan:#51d6e8;--violet:#9c8cff;--green:#66d9a5;--amber:#ffca6a;--red:#ff7d8a}
-    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 15% 0%,#102944 0,#07111f 42%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
-    .wrap{max-width:1500px;margin:auto;padding:30px 24px 70px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:24px}
-    h1{font-size:clamp(28px,4vw,48px);letter-spacing:-.04em;margin:0 0 8px}.subtitle{color:var(--muted);font-size:16px;max-width:900px}.meta{text-align:right;color:var(--muted);font-size:12px;line-height:1.6}
-    .badge{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#0b1727}.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
-    .demo{background:#3b2610;color:#ffe3ad;border:1px solid #77501f;padding:10px 14px;border-radius:10px;margin:0 0 18px;display:none}
-    .kpis{display:grid;grid-template-columns:repeat(5,minmax(160px,1fr));gap:14px;margin:18px 0}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:0 12px 35px #0003}
-    .label{text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-size:11px}.value{font-size:30px;font-weight:720;margin-top:7px;letter-spacing:-.03em}.delta{font-size:12px;margin-top:5px;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:2fr 1fr;gap:14px}.span2{grid-column:span 2}.chart{height:390px}.chart.tall{height:470px}.section-title{font-size:16px;margin:0 0 4px}.section-note{font-size:12px;color:var(--muted);margin-bottom:8px}
-    table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:9px 7px}th{color:var(--muted);font-weight:600}.status{padding:3px 7px;border-radius:999px}.status.live{background:#173226;color:#9cf1c7}.status.stale{background:#392b16;color:#ffd389}.status.demo{background:#372c60;color:#cfc5ff}.status.failed{background:#481f2a;color:#ffb1bc}
-    .method{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}.method p{font-size:13px;color:var(--muted);line-height:1.55}.method b{color:var(--text)}
-    footer{color:var(--muted);font-size:11px;line-height:1.6;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
-    @media(max-width:1000px){.kpis{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.span2{grid-column:auto}.method{grid-template-columns:1fr 1fr}.top{display:block}.meta{text-align:left;margin-top:12px}}
-    @media(max-width:600px){.kpis,.method{grid-template-columns:1fr}.wrap{padding:20px 12px}.chart{height:330px}}
-  </style>
+  <link rel="stylesheet" href="assets/dashboard.css" />
 </head>
 <body>
-<div class="wrap">
-  <div class="top"><div><h1>__TITLE__</h1><div class="subtitle">__SUBTITLE__</div></div><div class="meta"><span class="badge"><span class="dot"></span><span id="freshness">Built</span></span><br><span id="generated"></span></div></div>
-  <div class="demo" id="demoBanner"><b>Demonstration mode.</b> The bundled series is synthetic and exists only to preview the interface. Live collectors never fabricate missing observations.</div>
-  <div class="kpis">
-    <div class="card"><div class="label">Workload index</div><div class="value" id="kWork">—</div><div class="delta" id="dWork">Observed token workload</div></div>
-    <div class="card"><div class="label">Physical compute index</div><div class="value" id="kCompute">—</div><div class="delta" id="dCompute">Estimated H100-equivalent use</div></div>
-    <div class="card"><div class="label">Tightness index</div><div class="value" id="kTight">—</div><div class="delta">Price + latency − availability</div></div>
-    <div class="card"><div class="label">Capacity index</div><div class="value" id="kCapacity">—</div><div class="delta">Operational H100-equivalents</div></div>
-    <div class="card"><div class="label">Efficiency index</div><div class="value" id="kEfficiency">—</div><div class="delta">Tokens per estimated H100-hour</div></div>
+  <div class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AI infrastructure intelligence</div>
+        <h1>__TITLE__</h1>
+        <p class="subtitle">__SUBTITLE__</p>
+      </div>
+      <div class="build-meta">
+        <span class="freshness-badge"><span class="freshness-dot"></span><span id="freshness">Built</span></span>
+        <span id="generated"></span>
+      </div>
+    </header>
+
+    <nav class="module-nav" aria-label="Dashboard modules">
+      <button class="module-tab active" data-view="demand" type="button">Demand signals</button>
+      <button class="module-tab" data-view="economics" type="button">Infrastructure economics</button>
+      <button class="module-tab" data-view="methodology" type="button">Methodology</button>
+    </nav>
+
+    <main>
+      <section class="view active" id="view-demand" aria-labelledby="demand-heading">
+        <div class="demo-banner" id="demoBanner"><strong>Demonstration mode.</strong> The bundled demand series is synthetic and exists only to preview the interface. Live collectors never fabricate missing observations.</div>
+        <div class="section-intro">
+          <div><div class="section-kicker">Market monitor</div><h2 id="demand-heading">Demand, supply, and bottleneck signals</h2></div>
+          <p>Indices translate heterogeneous workload and infrastructure data into comparable directional signals.</p>
+        </div>
+        <div class="kpi-grid demand-kpis">
+          <article class="panel metric-card"><div class="metric-head"><span>Workload index</span><span class="type-badge calculated">Calculated</span></div><div class="metric-value" id="kWork">—</div><div class="metric-foot" id="dWork">Observed token workload</div></article>
+          <article class="panel metric-card"><div class="metric-head"><span>Physical compute index</span><span class="type-badge estimated">Estimated</span></div><div class="metric-value" id="kCompute">—</div><div class="metric-foot" id="dCompute">H100-equivalent use</div></article>
+          <article class="panel metric-card"><div class="metric-head"><span>Tightness index</span><span class="type-badge calculated">Calculated</span></div><div class="metric-value" id="kTight">—</div><div class="metric-foot">Price + latency − availability</div></article>
+          <article class="panel metric-card"><div class="metric-head"><span>Capacity index</span><span class="type-badge calculated">Calculated</span></div><div class="metric-value" id="kCapacity">—</div><div class="metric-foot">Operational H100-equivalents</div></article>
+          <article class="panel metric-card"><div class="metric-head"><span>Efficiency index</span><span class="type-badge calculated">Calculated</span></div><div class="metric-value" id="kEfficiency">—</div><div class="metric-foot">Tokens per estimated H100-hour</div></article>
+        </div>
+
+        <div class="chart-grid">
+          <article class="panel span-2"><div class="panel-heading"><div><h3>Workload versus physical compute</h3><p>Calculated indices normalized to 100 over the opening base period.</p></div></div><div id="mainChart" class="chart chart-tall"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Observed token throughput</h3><p>Reported OpenRouter traffic; modeled global anchors remain separate.</p></div></div><div id="tokensChart" class="chart"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Latest model mix</h3><p>Calculated share of reported tokens on the latest observed day.</p></div></div><div id="mixChart" class="chart"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>GPU rental market</h3><p>Reported median price and observable available units.</p></div></div><div id="gpuChart" class="chart"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Capacity and data-center power</h3><p>Reported aggregated capacity recognized from Epoch AI.</p></div></div><div id="capacityChart" class="chart"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>API efficiency and congestion</h3><p>Calculated indices from reported speed, latency, and price.</p></div></div><div id="apiChart" class="chart"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Frontier training compute</h3><p>Reported or estimated event data on a logarithmic scale.</p></div></div><div id="trainingChart" class="chart"></div></article>
+          <article class="panel span-2"><div class="panel-heading"><div><h3>Grid-load physical cross-check</h3><p>Reported load and calculated weather-model residuals; residuals are not a pure AI measure.</p></div></div><div id="gridChart" class="chart"></div></article>
+          <article class="panel span-2"><div class="panel-heading"><div><h3>Source health and audit trail</h3><p>One failed source does not prevent the remaining dashboard from updating.</p></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status</th><th>Latest observation</th><th>Last collection</th><th>Rows</th></tr></thead><tbody id="sourceTable"></tbody></table></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-economics" aria-labelledby="economics-heading">
+        <div class="economics-hero">
+          <div>
+            <div class="section-kicker">Scenario laboratory</div>
+            <h2 id="economics-heading">AI Infrastructure Economics</h2>
+            <p>Project-level returns for hyperscaler and AI-cloud capacity. Edit any assumption; every output recalculates locally and immediately.</p>
+          </div>
+          <div class="economics-controls">
+            <label class="select-label" for="companySelect">Focus company</label>
+            <select id="companySelect" aria-label="Focus company"></select>
+            <div class="scenario-control" role="group" aria-label="Scenario">
+              <button type="button" data-scenario="bear">Bear</button>
+              <button type="button" data-scenario="base" class="active">Base</button>
+              <button type="button" data-scenario="bull">Bull</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="classification-legend" aria-label="Metric classification legend">
+          <span>Classification</span>
+          <span class="type-badge reported">Reported</span>
+          <span class="type-badge calculated">Calculated</span>
+          <span class="type-badge estimated">Estimated</span>
+          <span class="type-badge user-supplied">User-supplied</span>
+        </div>
+
+        <div class="kpi-grid economics-kpis" id="economicsKpis"></div>
+        <div class="model-warning" id="modelWarning" role="status"></div>
+
+        <div class="economics-layout">
+          <div class="economics-main">
+            <article class="panel"><div class="panel-heading split"><div><h3>Return profile by company</h3><p>Calculated project returns under the selected scenario.</p></div><span class="type-badge calculated">Calculated</span></div><div id="returnChart" class="chart chart-tall"></div></article>
+            <div class="chart-grid compact">
+              <article class="panel"><div class="panel-heading split"><div><h3>Utilization and payback</h3><p>Bubble size represents modeled project capital.</p></div><span class="type-badge calculated">Calculated</span></div><div id="utilizationChart" class="chart"></div></article>
+              <article class="panel"><div class="panel-heading split"><div><h3 id="cashFlowTitle">Project cash-flow path</h3><p>Annual and cumulative unlevered cash flow.</p></div><span class="type-badge calculated">Calculated</span></div><div id="cashFlowChart" class="chart"></div></article>
+            </div>
+            <article class="panel"><div class="panel-heading"><div><h3>Latest reported company context</h3><p>Quarterly filing and earnings-call fields are context only; they are not silently treated as project economics.</p></div></div><div class="table-wrap"><table><thead><tr><th>Metric</th><th>Value</th><th>Type</th><th>Period</th><th>Source</th></tr></thead><tbody id="reportedContext"></tbody></table></div></article>
+          </div>
+
+          <aside class="panel assumption-panel">
+            <div class="assumption-sticky">
+              <div class="panel-heading"><div><h3>Editable assumptions</h3><p id="assumptionSubtitle">Base scenario</p></div></div>
+              <div class="assumption-actions"><button type="button" class="secondary-button" id="resetAssumptions">Reset scenario</button><button type="button" class="secondary-button" id="exportAssumptions">Export JSON</button></div>
+            </div>
+            <div id="assumptionInputs"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-methodology" aria-labelledby="methodology-heading">
+        <div class="section-intro methodology-intro">
+          <div><div class="section-kicker">Audit layer</div><h2 id="methodology-heading">Transparent methodology</h2></div>
+          <p>Reported facts remain separate from modeled allocations and calculated outputs. Nothing in this module is company guidance.</p>
+        </div>
+        <div class="methodology-grid" id="metricMethodology"></div>
+        <article class="panel update-architecture">
+          <div class="panel-heading"><div><h3>Quarterly update architecture</h3><p>The static GitHub Pages build is refreshed from versioned observations.</p></div></div>
+          <div class="pipeline-flow">
+            <div><span>01</span><strong>Company filings</strong><p>SEC Company Facts supplies standardized reported revenue, capex, depreciation, operating income, and cash flow.</p></div>
+            <div><span>02</span><strong>Earnings-call feed</strong><p>An optional normalized feed captures sourced capacity, active-power, AI-revenue, and utilization disclosures.</p></div>
+            <div><span>03</span><strong>Typed observations</strong><p>Each record keeps period, source URL, quality, provenance, and estimate status in the existing long-form schema.</p></div>
+            <div><span>04</span><strong>Scenario model</strong><p>Bear, base, and bull assumptions combine with reported facts; the site rebuilds and deploys through the existing workflow.</p></div>
+          </div>
+        </article>
+        <div class="methodology-grid classification-cards">
+          <article class="panel"><span class="type-badge reported">Reported</span><h3>Primary-source fact</h3><p>Directly disclosed in an SEC filing, earnings release, or sourced call transcript.</p></article>
+          <article class="panel"><span class="type-badge calculated">Calculated</span><h3>Formula output</h3><p>Deterministically produced from visible inputs using the documented equations.</p></article>
+          <article class="panel"><span class="type-badge estimated">Estimated</span><h3>Model assumption</h3><p>Analyst assumption, allocation, or fallback that is not directly disclosed by the company.</p></article>
+          <article class="panel"><span class="type-badge user-supplied">User-supplied</span><h3>Local override</h3><p>An assumption changed in this browser; reset restores the versioned scenario value.</p></article>
+        </div>
+        <article class="panel limitations"><h3>Important limitations</h3><p>Hyperscalers rarely disclose AI-only revenue, capex allocation, accelerator counts, utilization, or project economics. The model therefore converts company-wide capital-spend facts into a hypothetical AI project using explicit allocation and unit-economics assumptions. Internal-use capacity at Meta and Alphabet is represented by an estimated economic value per GPU-hour, not an external rental price. Financing structure, working capital, land timing, prepayments, tax credits, and company-level overhead are excluded.</p></article>
+      </section>
+    </main>
+
+    <footer>Sources supported by this build include SEC EDGAR Company Facts, company investor-relations materials, OpenRouter, Artificial Analysis, Vast.ai, U.S. EIA, Open-Meteo, Epoch AI, and MLCommons/MLPerf. Data use remains subject to each source’s terms. “H100-equivalent hours” and all infrastructure economics are estimates or calculations unless explicitly labeled reported.</footer>
   </div>
-  <div class="grid">
-    <div class="card span2"><h2 class="section-title">Workload versus physical compute</h2><div class="section-note">Indices are normalized to 100 over the opening base period. Compute uses configurable model weights.</div><div id="mainChart" class="chart tall"></div></div>
-    <div class="card"><h2 class="section-title">Observed token throughput</h2><div class="section-note">OpenRouter traffic only unless a separately labeled global anchor is supplied.</div><div id="tokensChart" class="chart"></div></div>
-    <div class="card"><h2 class="section-title">Latest model mix</h2><div class="section-note">Top model shares on the most recent observed day.</div><div id="mixChart" class="chart"></div></div>
-    <div class="card"><h2 class="section-title">GPU rental market</h2><div class="section-note">Median $/GPU-hour and observable units available.</div><div id="gpuChart" class="chart"></div></div>
-    <div class="card"><h2 class="section-title">Capacity and data-center power</h2><div class="section-note">Epoch AI aggregates when recognized in the current source schema.</div><div id="capacityChart" class="chart"></div></div>
-    <div class="card"><h2 class="section-title">API efficiency and congestion</h2><div class="section-note">Independent model speed, latency and output-price indices.</div><div id="apiChart" class="chart"></div></div>
-    <div class="card"><h2 class="section-title">Frontier training compute</h2><div class="section-note">Identified training runs are event data, shown on a logarithmic scale.</div><div id="trainingChart" class="chart"></div></div>
-    <div class="card span2"><h2 class="section-title">Grid-load physical cross-check</h2><div class="section-note">Regional load and weather-model residuals. Residuals are not a pure AI measure.</div><div id="gridChart" class="chart"></div></div>
-    <div class="card span2"><h2 class="section-title">Source health and audit trail</h2><div class="section-note">Statuses distinguish demo, live, stale, and failed sources. One failed source does not prevent the remaining dashboard from updating.</div><div style="overflow:auto"><table><thead><tr><th>Source</th><th>Status</th><th>Latest observation</th><th>Last collection</th><th>Rows</th></tr></thead><tbody id="sourceTable"></tbody></table></div></div>
-  </div>
-  <div class="method">
-    <div class="card"><b>Workload</b><p>Raw routed tokens plus optional disclosed global anchors. Native tokenizer differences remain visible rather than being hidden.</p></div>
-    <div class="card"><b>Physical compute</b><p>Input and output token estimates multiplied by auditable H100-second weights. Low-confidence model classifications are flagged.</p></div>
-    <div class="card"><b>Tightness</b><p>Rental price and API latency rise with tightness; available GPU supply reduces it. Components remain separately chartable.</p></div>
-    <div class="card"><b>Capacity</b><p>Operational H100-equivalent systems and AI data-center MW. Training compute is stored separately because it is lumpy.</p></div>
-  </div>
-  <footer>Sources supported by this build: OpenRouter, Artificial Analysis, Vast.ai, U.S. EIA, Open-Meteo, Epoch AI and MLCommons/MLPerf. Data use remains subject to each source’s terms. “H100-equivalent hours” is an estimate, not a metered fleet total.</footer>
-</div>
-<script>
-const D=__DATA__;
-const s=D.series||[], dates=s.map(x=>x.date); const val=(k)=>s.map(x=>x[k]);
-const fmt=(x,d=0)=>x==null?'—':Number(x).toLocaleString(undefined,{maximumFractionDigits:d});
-const pct=(x)=>x==null?'—':`${x>=0?'+':''}${fmt(x,1)}% / 28d`;
-document.getElementById('generated').textContent=`Generated ${D.meta.generated_at_utc}`;
-document.getElementById('freshness').textContent=D.meta.demo_mode?'Demo snapshot':'Latest build';
-if(D.meta.demo_mode)document.getElementById('demoBanner').style.display='block';
-[['kWork','workload_index'],['kCompute','physical_compute_index'],['kTight','tightness_index'],['kCapacity','capacity_index'],['kEfficiency','efficiency_index']].forEach(([id,k])=>document.getElementById(id).textContent=fmt(D.kpis[k],1));
-document.getElementById('dWork').textContent=pct(D.kpis.token_growth_28d);
-document.getElementById('dCompute').textContent=pct(D.kpis.compute_growth_28d);
-const layout=(extra={})=>Object.assign({margin:{l:55,r:25,t:18,b:45},paper_bgcolor:'transparent',plot_bgcolor:'transparent',font:{color:'#b8c6d8',size:11},xaxis:{gridcolor:'#21344a'},yaxis:{gridcolor:'#21344a'},legend:{orientation:'h',y:1.12},hovermode:'x unified'},extra);
-const config={displaylogo:false,responsive:true};
-Plotly.newPlot('mainChart',[
-{x:dates,y:val('workload_index'),name:'Fixed-weight workload',mode:'lines',line:{width:3}},
-{x:dates,y:val('physical_compute_index'),name:'Physical compute estimate',mode:'lines',line:{width:3}},
-{x:dates,y:val('capacity_index'),name:'Capacity',mode:'lines',line:{width:2,dash:'dot'}},
-{x:dates,y:val('tightness_index'),name:'Tightness',mode:'lines',line:{width:2,dash:'dash'}}],layout({yaxis:{title:'Index (base = 100)',gridcolor:'#21344a'}}),config);
-const tokenTraces=[{x:dates,y:val('tokens'),name:'OpenRouter observed',mode:'lines',fill:'tozeroy',line:{width:2}}];
-const anchors=D.global_token_anchors||[]; if(anchors.length){tokenTraces.push({x:anchors.map(x=>x.date),y:anchors.map(x=>x.high_tokens),name:'Global high',mode:'lines',line:{width:0},hoverinfo:'skip'});tokenTraces.push({x:anchors.map(x=>x.date),y:anchors.map(x=>x.low_tokens),name:'Global range',mode:'lines',fill:'tonexty',line:{width:0}});tokenTraces.push({x:anchors.map(x=>x.date),y:anchors.map(x=>x.central_tokens),name:'Global central',mode:'lines',line:{width:3,dash:'dash'}})}
-Plotly.newPlot('tokensChart',tokenTraces,layout({yaxis:{title:'Tokens/day',type:'log',gridcolor:'#21344a'}}),config);
-const mix=D.model_mix||[]; Plotly.newPlot('mixChart',[{labels:mix.map(x=>x.model),values:mix.map(x=>x.tokens),type:'pie',hole:.55,textinfo:'percent',hovertemplate:'%{label}<br>%{value:.3s} tokens<extra></extra>'}],layout({showlegend:true,legend:{font:{size:9},orientation:'v',x:1,y:1},margin:{l:10,r:10,t:10,b:10}}),config);
-Plotly.newPlot('gpuChart',[{x:dates,y:val('gpu_price'),name:'Median price',mode:'lines',yaxis:'y'},{x:dates,y:val('gpu_units'),name:'Available units',mode:'lines',yaxis:'y2'}],layout({yaxis:{title:'$/GPU-hour',gridcolor:'#21344a'},yaxis2:{title:'GPU units',overlaying:'y',side:'right',showgrid:false}}),config);
-Plotly.newPlot('capacityChart',[{x:dates,y:val('capacity_h100_eq'),name:'H100 equivalents',mode:'lines',yaxis:'y'},{x:dates,y:val('datacenter_power_mw'),name:'AI DC power MW',mode:'lines',yaxis:'y2'}],layout({yaxis:{title:'H100-equivalents',gridcolor:'#21344a'},yaxis2:{title:'MW',overlaying:'y',side:'right',showgrid:false}}),config);
-Plotly.newPlot('apiChart',[{x:dates,y:val('api_speed_index'),name:'Output speed',mode:'lines'},{x:dates,y:val('api_latency_index'),name:'TTFT / latency',mode:'lines'},{x:dates,y:val('api_price_index'),name:'Output price',mode:'lines',line:{dash:'dot'}}],layout({yaxis:{title:'Index (base = 100)',gridcolor:'#21344a'}}),config);
-const trn=D.training_events||[]; Plotly.newPlot('trainingChart',[{x:trn.map(x=>x.date),y:trn.map(x=>x.flop),text:trn.map(x=>x.model),name:'Training runs',mode:'markers',marker:{size:9},hovertemplate:'%{text}<br>%{x}<br>%{y:.2e} FLOP<extra></extra>'}],layout({showlegend:false,yaxis:{title:'Training FLOP',type:'log',gridcolor:'#21344a'}}),config);
-const gr=D.grid_residuals||[]; const regions=[...new Set(gr.map(x=>x.region))]; const traces=[]; regions.forEach(r=>{const a=gr.filter(x=>x.region===r);traces.push({x:a.map(x=>x.date),y:a.map(x=>x.grid_load_mw),name:`${r} load`,mode:'lines'});traces.push({x:a.map(x=>x.date),y:a.map(x=>x.grid_residual_mw),name:`${r} residual`,mode:'lines',line:{dash:'dot'}})}); Plotly.newPlot('gridChart',traces,layout({yaxis:{title:'MW',gridcolor:'#21344a'}}),config);
-const tb=document.getElementById('sourceTable'); (D.source_health||[]).sort((a,b)=>a.source.localeCompare(b.source)).forEach(x=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${x.source}</td><td><span class="status ${x.status}">${x.status}</span></td><td>${x.latest_observation||'—'}</td><td>${x.last_collection||'—'}</td><td>${fmt(x.rows)}</td>`;tb.appendChild(tr)});
-</script>
-</body></html>'''
+
+  <script>window.DASHBOARD_DATA=__DATA__;</script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>'''

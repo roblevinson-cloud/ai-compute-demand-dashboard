@@ -44,6 +44,8 @@ COLLECTOR_SOURCE = {
     "weather": "open_meteo",
     "epoch": "epoch",
     "mlperf": "mlperf",
+    "sec_companyfacts": "sec_companyfacts",
+    "company_disclosures": "company_disclosures",
 }
 
 

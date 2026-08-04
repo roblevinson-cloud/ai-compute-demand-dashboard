@@ -1,13 +1,15 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+import io
 import json
 import math
 import os
-from pathlib import Path
 import re
 import subprocess
-from typing import Any, Callable
+from collections.abc import Callable
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -335,6 +337,170 @@ def collect_mlperf(cfg: dict[str, Any], raw_dir: Path) -> list[Observation]:
     return [Observation(utc_now()[:10], "mlperf", "summary_objects", "inference_v6.0", float(count), "objects", provenance=cfg["summary_url"])]
 
 
+SEC_CONCEPTS: dict[str, list[str]] = {
+    "company_revenue": [
+        "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "Revenues",
+        "SalesRevenueNet",
+    ],
+    "company_capex": [
+        "PaymentsToAcquirePropertyPlantAndEquipment",
+        "PaymentsToAcquireProductiveAssets",
+    ],
+    "company_depreciation": [
+        "DepreciationDepletionAndAmortization",
+        "DepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+        "Depreciation",
+    ],
+    "company_operating_income": ["OperatingIncomeLoss"],
+    "company_operating_cash_flow": ["NetCashProvidedByUsedInOperatingActivities"],
+}
+
+
+def _sec_filing_url(cik: str, accession: str) -> str:
+    accession_compact = accession.replace("-", "")
+    return f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_compact}/{accession}-index.html"
+
+
+def _sec_duration_kind(fact: dict[str, Any]) -> str | None:
+    start = pd.to_datetime(fact.get("start"), utc=True, errors="coerce")
+    end = pd.to_datetime(fact.get("end"), utc=True, errors="coerce")
+    if pd.isna(start) or pd.isna(end):
+        return None
+    days = int((end - start).days)
+    form = str(fact.get("form") or "")
+    fiscal_period = str(fact.get("fp") or "")
+    if 70 <= days <= 120:
+        return "quarterly"
+    if form.startswith("10-K") and (280 <= days <= 400 or fiscal_period == "FY"):
+        return "annual"
+    return None
+
+
+def _sec_metric_facts(payload: dict[str, Any], tags: list[str]) -> tuple[str | None, list[dict[str, Any]]]:
+    concepts = payload.get("facts", {}).get("us-gaap", {})
+    candidates: list[tuple[str, str, list[dict[str, Any]]]] = []
+    for tag in tags:
+        units = concepts.get(tag, {}).get("units", {})
+        facts = units.get("USD", [])
+        recognized = []
+        for fact in facts:
+            value = _safe_float(fact.get("val"))
+            period_kind = _sec_duration_kind(fact)
+            if value is None or period_kind is None or not fact.get("accn"):
+                continue
+            recognized.append({**fact, "val": value, "period_kind": period_kind})
+        if recognized:
+            latest_end = max(str(fact.get("end") or "") for fact in recognized)
+            candidates.append((latest_end, tag, recognized))
+    if candidates:
+        _, tag, recognized = max(candidates, key=lambda item: item[0])
+        return tag, recognized
+    return None, []
+
+
+def collect_sec_companyfacts(cfg: dict[str, Any], raw_dir: Path) -> list[Observation]:
+    user_agent = env("SEC_USER_AGENT") or cfg.get("user_agent")
+    if not user_agent:
+        raise RuntimeError("SEC_USER_AGENT is not configured")
+    headers = {"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate"}
+    out: list[Observation] = []
+    for ticker, company in cfg.get("companies", {}).items():
+        cik = str(company["cik"]).zfill(10)
+        url = cfg["url_template"].format(cik=cik)
+        response = requests.get(url, headers=headers, timeout=TIMEOUT)
+        response.raise_for_status()
+        payload = response.json()
+        (raw_dir / f"sec_companyfacts_{ticker.lower()}.json").write_text(
+            json.dumps(payload, indent=2), encoding="utf-8"
+        )
+        for metric, tags in SEC_CONCEPTS.items():
+            tag, facts = _sec_metric_facts(payload, tags)
+            seen: set[tuple[str, str]] = set()
+            for fact in sorted(facts, key=lambda item: (str(item.get("end")), str(item.get("filed")))):
+                key = (str(fact.get("end")), str(fact.get("period_kind")))
+                if key in seen:
+                    continue
+                seen.add(key)
+                accession = str(fact["accn"])
+                filing_url = _sec_filing_url(cik, accession)
+                out.append(Observation(
+                    observed_at_utc=str(fact["end"]),
+                    source="sec_companyfacts",
+                    metric=metric,
+                    dimension=ticker,
+                    value=float(fact["val"]),
+                    unit="USD",
+                    quality="reported",
+                    is_estimate=False,
+                    provenance=url,
+                    metadata_json=json_text({
+                        "company": company.get("name"),
+                        "cik": cik,
+                        "tag": tag,
+                        "form": fact.get("form"),
+                        "fiscal_year": fact.get("fy"),
+                        "fiscal_period": fact.get("fp"),
+                        "filed": fact.get("filed"),
+                        "accession": accession,
+                        "period_kind": fact["period_kind"],
+                        "filing_url": filing_url,
+                    }),
+                ))
+    return out
+
+
+def collect_company_disclosures(cfg: dict[str, Any], raw_dir: Path) -> list[Observation]:
+    """Load normalized earnings-call disclosures from a remote feed or local fallback."""
+    feed_url = env(str(cfg.get("url_env") or "")) if cfg.get("url_env") else None
+    if feed_url:
+        response = requests.get(feed_url, timeout=TIMEOUT)
+        response.raise_for_status()
+        content_type = response.headers.get("content-type", "")
+        if "json" in content_type or feed_url.lower().endswith(".json"):
+            body = response.json()
+            rows = body.get("data", body) if isinstance(body, dict) else body
+            frame = pd.DataFrame(rows)
+            (raw_dir / "company_disclosures.json").write_text(json.dumps(body, indent=2), encoding="utf-8")
+        else:
+            frame = pd.read_csv(io.StringIO(response.text))
+            (raw_dir / "company_disclosures.csv").write_text(response.text, encoding="utf-8")
+    else:
+        path = Path(cfg["path"])
+        if not path.exists():
+            raise RuntimeError(f"Company disclosure fallback does not exist: {path}")
+        frame = pd.read_csv(path)
+    required = {"observed_at_utc", "ticker", "metric", "value", "unit", "classification", "source_url"}
+    missing = sorted(required - set(frame.columns))
+    if missing:
+        raise RuntimeError(f"Company disclosure feed is missing columns: {', '.join(missing)}")
+    out: list[Observation] = []
+    for _, row in frame.iterrows():
+        value = _safe_float(row.get("value"))
+        if value is None or not str(row.get("ticker") or "").strip() or not str(row.get("metric") or "").strip():
+            continue
+        classification = str(row.get("classification") or "estimated").strip().lower()
+        source_url = str(row.get("source_url") or "").strip()
+        out.append(Observation(
+            observed_at_utc=str(row["observed_at_utc"]),
+            source="company_disclosures",
+            metric=str(row["metric"]).strip(),
+            dimension=str(row["ticker"]).strip().upper(),
+            value=value,
+            unit=str(row["unit"]),
+            quality=classification,
+            is_estimate=classification in {"estimated", "user-supplied"},
+            provenance=source_url,
+            metadata_json=json_text({
+                "source_label": str(row.get("source_label") or "Earnings call disclosure"),
+                "filing_url": source_url,
+                "notes": str(row.get("notes") or ""),
+                "feed": feed_url or str(cfg["path"]),
+            }),
+        ))
+    return out
+
+
 COLLECTORS: dict[str, Callable[[dict[str, Any], Path], list[Observation]]] = {
     "openrouter_rankings": collect_openrouter_rankings,
     "openrouter_models": collect_openrouter_models,
@@ -345,4 +511,6 @@ COLLECTORS: dict[str, Callable[[dict[str, Any], Path], list[Observation]]] = {
     "weather": collect_weather,
     "epoch": collect_epoch,
     "mlperf": collect_mlperf,
+    "sec_companyfacts": collect_sec_companyfacts,
+    "company_disclosures": collect_company_disclosures,
 }

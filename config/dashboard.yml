@@ -1,10 +1,13 @@
 dashboard:
   title: "AI Compute Demand Monitor"
-  subtitle: "Observed workload, estimated accelerator consumption, market tightness and physical capacity"
+  subtitle: "Demand signals, physical capacity, and the economics of AI infrastructure"
   base_period_days: 28
   stale_after_hours: 36
   assumed_output_token_share: 0.25
   minimum_days_for_grid_model: 60
+
+economics:
+  config_path: config/infrastructure_economics.yml
 
 sources:
   openrouter_rankings:
@@ -44,6 +47,25 @@ sources:
   mlperf:
     enabled: true
     summary_url: https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/main/summary_results.json
+  sec_companyfacts:
+    enabled: true
+    url_template: https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json
+    # The SEC asks automated clients to identify themselves. Override this in
+    # GitHub Actions with SEC_USER_AGENT="project-name contact@example.com".
+    user_agent: ai-compute-demand-dashboard/0.2 (+https://github.com/roblevinson-cloud/ai-compute-demand-dashboard)
+    companies:
+      MSFT: {name: Microsoft, cik: "0000789019"}
+      AMZN: {name: Amazon, cik: "0001018724"}
+      GOOGL: {name: Alphabet, cik: "0001652044"}
+      META: {name: Meta, cik: "0001326801"}
+      ORCL: {name: Oracle, cik: "0001341439"}
+      CRWV: {name: CoreWeave, cik: "0001769628"}
+  company_disclosures:
+    enabled: true
+    path: data/manual/company_disclosures.csv
+    # Optional normalized CSV/JSON feed produced by an earnings-call extraction
+    # service. When set, the scheduled workflow uses it instead of the local CSV.
+    url_env: ECONOMICS_DISCLOSURES_URL
 
 manual:
   global_token_estimates: data/manual/global_token_estimates.csv

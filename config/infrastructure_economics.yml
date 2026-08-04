@@ -1,0 +1,312 @@
+version: "1.0.0"
+as_of: "2026-08-04"
+
+scenario_labels:
+  bear: Slower demand, lower pricing, higher operating cost
+  base: Central adoption, pricing, and cost assumptions
+  bull: Faster demand, stronger pricing, better operating leverage
+
+scenario_modifiers:
+  bear:
+    annual_project_revenue_usd_b: {multiply: 0.80}
+    blended_revenue_per_gpu_hour_usd: {multiply: 0.90}
+    non_power_opex_pct_revenue: {add: 4.0}
+    energy_cost_per_kwh_usd: {multiply: 1.20}
+    revenue_growth_pct: {add: -6.0}
+    maintenance_capex_pct_revenue: {add: 1.0}
+    discount_rate_pct: {add: 2.0}
+    residual_value_pct: {add: -3.0}
+  base: {}
+  bull:
+    annual_project_revenue_usd_b: {multiply: 1.20}
+    blended_revenue_per_gpu_hour_usd: {multiply: 1.07}
+    non_power_opex_pct_revenue: {add: -3.0}
+    energy_cost_per_kwh_usd: {multiply: 0.90}
+    revenue_growth_pct: {add: 6.0}
+    maintenance_capex_pct_revenue: {add: -1.0}
+    discount_rate_pct: {add: -1.5}
+    residual_value_pct: {add: 3.0}
+
+assumptions:
+  total_capex_basis_usd_b:
+    label: Capital spend basis
+    unit: USD billions
+    short_unit: $B
+    description: Latest reported annual capital expenditure when available; otherwise the disclosed model fallback.
+    min: 1
+    max: 160
+    step: 0.5
+  ai_capex_share_pct:
+    label: AI infrastructure share
+    unit: percent of capital spend
+    short_unit: "%"
+    description: Share of total capital expenditure allocated to the modeled AI data-center project.
+    min: 10
+    max: 100
+    step: 1
+  gpu_hardware_share_pct:
+    label: Accelerated-compute share
+    unit: percent of project capex
+    short_unit: "%"
+    description: Portion of project capital assigned to GPUs, accelerator systems, and supporting compute hardware.
+    min: 20
+    max: 85
+    step: 1
+  all_in_gpu_cost_usd:
+    label: All-in accelerator cost
+    unit: USD per GPU-equivalent
+    short_unit: "$"
+    description: Accelerator plus allocated server, networking, installation, and commissioning cost.
+    min: 20000
+    max: 90000
+    step: 1000
+  annual_project_revenue_usd_b:
+    label: Annual project revenue
+    unit: USD billions
+    short_unit: $B
+    description: Annual incremental revenue or internal economic value attributable to the modeled capacity.
+    min: 1
+    max: 120
+    step: 0.5
+  blended_revenue_per_gpu_hour_usd:
+    label: Revenue per GPU-hour
+    unit: USD per GPU-hour
+    short_unit: $/GPU-h
+    description: Blended external price or internal value realized for an occupied accelerator hour.
+    min: 1
+    max: 20
+    step: 0.1
+  non_power_opex_pct_revenue:
+    label: Non-power operating cost
+    unit: percent of revenue
+    short_unit: "%"
+    description: Labor, networking, software, facilities, and other cash operating costs excluding electricity.
+    min: 5
+    max: 65
+    step: 1
+  energy_cost_per_kwh_usd:
+    label: Electricity cost
+    unit: USD per kWh
+    short_unit: $/kWh
+    description: Delivered electricity price before multiplying by power usage effectiveness.
+    min: 0.02
+    max: 0.20
+    step: 0.005
+  pue:
+    label: Power usage effectiveness
+    unit: ratio
+    short_unit: x
+    description: Total facility power divided by IT equipment power.
+    min: 1.05
+    max: 1.60
+    step: 0.01
+  gpu_power_kw:
+    label: Accelerator system draw
+    unit: kW per GPU-equivalent
+    short_unit: kW
+    description: Average occupied power draw of an accelerator and its allocated host components.
+    min: 0.40
+    max: 1.80
+    step: 0.05
+  depreciation_years:
+    label: Depreciable life
+    unit: years
+    short_unit: yr
+    description: Straight-line useful life used for accelerator and project depreciation.
+    min: 3
+    max: 10
+    step: 1
+  revenue_growth_pct:
+    label: Annual revenue growth
+    unit: percent
+    short_unit: "%"
+    description: Annual growth in project revenue after the first modeled year.
+    min: -15
+    max: 40
+    step: 1
+  tax_rate_pct:
+    label: Cash tax rate
+    unit: percent
+    short_unit: "%"
+    description: Marginal cash tax rate applied to positive project EBIT.
+    min: 0
+    max: 35
+    step: 1
+  maintenance_capex_pct_revenue:
+    label: Maintenance capex
+    unit: percent of revenue
+    short_unit: "%"
+    description: Recurring capital expenditure required to sustain the project fleet and facilities.
+    min: 0
+    max: 20
+    step: 0.5
+  discount_rate_pct:
+    label: Discount rate
+    unit: percent
+    short_unit: "%"
+    description: Unlevered nominal hurdle rate used for project NPV.
+    min: 4
+    max: 25
+    step: 0.5
+  project_life_years:
+    label: Project life
+    unit: years
+    short_unit: yr
+    description: Explicit cash-flow forecast period.
+    min: 4
+    max: 15
+    step: 1
+  residual_value_pct:
+    label: Residual value
+    unit: percent of initial capex
+    short_unit: "%"
+    description: End-of-project proceeds from reusable facilities, networking, and hardware.
+    min: 0
+    max: 30
+    step: 1
+
+companies:
+  MSFT:
+    name: Microsoft
+    color: "#59a7ff"
+    cik: "0000789019"
+    investor_relations_url: https://www.microsoft.com/en-us/Investor
+    fallback_source_url: https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast
+    values:
+      total_capex_basis_usd_b: 96
+      ai_capex_share_pct: 66
+      gpu_hardware_share_pct: 55
+      all_in_gpu_cost_usd: 45000
+      annual_project_revenue_usd_b: 21
+      blended_revenue_per_gpu_hour_usd: 4.5
+      non_power_opex_pct_revenue: 28
+      energy_cost_per_kwh_usd: 0.065
+      pue: 1.18
+      gpu_power_kw: 0.85
+      depreciation_years: 5
+      revenue_growth_pct: 15
+      tax_rate_pct: 18
+      maintenance_capex_pct_revenue: 5
+      discount_rate_pct: 9.5
+      project_life_years: 8
+      residual_value_pct: 10
+  AMZN:
+    name: Amazon
+    color: "#ffb547"
+    cik: "0001018724"
+    investor_relations_url: https://ir.aboutamazon.com/quarterly-results/default.aspx
+    fallback_source_url: https://ir.aboutamazon.com/quarterly-results/default.aspx
+    values:
+      total_capex_basis_usd_b: 118
+      ai_capex_share_pct: 67
+      gpu_hardware_share_pct: 55
+      all_in_gpu_cost_usd: 45000
+      annual_project_revenue_usd_b: 29
+      blended_revenue_per_gpu_hour_usd: 4.8
+      non_power_opex_pct_revenue: 30
+      energy_cost_per_kwh_usd: 0.062
+      pue: 1.17
+      gpu_power_kw: 0.86
+      depreciation_years: 5
+      revenue_growth_pct: 17
+      tax_rate_pct: 19
+      maintenance_capex_pct_revenue: 5
+      discount_rate_pct: 9.5
+      project_life_years: 8
+      residual_value_pct: 10
+  GOOGL:
+    name: Alphabet
+    color: "#67d49b"
+    cik: "0001652044"
+    investor_relations_url: https://abc.xyz/investor/
+    fallback_source_url: https://abc.xyz/investor/
+    values:
+      total_capex_basis_usd_b: 104
+      ai_capex_share_pct: 70
+      gpu_hardware_share_pct: 60
+      all_in_gpu_cost_usd: 48000
+      annual_project_revenue_usd_b: 27.5
+      blended_revenue_per_gpu_hour_usd: 4.6
+      non_power_opex_pct_revenue: 27
+      energy_cost_per_kwh_usd: 0.060
+      pue: 1.14
+      gpu_power_kw: 0.82
+      depreciation_years: 5
+      revenue_growth_pct: 18
+      tax_rate_pct: 17
+      maintenance_capex_pct_revenue: 5
+      discount_rate_pct: 9.0
+      project_life_years: 8
+      residual_value_pct: 10
+  META:
+    name: Meta
+    color: "#a88bff"
+    cik: "0001326801"
+    investor_relations_url: https://investor.atmeta.com/financials/
+    fallback_source_url: https://investor.atmeta.com/financials/
+    values:
+      total_capex_basis_usd_b: 72
+      ai_capex_share_pct: 80
+      gpu_hardware_share_pct: 65
+      all_in_gpu_cost_usd: 48000
+      annual_project_revenue_usd_b: 20
+      blended_revenue_per_gpu_hour_usd: 4.0
+      non_power_opex_pct_revenue: 24
+      energy_cost_per_kwh_usd: 0.060
+      pue: 1.13
+      gpu_power_kw: 0.82
+      depreciation_years: 5
+      revenue_growth_pct: 19
+      tax_rate_pct: 16
+      maintenance_capex_pct_revenue: 4.5
+      discount_rate_pct: 9.5
+      project_life_years: 8
+      residual_value_pct: 10
+  ORCL:
+    name: Oracle
+    color: "#ff6b6b"
+    cik: "0001341439"
+    investor_relations_url: https://investor.oracle.com/financial-reporting/quarterly-earnings/
+    fallback_source_url: https://investor.oracle.com/financial-reporting/quarterly-earnings/
+    values:
+      total_capex_basis_usd_b: 40
+      ai_capex_share_pct: 80
+      gpu_hardware_share_pct: 60
+      all_in_gpu_cost_usd: 45000
+      annual_project_revenue_usd_b: 14
+      blended_revenue_per_gpu_hour_usd: 5.0
+      non_power_opex_pct_revenue: 32
+      energy_cost_per_kwh_usd: 0.068
+      pue: 1.20
+      gpu_power_kw: 0.88
+      depreciation_years: 5
+      revenue_growth_pct: 20
+      tax_rate_pct: 18
+      maintenance_capex_pct_revenue: 5.5
+      discount_rate_pct: 10.5
+      project_life_years: 8
+      residual_value_pct: 9
+  CRWV:
+    name: CoreWeave
+    color: "#55d8e5"
+    cik: "0001769628"
+    investor_relations_url: https://investors.coreweave.com/financials/quarterly-results/default.aspx
+    fallback_source_url: https://investors.coreweave.com/financials/quarterly-results/default.aspx
+    values:
+      total_capex_basis_usd_b: 24
+      ai_capex_share_pct: 95
+      gpu_hardware_share_pct: 70
+      all_in_gpu_cost_usd: 42000
+      annual_project_revenue_usd_b: 10
+      blended_revenue_per_gpu_hour_usd: 4.2
+      non_power_opex_pct_revenue: 36
+      energy_cost_per_kwh_usd: 0.072
+      pue: 1.24
+      gpu_power_kw: 0.92
+      depreciation_years: 5
+      revenue_growth_pct: 23
+      tax_rate_pct: 18
+      maintenance_capex_pct_revenue: 7
+      discount_rate_pct: 13.0
+      project_life_years: 8
+      residual_value_pct: 8
