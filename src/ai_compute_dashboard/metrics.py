@@ -9,6 +9,8 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from .economics import build_infrastructure_economics
+
 
 def _daily(df: pd.DataFrame, metric: str, source: str | None = None, agg: str = "sum") -> pd.Series:
     x = df[df["metric"].eq(metric)].copy()
@@ -33,7 +35,7 @@ def _base_index(series: pd.Series, days: int = 28) -> pd.Series:
 
 
 def _pct_change(series: pd.Series, periods: int) -> pd.Series:
-    return series.pct_change(periods=periods) * 100
+    return series.pct_change(periods=periods, fill_method=None) * 100
 
 
 def _weights(path: str | Path) -> pd.DataFrame:
@@ -114,7 +116,7 @@ def _grid_residual(df: pd.DataFrame, minimum_days: int) -> pd.DataFrame:
 def build_dashboard_data(df: pd.DataFrame, config: dict[str, Any], weights_path: str | Path) -> dict[str, Any]:
     dashboard_cfg = config["dashboard"]
     derived = derive_compute_observations(df, weights_path, float(dashboard_cfg["assumed_output_token_share"]))
-    full = pd.concat([df, derived], ignore_index=True)
+    full = df.copy() if derived.empty else pd.concat([df, derived], ignore_index=True)
 
     tokens = _daily(full, "tokens_total", "openrouter")
     compute = _daily(full, "h100_equivalent_hours", "derived")
@@ -211,16 +213,22 @@ def build_dashboard_data(df: pd.DataFrame, config: dict[str, Any], weights_path:
             kpis[col] = None if pd.isna(value) else float(value)
 
     frame_out = frame.reset_index().replace({np.nan: None}).to_dict("records")
+    economics_config = config.get("economics", {}).get(
+        "config_path", "config/infrastructure_economics.yml"
+    )
+    economics = build_infrastructure_economics(full, economics_config)
+
     return {
         "meta": {
             "title": dashboard_cfg["title"], "subtitle": dashboard_cfg["subtitle"],
             "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
             "demo_mode": bool(_demo_rows(df).any()),
-            "methodology_version": "0.1.0",
+            "methodology_version": "0.2.0",
             "latest_openrouter_date": latest_token_date,
         },
         "kpis": kpis, "series": frame_out, "model_mix": model_mix,
         "grid_residuals": grid_resid.replace({np.nan: None}).to_dict("records"),
         "training_events": training_events,
         "global_token_anchors": anchors, "source_health": health,
+        "infrastructure_economics": economics,
     }

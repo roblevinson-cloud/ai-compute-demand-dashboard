@@ -14,6 +14,46 @@ The repository is designed to run on **GitHub Actions every six hours**, append 
 | Capacity | Operational H100-equivalent capacity and AI data-center MW | Epoch AI data-center and cluster datasets |
 | Efficiency | Tokens per estimated H100-hour, model speed and price | Artificial Analysis, OpenRouter catalog, MLPerf calibration files |
 
+## AI Infrastructure Economics
+
+The **Infrastructure economics** module is part of the same generated GitHub Pages site. It compares Microsoft, Amazon, Alphabet, Meta, Oracle, and CoreWeave under editable bear/base/bull cases and calculates:
+
+- project IRR;
+- data-center ROIC;
+- implied GPU utilization;
+- fractional payback period;
+- depreciation-adjusted return; and
+- marginal operating margin.
+
+Each visible input and output carries one of four labels:
+
+| Label | Meaning |
+|---|---|
+| Reported | Direct company disclosure collected from a filing, earnings release, or sourced call transcript |
+| Calculated | Deterministic output of a documented formula |
+| Estimated | Versioned model assumption or fallback not directly disclosed by the company |
+| User-supplied | A local browser override; reset restores the versioned scenario value |
+
+Scenario defaults and input ranges live in `config/infrastructure_economics.yml`. Browser edits are saved only on the device and can be exported as JSON; they never overwrite repository data.
+
+### Economics formulas
+
+```text
+AI project capex = reported/fallback capital-spend basis × AI allocation share
+GPU-equivalents  = project capex × accelerated-compute share ÷ all-in GPU cost
+GPU utilization = annual project revenue ÷ (GPU-equivalents × 8,760 × value/GPU-hour)
+
+Marginal operating margin =
+  (revenue − non-power opex − electricity − straight-line depreciation) ÷ revenue
+
+Data-center ROIC = year-one NOPAT ÷ AI project capex
+Depreciation-adjusted return = (year-one NOPAT + depreciation) ÷ AI project capex
+Project IRR = discount rate that sets the modeled project cash-flow NPV to zero
+Payback = first fractional year in which cumulative unlevered cash flow is positive
+```
+
+The model excludes financing structure, working capital, land timing, prepayments, tax credits, and company-level overhead. Internal-use capacity is assigned an estimated economic value per GPU-hour and is not treated as reported cloud pricing.
+
 **Important:** raw tokens are not comparable across all providers or models. The dashboard therefore keeps raw observed tokens separate from compute-weighted estimates and marks model-weight assumptions explicitly.
 
 ## Repository layout
@@ -21,9 +61,10 @@ The repository is designed to run on **GitHub Actions every six hours**, append 
 ```text
 .github/workflows/update-dashboard.yml  scheduled collection + Pages deployment
 config/dashboard.yml                    sources, zones, thresholds, assumptions
+config/infrastructure_economics.yml     bear/base/bull economics model inputs
 config/model_weights.csv                editable compute-per-token assumptions
 data/observations.csv                   append-only normalized observations
- data/manual/                            disclosed/global anchors you add manually
+ data/manual/                            disclosed/global anchors and call overlays
  data/raw/                               downloaded source snapshots (gitignored by default)
 docs/index.html                         static interactive dashboard
 src/ai_compute_dashboard/               collectors, storage, metrics, site builder
@@ -60,6 +101,8 @@ The repository ships with **clearly labeled synthetic demo data** so the interfa
 | `ARTIFICIAL_ANALYSIS_API_KEY` | Model speed, latency, quality and price | Recommended; free key works |
 | `VAST_API_KEY` | Current rental offers | Recommended |
 | `VAST_HOST_API_KEY` | Vast supply/demand market metrics and history | Optional; host keys only |
+| `SEC_USER_AGENT` | Descriptive SEC API user agent, including a contact address | Recommended for quarterly economics updates |
+| `ECONOMICS_DISCLOSURES_URL` | Optional normalized CSV/JSON feed of sourced earnings-call disclosures | Optional |
 
 4. Under **Settings → Pages**, select **GitHub Actions** as the source.
 5. Run **Actions → Update AI compute dashboard → Run workflow** once.
@@ -72,6 +115,8 @@ The workflow:
 - rebuilds `docs/index.html` and `docs/data/dashboard.json`;
 - commits data changes back to `main`;
 - deploys `docs/` to GitHub Pages.
+
+For the economics module, the same run also queries the SEC Company Facts API for recognized quarterly and annual facts. A normalized earnings-call feed can supply company-specific `company_ai_infrastructure_revenue`, `company_gpu_utilization`, and `company_active_power_mw` observations without changing the calculation code.
 
 Scheduled GitHub Actions are not guaranteed to start at the exact minute under heavy platform load, so the dashboard displays source age and last-success time.
 
@@ -113,6 +158,7 @@ Examples:
 2026-07-24,openrouter,tokens_total,openai/gpt-x,1.25e11,tokens,observed,false,...
 2026-07-24,vast,gpu_price,H100_SXM,2.15,USD/GPU-hour,observed,false,...
 2026-07-24,derived,h100_equivalent_hours,openrouter_observed,88000,H100-hour,estimated,true,...
+2026-06-30,sec_companyfacts,company_capex,MSFT,3.1e10,USD,reported,false,...
 ```
 
 ## Compute-weighted token methodology
@@ -171,6 +217,19 @@ The dashboard will display these separately from OpenRouter-observed traffic. Do
 - **Open-Meteo:** recent temperature history for weather normalization; no key.
 - **Epoch AI:** public CSV downloads; schema is detected defensively and raw snapshots are retained locally.
 - **MLPerf:** official summary results JSON is downloaded as a calibration reference; no key.
+- **SEC Company Facts:** no API key; standardized revenue, capex, depreciation, operating income, and operating cash flow for the six modeled companies. Set a descriptive `SEC_USER_AGENT`.
+- **Company disclosures:** optional normalized CSV/JSON overlay for earnings-call and investor-relations disclosures. Every row must include its classification and source URL; `data/manual/company_disclosures.csv` is the version-controlled fallback.
+
+## Quarterly economics update contract
+
+The optional disclosure feed uses these columns:
+
+```text
+observed_at_utc,ticker,metric,value,unit,classification,
+source_url,source_label,notes
+```
+
+Supported economics disclosures include `company_ai_infrastructure_revenue`, `company_gpu_utilization`, and `company_active_power_mw`. Additive fields remain visible as reported context. AI-infrastructure revenue can replace the base-case revenue assumption when directly reported; bear and bull cases remain estimated scenario transformations. Raw snapshots are retained under `data/raw/`, normalized records append to `data/observations.csv`, and the generated economics payload is published in `docs/data/dashboard.json`.
 
 ## Production hardening
 
