@@ -3,69 +3,69 @@
     "collector": "openrouter_rankings",
     "status": "ok",
     "rows": 1530,
-    "at": "2026-08-09T04:49:03Z"
+    "at": "2026-08-09T08:24:23Z"
   },
   {
     "collector": "openrouter_models",
     "status": "ok",
     "rows": 800,
-    "at": "2026-08-09T04:49:03Z"
+    "at": "2026-08-09T08:24:24Z"
   },
   {
     "collector": "artificial_analysis",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-09T04:49:03Z",
+    "at": "2026-08-09T08:24:24Z",
     "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
   },
   {
     "collector": "vast_offers",
     "status": "ok",
     "rows": 4,
-    "at": "2026-08-09T04:49:04Z"
+    "at": "2026-08-09T08:24:24Z"
   },
   {
     "collector": "vast_market_metrics",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-09T04:49:04Z",
+    "at": "2026-08-09T08:24:24Z",
     "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
   },
   {
     "collector": "eia_grid",
     "status": "ok",
-    "rows": 1442,
-    "at": "2026-08-09T04:49:06Z"
+    "rows": 1440,
+    "at": "2026-08-09T08:24:27Z"
   },
   {
     "collector": "weather",
     "status": "ok",
     "rows": 2232,
-    "at": "2026-08-09T04:49:08Z"
+    "at": "2026-08-09T08:24:29Z"
   },
   {
     "collector": "epoch",
     "status": "ok",
     "rows": 538,
-    "at": "2026-08-09T04:49:08Z"
+    "at": "2026-08-09T08:24:30Z"
   },
   {
     "collector": "mlperf",
     "status": "ok",
     "rows": 1,
-    "at": "2026-08-09T04:49:09Z"
+    "at": "2026-08-09T08:24:30Z"
   },
   {
     "collector": "sec_companyfacts",
     "status": "error",
     "rows": 0,
-    "at": "2026-08-09T04:49:09Z",
+    "at": "2026-08-09T08:24:30Z",
     "detail": "403 Client Error: Forbidden for url: https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
   },
   {
     "collector": "company_disclosures",
     "status": "ok",
     "rows": 0,
-    "at": "2026-08-09T04:49:09Z"
+    "at": "2026-08-09T08:24:30Z"
   }
 ]
