@@ -2,21 +2,21 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Demand signals, physical capacity, and the economics of AI infrastructure",
-    "generated_at_utc": "2026-08-16T13:00:33Z",
+    "generated_at_utc": "2026-08-16T18:47:00Z",
     "demo_mode": false,
     "methodology_version": "0.2.0",
     "latest_openrouter_date": "2026-08-15"
   },
   "kpis": {
-    "workload_index": 119.1391367499366,
-    "physical_compute_index": 124.16398202238656,
-    "tightness_index": 121.91473421918957,
+    "workload_index": 119.1391768139807,
+    "physical_compute_index": 124.1640065812581,
+    "tightness_index": 111.69252056568217,
     "capacity_index": 105.37904618266478,
-    "efficiency_index": 95.52697332592298,
-    "tokens": 9565038668326.0,
-    "h100_hours": 1931113.9882289816,
-    "token_growth_28d": 23.534001820657746,
-    "compute_growth_28d": 23.58840091544032
+    "efficiency_index": 95.52698655503156,
+    "tokens": 9565041884852.0,
+    "h100_hours": 1931114.3701914442,
+    "token_growth_28d": 23.534043362604674,
+    "compute_growth_28d": 23.588425360465436
   },
   "series": [
     {
@@ -763,7 +763,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 292.05189402966744,
+      "tightness_index": 293.97079014193594,
       "token_growth_28d": 18.655995242058054,
       "compute_growth_28d": 27.688718030299796,
       "token_growth_yoy": null,
@@ -788,7 +788,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 86.60585189695338,
+      "tightness_index": 86.90831171651107,
       "token_growth_28d": 23.65829188573201,
       "compute_growth_28d": 27.503042859791215,
       "token_growth_yoy": null,
@@ -813,7 +813,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 100.93056976357039,
+      "tightness_index": 101.37062878355425,
       "token_growth_28d": 24.497200534912157,
       "compute_growth_28d": 26.89814341037675,
       "token_growth_yoy": null,
@@ -838,7 +838,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 133.29596337053846,
+      "tightness_index": 133.99957130743383,
       "token_growth_28d": 27.825397227803595,
       "compute_growth_28d": 30.300792203359663,
       "token_growth_yoy": null,
@@ -863,7 +863,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 96.71133102927374,
+      "tightness_index": 97.11871867622523,
       "token_growth_28d": 28.229563984949202,
       "compute_growth_28d": 28.945211469403255,
       "token_growth_yoy": null,
@@ -888,7 +888,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 103.06165938824009,
+      "tightness_index": 103.53965235319633,
       "token_growth_28d": 37.12500861887895,
       "compute_growth_28d": 32.773544186503734,
       "token_growth_yoy": null,
@@ -913,7 +913,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 170.18625127010446,
+      "tightness_index": 171.19952728220133,
       "token_growth_28d": 41.5994190406965,
       "compute_growth_28d": 32.77496855562194,
       "token_growth_yoy": null,
@@ -938,7 +938,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 76.15790775958206,
+      "tightness_index": 76.43842809281048,
       "token_growth_28d": 32.81337172187797,
       "compute_growth_28d": 29.081863355657745,
       "token_growth_yoy": null,
@@ -963,7 +963,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 77.65152547629647,
+      "tightness_index": 77.94385676618207,
       "token_growth_28d": 21.07098978560622,
       "compute_growth_28d": 19.200364354879575,
       "token_growth_yoy": null,
@@ -988,7 +988,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 79.23617313245734,
+      "tightness_index": 79.5409726129684,
       "token_growth_28d": 28.559342325571823,
       "compute_growth_28d": 26.1397797993407,
       "token_growth_yoy": null,
@@ -1013,7 +1013,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 74.62207116625552,
+      "tightness_index": 74.89054669333365,
       "token_growth_28d": 18.6526787153136,
       "compute_growth_28d": 15.953243213010616,
       "token_growth_yoy": null,
@@ -1038,7 +1038,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 94.63134867271992,
+      "tightness_index": 95.0359752181902,
       "token_growth_28d": 17.37272888293915,
       "compute_growth_28d": 13.343861419231917,
       "token_growth_yoy": null,
@@ -1063,7 +1063,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 112.6979193102186,
+      "tightness_index": 113.24820376594266,
       "token_growth_28d": 18.491324018844214,
       "compute_growth_28d": 16.24482347923426,
       "token_growth_yoy": null,
@@ -1088,7 +1088,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 184.7007895960577,
+      "tightness_index": 185.8087361792248,
       "token_growth_28d": 15.759203080604568,
       "compute_growth_28d": 13.163132512610186,
       "token_growth_yoy": null,
@@ -1113,7 +1113,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 130.8239252402901,
+      "tightness_index": 131.45126948709927,
       "token_growth_28d": 19.37810148628447,
       "compute_growth_28d": 16.221914380011103,
       "token_growth_yoy": null,
@@ -1121,8 +1121,8 @@
     },
     {
       "date": "2026-08-15",
-      "tokens": 9565038668326.0,
-      "h100_hours": 1931113.9882289816,
+      "tokens": 9565041884852.0,
+      "h100_hours": 1931114.3701914442,
       "gpu_price": 6.876302083333333,
       "gpu_units": 380.0,
       "latency": null,
@@ -1131,41 +1131,41 @@
       "grid_load_mw": 39662.041666666664,
       "output_speed": null,
       "api_output_price": null,
-      "workload_index": 119.1391367499366,
-      "physical_compute_index": 124.16398202238656,
+      "workload_index": 119.1391768139807,
+      "physical_compute_index": 124.1640065812581,
       "capacity_index": 103.33911899036482,
-      "efficiency_index": 95.52697332592298,
+      "efficiency_index": 95.52698655503156,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 96.98579795447716,
-      "token_growth_28d": 18.80906924979564,
-      "compute_growth_28d": 19.938716232157216,
+      "tightness_index": 97.35941899463623,
+      "token_growth_28d": 18.809109202844798,
+      "compute_growth_28d": 19.93873995529718,
       "token_growth_yoy": null,
       "compute_growth_yoy": null
     },
     {
       "date": "2026-08-16",
-      "tokens": 9565038668326.0,
-      "h100_hours": 1931113.9882289816,
-      "gpu_price": 6.876302083333333,
-      "gpu_units": 237.0,
+      "tokens": 9565041884852.0,
+      "h100_hours": 1931114.3701914442,
+      "gpu_price": 6.784830729166666,
+      "gpu_units": 279.0,
       "latency": null,
       "capacity_h100_eq": 13678078.407920385,
       "datacenter_power_mw": 12712.12971,
-      "grid_load_mw": 37586.96153846154,
+      "grid_load_mw": 36819.805555555555,
       "output_speed": null,
       "api_output_price": null,
-      "workload_index": 119.1391367499366,
-      "physical_compute_index": 124.16398202238656,
+      "workload_index": 119.1391768139807,
+      "physical_compute_index": 124.1640065812581,
       "capacity_index": 105.37904618266478,
-      "efficiency_index": 95.52697332592298,
+      "efficiency_index": 95.52698655503156,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 121.91473421918957,
-      "token_growth_28d": 23.534001820657746,
-      "compute_growth_28d": 23.58840091544032,
+      "tightness_index": 111.69252056568217,
+      "token_growth_28d": 23.534043362604674,
+      "compute_growth_28d": 23.588425360465436,
       "token_growth_yoy": null,
       "compute_growth_yoy": null
     }
@@ -1173,63 +1173,63 @@
   "model_mix": [
     {
       "model": "deepseek/deepseek-v4-flash-20260731",
-      "tokens": 1407523430531.0,
-      "share": 0.14715292633284607
+      "tokens": 1407526647057.0,
+      "share": 0.1471532131276996
     },
     {
       "model": "tencent/hy3-20260706",
       "tokens": 1117668844080.0,
-      "share": 0.11684938062833841
+      "share": 0.11684934133430548
     },
     {
       "model": "openai/gpt-5.6-luna-20260709",
       "tokens": 652006253602.0,
-      "share": 0.06816556380070643
+      "share": 0.06816554087803542
     },
     {
       "model": "other",
       "tokens": 641140079526.0,
-      "share": 0.06702953346640338
+      "share": 0.0670295109257559
     },
     {
       "model": "deepseek/deepseek-v4-flash-20260423",
       "tokens": 581065793450.0,
-      "share": 0.06074892257092084
+      "share": 0.06074890214231308
     },
     {
       "model": "anthropic/claude-opus-5-20260723",
       "tokens": 528691648259.0,
-      "share": 0.055273341446044316
+      "share": 0.055273322858761374
     },
     {
       "model": "z-ai/glm-5.2-20260616",
       "tokens": 526052662300.0,
-      "share": 0.054997442304335786
+      "share": 0.054997423809832024
     },
     {
       "model": "xiaomi/mimo-v2.5-20260422",
       "tokens": 449465216688.0,
-      "share": 0.04699042338180761
+      "share": 0.04699040757989891
     },
     {
       "model": "nvidia/nemotron-3-ultra-550b-a55b-20260604:free",
       "tokens": 399559087450.0,
-      "share": 0.041772866927670016
+      "share": 0.04177285288031777
     },
     {
       "model": "deepseek/deepseek-v4-pro-20260423",
       "tokens": 330252003744.0,
-      "share": 0.03452699097156898
+      "share": 0.034526979360855144
     },
     {
       "model": "poolside/laguna-s-2.1-20260720:free",
       "tokens": 239687268409.0,
-      "share": 0.02505868263791852
+      "share": 0.025058674211201188
     },
     {
       "model": "minimax/minimax-m3-20260531",
       "tokens": 206850067620.0,
-      "share": 0.021625638410116468
+      "share": 0.021625631137860993
     }
   ],
   "grid_residuals": [
@@ -1506,7 +1506,7 @@
     {
       "date": "2026-08-16",
       "region": "ERCO",
-      "grid_load_mw": 69408.76923076923,
+      "grid_load_mw": 67860.38888888889,
       "grid_residual_mw": null
     },
     {
@@ -1782,7 +1782,7 @@
     {
       "date": "2026-08-16",
       "region": "PACE",
-      "grid_load_mw": 5765.153846153846,
+      "grid_load_mw": 5779.222222222223,
       "grid_residual_mw": null
     }
   ],
@@ -4619,73 +4619,73 @@
     {
       "source": "derived",
       "latest_observation": "2026-08-15T00:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
       "rows": 2295
     },
     {
       "source": "eia",
-      "latest_observation": "2026-08-16T12:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "latest_observation": "2026-08-16T17:00:00+00:00",
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
-      "rows": 2184
+      "rows": 2194
     },
     {
       "source": "epoch",
       "latest_observation": "2026-08-16T00:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
       "rows": 539
     },
     {
       "source": "mlperf",
       "latest_observation": "2026-08-16T00:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
       "rows": 17
     },
     {
       "source": "open_meteo",
       "latest_observation": "2026-08-16T23:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
       "rows": 3384
     },
     {
       "source": "openrouter",
       "latest_observation": "2026-08-15T00:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
       "rows": 2295
     },
     {
       "source": "openrouter_catalog",
       "latest_observation": "2026-08-16T00:00:00+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
       "rows": 12860
     },
     {
       "source": "vast",
-      "latest_observation": "2026-08-16T13:00:05+00:00",
-      "last_collection": "2026-08-16T13:00:31+00:00",
-      "age_hours": 0.0005938438888888889,
+      "latest_observation": "2026-08-16T18:46:33+00:00",
+      "last_collection": "2026-08-16T18:46:58+00:00",
+      "age_hours": 0.0006225530555555556,
       "status": "live",
-      "rows": 232
+      "rows": 236
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-16T13:00:04Z",
+      "last_collection": "2026-08-16T18:46:33Z",
       "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
@@ -4694,7 +4694,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-16T13:00:05Z",
+      "last_collection": "2026-08-16T18:46:33Z",
       "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     },
@@ -4703,7 +4703,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-16T13:00:31Z",
+      "last_collection": "2026-08-16T18:46:58Z",
       "status": "failed",
       "detail": "403 Client Error: Forbidden for url: https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
     }
@@ -4712,7 +4712,7 @@
     "meta": {
       "version": "1.0.0",
       "as_of": "2026-08-04",
-      "generated_at_utc": "2026-08-16T13:00:33Z",
+      "generated_at_utc": "2026-08-16T18:47:00Z",
       "disclaimer": "Scenario analysis, not investment advice. Project-level economics are not company guidance or consolidated forecasts."
     },
     "scenario_labels": {
