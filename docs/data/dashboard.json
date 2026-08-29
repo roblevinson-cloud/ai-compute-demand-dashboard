@@ -2,21 +2,21 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Demand signals, physical capacity, and the economics of AI infrastructure",
-    "generated_at_utc": "2026-08-29T16:43:10Z",
+    "generated_at_utc": "2026-08-29T20:55:17Z",
     "demo_mode": false,
     "methodology_version": "0.2.0",
     "latest_openrouter_date": "2026-08-28"
   },
   "kpis": {
-    "workload_index": 188.28807905987418,
-    "physical_compute_index": 185.49688299540105,
-    "tightness_index": 120.87460678665117,
+    "workload_index": 188.28843602316243,
+    "physical_compute_index": 185.4973129477664,
+    "tightness_index": 99.61710479143969,
     "capacity_index": 110.04206487513899,
-    "efficiency_index": 101.05397688744621,
-    "tokens": 15116634265805.0,
-    "h100_hours": 2885020.435803259,
-    "token_growth_28d": 113.90634939875648,
-    "compute_growth_28d": 118.46318525374588
+    "efficiency_index": 101.05393424219918,
+    "tokens": 15116662924462.0,
+    "h100_hours": 2885027.122823226,
+    "token_growth_28d": 113.90675493007976,
+    "compute_growth_28d": 118.46369161677322
   },
   "series": [
     {
@@ -1446,8 +1446,8 @@
     },
     {
       "date": "2026-08-28",
-      "tokens": 15116634265805.0,
-      "h100_hours": 2885020.435803259,
+      "tokens": 15116662924462.0,
+      "h100_hours": 2885027.122823226,
       "gpu_price": 7.63046875,
       "gpu_units": 60.0,
       "latency": null,
@@ -1456,41 +1456,41 @@
       "grid_load_mw": 40082.479166666664,
       "output_speed": null,
       "api_output_price": null,
-      "workload_index": 188.28807905987418,
-      "physical_compute_index": 185.49688299540105,
+      "workload_index": 188.28843602316243,
+      "physical_compute_index": 185.4973129477664,
       "capacity_index": 110.04206487513899,
-      "efficiency_index": 101.05397688744621,
+      "efficiency_index": 101.05393424219918,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
       "tightness_index": 281.78390448803015,
-      "token_growth_28d": 82.21106485132769,
-      "compute_growth_28d": 79.33516174150539,
+      "token_growth_28d": 82.21141029359464,
+      "compute_growth_28d": 79.33557741197774,
       "token_growth_yoy": null,
       "compute_growth_yoy": null
     },
     {
       "date": "2026-08-29",
-      "tokens": 15116634265805.0,
-      "h100_hours": 2885020.435803259,
+      "tokens": 15116662924462.0,
+      "h100_hours": 2885027.122823226,
       "gpu_price": 6.005208333333332,
-      "gpu_units": 179.0,
+      "gpu_units": 250.0,
       "latency": null,
       "capacity_h100_eq": 14645830.343746556,
       "datacenter_power_mw": 13257.12971,
-      "grid_load_mw": 35113.0,
+      "grid_load_mw": 36795.07142857143,
       "output_speed": null,
       "api_output_price": null,
-      "workload_index": 188.28807905987418,
-      "physical_compute_index": 185.49688299540105,
+      "workload_index": 188.28843602316243,
+      "physical_compute_index": 185.4973129477664,
       "capacity_index": 110.04206487513899,
-      "efficiency_index": 101.05397688744621,
+      "efficiency_index": 101.05393424219918,
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 120.87460678665117,
-      "token_growth_28d": 113.90634939875648,
-      "compute_growth_28d": 118.46318525374588,
+      "tightness_index": 99.61710479143969,
+      "token_growth_28d": 113.90675493007976,
+      "compute_growth_28d": 118.46369161677322,
       "token_growth_yoy": null,
       "compute_growth_yoy": null
     }
@@ -1499,62 +1499,62 @@
     {
       "model": "openai/gpt-5.6-luna-20260709",
       "tokens": 1700341522659.0,
-      "share": 0.11248148845575397
+      "share": 0.11248127520972126
     },
     {
       "model": "deepseek/deepseek-v4-flash-20260731",
       "tokens": 1605564470106.0,
-      "share": 0.10621176922550223
+      "share": 0.10621156786580539
     },
     {
       "model": "xiaomi/mimo-v2.5-20260422",
       "tokens": 1578104901546.0,
-      "share": 0.10439525583520902
+      "share": 0.10439505791931684
     },
     {
       "model": "z-ai/glm-5.3-flash-20260826",
       "tokens": 1556774182660.0,
-      "share": 0.10298417989654907
+      "share": 0.10298398465582015
     },
     {
       "model": "tencent/hy3-20260706",
       "tokens": 963010163292.0,
-      "share": 0.06370532926568209
+      "share": 0.06370520849106473
     },
     {
       "model": "other",
-      "tokens": 872370117413.0,
-      "share": 0.05770928250783767
+      "tokens": 872398776070.0,
+      "share": 0.057711068932963495
     },
     {
       "model": "nvidia/nemotron-3-ultra-550b-a55b-20260604:free",
       "tokens": 750226968483.0,
-      "share": 0.04962923328641162
+      "share": 0.04962913919771089
     },
     {
       "model": "deepseek/deepseek-v4-flash-20260423",
       "tokens": 711480301714.0,
-      "share": 0.04706605248255716
+      "share": 0.04706596325321724
     },
     {
       "model": "minimax/minimax-m3-20260531:free",
       "tokens": 605058843802.0,
-      "share": 0.040026029151918434
+      "share": 0.04002595326928175
     },
     {
       "model": "tencent/hy4-preview-20260827",
       "tokens": 363788183015.0,
-      "share": 0.024065422012485748
+      "share": 0.02406537638848272
     },
     {
       "model": "google/gemini-3.7-flash-20260813",
       "tokens": 353600982632.0,
-      "share": 0.023391515360788536
+      "share": 0.02339147101439947
     },
     {
       "model": "z-ai/glm-5.2-20260616",
       "tokens": 338142998622.0,
-      "share": 0.022368934292926947
+      "share": 0.02236889188518004
     }
   ],
   "grid_residuals": [
@@ -1909,7 +1909,7 @@
     {
       "date": "2026-08-29",
       "region": "ERCO",
-      "grid_load_mw": 64314.0625,
+      "grid_load_mw": 67456.19047619047,
       "grid_residual_mw": null
     },
     {
@@ -2263,7 +2263,7 @@
     {
       "date": "2026-08-29",
       "region": "PACE",
-      "grid_load_mw": 5911.9375,
+      "grid_load_mw": 6133.952380952381,
       "grid_residual_mw": null
     }
   ],
@@ -5106,73 +5106,73 @@
     {
       "source": "derived",
       "latest_observation": "2026-08-28T00:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
       "rows": 2958
     },
     {
       "source": "eia",
-      "latest_observation": "2026-08-29T15:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "latest_observation": "2026-08-29T20:00:00+00:00",
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
-      "rows": 2814
+      "rows": 2824
     },
     {
       "source": "epoch",
       "latest_observation": "2026-08-29T00:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
       "rows": 592
     },
     {
       "source": "mlperf",
       "latest_observation": "2026-08-29T00:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
       "rows": 30
     },
     {
       "source": "open_meteo",
       "latest_observation": "2026-08-29T23:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
       "rows": 4320
     },
     {
       "source": "openrouter",
       "latest_observation": "2026-08-28T00:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
       "rows": 2958
     },
     {
       "source": "openrouter_catalog",
       "latest_observation": "2026-08-29T00:00:00+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
       "rows": 23652
     },
     {
       "source": "vast",
-      "latest_observation": "2026-08-29T16:43:02+00:00",
-      "last_collection": "2026-08-29T16:43:08+00:00",
-      "age_hours": 0.0005330583333333334,
+      "latest_observation": "2026-08-29T20:55:10+00:00",
+      "last_collection": "2026-08-29T20:55:15+00:00",
+      "age_hours": 0.0005805313888888889,
       "status": "live",
-      "rows": 416
+      "rows": 420
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-29T16:43:01Z",
+      "last_collection": "2026-08-29T20:55:10Z",
       "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
@@ -5181,7 +5181,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-29T16:43:02Z",
+      "last_collection": "2026-08-29T20:55:10Z",
       "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     },
@@ -5190,7 +5190,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-08-29T16:43:07Z",
+      "last_collection": "2026-08-29T20:55:15Z",
       "status": "failed",
       "detail": "403 Client Error: Forbidden for url: https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
     }
@@ -5199,7 +5199,7 @@
     "meta": {
       "version": "1.0.0",
       "as_of": "2026-08-04",
-      "generated_at_utc": "2026-08-29T16:43:10Z",
+      "generated_at_utc": "2026-08-29T20:55:17Z",
       "disclaimer": "Scenario analysis, not investment advice. Project-level economics are not company guidance or consolidated forecasts."
     },
     "scenario_labels": {
