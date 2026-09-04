@@ -1,10 +1,11 @@
-const BUILD='20260904c';
+const BUILD='20260904d';
 const root=document.getElementById('projectRoot'),slug=document.body.dataset.projectSlug||new URLSearchParams(location.search).get('slug');
 const dataBase=location.pathname.includes('/data-centers/projects/')?'../../data':'../data';
 const text=(v,f='n/d')=>(v===null||v===undefined||v==='')?f:v;
 const num=(v)=>typeof v==='number'&&Number.isFinite(v);
 const mw=(v)=>num(v)?Number(v).toLocaleString(undefined,{maximumFractionDigits:1})+' MW':'n/d';
 const pill=(p)=>`<span class="pill ${p.risk_color==='green'?'green':(p.risk_score>=75?'red':'amber')}">${text(p.risk_label)}</span>`;
+const capexDate=(p)=>{if(p.capex_effective_date)return p.capex_effective_date;const ev=(p.evidence||[]).find(e=>/(capex|construction commitment|development cost|financing|debt|notes|build cost|cost per)/i.test(e.headline||''));return ev?.date||'n/d'};
 Promise.all([
  fetch(`${dataBase}/projects.json?v=${BUILD}`,{cache:'no-store'}).then(r=>r.json()),
  fetch(`${dataBase}/credit_projects.json?v=${BUILD}`,{cache:'no-store'}).then(r=>r.json()),
@@ -31,7 +32,7 @@ function render(p){
  <section class="section"><div class="eyebrow">SCHEDULE</div><h1>Critical path</h1><div class="card"><div class="timeline">${milestones.map(m=>`<div class="mile ${text(m.state,'watch')}"><div class="mdate">${text(m.date)}</div><div class="mlabel">${text(m.label)}</div><div class="mnote">${text(m.note)}</div></div>`).join('')}</div></div></section>
  <section class="grid two section">
   <div class="card"><div class="cardhead"><strong>Deal & build economics</strong><span>Comparable operating fields</span></div>${facts([
-   ['Developer / landlord',text(p.developer)+' · '+text(p.landlord)],['Tenant / support',text(p.tenant)+' · '+text(p.tenant_detail)],['Contracted revenue',text(p.contracted_revenue_display)],['Critical / utility capacity',mw(p.critical_it_mw)+' / '+mw(p.utility_mw)],['Capital intensity',text(p.capex_per_mw_display)+' — '+text(p.capex_note)],['Delivery',text(p.delivery)]
+   ['Developer / landlord',text(p.developer)+' · '+text(p.landlord)],['Tenant / support',text(p.tenant)+' · '+text(p.tenant_detail)],['Contracted revenue',text(p.contracted_revenue_display)],['Critical / utility capacity',mw(p.critical_it_mw)+' / '+mw(p.utility_mw)],['Capital intensity',text(p.capex_per_mw_display)+' · effective '+capexDate(p)+' — '+text(p.capex_note)],['Delivery',text(p.delivery)]
   ])}</div>
   <div class="card"><div class="cardhead"><strong>Capital markets</strong><span>${text(p.credit_bucket)}</span></div>${facts([
    ['Instrument',text(p.financing_type,text(p.financing))],['Debt amount',text(p.debt_amount_display)],['Coupon / spread',text(p.coupon_display)],['Maturity',text(p.maturity)],['Rating',text(p.rating_display)],['Issue price',text(p.issue_price_display)],['Security',text(p.security_display)],['Structure note',text(p.capital_markets_note,text(p.financing))]
