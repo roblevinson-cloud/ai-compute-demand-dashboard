@@ -1,12 +1,13 @@
 const root=document.getElementById('projectRoot'),slug=document.body.dataset.projectSlug||new URLSearchParams(location.search).get('slug');
+const dataBase=location.pathname.includes('/data-centers/projects/')?'../../data':'../data';
 const text=(v,f='n/d')=>(v===null||v===undefined||v==='')?f:v;
 const num=(v)=>typeof v==='number'&&Number.isFinite(v);
 const mw=(v)=>num(v)?Number(v).toLocaleString(undefined,{maximumFractionDigits:1})+' MW':'n/d';
 const pill=(p)=>`<span class="pill ${p.risk_color==='green'?'green':(p.risk_score>=75?'red':'amber')}">${text(p.risk_label)}</span>`;
 Promise.all([
- fetch('../../data/projects.json').then(r=>r.json()),
- fetch('../../data/credit_projects.json').then(r=>r.json()),
- fetch('../../data/hy_projects.json').then(r=>r.json())
+ fetch(`${dataBase}/projects.json`).then(r=>r.json()),
+ fetch(`${dataBase}/credit_projects.json`).then(r=>r.json()),
+ fetch(`${dataBase}/hy_projects.json`).then(r=>r.json())
 ]).then(([base,credit,hy])=>{
  const overrides=credit.overrides||{};
  const all=[...base.projects.map(p=>({...p,...(overrides[p.slug]||{})})),...(credit.projects||[]),...(hy.projects||[])];
@@ -14,7 +15,7 @@ Promise.all([
  const p=all.find(x=>x.slug===slug);
  if(!p){root.innerHTML='<h1>Project not found</h1><p class="lede">Return to the project monitor and select a tracked deal.</p>';return}
  document.title=p.name+' — DC Intelligence';render(p);
-});
+}).catch(err=>{console.error(err);root.innerHTML='<h1>Project data unavailable</h1><p class="lede">Return to the project monitor and try again.</p>'});
 function facts(rows){return rows.filter(x=>x[1]!==null&&x[1]!==undefined&&x[1]!=='').map(x=>`<div class="fact"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}
 function render(p){
  const milestones=p.milestones||[], evidence=p.evidence||[], sources=p.sources||[], watch=p.watch||[];
