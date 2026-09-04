@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-09-04T21:45:00Z",
+  "source": "https://where2bro.com/hot-spots/",
+  "methodology": {
+    "scope": "Explicitly identifiable data-center-related electrician calls only.",
+    "stress_score": "0–100 composite of openings, weekly hours, explicit hourly incentive, OT multiplier and per diem.",
+    "warning": "A drop in open calls can mean hiring filled, project phase change, reporting change, or true construction deceleration."
+  },
+  "markets": [
+    {"market":"El Paso–Santa Teresa","date":"2026-08-31","openings":34,"intensity":61.8,"lat":31.8559,"lon":-106.6389,"state":"TX/NM","projects":[{"project":"Meta El Paso","openings":23},{"project":"Project Miner / Santa Teresa","openings":11}]},
+    {"market":"Cedar Rapids","date":"2026-08-31","openings":67,"intensity":73.0,"lat":41.9779,"lon":-91.6656,"state":"IA","projects":[{"project":"EWD Data Center","openings":50},{"project":"QTS","openings":17}]},
+    {"market":"Racine / SE Wisconsin","date":"2026-08-31","openings":58,"intensity":47.0,"lat":42.7261,"lon":-87.7829,"state":"WI","projects":[{"project":"Microsoft","openings":58}]},
+    {"market":"Hannibal / New Florence","date":"2026-09-02","openings":31,"intensity":57.0,"lat":39.48,"lon":-91.0,"state":"MO","projects":[{"project":"Google Project Spade","openings":31}]},
+    {"market":"Salt Lake City","date":"2026-08-31","openings":14,"intensity":47.0,"lat":40.7608,"lon":-111.891,"state":"UT","projects":[{"project":"Facebook","openings":10},{"project":"QTS","openings":4}]}
+  ],
+  "history": [
+    {"market":"El Paso–Santa Teresa","date":"2026-08-31","openings":34,"intensity":61.8},
+    {"market":"Cedar Rapids","date":"2026-08-31","openings":67,"intensity":73.0},
+    {"market":"Racine / SE Wisconsin","date":"2026-08-31","openings":58,"intensity":47.0},
+    {"market":"Hannibal / New Florence","date":"2026-09-02","openings":31,"intensity":57.0},
+    {"market":"Salt Lake City","date":"2026-08-31","openings":14,"intensity":47.0}
+  ],
+  "drops": []
+}
