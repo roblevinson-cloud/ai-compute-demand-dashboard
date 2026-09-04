@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T22:44:31.192274+00:00",
+  "generated_at": "2026-09-04T22:47:35.540472+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -241,8 +241,8 @@
       ]
     },
     {
-      "market": "Dayton, Oh",
-      "date": "2026-08-31",
+      "market": "Kansas City, Mo",
+      "date": "2026-09-04",
       "openings": 2,
       "intensity": 29.0,
       "lat": null,
@@ -369,12 +369,6 @@
       "intensity": 49.4
     },
     {
-      "market": "Dayton, Oh",
-      "date": "2026-08-31",
-      "openings": 2,
-      "intensity": 29.0
-    },
-    {
       "market": "El Paso\u2013Santa Teresa",
       "date": "2026-08-31",
       "openings": 34,
@@ -397,6 +391,12 @@
       "date": "2026-08-31",
       "openings": 2,
       "intensity": 31.0
+    },
+    {
+      "market": "Kansas City, Mo",
+      "date": "2026-09-04",
+      "openings": 2,
+      "intensity": 29.0
     },
     {
       "market": "Milwaukee / SE Wisconsin",
