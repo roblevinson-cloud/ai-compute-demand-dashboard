@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T22:49:33.675317+00:00",
+  "generated_at": "2026-09-04T22:52:33.332448+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -46,13 +46,13 @@
       ]
     },
     {
-      "market": "Grand Forks, Nd",
+      "market": "Fargo\u2013Harwood",
       "date": "2026-08-31",
       "openings": 40,
       "intensity": 55.7,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 46.98,
+      "lon": -96.88,
+      "state": "ND",
       "projects": [
         {
           "project": "Unclassified data center",
@@ -99,13 +99,13 @@
       ]
     },
     {
-      "market": "Toledo, Oh",
+      "market": "Toledo\u2013Bowling Green",
       "date": "2026-08-31",
       "openings": 8,
       "intensity": 42.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 41.3748,
+      "lon": -83.6513,
+      "state": "OH",
       "projects": [
         {
           "project": "Project Accordian",
@@ -114,25 +114,10 @@
       ]
     },
     {
-      "market": "Milwaukee / SE Wisconsin",
-      "date": "2026-08-31",
-      "openings": 72,
-      "intensity": 40.0,
-      "lat": 43.0389,
-      "lon": -87.9065,
-      "state": "WI",
-      "projects": [
-        {
-          "project": "Port Washington Data Center",
-          "openings": 72
-        }
-      ]
-    },
-    {
       "market": "Atlanta",
       "date": "2026-08-31",
-      "openings": 185,
-      "intensity": 39.5,
+      "openings": 176,
+      "intensity": 40.4,
       "lat": 33.749,
       "lon": -84.388,
       "state": "GA",
@@ -142,12 +127,12 @@
           "openings": 124
         },
         {
-          "project": "Switch",
-          "openings": 24
-        },
-        {
           "project": "DataBank",
           "openings": 16
+        },
+        {
+          "project": "Switch",
+          "openings": 15
         },
         {
           "project": "Equinix",
@@ -168,6 +153,21 @@
       ]
     },
     {
+      "market": "Milwaukee / SE Wisconsin",
+      "date": "2026-08-31",
+      "openings": 72,
+      "intensity": 40.0,
+      "lat": 43.0389,
+      "lon": -87.9065,
+      "state": "WI",
+      "projects": [
+        {
+          "project": "Port Washington Data Center",
+          "openings": 72
+        }
+      ]
+    },
+    {
       "market": "Racine / SE Wisconsin",
       "date": "2026-08-31",
       "openings": 58,
@@ -183,13 +183,13 @@
       ]
     },
     {
-      "market": "Indianapolis, In",
+      "market": "Indianapolis\u2013Mooresville",
       "date": "2026-08-31",
       "openings": 2,
       "intensity": 31.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 39.6128,
+      "lon": -86.3742,
+      "state": "IN",
       "projects": [
         {
           "project": "Google",
@@ -217,13 +217,13 @@
       ]
     },
     {
-      "market": "Kansas City, Mo",
+      "market": "Kansas City",
       "date": "2026-09-04",
       "openings": 2,
       "intensity": 29.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
       "projects": [
         {
           "project": "Google",
@@ -324,32 +324,17 @@
       ]
     },
     {
-      "market": "Boise, Id",
+      "market": "Boise",
       "date": "2026-08-31",
       "openings": 6,
       "intensity": 14.4,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 43.615,
+      "lon": -116.2023,
+      "state": "ID",
       "projects": [
         {
           "project": "Meta",
           "openings": 6
-        }
-      ]
-    },
-    {
-      "market": "Rock Island, Il",
-      "date": "2026-08-31",
-      "openings": 2,
-      "intensity": 11.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "openings": 2
         }
       ]
     }
@@ -358,11 +343,11 @@
     {
       "market": "Atlanta",
       "date": "2026-08-31",
-      "openings": 185,
-      "intensity": 39.5
+      "openings": 176,
+      "intensity": 40.4
     },
     {
-      "market": "Boise, Id",
+      "market": "Boise",
       "date": "2026-08-31",
       "openings": 6,
       "intensity": 14.4
@@ -392,7 +377,7 @@
       "intensity": 61.8
     },
     {
-      "market": "Grand Forks, Nd",
+      "market": "Fargo\u2013Harwood",
       "date": "2026-08-31",
       "openings": 40,
       "intensity": 55.7
@@ -404,13 +389,13 @@
       "intensity": 43.0
     },
     {
-      "market": "Indianapolis, In",
+      "market": "Indianapolis\u2013Mooresville",
       "date": "2026-08-31",
       "openings": 2,
       "intensity": 31.0
     },
     {
-      "market": "Kansas City, Mo",
+      "market": "Kansas City",
       "date": "2026-09-04",
       "openings": 2,
       "intensity": 29.0
@@ -446,19 +431,13 @@
       "intensity": 27.3
     },
     {
-      "market": "Rock Island, Il",
-      "date": "2026-08-31",
-      "openings": 2,
-      "intensity": 11.0
-    },
-    {
       "market": "Salt Lake City",
       "date": "2026-08-31",
       "openings": 14,
       "intensity": 27.5
     },
     {
-      "market": "Toledo, Oh",
+      "market": "Toledo\u2013Bowling Green",
       "date": "2026-08-31",
       "openings": 8,
       "intensity": 42.0
