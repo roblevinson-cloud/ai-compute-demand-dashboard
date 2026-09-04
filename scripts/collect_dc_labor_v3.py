@@ -1,10 +1,10 @@
 """Boundary-hardened entry point for the data-center electrician labor collector.
 
 Where2Bro is human-edited and local headings occasionally contain Unicode dashes,
-line breaks or inconsistent spacing (e.g. the current Local 405 Cedar Rapids
-heading).  The v2 parser is deliberately conservative at the call level; this
-wrapper normalizes section headings and adds a fail-safe boundary detector so a
-missed local cannot leak its calls into the preceding geography.
+line breaks, nested inline tags or inconsistent spacing. The v2 parser is deliberately
+conservative at the call level; this wrapper normalizes section headings and adds a
+fail-safe boundary detector so a missed local cannot leak its calls into the preceding
+geography.
 """
 from __future__ import annotations
 
@@ -24,7 +24,13 @@ def normalize_local_headings(text: str) -> str:
     # occasional HTML-created newline between the LU token and local number.
     text = re.sub(r"\bLU\s*-?\s*(\d{1,4})\b", r"LU-\1", text, flags=re.I)
 
-    # Where2Bro currently misspells Cedar Rapids as CEADER RAPIDS.  Local number is
+    # WordPress sometimes wraps the local number and city in adjacent inline <strong>
+    # nodes with no literal whitespace between their text nodes. The retained 2026-09-04
+    # source snapshot does this for Local 405: "LU-405" + "CEADER RAPIDS...". Restore
+    # the semantic separator before section parsing.
+    text = re.sub(r"\b(LU-\d{1,4})(?=[A-Z])", r"\1 ", text, flags=re.I)
+
+    # Where2Bro currently misspells Cedar Rapids as CEADER RAPIDS. Local number is
     # authoritative, but canonicalizing the label keeps raw-derived displays clean.
     text = re.sub(r"\bCEADER\s+RAPIDS\b", "CEDAR RAPIDS", text, flags=re.I)
     return text
@@ -33,9 +39,7 @@ def normalize_local_headings(text: str) -> str:
 def robust_segments(text: str):
     text = normalize_local_headings(text)
 
-    # Date-shaped parentheses are the discriminator that keeps the district/local
-    # index from being mistaken for the live jobs sections.  Permit harmless text
-    # before LU on a heading line and flexible spacing inside the date.
+    # Date-shaped parentheses distinguish live local sections from the district index.
     header = re.compile(
         r"(?im)(?:^|\n)[^\n]*?\bLU-\s*(\d{1,4})\s+([^\n]{1,120}?)\s+"
         r"\((\d{1,2}\s*-\s*\d{1,2})\)"
@@ -51,10 +55,9 @@ def validated_parse_calls(text, observed, cfg):
     normalized = normalize_local_headings(text)
     rows = base_parse_calls(normalized, observed, cfg)
 
-    # Geography integrity guard: if a configured live-local heading is visibly
-    # present, calls parsed from the following section must not remain attributed
-    # to the preceding local because of a boundary miss.  We fail loudly instead
-    # of publishing a contaminated dashboard.
+    # Geography integrity guard: every configured live-local heading visible in the
+    # source must be discoverable as a section boundary. A local may legitimately have
+    # zero DC calls, so we validate boundaries rather than requiring parsed rows.
     visible_locals = {
         m.group(1)
         for m in re.finditer(
@@ -62,11 +65,7 @@ def validated_parse_calls(text, observed, cfg):
             normalized,
         )
     }
-    parsed_locals = {row.local for row in rows}
     configured_visible = visible_locals.intersection(set(cfg.get("locals", {}).keys()))
-
-    # We do not require every visible local to have DC calls.  Instead, specifically
-    # guard known high-value boundaries by confirming their section is discoverable.
     section_locals = {local for local, _, _, _ in robust_segments(normalized)}
     missing_boundaries = configured_visible - section_locals
     if missing_boundaries:
@@ -74,6 +73,12 @@ def validated_parse_calls(text, observed, cfg):
             "Local boundary parser missed configured live headings: "
             + ", ".join(sorted(missing_boundaries, key=int))
         )
+
+    # Explicit regression guard for the current high-value adjacent markets. If the
+    # source exposes a dated Local 405 heading, it must become its own section.
+    if re.search(r"(?im)\bLU-405\s+CEDAR RAPIDS[^\n]*\(\d{1,2}-\d{1,2}\)", normalized):
+        if "405" not in section_locals:
+            raise RuntimeError("Local 405 Cedar Rapids boundary was not parsed")
 
     return rows
 
