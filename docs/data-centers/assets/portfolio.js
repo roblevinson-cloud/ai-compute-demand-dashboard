@@ -3,6 +3,7 @@ const el=(id)=>document.getElementById(id);
 const num=(v)=>typeof v==='number'&&Number.isFinite(v);
 const text=(v,f='n/d')=>(v===null||v===undefined||v==='')?f:v;
 const mw=(v)=>num(v)?fmt(v,1)+' MW':'n/d';
+const projectHref=(p)=>`./project/?slug=${encodeURIComponent(p.slug)}`;
 let projects=[];
 Promise.all([
   fetch('./data/projects.json').then(r=>r.json()),
@@ -32,15 +33,15 @@ function renderKPIs(){
 }
 function barRows(list,valKey,max,labelFn,live=false){
   if(!list.length||!max)return '<div class="pad sub">No comparable data.</div>';
-  return list.map(p=>{const v=p[valKey];const liveV=num(p.live_mw)?p.live_mw:0;return `<div class="barrow"><div class="barname">${p.name}</div><div class="bartrack"><div class="barfill" style="width:${v/max*100}%"></div>${live?`<div class="barlive" style="width:${liveV/max*100}%"></div>`:''}</div><div class="barval">${labelFn(p)}</div></div>`}).join('');
+  return list.map(p=>{const v=p[valKey];const liveV=num(p.live_mw)?p.live_mw:0;return `<a class="barrow barlink" href="${projectHref(p)}" aria-label="Open ${p.name} project page"><div class="barname">${p.name}</div><div class="bartrack"><div class="barfill" style="width:${v/max*100}%"></div>${live?`<div class="barlive" style="width:${liveV/max*100}%"></div>`:''}</div><div class="barval">${labelFn(p)}</div></a>`}).join('');
 }
 function renderBars(){
   const byMW=projects.filter(p=>num(p.critical_it_mw)&&p.critical_it_mw>0).sort((a,b)=>b.critical_it_mw-a.critical_it_mw).slice(0,12);
   const byDebt=projects.filter(p=>num(p.debt_amount_b)&&p.debt_amount_b>0).sort((a,b)=>b.debt_amount_b-a.debt_amount_b).slice(0,12);
   const byCap=projects.filter(p=>num(p.capex_per_mw)&&p.capex_per_mw>0).sort((a,b)=>b.capex_per_mw-a.capex_per_mw).slice(0,12);
-  el('capacityChart').innerHTML=barRows(byMW,'critical_it_mw',Math.max(...byMW.map(p=>p.critical_it_mw)),p=>mw(p.critical_it_mw),true)+`<div class="legend"><span><i class="dot cyan"></i>Tracked / contracted</span><span><i class="dot green"></i>Live</span></div>`;
-  el('debtChart').innerHTML=barRows(byDebt,'debt_amount_b',Math.max(...byDebt.map(p=>p.debt_amount_b)),p=>'$'+p.debt_amount_b.toFixed(p.debt_amount_b<1?2:1)+'B')+`<div class="legend">Known project debt; bank programs and bonds shown on the same scale.</div>`;
-  el('capexChart').innerHTML=barRows(byCap,'capex_per_mw',Math.max(...byCap.map(p=>p.capex_per_mw)),p=>text(p.capex_per_mw_display),false)+`<div class="legend">Disclosure bases vary: total project cost, debt/MW and company build-cost guides are labeled on deal pages.</div>`;
+  el('capacityChart').innerHTML=barRows(byMW,'critical_it_mw',Math.max(...byMW.map(p=>p.critical_it_mw)),p=>mw(p.critical_it_mw),true)+`<div class="legend"><span><i class="dot cyan"></i>Tracked / contracted</span><span><i class="dot green"></i>Live</span><span>Click any project to open its deal page</span></div>`;
+  el('debtChart').innerHTML=barRows(byDebt,'debt_amount_b',Math.max(...byDebt.map(p=>p.debt_amount_b)),p=>'$'+p.debt_amount_b.toFixed(p.debt_amount_b<1?2:1)+'B')+`<div class="legend">Known project debt; bank programs and bonds shown on the same scale. Click through for capital structure.</div>`;
+  el('capexChart').innerHTML=barRows(byCap,'capex_per_mw',Math.max(...byCap.map(p=>p.capex_per_mw)),p=>text(p.capex_per_mw_display),false)+`<div class="legend">Disclosure bases vary; click a project for the precise $/MW definition and source notes.</div>`;
 }
 function riskPill(p){let c=p.risk_color==='green'?'green':(num(p.risk_score)&&p.risk_score>=75?'red':'amber');return `<span class="pill ${c}">${text(p.risk_label)}</span><div class="sub">${text(p.delay_view)}</div>`}
 function creditCell(p){return `<div>${text(p.credit_bucket)}</div><div class="sub">${text(p.rating_display)} · ${text(p.financing_type)}</div>`}
@@ -48,7 +49,7 @@ function debtCell(p){return `<div>${text(p.debt_amount_display)}</div><div class
 function renderTable(rows){
  const tb=document.querySelector('#projectTable tbody');
  tb.innerHTML=rows.map(p=>`<tr data-slug="${p.slug}">
- <td><div class="projname">${p.name}</div><div class="sub">${text(p.campus)} · ${text(p.location)}</div></td>
+ <td><a class="projectlink" href="${projectHref(p)}"><div class="projname">${p.name}</div><div class="sub">${text(p.campus)} · ${text(p.location)}</div></a></td>
  <td><div>${text(p.developer)}</div><div class="sub">${text(p.landlord)}</div></td>
  <td><div>${text(p.tenant)}</div><div class="sub">${text(p.tenant_detail)}</div></td>
  <td class="nowrap"><div>${mw(p.critical_it_mw)}</div><div class="sub">${num(p.live_mw)?fmt(p.live_mw,1)+' MW live':'n/d live'}</div></td>
@@ -58,7 +59,7 @@ function renderTable(rows){
  <td><div>${text(p.power_provider)}</div><div class="sub">${text(p.power_source)}</div></td>
  <td>${text(p.delivery)}</td>
  <td>${riskPill(p)}</td></tr>`).join('');
- tb.querySelectorAll('tr').forEach(tr=>tr.onclick=()=>location.href=`./project/?slug=${encodeURIComponent(tr.dataset.slug)}`);
+ tb.querySelectorAll('tr').forEach(tr=>tr.onclick=(e)=>{if(e.target.closest('a'))return;location.href=`./project/?slug=${encodeURIComponent(tr.dataset.slug)}`});
 }
 let asc=true,sortKey='name';
 document.querySelectorAll('#projectTable th').forEach(th=>th.onclick=()=>{
