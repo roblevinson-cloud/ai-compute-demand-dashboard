@@ -53,13 +53,14 @@ jobs:
           BACKFILL_DAYS: "30"
         run: |
           python -m ai_compute_dashboard.pipeline collect || true
+          python scripts/collect_dc_labor.py || true
           python -m ai_compute_dashboard.pipeline build
 
       - name: Commit refreshed history
         run: |
           git config user.name "ai-compute-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observations.csv data/collector_status.json docs/index.html docs/data/dashboard.json docs/assets/dashboard.css docs/assets/dashboard.js docs/og.png
+          git add data/observations.csv data/collector_status.json docs/index.html docs/data/dashboard.json docs/assets/dashboard.css docs/assets/dashboard.js docs/og.png data/dc_labor docs/labor
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh AI compute dashboard"
             git push
