@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T22:47:35.540472+00:00",
+  "generated_at": "2026-09-04T22:49:33.675317+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -7,6 +7,25 @@
     "warning": "A drop in open calls can mean hiring filled, project phase change, reporting change, or true construction deceleration."
   },
   "markets": [
+    {
+      "market": "Cedar Rapids",
+      "date": "2026-08-31",
+      "openings": 85,
+      "intensity": 63.9,
+      "lat": 41.9779,
+      "lon": -91.6656,
+      "state": "IA",
+      "projects": [
+        {
+          "project": "EWD Data Center",
+          "openings": 54
+        },
+        {
+          "project": "QTS",
+          "openings": 31
+        }
+      ]
+    },
     {
       "market": "El Paso\u2013Santa Teresa",
       "date": "2026-08-31",
@@ -38,49 +57,6 @@
         {
           "project": "Unclassified data center",
           "openings": 40
-        }
-      ]
-    },
-    {
-      "market": "Reno",
-      "date": "2026-08-31",
-      "openings": 117,
-      "intensity": 53.9,
-      "lat": 39.5296,
-      "lon": -119.8138,
-      "state": "NV",
-      "projects": [
-        {
-          "project": "EWD Data Center",
-          "openings": 54
-        },
-        {
-          "project": "QTS",
-          "openings": 31
-        },
-        {
-          "project": "Bighorn Data Center",
-          "openings": 8
-        },
-        {
-          "project": "Vantage",
-          "openings": 8
-        },
-        {
-          "project": "Unclassified data center",
-          "openings": 6
-        },
-        {
-          "project": "EdgeCore",
-          "openings": 4
-        },
-        {
-          "project": "Google",
-          "openings": 3
-        },
-        {
-          "project": "RNO 2",
-          "openings": 3
         }
       ]
     },
@@ -275,6 +251,41 @@
       ]
     },
     {
+      "market": "Reno",
+      "date": "2026-08-31",
+      "openings": 32,
+      "intensity": 27.3,
+      "lat": 39.5296,
+      "lon": -119.8138,
+      "state": "NV",
+      "projects": [
+        {
+          "project": "Bighorn Data Center",
+          "openings": 8
+        },
+        {
+          "project": "Vantage",
+          "openings": 8
+        },
+        {
+          "project": "Unclassified data center",
+          "openings": 6
+        },
+        {
+          "project": "EdgeCore",
+          "openings": 4
+        },
+        {
+          "project": "Google",
+          "openings": 3
+        },
+        {
+          "project": "RNO 2",
+          "openings": 3
+        }
+      ]
+    },
+    {
       "market": "Newark\u2013New Albany",
       "date": "2026-08-31",
       "openings": 14,
@@ -357,6 +368,12 @@
       "intensity": 14.4
     },
     {
+      "market": "Cedar Rapids",
+      "date": "2026-08-31",
+      "openings": 85,
+      "intensity": 63.9
+    },
+    {
       "market": "Columbus\u2013New Albany",
       "date": "2026-08-31",
       "openings": 2,
@@ -425,8 +442,8 @@
     {
       "market": "Reno",
       "date": "2026-08-31",
-      "openings": 117,
-      "intensity": 53.9
+      "openings": 32,
+      "intensity": 27.3
     },
     {
       "market": "Rock Island, Il",
