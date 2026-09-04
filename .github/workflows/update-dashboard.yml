@@ -55,6 +55,7 @@ jobs:
           python -m ai_compute_dashboard.pipeline collect || true
           python scripts/collect_dc_labor_v3.py
           python -m ai_compute_dashboard.pipeline build
+          python scripts/link_labor_dashboard.py
 
       - name: Commit refreshed history
         run: |
