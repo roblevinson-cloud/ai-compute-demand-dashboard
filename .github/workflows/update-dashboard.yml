@@ -53,7 +53,7 @@ jobs:
           BACKFILL_DAYS: "30"
         run: |
           python -m ai_compute_dashboard.pipeline collect || true
-          python scripts/collect_dc_labor.py || true
+          python scripts/collect_dc_labor_v2.py || true
           python -m ai_compute_dashboard.pipeline build
 
       - name: Commit refreshed history
