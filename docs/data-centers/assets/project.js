@@ -1,3 +1,4 @@
+const BUILD='20260904c';
 const root=document.getElementById('projectRoot'),slug=document.body.dataset.projectSlug||new URLSearchParams(location.search).get('slug');
 const dataBase=location.pathname.includes('/data-centers/projects/')?'../../data':'../data';
 const text=(v,f='n/d')=>(v===null||v===undefined||v==='')?f:v;
@@ -5,9 +6,9 @@ const num=(v)=>typeof v==='number'&&Number.isFinite(v);
 const mw=(v)=>num(v)?Number(v).toLocaleString(undefined,{maximumFractionDigits:1})+' MW':'n/d';
 const pill=(p)=>`<span class="pill ${p.risk_color==='green'?'green':(p.risk_score>=75?'red':'amber')}">${text(p.risk_label)}</span>`;
 Promise.all([
- fetch(`${dataBase}/projects.json`).then(r=>r.json()),
- fetch(`${dataBase}/credit_projects.json`).then(r=>r.json()),
- fetch(`${dataBase}/hy_projects.json`).then(r=>r.json())
+ fetch(`${dataBase}/projects.json?v=${BUILD}`,{cache:'no-store'}).then(r=>r.json()),
+ fetch(`${dataBase}/credit_projects.json?v=${BUILD}`,{cache:'no-store'}).then(r=>r.json()),
+ fetch(`${dataBase}/hy_projects.json?v=${BUILD}`,{cache:'no-store'}).then(r=>r.json())
 ]).then(([base,credit,hy])=>{
  const overrides=credit.overrides||{};
  const all=[...base.projects.map(p=>({...p,...(overrides[p.slug]||{})})),...(credit.projects||[]),...(hy.projects||[])];
