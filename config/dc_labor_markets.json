@@ -1,0 +1,40 @@
+{
+  "locals": {
+    "20": {"market": "Dallas–Fort Worth"},
+    "24": {"market": "Baltimore–Frederick"},
+    "26": {"market": "Northern Virginia / DC"},
+    "347": {"market": "Des Moines–Altoona"},
+    "350": {"market": "Hannibal / New Florence"},
+    "354": {"market": "Salt Lake City"},
+    "401": {"market": "Reno"},
+    "405": {"market": "Cedar Rapids"},
+    "430": {"market": "Racine / SE Wisconsin"},
+    "494": {"market": "Milwaukee / SE Wisconsin"},
+    "583": {"market": "El Paso–Santa Teresa"},
+    "611": {"market": "Albuquerque / Rio Rancho"},
+    "613": {"market": "Atlanta"},
+    "683": {"market": "Columbus–New Albany"},
+    "1105": {"market": "Newark–New Albany"}
+  },
+  "markets": {
+    "Dallas–Fort Worth": {"state": "TX", "lat": 32.7767, "lon": -96.797},
+    "Baltimore–Frederick": {"state": "MD", "lat": 39.4143, "lon": -77.4105},
+    "Northern Virginia / DC": {"state": "VA", "lat": 38.96, "lon": -77.48},
+    "Des Moines–Altoona": {"state": "IA", "lat": 41.6442, "lon": -93.4647},
+    "Hannibal / New Florence": {"state": "MO", "lat": 39.48, "lon": -91.0},
+    "Salt Lake City": {"state": "UT", "lat": 40.7608, "lon": -111.891},
+    "Reno": {"state": "NV", "lat": 39.5296, "lon": -119.8138},
+    "Cedar Rapids": {"state": "IA", "lat": 41.9779, "lon": -91.6656},
+    "Racine / SE Wisconsin": {"state": "WI", "lat": 42.7261, "lon": -87.7829},
+    "Milwaukee / SE Wisconsin": {"state": "WI", "lat": 43.0389, "lon": -87.9065},
+    "El Paso–Santa Teresa": {"state": "TX/NM", "lat": 31.8559, "lon": -106.6389},
+    "Albuquerque / Rio Rancho": {"state": "NM", "lat": 35.159, "lon": -106.68},
+    "Atlanta": {"state": "GA", "lat": 33.749, "lon": -84.388},
+    "Columbus–New Albany": {"state": "OH", "lat": 40.0812, "lon": -82.8088},
+    "Newark–New Albany": {"state": "OH", "lat": 40.0581, "lon": -82.4013}
+  },
+  "notes": {
+    "El Paso–Santa Teresa": "Project Jupiter-area labor should be tracked through IBEW Local 583 (El Paso), which dispatches Santa Teresa, NM work. Do not use Albuquerque Local 611 as the primary proxy.",
+    "Albuquerque / Rio Rancho": "Separate New Mexico labor market; useful for Intel/Rio Rancho/Los Alamos activity but not the primary Project Jupiter construction pool."
+  }
+}
