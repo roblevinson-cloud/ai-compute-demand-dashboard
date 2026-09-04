@@ -58,7 +58,7 @@ function renderTable(rows){
  <td><div>${text(p.power_provider)}</div><div class="sub">${text(p.power_source)}</div></td>
  <td>${text(p.delivery)}</td>
  <td>${riskPill(p)}</td></tr>`).join('');
- tb.querySelectorAll('tr').forEach(tr=>tr.onclick=()=>location.href=`./projects/${tr.dataset.slug}/`);
+ tb.querySelectorAll('tr').forEach(tr=>tr.onclick=()=>location.href=`./project/?slug=${encodeURIComponent(tr.dataset.slug)}`);
 }
 let asc=true,sortKey='name';
 document.querySelectorAll('#projectTable th').forEach(th=>th.onclick=()=>{
