@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T22:53:46.499658+00:00",
+  "generated_at": "2026-09-05T04:26:46.684451+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -9,92 +9,88 @@
   "markets": [
     {
       "market": "Cedar Rapids",
-      "date": "2026-08-31",
-      "openings": 85,
-      "intensity": 63.9,
+      "date": "2026-09-08",
+      "openings": 81,
+      "intensity": 61.8,
       "lat": 41.9779,
       "lon": -91.6656,
       "state": "IA",
       "projects": [
         {
           "project": "EWD Data Center",
-          "openings": 54
+          "openings": 49
         },
         {
           "project": "QTS",
-          "openings": 31
+          "openings": 32
         }
       ]
     },
     {
       "market": "El Paso\u2013Santa Teresa",
-      "date": "2026-08-31",
-      "openings": 34,
-      "intensity": 61.8,
+      "date": "2026-09-08",
+      "openings": 33,
+      "intensity": 60.1,
       "lat": 31.8559,
       "lon": -106.6389,
       "state": "TX/NM",
       "projects": [
         {
           "project": "Meta El Paso",
-          "openings": 23
+          "openings": 21
         },
         {
           "project": "Project Miner / Santa Teresa",
-          "openings": 11
+          "openings": 12
         }
       ]
     },
     {
       "market": "Fargo\u2013Harwood",
-      "date": "2026-08-31",
-      "openings": 40,
-      "intensity": 55.7,
+      "date": "2026-09-08",
+      "openings": 39,
+      "intensity": 50.9,
       "lat": 46.98,
       "lon": -96.88,
       "state": "ND",
       "projects": [
         {
           "project": "Unclassified data center",
-          "openings": 40
+          "openings": 39
         }
       ]
     },
     {
       "market": "Dallas\u2013Fort Worth",
-      "date": "2026-08-31",
-      "openings": 36,
-      "intensity": 49.4,
+      "date": "2026-09-08",
+      "openings": 63,
+      "intensity": 48.7,
       "lat": 32.7767,
       "lon": -96.797,
       "state": "TX",
       "projects": [
         {
           "project": "QTS",
-          "openings": 21
+          "openings": 52
         },
         {
           "project": "DataBank",
-          "openings": 13
-        },
-        {
-          "project": "Stream Data Centers",
-          "openings": 2
+          "openings": 11
         }
       ]
     },
     {
-      "market": "Hannibal / New Florence",
-      "date": "2026-09-02",
-      "openings": 31,
-      "intensity": 43.0,
-      "lat": 39.48,
-      "lon": -91.0,
-      "state": "MO",
+      "market": "Milwaukee / SE Wisconsin",
+      "date": "2026-09-08",
+      "openings": 85,
+      "intensity": 42.9,
+      "lat": 43.0389,
+      "lon": -87.9065,
+      "state": "WI",
       "projects": [
         {
-          "project": "Google Project Spade",
-          "openings": 31
+          "project": "Port Washington Data Center",
+          "openings": 85
         }
       ]
     },
@@ -114,29 +110,44 @@
       ]
     },
     {
+      "market": "Hannibal / New Florence",
+      "date": "2026-09-08",
+      "openings": 65,
+      "intensity": 41.7,
+      "lat": 39.48,
+      "lon": -91.0,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Google Project Spade",
+          "openings": 65
+        }
+      ]
+    },
+    {
       "market": "Atlanta",
-      "date": "2026-08-31",
-      "openings": 176,
-      "intensity": 40.4,
+      "date": "2026-09-08",
+      "openings": 182,
+      "intensity": 39.4,
       "lat": 33.749,
       "lon": -84.388,
       "state": "GA",
       "projects": [
         {
           "project": "QTS",
-          "openings": 124
+          "openings": 127
         },
         {
           "project": "DataBank",
-          "openings": 16
+          "openings": 21
         },
         {
           "project": "Switch",
-          "openings": 15
+          "openings": 18
         },
         {
           "project": "Equinix",
-          "openings": 10
+          "openings": 8
         },
         {
           "project": "Fulton Industrial Data Center",
@@ -144,41 +155,79 @@
         },
         {
           "project": "Unclassified data center",
-          "openings": 4
+          "openings": 2
         },
         {
           "project": "T5 Data Center",
+          "openings": 1
+        }
+      ]
+    },
+    {
+      "market": "Salt Lake City",
+      "date": "2026-09-08",
+      "openings": 33,
+      "intensity": 38.2,
+      "lat": 40.7608,
+      "lon": -111.891,
+      "state": "UT",
+      "projects": [
+        {
+          "project": "QTS",
+          "openings": 22
+        },
+        {
+          "project": "Meta / Facebook",
+          "openings": 9
+        },
+        {
+          "project": "Meta",
           "openings": 2
         }
       ]
     },
     {
-      "market": "Milwaukee / SE Wisconsin",
-      "date": "2026-08-31",
-      "openings": 72,
-      "intensity": 40.0,
-      "lat": 43.0389,
-      "lon": -87.9065,
-      "state": "WI",
+      "market": "Reno",
+      "date": "2026-09-08",
+      "openings": 8,
+      "intensity": 37.4,
+      "lat": 39.5296,
+      "lon": -119.8138,
+      "state": "NV",
       "projects": [
         {
-          "project": "Port Washington Data Center",
-          "openings": 72
+          "project": "EdgeCore",
+          "openings": 8
         }
       ]
     },
     {
       "market": "Racine / SE Wisconsin",
-      "date": "2026-08-31",
-      "openings": 58,
-      "intensity": 31.8,
+      "date": "2026-09-08",
+      "openings": 66,
+      "intensity": 35.0,
       "lat": 42.7261,
       "lon": -87.7829,
       "state": "WI",
       "projects": [
         {
           "project": "Microsoft",
-          "openings": 58
+          "openings": 66
+        }
+      ]
+    },
+    {
+      "market": "South Bend, In",
+      "date": "2026-09-08",
+      "openings": 3,
+      "intensity": 33.9,
+      "lat": null,
+      "lon": null,
+      "state": null,
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "openings": 3
         }
       ]
     },
@@ -198,105 +247,51 @@
       ]
     },
     {
-      "market": "Northern Virginia / DC",
-      "date": "2026-08-24",
-      "openings": 215,
-      "intensity": 30.1,
-      "lat": 38.96,
-      "lon": -77.48,
-      "state": "VA",
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "openings": 211
-        },
-        {
-          "project": "QTS",
-          "openings": 4
-        }
-      ]
-    },
-    {
       "market": "Kansas City",
-      "date": "2026-09-04",
-      "openings": 2,
-      "intensity": 29.0,
+      "date": "2026-09-08",
+      "openings": 12,
+      "intensity": 30.7,
       "lat": 39.0997,
       "lon": -94.5786,
       "state": "MO",
       "projects": [
         {
           "project": "Google",
-          "openings": 2
+          "openings": 12
         }
       ]
     },
     {
-      "market": "Salt Lake City",
-      "date": "2026-08-31",
-      "openings": 14,
-      "intensity": 27.5,
-      "lat": 40.7608,
-      "lon": -111.891,
-      "state": "UT",
+      "market": "Northern Virginia / DC",
+      "date": "2026-09-08",
+      "openings": 340,
+      "intensity": 29.9,
+      "lat": 38.96,
+      "lon": -77.48,
+      "state": "VA",
       "projects": [
         {
-          "project": "Meta / Facebook",
-          "openings": 10
+          "project": "Unclassified data center",
+          "openings": 326
         },
         {
           "project": "QTS",
-          "openings": 4
-        }
-      ]
-    },
-    {
-      "market": "Reno",
-      "date": "2026-08-31",
-      "openings": 32,
-      "intensity": 27.3,
-      "lat": 39.5296,
-      "lon": -119.8138,
-      "state": "NV",
-      "projects": [
-        {
-          "project": "Bighorn Data Center",
-          "openings": 8
-        },
-        {
-          "project": "Vantage",
-          "openings": 8
-        },
-        {
-          "project": "Unclassified data center",
-          "openings": 6
-        },
-        {
-          "project": "EdgeCore",
-          "openings": 4
-        },
-        {
-          "project": "Google",
-          "openings": 3
-        },
-        {
-          "project": "RNO 2",
-          "openings": 3
+          "openings": 14
         }
       ]
     },
     {
       "market": "Newark\u2013New Albany",
-      "date": "2026-08-31",
-      "openings": 14,
-      "intensity": 26.6,
+      "date": "2026-09-08",
+      "openings": 13,
+      "intensity": 25.6,
       "lat": 40.0581,
       "lon": -82.4013,
       "state": "OH",
       "projects": [
         {
           "project": "Vantage",
-          "openings": 8
+          "openings": 7
         },
         {
           "project": "Meta",
@@ -347,6 +342,12 @@
       "intensity": 40.4
     },
     {
+      "market": "Atlanta",
+      "date": "2026-09-08",
+      "openings": 182,
+      "intensity": 39.4
+    },
+    {
       "market": "Boise",
       "date": "2026-08-31",
       "openings": 6,
@@ -357,6 +358,12 @@
       "date": "2026-08-31",
       "openings": 85,
       "intensity": 63.9
+    },
+    {
+      "market": "Cedar Rapids",
+      "date": "2026-09-08",
+      "openings": 81,
+      "intensity": 61.8
     },
     {
       "market": "Columbus\u2013New Albany",
@@ -371,10 +378,22 @@
       "intensity": 49.4
     },
     {
+      "market": "Dallas\u2013Fort Worth",
+      "date": "2026-09-08",
+      "openings": 63,
+      "intensity": 48.7
+    },
+    {
       "market": "El Paso\u2013Santa Teresa",
       "date": "2026-08-31",
       "openings": 34,
       "intensity": 61.8
+    },
+    {
+      "market": "El Paso\u2013Santa Teresa",
+      "date": "2026-09-08",
+      "openings": 33,
+      "intensity": 60.1
     },
     {
       "market": "Fargo\u2013Harwood",
@@ -383,10 +402,22 @@
       "intensity": 55.7
     },
     {
+      "market": "Fargo\u2013Harwood",
+      "date": "2026-09-08",
+      "openings": 39,
+      "intensity": 50.9
+    },
+    {
       "market": "Hannibal / New Florence",
       "date": "2026-09-02",
       "openings": 31,
       "intensity": 43.0
+    },
+    {
+      "market": "Hannibal / New Florence",
+      "date": "2026-09-08",
+      "openings": 65,
+      "intensity": 41.7
     },
     {
       "market": "Indianapolis\u2013Mooresville",
@@ -401,10 +432,22 @@
       "intensity": 29.0
     },
     {
+      "market": "Kansas City",
+      "date": "2026-09-08",
+      "openings": 12,
+      "intensity": 30.7
+    },
+    {
       "market": "Milwaukee / SE Wisconsin",
       "date": "2026-08-31",
       "openings": 72,
       "intensity": 40.0
+    },
+    {
+      "market": "Milwaukee / SE Wisconsin",
+      "date": "2026-09-08",
+      "openings": 85,
+      "intensity": 42.9
     },
     {
       "market": "Newark\u2013New Albany",
@@ -413,10 +456,22 @@
       "intensity": 26.6
     },
     {
+      "market": "Newark\u2013New Albany",
+      "date": "2026-09-08",
+      "openings": 13,
+      "intensity": 25.6
+    },
+    {
       "market": "Northern Virginia / DC",
       "date": "2026-08-24",
       "openings": 215,
       "intensity": 30.1
+    },
+    {
+      "market": "Northern Virginia / DC",
+      "date": "2026-09-08",
+      "openings": 340,
+      "intensity": 29.9
     },
     {
       "market": "Racine / SE Wisconsin",
@@ -425,10 +480,22 @@
       "intensity": 31.8
     },
     {
+      "market": "Racine / SE Wisconsin",
+      "date": "2026-09-08",
+      "openings": 66,
+      "intensity": 35.0
+    },
+    {
       "market": "Reno",
       "date": "2026-08-31",
       "openings": 32,
       "intensity": 27.3
+    },
+    {
+      "market": "Reno",
+      "date": "2026-09-08",
+      "openings": 8,
+      "intensity": 37.4
     },
     {
       "market": "Salt Lake City",
@@ -437,11 +504,33 @@
       "intensity": 27.5
     },
     {
+      "market": "Salt Lake City",
+      "date": "2026-09-08",
+      "openings": 33,
+      "intensity": 38.2
+    },
+    {
+      "market": "South Bend, In",
+      "date": "2026-09-08",
+      "openings": 3,
+      "intensity": 33.9
+    },
+    {
       "market": "Toledo\u2013Bowling Green",
       "date": "2026-08-31",
       "openings": 8,
       "intensity": 42.0
     }
   ],
-  "drops": []
+  "drops": [
+    {
+      "market": "Reno",
+      "from_date": "2026-08-31",
+      "to_date": "2026-09-08",
+      "from_openings": 32,
+      "to_openings": 8,
+      "change_pct": -75.0,
+      "flag": "Potential deceleration \u2014 verify direct local board / project phase"
+    }
+  ]
 }
