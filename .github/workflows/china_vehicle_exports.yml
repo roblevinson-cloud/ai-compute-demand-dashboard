@@ -6,7 +6,9 @@ on:
     paths:
       - 'scripts/china_vehicle_exports.py'
       - 'scripts/china_vehicle_current.py'
+      - 'scripts/deploy_china_auto_frontend.py'
       - 'docs/china-auto/index.html'
+      - 'docs/china-auto/current.html'
       - '.github/workflows/china_vehicle_exports.yml'
   schedule:
     - cron: '17 12 * * *'
@@ -30,15 +32,17 @@ jobs:
           python-version: '3.12'
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests country_converter
+      - name: Promote current pulse frontend
+        run: python scripts/deploy_china_auto_frontend.py
       - name: Refresh verified China-reported HS 8703 history
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
       - name: Refresh current GACC value and destination mirror pulse
         run: python scripts/china_vehicle_current.py --output docs/china-auto/data/current.json
-      - name: Commit refreshed snapshots
+      - name: Commit refreshed site and snapshots
         run: |
           git config user.name "china-auto-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/china-auto/data/exports.json docs/china-auto/data/current.json
+          git add docs/china-auto/index.html docs/china-auto/current.html docs/china-auto/history.html docs/china-auto/data/exports.json docs/china-auto/data/current.json
           git diff --cached --quiet && exit 0
           git commit -m "data: refresh China passenger vehicle monitor [skip ci]"
           for attempt in 1 2 3; do
