@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T20:55:56.213767+00:00",
+  "generated_at": "2026-09-10T04:41:28.488023+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -203,8 +203,8 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-09-09",
-      "openings": 9,
+      "date": "2026-09-10",
+      "openings": 42,
       "intensity": 35.1,
       "lat": 39.0997,
       "lon": -94.5786,
@@ -212,11 +212,11 @@
       "projects": [
         {
           "project": "Google",
-          "openings": 5
+          "openings": 30
         },
         {
           "project": "Meta / Facebook",
-          "openings": 4
+          "openings": 12
         }
       ]
     },
@@ -445,6 +445,12 @@
       "market": "Kansas City",
       "date": "2026-09-09",
       "openings": 9,
+      "intensity": 35.1
+    },
+    {
+      "market": "Kansas City",
+      "date": "2026-09-10",
+      "openings": 42,
       "intensity": 35.1
     },
     {
