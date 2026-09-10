@@ -29,6 +29,18 @@ jobs:
           python-version: '3.12'
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests country_converter
+      - name: Probe China Data Portal current-trade schema
+        run: |
+          python - <<'PY'
+          import json, requests
+          u='https://chinadata.live/api/v2/trade/hs/870380?flow=export&period=2026&limit=20'
+          r=requests.get(u, timeout=30)
+          print('status', r.status_code, 'content-type', r.headers.get('content-type'))
+          r.raise_for_status()
+          j=r.json()
+          print('top keys', list(j) if isinstance(j,dict) else type(j).__name__)
+          print(json.dumps(j, ensure_ascii=False)[:12000])
+          PY
       - name: Refresh China HS 8703 country-month history
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
       - name: Commit refreshed snapshot
