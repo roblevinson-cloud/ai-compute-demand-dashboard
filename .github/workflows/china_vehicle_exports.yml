@@ -29,58 +29,41 @@ jobs:
           python-version: '3.12'
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests country_converter
-      - name: Probe current China customs sources
+      - name: Probe current China vehicle feeds
         run: |
           python - <<'PY'
-          import json, re, requests
+          import json, requests
 
-          u='https://chinadata.live/api/v2/trade/hs/870380?flow=export&period=2026&limit=20'
-          r=requests.get(u, timeout=30)
-          print('CHINADATA', r.status_code, r.headers.get('content-type'))
-          r.raise_for_status()
-          j=r.json()
-          print('CHINADATA_COVERAGE', json.dumps(j.get('coverage',{}), ensure_ascii=False))
-          print('CHINADATA_PUBLIC_PARTNER_LIMIT', j.get('public_partner_limit'))
-          print('CHINADATA_LATEST_PARTNER_SAMPLE', json.dumps((j.get('latest_partners') or [])[:2], ensure_ascii=False))
+          # GACC-derived public HS4 value feed.
+          for hs in ('8703','870380'):
+              u=f'https://chinadata.live/api/v2/trade/hs/{hs}?flow=export&period=2026&limit=20'
+              r=requests.get(u, timeout=30)
+              print('CHINADATA', hs, r.status_code, r.headers.get('content-type'))
+              if r.ok:
+                  j=r.json()
+                  print('COVERAGE', hs, json.dumps(j.get('coverage',{}), ensure_ascii=False))
+                  print('LATEST', hs, json.dumps(j.get('latest',{}), ensure_ascii=False))
+                  print('PARTNER_LIMIT', hs, j.get('public_partner_limit'))
+                  print('LATEST_PARTNERS_SAMPLE', hs, json.dumps((j.get('latest_partners') or [])[:3], ensure_ascii=False))
 
-          # GACC's statistics application itself publishes HTTP query URLs. Use a plain
-          # anonymous session only; never attempt to solve/bypass any verification challenge.
-          try:
-              s=requests.Session()
-              s.headers.update({'User-Agent':'Mozilla/5.0 (compatible; ChinaAutoExportMonitor/1.0)'})
-              landing='http://stats.customs.gov.cn/queryData/queryDataByWhere'
-              lr=s.get(landing, timeout=30, allow_redirects=True)
-              print('GACC_LANDING', lr.status_code, lr.url, lr.headers.get('content-type'), 'len=',len(lr.text))
-              text=lr.text
-              def hidden(name, default):
-                  m=re.search(r'name=[\"\']%s[\"\'][^>]*value=[\"\']([^\"\']*)' % re.escape(name), text, re.I)
-                  if not m:
-                      m=re.search(r'value=[\"\']([^\"\']*)[\"\'][^>]*name=[\"\']%s[\"\']' % re.escape(name), text, re.I)
-                  return m.group(1) if m else default
-              current_start=hidden('currentStartTime','202409')
-              current_end=hidden('currentEndTime','202607')
-              current_source=hidden('currentDateBySource',current_end)
-              print('GACC_META', current_start, current_end, current_source)
-              body={
-                'pageSize':'20','pageNum':'1','iEType':'0','currencyType':'usd',
-                'year':'2026','startMonth':'7','endMonth':'7','monthFlag':'1',
-                'unitFlag':'true','unitFlag1':'true','codeLength':'8',
-                'outerField1':'CODE_TS','outerField2':'ORIGIN_COUNTRY',
-                'outerField3':'TRADE_MODE','outerField4':'TRADE_CO_PORT',
-                'outerValue1':'87038000','outerValue2':'','outerValue3':'','outerValue4':'',
-                'orderType':'CODE ASC DEFAULT','selectTableState':'1',
-                'currentStartTime':current_start,'currentEndTime':current_end,
-                'currentDateBySource':current_source,
-              }
-              gr=s.post('http://stats.customs.gov.cn/queryData/getQueryDataListByWhere',
-                        data=body, headers={'X-Requested-With':'XMLHttpRequest','Referer':lr.url},
-                        timeout=30, allow_redirects=True)
-              sample=re.sub(r'\s+',' ',gr.text[:8000])
-              blocked=any(x in sample.lower() for x in ['captcha','verify','verification','slider','验证码','滑块'])
-              print('GACC_QUERY', gr.status_code, gr.url, gr.headers.get('content-type'), 'blocked=',blocked, 'len=',len(gr.text))
-              print('GACC_SAMPLE', sample[:3500])
-          except Exception as exc:
-              print('GACC_PROBE_ERROR', type(exc).__name__, str(exc))
+          # Official destination-reported mirror imports from China. This tests whether
+          # Comtrade's public monthly endpoint can return one HS8703 row per reporting
+          # destination in a single request for recent months.
+          base='https://comtradeapi.un.org/public/v1/preview/C/M/HS'
+          variants=[
+              {'reportercode':'all','period':'202607','flowCode':'M','partnerCode':156,'cmdCode':'8703','maxRecords':500,'breakdownMode':'classic','includeDesc':'true'},
+              {'reportercode':'all','period':'202507','flowCode':'M','partnerCode':156,'cmdCode':'8703','maxRecords':500,'breakdownMode':'classic','includeDesc':'true'},
+          ]
+          for p in variants:
+              r=requests.get(base, params=p, timeout=60)
+              print('MIRROR', p['period'], r.status_code, r.url)
+              if r.ok:
+                  j=r.json()
+                  rows=j.get('data',[]) if isinstance(j,dict) else []
+                  print('MIRROR_COUNT', p['period'], j.get('count'), 'rows', len(rows), 'error', j.get('error'))
+                  print('MIRROR_SAMPLE', p['period'], json.dumps(rows[:3], ensure_ascii=False)[:5000])
+              else:
+                  print('MIRROR_BODY', r.text[:1000])
           PY
       - name: Refresh China HS 8703 country-month history
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
