@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/china_vehicle_exports.py'
+      - 'scripts/china_vehicle_current.py'
       - 'docs/china-auto/index.html'
       - '.github/workflows/china_vehicle_exports.yml'
   schedule:
@@ -29,35 +30,17 @@ jobs:
           python-version: '3.12'
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests country_converter
-      - name: Probe destination-reported mirror imports
-        run: |
-          python - <<'PY'
-          import json, time, requests
-          base='https://comtradeapi.un.org/public/v1/preview/C/M/HS'
-          for period in ('202507','202607'):
-              p={'period':period,'flowCode':'M','partnerCode':156,'cmdCode':'8703','maxRecords':500,'breakdownMode':'classic','includeDesc':'true'}
-              for attempt in range(4):
-                  r=requests.get(base, params=p, timeout=60)
-                  if r.status_code != 429: break
-                  time.sleep(2.5*(attempt+1))
-              print('MIRROR', period, r.status_code, r.url)
-              if r.ok:
-                  j=r.json(); rows=j.get('data',[]) if isinstance(j,dict) else []
-                  print('MIRROR_COUNT',period,j.get('count'),'rows',len(rows),'error',j.get('error'))
-                  print('MIRROR_SAMPLE',period,json.dumps(rows[:5],ensure_ascii=False)[:8000])
-              else:
-                  print('MIRROR_BODY',r.text[:1500])
-              time.sleep(2.5)
-          PY
-      - name: Refresh China HS 8703 country-month history
+      - name: Refresh verified China-reported HS 8703 history
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
-      - name: Commit refreshed snapshot
+      - name: Refresh current GACC value and destination mirror pulse
+        run: python scripts/china_vehicle_current.py --output docs/china-auto/data/current.json
+      - name: Commit refreshed snapshots
         run: |
           git config user.name "china-auto-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/china-auto/data/exports.json
+          git add docs/china-auto/data/exports.json docs/china-auto/data/current.json
           git diff --cached --quiet && exit 0
-          git commit -m "data: refresh China passenger vehicle exports [skip ci]"
+          git commit -m "data: refresh China passenger vehicle monitor [skip ci]"
           for attempt in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then
