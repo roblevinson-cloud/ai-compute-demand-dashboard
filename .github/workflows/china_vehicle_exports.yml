@@ -34,54 +34,53 @@ jobs:
           python - <<'PY'
           import json, re, requests
 
-          # Public China Data Portal preview: confirms current GACC coverage and schema.
           u='https://chinadata.live/api/v2/trade/hs/870380?flow=export&period=2026&limit=20'
           r=requests.get(u, timeout=30)
           print('CHINADATA', r.status_code, r.headers.get('content-type'))
           r.raise_for_status()
           j=r.json()
-          print('CHINADATA_KEYS', list(j) if isinstance(j,dict) else type(j).__name__)
           print('CHINADATA_COVERAGE', json.dumps(j.get('coverage',{}), ensure_ascii=False))
           print('CHINADATA_PUBLIC_PARTNER_LIMIT', j.get('public_partner_limit'))
           print('CHINADATA_LATEST_PARTNER_SAMPLE', json.dumps((j.get('latest_partners') or [])[:2], ensure_ascii=False))
 
-          # Official GACC endpoint probe. This uses a normal anonymous session only; it does
-          # not attempt to bypass slider/CAPTCHA verification. If verification is required,
-          # the response is logged as blocked and the production collector leaves current
-          # country-month rows untouched.
-          s=requests.Session()
-          s.headers.update({'User-Agent':'Mozilla/5.0 (compatible; ChinaAutoExportMonitor/1.0)'})
-          landing='https://stats.customs.gov.cn/queryData/queryDataByWhere'
-          lr=s.get(landing, timeout=30, allow_redirects=True)
-          print('GACC_LANDING', lr.status_code, lr.url, lr.headers.get('content-type'))
-          text=lr.text
-          def hidden(name, default):
-              m=re.search(r'name=[\"\']%s[\"\'][^>]*value=[\"\']([^\"\']*)' % re.escape(name), text, re.I)
-              if not m:
-                  m=re.search(r'value=[\"\']([^\"\']*)[\"\'][^>]*name=[\"\']%s[\"\']' % re.escape(name), text, re.I)
-              return m.group(1) if m else default
-          current_start=hidden('currentStartTime','202409')
-          current_end=hidden('currentEndTime','202607')
-          current_source=hidden('currentDateBySource',current_end)
-          print('GACC_META', current_start, current_end, current_source)
-          body={
-            'pageSize':'20','pageNum':'1','iEType':'0','currencyType':'usd',
-            'year':'2026','startMonth':'7','endMonth':'7','monthFlag':'1',
-            'unitFlag':'true','unitFlag1':'true','codeLength':'8',
-            'outerField1':'CODE_TS','outerField2':'ORIGIN_COUNTRY',
-            'outerField3':'TRADE_MODE','outerField4':'TRADE_CO_PORT',
-            'outerValue1':'87038000','outerValue2':'','outerValue3':'','outerValue4':'',
-            'orderType':'CODE ASC DEFAULT','selectTableState':'1',
-            'currentStartTime':current_start,'currentEndTime':current_end,
-            'currentDateBySource':current_source,
-          }
-          gr=s.post('https://stats.customs.gov.cn/queryData/getQueryDataListByWhere',
-                    data=body, headers={'X-Requested-With':'XMLHttpRequest','Referer':lr.url},
-                    timeout=30, allow_redirects=True)
-          sample=re.sub(r'\s+',' ',gr.text[:6000])
-          blocked=any(x in sample.lower() for x in ['captcha','verify','verification','slider','验证码','滑块'])
-          print('GACC_QUERY', gr.status_code, gr.url, gr.headers.get('content-type'), 'blocked=',blocked, 'len=',len(gr.text))
-          print('GACC_SAMPLE', sample[:2500])
+          # GACC's statistics application itself publishes HTTP query URLs. Use a plain
+          # anonymous session only; never attempt to solve/bypass any verification challenge.
+          try:
+              s=requests.Session()
+              s.headers.update({'User-Agent':'Mozilla/5.0 (compatible; ChinaAutoExportMonitor/1.0)'})
+              landing='http://stats.customs.gov.cn/queryData/queryDataByWhere'
+              lr=s.get(landing, timeout=30, allow_redirects=True)
+              print('GACC_LANDING', lr.status_code, lr.url, lr.headers.get('content-type'), 'len=',len(lr.text))
+              text=lr.text
+              def hidden(name, default):
+                  m=re.search(r'name=[\"\']%s[\"\'][^>]*value=[\"\']([^\"\']*)' % re.escape(name), text, re.I)
+                  if not m:
+                      m=re.search(r'value=[\"\']([^\"\']*)[\"\'][^>]*name=[\"\']%s[\"\']' % re.escape(name), text, re.I)
+                  return m.group(1) if m else default
+              current_start=hidden('currentStartTime','202409')
+              current_end=hidden('currentEndTime','202607')
+              current_source=hidden('currentDateBySource',current_end)
+              print('GACC_META', current_start, current_end, current_source)
+              body={
+                'pageSize':'20','pageNum':'1','iEType':'0','currencyType':'usd',
+                'year':'2026','startMonth':'7','endMonth':'7','monthFlag':'1',
+                'unitFlag':'true','unitFlag1':'true','codeLength':'8',
+                'outerField1':'CODE_TS','outerField2':'ORIGIN_COUNTRY',
+                'outerField3':'TRADE_MODE','outerField4':'TRADE_CO_PORT',
+                'outerValue1':'87038000','outerValue2':'','outerValue3':'','outerValue4':'',
+                'orderType':'CODE ASC DEFAULT','selectTableState':'1',
+                'currentStartTime':current_start,'currentEndTime':current_end,
+                'currentDateBySource':current_source,
+              }
+              gr=s.post('http://stats.customs.gov.cn/queryData/getQueryDataListByWhere',
+                        data=body, headers={'X-Requested-With':'XMLHttpRequest','Referer':lr.url},
+                        timeout=30, allow_redirects=True)
+              sample=re.sub(r'\s+',' ',gr.text[:8000])
+              blocked=any(x in sample.lower() for x in ['captcha','verify','verification','slider','验证码','滑块'])
+              print('GACC_QUERY', gr.status_code, gr.url, gr.headers.get('content-type'), 'blocked=',blocked, 'len=',len(gr.text))
+              print('GACC_SAMPLE', sample[:3500])
+          except Exception as exc:
+              print('GACC_PROBE_ERROR', type(exc).__name__, str(exc))
           PY
       - name: Refresh China HS 8703 country-month history
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
