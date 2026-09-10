@@ -29,41 +29,25 @@ jobs:
           python-version: '3.12'
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests country_converter
-      - name: Probe current China vehicle feeds
+      - name: Probe destination-reported mirror imports
         run: |
           python - <<'PY'
-          import json, requests
-
-          # GACC-derived public HS4 value feed.
-          for hs in ('8703','870380'):
-              u=f'https://chinadata.live/api/v2/trade/hs/{hs}?flow=export&period=2026&limit=20'
-              r=requests.get(u, timeout=30)
-              print('CHINADATA', hs, r.status_code, r.headers.get('content-type'))
-              if r.ok:
-                  j=r.json()
-                  print('COVERAGE', hs, json.dumps(j.get('coverage',{}), ensure_ascii=False))
-                  print('LATEST', hs, json.dumps(j.get('latest',{}), ensure_ascii=False))
-                  print('PARTNER_LIMIT', hs, j.get('public_partner_limit'))
-                  print('LATEST_PARTNERS_SAMPLE', hs, json.dumps((j.get('latest_partners') or [])[:3], ensure_ascii=False))
-
-          # Official destination-reported mirror imports from China. This tests whether
-          # Comtrade's public monthly endpoint can return one HS8703 row per reporting
-          # destination in a single request for recent months.
+          import json, time, requests
           base='https://comtradeapi.un.org/public/v1/preview/C/M/HS'
-          variants=[
-              {'reportercode':'all','period':'202607','flowCode':'M','partnerCode':156,'cmdCode':'8703','maxRecords':500,'breakdownMode':'classic','includeDesc':'true'},
-              {'reportercode':'all','period':'202507','flowCode':'M','partnerCode':156,'cmdCode':'8703','maxRecords':500,'breakdownMode':'classic','includeDesc':'true'},
-          ]
-          for p in variants:
-              r=requests.get(base, params=p, timeout=60)
-              print('MIRROR', p['period'], r.status_code, r.url)
+          for period in ('202507','202607'):
+              p={'period':period,'flowCode':'M','partnerCode':156,'cmdCode':'8703','maxRecords':500,'breakdownMode':'classic','includeDesc':'true'}
+              for attempt in range(4):
+                  r=requests.get(base, params=p, timeout=60)
+                  if r.status_code != 429: break
+                  time.sleep(2.5*(attempt+1))
+              print('MIRROR', period, r.status_code, r.url)
               if r.ok:
-                  j=r.json()
-                  rows=j.get('data',[]) if isinstance(j,dict) else []
-                  print('MIRROR_COUNT', p['period'], j.get('count'), 'rows', len(rows), 'error', j.get('error'))
-                  print('MIRROR_SAMPLE', p['period'], json.dumps(rows[:3], ensure_ascii=False)[:5000])
+                  j=r.json(); rows=j.get('data',[]) if isinstance(j,dict) else []
+                  print('MIRROR_COUNT',period,j.get('count'),'rows',len(rows),'error',j.get('error'))
+                  print('MIRROR_SAMPLE',period,json.dumps(rows[:5],ensure_ascii=False)[:8000])
               else:
-                  print('MIRROR_BODY', r.text[:1000])
+                  print('MIRROR_BODY',r.text[:1500])
+              time.sleep(2.5)
           PY
       - name: Refresh China HS 8703 country-month history
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
