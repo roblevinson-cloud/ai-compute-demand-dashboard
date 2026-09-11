@@ -1,5 +1,37 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url=current.html?v=20260910-2217"><title>China Passenger Vehicle Export Monitor</title><script>location.replace('current.html?v=20260910-2217');</script></head>
-<body><p>Loading current China Passenger Vehicle Export Monitor… <a href="current.html?v=20260910-2217">Open current dashboard</a>.</p></body>
-</html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>China Passenger Vehicle Export Monitor — Current</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+body{margin:0;background:#edf3f7;color:#11344d;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.header{background:linear-gradient(115deg,#073e63,#07577f 65%,#06334f);color:#fff;padding:16px 22px}.title{font-size:30px;font-weight:850}.subtitle{font-size:14px;margin-top:5px}.wrap{max-width:1700px;margin:auto;padding:12px}.banner{background:#fff;border:1px solid #c8d9e4;border-left:5px solid #1aab61;border-radius:6px;padding:10px 12px;margin-bottom:10px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:9px}.kpi{background:#073e63;color:#fff;border-radius:6px;padding:12px}.kpi .label{font-size:11px;opacity:.82}.kpi .big{font-size:26px;font-weight:850;margin-top:8px}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:8px}.panel{background:#fff;border:1px solid #c8d9e4;border-radius:6px;overflow:hidden}.pt{background:linear-gradient(90deg,#073e63,#0c5b87);color:#fff;padding:8px 11px;font-size:12px;font-weight:800}.pb{padding:8px}.chart{height:360px}.scroll{height:360px;overflow:auto}table{width:100%;border-collapse:collapse;font-size:11px}th,td{border:1px solid #d8e3ea;padding:5px 6px;text-align:right}th:first-child,td:first-child{text-align:left}th{position:sticky;top:0;background:#e7eff5}.foot{font-size:10px;color:#617c8e;margin-top:8px;line-height:1.45}.nav{margin-top:10px}.nav a{display:inline-block;margin-right:6px;padding:7px 12px;border:1px solid #bdd0dd;border-radius:5px;background:#fff;color:#21445d;text-decoration:none;font-size:11px}.loading{padding:40px;text-align:center;font-weight:700}@media(max-width:900px){.kpis,.grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.kpis,.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header"><div class="title">China Passenger Vehicle Export Monitor</div><div class="subtitle">Continuous 2020–2026 view · HS 8703 · USD value and units where available</div></div>
+<div class="wrap">
+<div id="loading" class="loading">Loading current data…</div>
+<div id="app" style="display:none">
+<div class="banner"><strong>Coverage:</strong> <span id="coverage"></span><br><span style="font-size:11px;color:#638093">2020–2024 uses full China-reported country-month history. 2025–2026 extends the timeline with current GACC monthly export value and the destination-country customs mirror for available units/value. The source transition is explicit; unlike measures are not silently blended.</span></div>
+<div class="kpis"><div class="kpi"><div class="label">Latest month</div><div id="latestMonth" class="big">—</div></div><div class="kpi"><div class="label">Latest GACC export value</div><div id="latestValue" class="big">—</div></div><div class="kpi"><div class="label">MoM export value</div><div id="mom" class="big">—</div></div><div class="kpi"><div class="label">#1 destination by value</div><div id="topDest" class="big">—</div></div></div>
+<div class="grid"><div class="panel"><div class="pt">China Passenger Vehicle Export Value — Continuous Monthly Timeline</div><div class="pb"><div id="valueChart" class="chart"></div></div></div><div class="panel"><div class="pt">Latest GACC Destination Ranking — USD</div><div class="scroll"><table><thead><tr><th>Destination</th><th>USD value</th><th>Share</th></tr></thead><tbody id="destTable"></tbody></table></div></div></div>
+<div class="grid" style="margin-top:8px"><div class="panel"><div class="pt">Destination Mirror — Reported Units, 2024–2026</div><div class="pb"><div id="unitChart" class="chart"></div></div></div><div class="panel"><div class="pt">Latest Mirror Reporters — Units</div><div class="scroll"><table><thead><tr><th>Destination</th><th>Units</th><th>Mirror value</th></tr></thead><tbody id="unitTable"></tbody></table></div></div></div>
+<div class="nav"><a href="history.html">Verified 2020–2024 history detail</a><a href="../">Main dashboard</a></div>
+<div class="foot">Current data source: GACC current HS 8703 value series; destination mirror: UN Comtrade partner-country reports with China as partner. Historical core remains the complete China-reported series through Dec 2024.</div>
+</div></div>
+<script>
+const $=id=>document.getElementById(id);const usd=n=>n==null?'—':(Math.abs(n)>=1e9?'$'+(n/1e9).toFixed(2)+'B':Math.abs(n)>=1e6?'$'+(n/1e6).toFixed(1)+'M':'$'+Math.round(n).toLocaleString());const pct=n=>n==null?'—':(n>=0?'+':'')+(n*100).toFixed(1)+'%';const ml=p=>{const [y,m]=p.split('-').map(Number);return new Date(Date.UTC(y,m-1,1)).toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'})};
+Promise.all([fetch('./data/current.json?v=20260910-2217').then(r=>r.json()),fetch('./data/exports.json?v=20260910-2217').then(r=>r.json())]).then(([cur,hist])=>{
+ const gm=(cur.gacc&&cur.gacc.monthly_value)||[];const latest=gm[gm.length-1];const prev=gm[gm.length-2];const gp=((cur.gacc&&cur.gacc.latest_partners)||[]).slice().sort((a,b)=>b.value_usd-a.value_usd);const hLatest=hist&&hist.meta?hist.meta.latest_period:'2024-12';
+ $('coverage').textContent='Jan 2020 – '+(latest?ml(latest.period):ml(hLatest));$('latestMonth').textContent=latest?ml(latest.period):'—';$('latestValue').textContent=latest?usd(latest.value_usd):'—';$('mom').textContent=latest&&prev?pct(latest.value_usd/prev.value_usd-1):'—';$('topDest').textContent=gp[0]?gp[0].country:'—';
+ const histMonthly={};((hist&&hist.records)||[]).forEach(r=>{if(r.export_value_usd!=null)histMonthly[r.period]=(histMonthly[r.period]||0)+Number(r.export_value_usd)});const hx=Object.keys(histMonthly).sort();const hy=hx.map(x=>histMonthly[x]);const gx=gm.map(r=>r.period),gy=gm.map(r=>r.value_usd);
+ Plotly.newPlot('valueChart',[{x:hx,y:hy,type:'scatter',mode:'lines',name:'China-reported history',line:{width:3}},{x:gx,y:gy,type:'scatter',mode:'lines+markers',name:'GACC current extension',line:{width:3,dash:'dot'}}],{margin:{l:65,r:20,t:20,b:45},paper_bgcolor:'white',plot_bgcolor:'white',xaxis:{gridcolor:'#e9f0f4'},yaxis:{gridcolor:'#e9f0f4',tickprefix:'$',tickformat:'.2s'},legend:{orientation:'h',y:1.12}},{responsive:true,displayModeBar:false});
+ $('destTable').innerHTML=gp.map(r=>`<tr><td>${r.country}</td><td>${usd(r.value_usd)}</td><td>${(r.share*100).toFixed(1)}%</td></tr>`).join('');
+ const m=(cur.mirror&&cur.mirror.records)||[];const latestMirror=cur.mirror&&cur.mirror.latest_period;const latestRows=m.filter(r=>r.period===latestMirror&&r.units!=null).sort((a,b)=>b.units-a.units);$('unitTable').innerHTML=latestRows.slice(0,30).map(r=>`<tr><td>${r.country}</td><td>${Math.round(r.units).toLocaleString()}</td><td>${usd(r.mirror_value_usd)}</td></tr>`).join('');
+ const sums={};m.forEach(r=>{if(r.units!=null)sums[r.period]=(sums[r.period]||0)+Number(r.units)});const ux=Object.keys(sums).sort(),uy=ux.map(x=>sums[x]);Plotly.newPlot('unitChart',[{x:ux,y:uy,type:'bar',name:'Reported mirror units'}],{margin:{l:60,r:20,t:20,b:45},paper_bgcolor:'white',plot_bgcolor:'white',xaxis:{gridcolor:'#e9f0f4'},yaxis:{gridcolor:'#e9f0f4'},showlegend:false},{responsive:true,displayModeBar:false});
+ $('loading').style.display='none';$('app').style.display='block';
+}).catch(e=>{$('loading').textContent='Data load error: '+e.message});
+</script>
+</body></html>
