@@ -2,7 +2,7 @@
   "meta": {
     "title": "AI Compute Demand Monitor",
     "subtitle": "Demand signals, physical capacity, and the economics of AI infrastructure",
-    "generated_at_utc": "2026-09-14T21:49:01Z",
+    "generated_at_utc": "2026-09-14T22:09:37Z",
     "demo_mode": false,
     "methodology_version": "0.2.0",
     "latest_openrouter_date": "2026-09-13"
@@ -10,7 +10,7 @@
   "kpis": {
     "workload_index": 208.39351378114256,
     "physical_compute_index": 224.7721442901593,
-    "tightness_index": 494.53078407603397,
+    "tightness_index": 404.65282050641486,
     "capacity_index": 104.71737449447016,
     "efficiency_index": 92.30153209018542,
     "tokens": 16730791173422.0,
@@ -1873,8 +1873,8 @@
       "date": "2026-09-14",
       "tokens": 16730791173422.0,
       "h100_hours": 3495865.9100083406,
-      "gpu_price": 8.1328125,
-      "gpu_units": 31.0,
+      "gpu_price": 7.9734375,
+      "gpu_units": 39.0,
       "latency": null,
       "capacity_h100_eq": 13937151.23965358,
       "datacenter_power_mw": 13257.12971,
@@ -1888,7 +1888,7 @@
       "api_speed_index": null,
       "api_latency_index": null,
       "api_price_index": null,
-      "tightness_index": 494.53078407603397,
+      "tightness_index": 404.65282050641486,
       "token_growth_28d": 25.688985580957645,
       "compute_growth_28d": 32.135077345433125,
       "token_growth_yoy": null,
@@ -2977,7 +2977,7 @@
     {
       "date": "1989-11-27",
       "model": "model",
-      "flop": 7485696000.0,
+      "flop": 181440000000.0,
       "source": "epoch"
     },
     {
@@ -3205,7 +3205,7 @@
     {
       "date": "2011-09-18",
       "model": "model",
-      "flop": 2.6e+16,
+      "flop": 5.2e+16,
       "source": "epoch"
     },
     {
@@ -3217,7 +3217,7 @@
     {
       "date": "2012-06-03",
       "model": "model",
-      "flop": 2.731968e+17,
+      "flop": 6039370800000000.0,
       "source": "epoch"
     },
     {
@@ -3487,7 +3487,7 @@
     {
       "date": "2016-11-05",
       "model": "model",
-      "flop": 1.05e+16,
+      "flop": 2.2e+21,
       "source": "epoch"
     },
     {
@@ -3685,7 +3685,7 @@
     {
       "date": "2018-07-10",
       "model": "model",
-      "flop": 4.290048e+17,
+      "flop": 2.46048e+17,
       "source": "epoch"
     },
     {
@@ -3925,13 +3925,13 @@
     {
       "date": "2019-12-05",
       "model": "model",
-      "flop": 1.938e+17,
+      "flop": 5.8298782e+16,
       "source": "epoch"
     },
     {
       "date": "2019-12-13",
       "model": "model",
-      "flop": 1.3e+22,
+      "flop": 6.7e+22,
       "source": "epoch"
     },
     {
@@ -4171,7 +4171,7 @@
     {
       "date": "2021-03-05",
       "model": "model",
-      "flop": 5.5e+21,
+      "flop": 1.449e+22,
       "source": "epoch"
     },
     {
@@ -4237,7 +4237,7 @@
     {
       "date": "2021-06-21",
       "model": "model",
-      "flop": 2.42784e+21,
+      "flop": 1.70208e+21,
       "source": "epoch"
     },
     {
@@ -4273,7 +4273,7 @@
     {
       "date": "2021-07-27",
       "model": "model",
-      "flop": 5.54e+21,
+      "flop": 2.412e+22,
       "source": "epoch"
     },
     {
@@ -4291,7 +4291,7 @@
     {
       "date": "2021-08-11",
       "model": "model",
-      "flop": 8.016e+20,
+      "flop": 3.7e+23,
       "source": "epoch"
     },
     {
@@ -4591,7 +4591,7 @@
     {
       "date": "2022-05-27",
       "model": "model",
-      "flop": 8.9280922e+20,
+      "flop": 7.24e+21,
       "source": "epoch"
     },
     {
@@ -4945,7 +4945,7 @@
     {
       "date": "2023-07-06",
       "model": "model",
-      "flop": 6.2e+23,
+      "flop": 9.984e+23,
       "source": "epoch"
     },
     {
@@ -4957,7 +4957,7 @@
     {
       "date": "2023-07-18",
       "model": "model",
-      "flop": 8.1e+23,
+      "flop": 8.4e+22,
       "source": "epoch"
     },
     {
@@ -5461,7 +5461,7 @@
     {
       "date": "2025-04-05",
       "model": "model",
-      "flop": 5.18400000000001e+25,
+      "flop": 2.244000000001e+24,
       "source": "epoch"
     },
     {
@@ -5605,7 +5605,7 @@
     {
       "date": "2025-12-31",
       "model": "model",
-      "flop": 1.52e+24,
+      "flop": 1.3999999999999998e+24,
       "source": "epoch"
     },
     {
@@ -5728,73 +5728,73 @@
     {
       "source": "derived",
       "latest_observation": "2026-09-13T00:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 3774
     },
     {
       "source": "eia",
       "latest_observation": "2026-09-14T21:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 3594
     },
     {
       "source": "epoch",
       "latest_observation": "2026-09-14T00:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 661
     },
     {
       "source": "mlperf",
       "latest_observation": "2026-09-14T00:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 46
     },
     {
       "source": "open_meteo",
       "latest_observation": "2026-09-14T23:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 5472
     },
     {
       "source": "openrouter",
       "latest_observation": "2026-09-13T00:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 3774
     },
     {
       "source": "openrouter_catalog",
       "latest_observation": "2026-09-14T00:00:00+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
       "rows": 37466
     },
     {
       "source": "vast",
-      "latest_observation": "2026-09-14T21:48:52+00:00",
-      "last_collection": "2026-09-14T21:48:57+00:00",
-      "age_hours": 0.0011247905555555556,
+      "latest_observation": "2026-09-14T22:09:25+00:00",
+      "last_collection": "2026-09-14T22:09:34+00:00",
+      "age_hours": 0.0008106866666666667,
       "status": "live",
-      "rows": 752
+      "rows": 756
     },
     {
       "source": "artificial_analysis",
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-09-14T21:48:52Z",
+      "last_collection": "2026-09-14T22:09:25Z",
       "status": "failed",
       "detail": "ARTIFICIAL_ANALYSIS_API_KEY is not configured"
     },
@@ -5803,7 +5803,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-09-14T21:48:52Z",
+      "last_collection": "2026-09-14T22:09:25Z",
       "status": "failed",
       "detail": "VAST_HOST_API_KEY is not configured (host keys only)"
     },
@@ -5812,7 +5812,7 @@
       "latest_observation": null,
       "age_hours": null,
       "rows": 0,
-      "last_collection": "2026-09-14T21:48:57Z",
+      "last_collection": "2026-09-14T22:09:33Z",
       "status": "failed",
       "detail": "403 Client Error: Forbidden for url: https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
     }
@@ -5821,7 +5821,7 @@
     "meta": {
       "version": "1.0.0",
       "as_of": "2026-08-04",
-      "generated_at_utc": "2026-09-14T21:49:01Z",
+      "generated_at_utc": "2026-09-14T22:09:37Z",
       "disclaimer": "Scenario analysis, not investment advice. Project-level economics are not company guidance or consolidated forecasts."
     },
     "scenario_labels": {
