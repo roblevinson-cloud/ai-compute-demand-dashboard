@@ -1,0 +1,16 @@
+{
+  "rss_url": "https://www.datacenterdynamics.com/rss/",
+  "news_path": "docs/data-centers/data/news.json",
+  "project_files": [
+    "docs/data-centers/data/projects.json",
+    "docs/data-centers/data/credit_projects.json",
+    "docs/data-centers/data/hy_projects.json"
+  ],
+  "max_items": 150,
+  "manual_targets": [
+    {
+      "name": "Project Lola",
+      "aliases": ["project lola", "council bluffs", "edged"]
+    }
+  ]
+}
