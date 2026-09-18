@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-18T13:18:25.944449+00:00",
+  "generated_at": "2026-09-18T13:24:38.658492+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
-    "stress_score": "0–100 composite of openings, weekly hours, explicit hourly incentive, OT multiplier and per diem.",
+    "stress_score": "0\u2013100 composite of openings, weekly hours, explicit hourly incentive, OT multiplier and per diem.",
     "warning": "A drop in open calls can mean hiring filled, project phase change, reporting change, or true construction deceleration."
   },
   "markets": [
@@ -27,13 +27,13 @@
       ]
     },
     {
-      "market": "Indianapolis–Mooresville",
+      "market": "Indianapolis\u2013Mooresville",
       "date": "2026-09-14",
       "openings": 11,
       "intensity": 54.8,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 39.6128,
+      "lon": -86.3742,
+      "state": "IN",
       "projects": [
         {
           "project": "Meta",
@@ -42,13 +42,13 @@
       ]
     },
     {
-      "market": "Fargo–Harwood",
+      "market": "Fargo\u2013Harwood",
       "date": "2026-09-14",
       "openings": 31,
       "intensity": 50.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 46.98,
+      "lon": -96.88,
+      "state": "ND",
       "projects": [
         {
           "project": "Unclassified data center",
@@ -72,13 +72,13 @@
       ]
     },
     {
-      "market": "Columbus–New Albany",
+      "market": "Columbus\u2013New Albany",
       "date": "2026-09-14",
       "openings": 16,
       "intensity": 42.3,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 40.0812,
+      "lon": -82.8088,
+      "state": "OH",
       "projects": [
         {
           "project": "Unclassified data center",
@@ -87,13 +87,13 @@
       ]
     },
     {
-      "market": "Dallas–Fort Worth",
+      "market": "Dallas\u2013Fort Worth",
       "date": "2026-09-14",
       "openings": 15,
       "intensity": 42.1,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 32.7767,
+      "lon": -96.797,
+      "state": "TX",
       "projects": [
         {
           "project": "QTS",
@@ -106,13 +106,13 @@
       ]
     },
     {
-      "market": "Toledo–Bowling Green",
+      "market": "Toledo\u2013Bowling Green",
       "date": "2026-08-31",
       "openings": 8,
       "intensity": 42.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 41.3748,
+      "lon": -83.6513,
+      "state": "OH",
       "projects": [
         {
           "project": "Project Accordian",
@@ -209,13 +209,13 @@
       ]
     },
     {
-      "market": "El Paso–Santa Teresa",
+      "market": "El Paso\u2013Santa Teresa",
       "date": "2026-09-14",
       "openings": 10,
       "intensity": 39.1,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 31.8559,
+      "lon": -106.6389,
+      "state": "TX/NM",
       "projects": [
         {
           "project": "Project Miner / Santa Teresa",
@@ -319,13 +319,13 @@
       ]
     },
     {
-      "market": "Newark–New Albany",
+      "market": "Newark\u2013New Albany",
       "date": "2026-09-14",
       "openings": 9,
       "intensity": 21.0,
-      "lat": null,
-      "lon": null,
-      "state": null,
+      "lat": 40.0581,
+      "lon": -82.4013,
+      "state": "OH",
       "projects": [
         {
           "project": "Meta",
@@ -397,67 +397,67 @@
       "intensity": 55.7
     },
     {
-      "market": "Columbus–New Albany",
+      "market": "Columbus\u2013New Albany",
       "date": "2026-08-31",
       "openings": 2,
       "intensity": 16.9
     },
     {
-      "market": "Columbus–New Albany",
+      "market": "Columbus\u2013New Albany",
       "date": "2026-09-14",
       "openings": 16,
       "intensity": 42.3
     },
     {
-      "market": "Dallas–Fort Worth",
+      "market": "Dallas\u2013Fort Worth",
       "date": "2026-08-31",
       "openings": 36,
       "intensity": 49.4
     },
     {
-      "market": "Dallas–Fort Worth",
+      "market": "Dallas\u2013Fort Worth",
       "date": "2026-09-08",
       "openings": 63,
       "intensity": 48.7
     },
     {
-      "market": "Dallas–Fort Worth",
+      "market": "Dallas\u2013Fort Worth",
       "date": "2026-09-14",
       "openings": 15,
       "intensity": 42.1
     },
     {
-      "market": "El Paso–Santa Teresa",
+      "market": "El Paso\u2013Santa Teresa",
       "date": "2026-08-31",
       "openings": 34,
       "intensity": 61.8
     },
     {
-      "market": "El Paso–Santa Teresa",
+      "market": "El Paso\u2013Santa Teresa",
       "date": "2026-09-08",
       "openings": 33,
       "intensity": 60.1
     },
     {
-      "market": "El Paso–Santa Teresa",
+      "market": "El Paso\u2013Santa Teresa",
       "date": "2026-09-14",
       "openings": 10,
       "intensity": 39.1
     },
     {
-      "market": "Fargo–Harwood",
+      "market": "Fargo\u2013Harwood",
       "date": "2026-08-31",
       "openings": 40,
       "intensity": 55.7
     },
     {
-      "market": "Fargo–Harwood",
+      "market": "Fargo\u2013Harwood",
       "date": "2026-09-08",
       "openings": 39,
       "intensity": 50.9
     },
     {
-      "market": "Fargo–Harwood",
+      "market": "Fargo\u2013Harwood",
       "date": "2026-09-14",
       "openings": 31,
       "intensity": 50.0
@@ -481,13 +481,13 @@
       "intensity": 41.7
     },
     {
-      "market": "Indianapolis–Mooresville",
+      "market": "Indianapolis\u2013Mooresville",
       "date": "2026-08-31",
       "openings": 2,
       "intensity": 31.0
     },
     {
-      "market": "Indianapolis–Mooresville",
+      "market": "Indianapolis\u2013Mooresville",
       "date": "2026-09-14",
       "openings": 11,
       "intensity": 54.8
@@ -571,19 +571,19 @@
       "intensity": 43.3
     },
     {
-      "market": "Newark–New Albany",
+      "market": "Newark\u2013New Albany",
       "date": "2026-08-31",
       "openings": 14,
       "intensity": 26.6
     },
     {
-      "market": "Newark–New Albany",
+      "market": "Newark\u2013New Albany",
       "date": "2026-09-08",
       "openings": 13,
       "intensity": 25.6
     },
     {
-      "market": "Newark–New Albany",
+      "market": "Newark\u2013New Albany",
       "date": "2026-09-14",
       "openings": 9,
       "intensity": 21.0
@@ -667,7 +667,7 @@
       "intensity": 33.9
     },
     {
-      "market": "Toledo–Bowling Green",
+      "market": "Toledo\u2013Bowling Green",
       "date": "2026-08-31",
       "openings": 8,
       "intensity": 42.0
@@ -722,7 +722,7 @@
       }
     },
     {
-      "market": "Columbus–New Albany",
+      "market": "Columbus\u2013New Albany",
       "from_date": "2026-08-31",
       "to_date": "2026-09-14",
       "from_openings": 2,
@@ -772,7 +772,7 @@
       }
     },
     {
-      "market": "Indianapolis–Mooresville",
+      "market": "Indianapolis\u2013Mooresville",
       "from_date": "2026-08-31",
       "to_date": "2026-09-14",
       "from_openings": 2,
@@ -878,7 +878,7 @@
       }
     },
     {
-      "market": "Dallas–Fort Worth",
+      "market": "Dallas\u2013Fort Worth",
       "from_date": "2026-09-08",
       "to_date": "2026-09-14",
       "from_openings": 63,
@@ -935,7 +935,7 @@
       }
     },
     {
-      "market": "El Paso–Santa Teresa",
+      "market": "El Paso\u2013Santa Teresa",
       "from_date": "2026-09-08",
       "to_date": "2026-09-14",
       "from_openings": 33,
@@ -1038,7 +1038,7 @@
       }
     },
     {
-      "market": "Newark–New Albany",
+      "market": "Newark\u2013New Albany",
       "from_date": "2026-09-08",
       "to_date": "2026-09-14",
       "from_openings": 13,
@@ -1210,7 +1210,7 @@
       }
     },
     {
-      "market": "Fargo–Harwood",
+      "market": "Fargo\u2013Harwood",
       "from_date": "2026-09-08",
       "to_date": "2026-09-14",
       "from_openings": 39,
@@ -1453,22 +1453,22 @@
   ],
   "drops": [
     {
-      "market": "Dallas–Fort Worth",
+      "market": "Dallas\u2013Fort Worth",
       "from_date": "2026-09-08",
       "to_date": "2026-09-14",
       "from_openings": 63,
       "to_openings": 15,
       "change_pct": -76.2,
-      "flag": "Potential deceleration — verify direct local board / project phase"
+      "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     },
     {
-      "market": "El Paso–Santa Teresa",
+      "market": "El Paso\u2013Santa Teresa",
       "from_date": "2026-09-08",
       "to_date": "2026-09-14",
       "from_openings": 33,
       "to_openings": 10,
       "change_pct": -69.7,
-      "flag": "Potential deceleration — verify direct local board / project phase"
+      "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     }
   ]
 }
