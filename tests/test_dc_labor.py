@@ -1,0 +1,28 @@
+from pathlib import Path
+import sys
+
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+import collect_dc_labor_v2 as labor
+
+
+def test_active_snapshot_rows_uses_latest_scrape_and_deduplicates_source_sections():
+    base = {
+        "market": "Kansas City",
+        "source_date": "2026-09-17",
+        "local": "124",
+        "project": "Google",
+        "openings": "10",
+        "source_text": "10 - CAPITAL - GOOGLE NRD",
+    }
+    rows = [
+        {**base, "observed_at": "2026-09-17T10:00:00+00:00"},
+        {**base, "observed_at": "2026-09-17T12:00:00+00:00"},
+        {**base, "observed_at": "2026-09-17T12:00:00+00:00"},
+    ]
+
+    active = labor.active_snapshot_rows(rows)
+
+    assert len(active) == 1
+    assert active[0]["observed_at"] == "2026-09-17T12:00:00+00:00"

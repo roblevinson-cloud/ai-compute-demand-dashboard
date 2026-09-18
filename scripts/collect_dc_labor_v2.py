@@ -305,7 +305,36 @@ def active_snapshot_rows(calls: list[dict]) -> list[dict]:
     for r in calls:
         key = (r["market"], r["source_date"])
         latest[key] = max(latest.get(key, ""), r["observed_at"])
-    return [r for r in calls if r["observed_at"] == latest[(r["market"], r["source_date"])]]
+    active = [r for r in calls if r["observed_at"] == latest[(r["market"], r["source_date"])]]
+
+    # Where2Bro occasionally renders the same local section twice in one page. Keep
+    # the immutable raw rows, but do not double-count byte-identical calls in the
+    # published aggregates (observed for Local 124 Kansas City in September 2026).
+    deduped: list[dict] = []
+    seen: set[tuple[str, ...]] = set()
+    for r in active:
+        identity = (
+            r["market"], r["source_date"], r["local"], r["project"],
+            r["openings"], r["source_text"],
+        )
+        if identity not in seen:
+            seen.add(identity)
+            deduped.append(r)
+    return deduped
+
+
+def numeric_values(rows: list[dict], field: str) -> list[float]:
+    return sorted({float(r[field]) for r in rows if r.get(field) not in (None, "")})
+
+
+def condition_summary(rows: list[dict]) -> dict:
+    return {
+        "weekly_hours": numeric_values(rows, "weekly_hours"),
+        "base_hourly": numeric_values(rows, "base_hourly"),
+        "incentive_hourly": numeric_values(rows, "incentive_hourly"),
+        "per_diem_daily": numeric_values(rows, "per_diem_daily"),
+        "ot_multiplier": numeric_values(rows, "ot_multiplier"),
+    }
 
 
 def build_dashboard(cfg: dict) -> dict:
@@ -334,10 +363,45 @@ def build_dashboard(cfg: dict) -> dict:
         markets.append({**latest, "lat": meta.get("lat"), "lon": meta.get("lon"), "state": meta.get("state"),
                         "projects": [{"project": k, "openings": v} for k, v in sorted(projects.items(), key=lambda x: -x[1])]})
     markets.sort(key=lambda r: (-r["intensity"], -r["openings"]))
-    drops = []
     per_market: dict[str, list[dict]] = {}
     for h in history:
         per_market.setdefault(h["market"], []).append(h)
+    changes = []
+    for market, rows in per_market.items():
+        rows.sort(key=lambda r: r["date"])
+        if len(rows) < 2:
+            continue
+        prev, cur = rows[-2], rows[-1]
+        prev_rows = grouped[(market, prev["date"])]
+        cur_rows = grouped[(market, cur["date"])]
+        prev_projects: dict[str, int] = {}
+        cur_projects: dict[str, int] = {}
+        for r in prev_rows:
+            prev_projects[r["project"]] = prev_projects.get(r["project"], 0) + int(float(r["openings"]))
+        for r in cur_rows:
+            cur_projects[r["project"]] = cur_projects.get(r["project"], 0) + int(float(r["openings"]))
+        project_changes = []
+        for project in set(prev_projects) | set(cur_projects):
+            before, after = prev_projects.get(project, 0), cur_projects.get(project, 0)
+            if before != after:
+                project_changes.append({
+                    "project": project, "from_openings": before, "to_openings": after,
+                    "change_openings": after - before,
+                })
+        project_changes.sort(key=lambda r: (-abs(r["change_openings"]), r["project"]))
+        delta = cur["openings"] - prev["openings"]
+        changes.append({
+            "market": market, "from_date": prev["date"], "to_date": cur["date"],
+            "from_openings": prev["openings"], "to_openings": cur["openings"],
+            "change_openings": delta,
+            "change_pct": round(delta / prev["openings"] * 100, 1) if prev["openings"] else None,
+            "from_intensity": prev["intensity"], "to_intensity": cur["intensity"],
+            "change_intensity": round(cur["intensity"] - prev["intensity"], 1),
+            "projects": project_changes,
+            "conditions": {"from": condition_summary(prev_rows), "to": condition_summary(cur_rows)},
+        })
+    changes.sort(key=lambda r: (r["to_date"], abs(r["change_pct"] or 0)), reverse=True)
+    drops = []
     for market, rows in per_market.items():
         rows.sort(key=lambda r: r["date"])
         if len(rows) < 2:
@@ -358,7 +422,7 @@ def build_dashboard(cfg: dict) -> dict:
             "stress_score": "0–100 composite of openings, weekly hours, explicit hourly incentive, OT multiplier and per diem.",
             "warning": "A drop in open calls can mean hiring filled, project phase change, reporting change, or true construction deceleration."
         },
-        "markets": markets, "history": history, "drops": drops,
+        "markets": markets, "history": history, "changes": changes, "drops": drops,
     }
 
 
