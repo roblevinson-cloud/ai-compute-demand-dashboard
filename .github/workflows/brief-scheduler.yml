@@ -1,0 +1,87 @@
+name: Generate morning and evening briefs
+
+on:
+  workflow_dispatch:
+    inputs:
+      brief_type:
+        description: Brief to generate now
+        required: true
+        default: due
+        type: choice
+        options:
+          - due
+          - morning
+          - evening
+  schedule:
+    # Paired UTC times keep the Eastern schedule correct through daylight-saving changes.
+    - cron: "30 10,11 * * *"
+    - cron: "0 22,23 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: gridsignal-brief-publisher
+  cancel-in-progress: false
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the published branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install the brief generator
+        run: pip install -e .
+
+      - name: Generate any due brief
+        id: brief
+        shell: bash
+        run: |
+          if [[ "${{ inputs.brief_type }}" == "morning" || "${{ inputs.brief_type }}" == "evening" ]]; then
+            dc-intel publish-briefs --type "${{ inputs.brief_type }}"
+          else
+            dc-intel publish-briefs
+          fi
+          git add data/briefs.json docs
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Save the brief archive
+        if: steps.brief.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish scheduled GridSignal brief"
+          git push origin HEAD:main
+
+      - name: Configure GitHub Pages
+        if: steps.brief.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload updated dashboard
+        if: steps.brief.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Publish updated dashboard
+        if: steps.brief.outputs.changed == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

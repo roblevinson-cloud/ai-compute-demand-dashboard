@@ -158,13 +158,44 @@ function renderBriefs() {
   const brief = D.briefs.find(item => item.id === state.selectedBrief) || D.briefs[0];
   if (!brief) return;
   const events = brief.event_ids.map(id => D.events.find(event => event.id === id)).filter(Boolean);
-  $("#briefPreview").innerHTML = `<span class="brief-kicker">${esc(brief.type)} · ${fmtDate(brief.date)}</span><h2>${esc(brief.subject)}</h2><p class="dek">${esc(brief.summary)}</p><span class="section-label">TOP DEVELOPMENTS</span>${events.map(event => `<section class="brief-event"><h3>${esc(event.headline)}</h3><p><strong>What changed:</strong> ${esc(event.what_new)}</p><p><strong>Why it matters:</strong> ${esc(event.why_matters)}</p><p><strong>Implication:</strong> ${esc(event.implication)}</p><div class="event-meta"><span class="tag">M ${event.materiality}</span><span class="tag">N ${event.novelty}</span><span class="tag">C ${event.confidence}</span><a class="source-tag" href="${esc(event.source_url)}" target="_blank" rel="noreferrer">Underlying evidence ↗</a></div></section>`).join("")}`;
+  const generated = brief.generated_at ? `Generated ${fmtDate(brief.generated_at, true)}` : "Archived report";
+  const files = brief.text_url && brief.html_url ? `<div class="brief-files"><a href="${esc(brief.text_url)}" target="_blank">Open text version ↗</a><a href="${esc(brief.html_url)}" target="_blank">Open email version ↗</a></div>` : "";
+  const eventMarkup = events.length ? events.map(event => `<section class="brief-event"><h3>${esc(event.headline)}</h3><p><strong>What changed:</strong> ${esc(event.what_new)}</p><p><strong>Why it matters:</strong> ${esc(event.why_matters)}</p><p><strong>Implication:</strong> ${esc(event.implication)}</p><div class="event-meta"><span class="tag">M ${event.materiality}</span><span class="tag">N ${event.novelty}</span><span class="tag">C ${event.confidence}</span><a class="source-tag" href="${esc(event.source_url)}" target="_blank" rel="noreferrer">Underlying evidence ↗</a></div></section>`).join("") : `<div class="brief-empty">No qualifying changes were published in this window. The email still records a completed scheduled check.</div>`;
+  $("#briefPreview").innerHTML = `<span class="brief-kicker">${esc(brief.type)} · ${fmtDate(brief.date)} · ${esc(generated)}</span><h2>${esc(brief.subject)}</h2><p class="dek">${esc(brief.summary)}</p>${files}<span class="section-label">TOP DEVELOPMENTS</span>${eventMarkup}`;
 }
 
 function briefText() {
   const brief = D.briefs.find(item => item.id === state.selectedBrief) || D.briefs[0];
+  if (brief.body_text) return brief.body_text;
   const events = brief.event_ids.map(id => D.events.find(event => event.id === id)).filter(Boolean);
-  return [`Subject: ${brief.subject}`, "", brief.summary, "", "TOP DEVELOPMENTS", ...events.flatMap(event => ["", event.headline, `What changed: ${event.what_new}`, `Why it matters: ${event.why_matters}`, `Implication: ${event.implication}`, `Scores: materiality ${event.materiality}, novelty ${event.novelty}, confidence ${event.confidence}`, `Evidence: ${event.source_url}`])].join("\n");
+  const lines = [`Subject: ${brief.subject}`, "", brief.summary, "", "TOP DEVELOPMENTS"];
+  if (!events.length) lines.push("", "No qualifying changes were published in this window.");
+  return [...lines, ...events.flatMap(event => ["", event.headline, `What changed: ${event.what_new}`, `Why it matters: ${event.why_matters}`, `Implication: ${event.implication}`, `Scores: materiality ${event.materiality}, novelty ${event.novelty}, confidence ${event.confidence}`, `Evidence: ${event.source_url}`])].join("\n");
+}
+
+function briefHtml() {
+  const brief = D.briefs.find(item => item.id === state.selectedBrief) || D.briefs[0];
+  if (brief.body_html) return brief.body_html;
+  const events = brief.event_ids.map(id => D.events.find(event => event.id === id)).filter(Boolean);
+  const eventMarkup = events.length ? events.map(event => `<section><h2>${esc(event.headline)}</h2><p><strong>What changed:</strong> ${esc(event.what_new)}</p><p><strong>Why it matters:</strong> ${esc(event.why_matters)}</p><p><strong>Implication:</strong> ${esc(event.implication)}</p><p><a href="${esc(event.source_url)}">Underlying evidence</a></p></section>`).join("") : "<p>No qualifying changes were published in this window.</p>";
+  return `<h1>${esc(brief.subject)}</h1><p>${esc(brief.summary)}</p><h2>Top Developments</h2>${eventMarkup}`;
+}
+
+async function writePlainText(value) {
+  if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(value);
+  const field = document.createElement("textarea");
+  field.value = value; document.body.appendChild(field); field.select(); document.execCommand("copy"); field.remove();
+}
+
+async function copyFormattedBrief() {
+  const text = briefText();
+  const html = briefHtml();
+  if (window.ClipboardItem && navigator.clipboard?.write) {
+    const item = new ClipboardItem({"text/plain": new Blob([text], {type: "text/plain"}), "text/html": new Blob([html], {type: "text/html"})});
+    await navigator.clipboard.write([item]);
+  } else {
+    await writePlainText(text);
+  }
 }
 
 function setupGlobalSearch() {
@@ -188,7 +219,8 @@ function init() {
   renderKpis(); renderOverview(); setupProjectFilters(); renderProjectTable(); setupEventFilters(); renderEventFeed(); renderReviewQueue(); renderSources(); renderBriefs();
   $("#taxonomy").innerHTML = D.event_taxonomy.map(item => `<span>${esc(label(item))}</span>`).join("");
   setupNavigation(); setupGlobalSearch();
-  $("#copyBrief").addEventListener("click", async () => { await navigator.clipboard.writeText(briefText()); toast("Email-ready brief copied"); });
+  $("#copyBriefText").addEventListener("click", async () => { await writePlainText(briefText()); toast("Plain-text email copied"); });
+  $("#copyBriefRich").addEventListener("click", async () => { await copyFormattedBrief(); toast("Formatted email copied"); });
 }
 
 init();

@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 
+from .brief_archive import load_brief_archive
 from .legacy_import import load_legacy_portfolio
 from .resolution import compare_project
 from .source_registry import load_source_registry, source_summary
@@ -48,7 +50,10 @@ def _event(
     }
 
 
-def build_demo_data(source_path: str = "config/sources.yml") -> dict[str, Any]:
+def build_demo_data(
+    source_path: str = "config/sources.yml",
+    brief_archive_path: str | Path | None = "data/briefs.json",
+) -> dict[str, Any]:
     sources = load_source_registry(source_path)
     jupiter = {
         "id": "project-jupiter",
@@ -273,18 +278,23 @@ def build_demo_data(source_path: str = "config/sources.yml") -> dict[str, Any]:
 
     briefs = [
         {
-            "id": "brief-evening-2026-09-17", "type": "Evening Brief", "date": "2026-09-17",
+            "id": "brief-evening-2026-09-17", "digest_type": "evening", "type": "Evening Brief", "date": "2026-09-17",
             "subject": "Evening Data Center Intelligence — Court stay raises Jupiter critical-path risk",
             "summary": "NMED now marks the YGI Microgrid air-permit process stayed by the New Mexico Supreme Court. Google's unnamed Lea County disclosure remains a separate early-stage discovery signal.",
             "event_ids": ["evt-jupiter-permit-stay", "evt-google-lea", "evt-jupiter-permit-statement"],
         },
         {
-            "id": "brief-morning-2026-09-18", "type": "Morning Brief", "date": "2026-09-18",
+            "id": "brief-morning-2026-09-18", "digest_type": "morning", "type": "Morning Brief", "date": "2026-09-18",
             "subject": "Morning Data Center Intelligence — Jupiter air-permit process stayed",
             "summary": "The leading overnight development is NMED's notice that the YGI Microgrid permit process is stayed, combined with Oracle's clarification that the campus and adjacent microgrid are separate facilities.",
             "event_ids": ["evt-jupiter-permit-stay", "evt-jupiter-permit-statement", "evt-jupiter-hearing"],
         },
     ]
+    archived_briefs = load_brief_archive(brief_archive_path) if brief_archive_path is not None else []
+    if archived_briefs:
+        briefs = archived_briefs
+    else:
+        briefs.sort(key=lambda item: (item["date"], item["digest_type"]), reverse=True)
 
     return {
         "meta": {

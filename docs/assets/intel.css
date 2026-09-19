@@ -196,10 +196,14 @@ h1 { margin: 5px 0 4px; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.04e
 .brief-preview { padding: 28px; min-height: 500px; }
 .brief-preview .brief-kicker { color: var(--teal-dark); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
 .brief-preview h2 { font-size: 24px; margin: 8px 0 7px; letter-spacing: -.03em; }
-.brief-preview .dek { color: var(--muted); line-height: 1.6; font-size: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.brief-preview .dek { color: var(--muted); line-height: 1.6; font-size: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 .brief-event { padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
-.brief-event h3 { margin: 0 0 6px; font-size: 13px; }
-.brief-event p { margin: 5px 0; font-size: 11px; line-height: 1.5; }
+.brief-event h3 { margin: 0 0 6px; font-size: 16px; }
+.brief-event p { margin: 5px 0; font-size: 14px; line-height: 1.55; }
+.brief-files { display: flex; flex-wrap: wrap; gap: 12px; margin: -4px 0 20px; }
+.brief-files a { color: var(--teal-dark); font-size: 13px; font-weight: 700; text-decoration: none; }
+.brief-files a:hover { text-decoration: underline; }
+.brief-empty { margin-top: 14px; padding: 18px; border: 1px dashed #b9c8cc; border-radius: 8px; color: var(--muted); font-size: 14px; line-height: 1.55; background: #f8fafb; }
 .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .method-number { color: #94aaa8; font-size: 10px; font-weight: 800; }
 .method-grid h2 { margin: 14px 0 7px; }

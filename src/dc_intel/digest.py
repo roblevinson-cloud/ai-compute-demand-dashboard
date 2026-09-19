@@ -46,6 +46,13 @@ def render_digest(events: list[dict[str, Any]], digest_type: str, as_of: str) ->
 
     text_lines = [subject, "", "TOP DEVELOPMENTS"]
     html_parts = [f"<h1>{html.escape(subject)}</h1>", "<h2>Top Developments</h2>"]
+    if not selected:
+        no_change = (
+            "No new developments met the publication threshold during this reporting window. "
+            "The tracked-project watchlist remains unchanged."
+        )
+        text_lines.extend(["", no_change])
+        html_parts.append(f"<p>{html.escape(no_change)}</p>")
     for event in selected[:3]:
         text_lines.extend([f"• {event['headline']} [{event['materiality']}/100]", f"  {event['what_new']}", f"  Why it matters: {event['why_matters']}", f"  Evidence: {event['source_url']}", ""])
         html_parts.append(_event_html(event))

@@ -13,7 +13,7 @@ The included dashboard combines the repository's **24-project national data-cent
 - Conservative entity resolution with explicit feature weights, contradiction penalties, and a human review queue.
 - Transparent 0–100 materiality, novelty, and confidence scores with stored factor breakdowns.
 - Immediate-alert queue for events crossing materiality, novelty, and confidence thresholds.
-- Morning (6:30 a.m. Eastern) and evening (6:00 p.m. Eastern) digest windows, stored in PostgreSQL and emitted as text and email-ready HTML.
+- Morning (6:30 a.m. Eastern) and evening (6:00 p.m. Eastern) digest windows, stored in PostgreSQL for live deployments and published as copy-ready text and HTML by GitHub Actions for the public dashboard.
 - Responsive dashboard with project search/filtering, evidence-backed project pages, an event feed, entity review queue, source health, and report archive.
 - Tests for extraction, scoring, resolution, source configuration, demo integrity, and digest output.
 
@@ -70,6 +70,18 @@ dc-intel worker --poll-seconds 60
 | `dc-intel run-once` | Sync, collect, and process a complete cycle |
 | `dc-intel worker` | Continuously run collection, processing, alerts, and scheduled digests |
 | `dc-intel digest --type morning` | Generate a standalone email-ready pilot brief |
+| `dc-intel publish-briefs` | Generate any due public brief, update its text/HTML files, and rebuild the dashboard |
+
+## Scheduled public briefs
+
+The `Generate morning and evening briefs` GitHub Actions workflow runs at the Eastern-time equivalents of 6:30 a.m. and 6:00 p.m. It checks the time in `America/New_York`, so duplicate UTC triggers around daylight-saving changes remain idempotent. Each successful run:
+
+1. creates a dated morning or evening archive record;
+2. writes plain-text and HTML email versions under `docs/briefs/`;
+3. rebuilds the dashboard with the latest report selected;
+4. commits the archive and publishes the updated GitHub Pages site.
+
+The workflow publishes a completed no-change report when no event clears the materiality and novelty thresholds. On the dashboard, use **Copy plain text** for a conventional email draft or **Copy formatted email** for rich-text email clients. The workflow generates copy-ready emails; it does not send them or store recipient credentials.
 
 ## Pipeline
 

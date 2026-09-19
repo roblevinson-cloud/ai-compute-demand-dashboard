@@ -1,4 +1,13 @@
 
+from datetime import datetime
+
+from dc_intel.brief_archive import (
+    EASTERN,
+    build_archive_brief,
+    due_digest_types,
+    load_brief_archive,
+    save_brief_archive,
+)
 from dc_intel.demo import build_demo_data
 from dc_intel.digest import render_digest
 from dc_intel.extraction import deterministic_extract
@@ -114,3 +123,23 @@ def test_email_digest_explains_change_and_links_evidence():
     assert "Why it matters:" in html_body
     assert "Underlying evidence" in html_body
     assert "https://" in text_body
+
+
+def test_public_brief_schedule_uses_eastern_time_and_is_idempotent_by_id(tmp_path):
+    before_morning = datetime(2026, 9, 19, 6, 29, tzinfo=EASTERN)
+    morning = datetime(2026, 9, 19, 6, 30, tzinfo=EASTERN)
+    evening = datetime(2026, 9, 19, 18, 0, tzinfo=EASTERN)
+
+    assert due_digest_types(before_morning) == []
+    assert due_digest_types(morning) == ["morning"]
+    assert due_digest_types(evening) == ["morning", "evening"]
+
+    data = build_demo_data(brief_archive_path=None)
+    brief = build_archive_brief(data["events"], "morning", morning)
+    assert brief["id"] == "brief-morning-2026-09-19"
+    assert brief["event_ids"] == []
+    assert "No new developments" in brief["body_text"]
+
+    archive = tmp_path / "briefs.json"
+    save_brief_archive([brief], archive)
+    assert load_brief_archive(archive)[0]["id"] == brief["id"]

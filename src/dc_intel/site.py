@@ -101,7 +101,7 @@ TEMPLATE = r'''<!doctype html>
         </section>
 
         <section class="view" id="view-briefs">
-          <div class="page-head"><div><span class="eyebrow">DELIVERABLES</span><h1>Intelligence briefs</h1><p>Morning and evening reports explain the change, implication, confidence, and evidence.</p></div><button class="primary" id="copyBrief">Copy email-ready brief</button></div>
+          <div class="page-head"><div><span class="eyebrow">DELIVERABLES</span><h1>Intelligence briefs</h1><p>Automatically generated at 6:30 a.m. and 6:00 p.m. Eastern, ready to paste into an email.</p></div><div class="page-actions"><button class="secondary" id="copyBriefText">Copy plain text</button><button class="primary" id="copyBriefRich">Copy formatted email</button></div></div>
           <div class="brief-layout"><div id="briefList" class="brief-list"></div><article id="briefPreview" class="brief-preview"></article></div>
         </section>
 

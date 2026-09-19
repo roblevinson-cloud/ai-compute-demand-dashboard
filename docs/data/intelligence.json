@@ -2,8 +2,8 @@
   "meta": {
     "title": "GridSignal",
     "subtitle": "U.S. data center development intelligence",
-    "generated_at": "2026-09-19T03:02:29.513508+00:00",
-    "as_of": "2026-09-18T10:30:00-04:00",
+    "generated_at": "2026-09-19T12:25:04.153232+00:00",
+    "as_of": "2026-09-19T10:30:00+00:00",
     "mode": "U.S. portfolio \u2014 evidence-linked project intelligence",
     "disclaimer": "The national portfolio is imported from the linked project monitor and merged with the newer New Mexico records. Capacity, capital, and schedule boundaries are preserved; verify live status at each source."
   },
@@ -4153,19 +4153,24 @@
   },
   "briefs": [
     {
-      "id": "brief-evening-2026-09-17",
-      "type": "Evening Brief",
-      "date": "2026-09-17",
-      "subject": "Evening Data Center Intelligence \u2014 Court stay raises Jupiter critical-path risk",
-      "summary": "NMED now marks the YGI Microgrid air-permit process stayed by the New Mexico Supreme Court. Google's unnamed Lea County disclosure remains a separate early-stage discovery signal.",
-      "event_ids": [
-        "evt-jupiter-permit-stay",
-        "evt-google-lea",
-        "evt-jupiter-permit-statement"
-      ]
+      "id": "brief-morning-2026-09-19",
+      "digest_type": "morning",
+      "type": "Morning Brief",
+      "date": "2026-09-19",
+      "subject": "Morning Brief \u2014 Data Center Development Intelligence \u2014 September 19, 2026",
+      "summary": "No new developments met the publication threshold during this reporting window. The tracked-project watchlist remains unchanged.",
+      "event_ids": [],
+      "window_start": "2026-09-18T22:00:00+00:00",
+      "window_end": "2026-09-19T10:30:00+00:00",
+      "generated_at": "2026-09-19T10:30:00+00:00",
+      "body_text": "Subject: Morning Brief \u2014 Data Center Development Intelligence \u2014 September 19, 2026\n\nTOP DEVELOPMENTS\n\nNo new developments met the publication threshold during this reporting window. The tracked-project watchlist remains unchanged.\nMethod note: scores are transparent prioritization aids, not facts. Source links are the audit record.",
+      "body_html": "<h1>Morning Brief \u2014 Data Center Development Intelligence \u2014 September 19, 2026</h1>\n<h2>Top Developments</h2>\n<p>No new developments met the publication threshold during this reporting window. The tracked-project watchlist remains unchanged.</p>\n<p><small>Scores are transparent prioritization aids, not facts. Source links are the audit record.</small></p>",
+      "text_url": "briefs/2026-09-19-morning.txt",
+      "html_url": "briefs/2026-09-19-morning.html"
     },
     {
       "id": "brief-morning-2026-09-18",
+      "digest_type": "morning",
       "type": "Morning Brief",
       "date": "2026-09-18",
       "subject": "Morning Data Center Intelligence \u2014 Jupiter air-permit process stayed",
@@ -4174,6 +4179,19 @@
         "evt-jupiter-permit-stay",
         "evt-jupiter-permit-statement",
         "evt-jupiter-hearing"
+      ]
+    },
+    {
+      "id": "brief-evening-2026-09-17",
+      "digest_type": "evening",
+      "type": "Evening Brief",
+      "date": "2026-09-17",
+      "subject": "Evening Data Center Intelligence \u2014 Court stay raises Jupiter critical-path risk",
+      "summary": "NMED now marks the YGI Microgrid air-permit process stayed by the New Mexico Supreme Court. Google's unnamed Lea County disclosure remains a separate early-stage discovery signal.",
+      "event_ids": [
+        "evt-jupiter-permit-stay",
+        "evt-google-lea",
+        "evt-jupiter-permit-statement"
       ]
     }
   ],
