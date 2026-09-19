@@ -1,0 +1,39 @@
+name: Test and build intelligence dashboard
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: dcintel_test
+          POSTGRES_USER: dcintel
+          POSTGRES_PASSWORD: dcintel
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dcintel -d dcintel_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - run: dc-intel init-db
+        env:
+          DATABASE_URL: postgresql://dcintel:dcintel@localhost:5432/dcintel_test
+      - run: dc-intel build-demo

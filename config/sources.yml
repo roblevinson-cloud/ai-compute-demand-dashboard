@@ -1,0 +1,293 @@
+version: 1
+defaults:
+  interval_minutes: 60
+  retain_originals: true
+
+sources:
+  - key: nm-nmed-public-notices
+    name: New Mexico Environment Department — public notices
+    source_type: primary_regulatory
+    jurisdiction: New Mexico
+    url: https://www.env.nm.gov/public-notices/
+    method: page
+    interval_minutes: 60
+    priority: 100
+    enabled: true
+    tags: [environmental, air, water, permits, project-jupiter, discovery]
+    parser_config: {watch_terms: [data center, microgrid, Yucca Growth Infrastructure, Project Jupiter, fuel cell]}
+
+  - key: nm-nmed-dockets
+    name: New Mexico Environment Department — docketed matters
+    source_type: primary_regulatory
+    jurisdiction: New Mexico
+    url: https://www.env.nm.gov/opf/docketed-matters/
+    method: page
+    interval_minutes: 60
+    priority: 100
+    enabled: true
+    tags: [docket, environmental, project-jupiter]
+    parser_config: {watch_terms: [AQB 26-57, Yucca Growth Infrastructure, Project Jupiter]}
+
+  - key: nm-aqb-actions
+    name: New Mexico Air Quality Bureau — permitting actions
+    source_type: primary_regulatory
+    jurisdiction: New Mexico
+    url: https://aqb-cpaur.env.nm.gov/
+    method: page
+    interval_minutes: 60
+    priority: 98
+    enabled: true
+    tags: [air, permits, project-jupiter, discovery]
+    parser_config: {watch_terms: [Yucca Growth Infrastructure, YGI Microgrid, data center, fuel cell]}
+
+  - key: nm-prc-edocket
+    name: New Mexico Public Regulation Commission — eDocket
+    source_type: primary_regulatory
+    jurisdiction: New Mexico
+    url: https://www.nm-prc.org/case-lookup-e-docket/
+    method: page
+    interval_minutes: 60
+    priority: 100
+    enabled: true
+    tags: [puc, utility, tariffs, large-load, interconnection, discovery]
+    parser_config: {watch_terms: [data center, large load, PNM, El Paso Electric, substation, transmission]}
+
+  - key: nm-courts-case-lookup
+    name: New Mexico Courts — public case lookup
+    source_type: primary_government
+    jurisdiction: New Mexico
+    url: https://caselookup.nmcourts.gov/caselookup/
+    method: page
+    interval_minutes: 180
+    priority: 94
+    enabled: true
+    tags: [legal, litigation, project-jupiter]
+    parser_config: {watch_terms: [Project Jupiter, Yucca Growth Infrastructure, BorderPlex, Doña Ana County]}
+
+  - key: dona-ana-agendas
+    name: Doña Ana County — agendas and minutes
+    source_type: primary_government
+    jurisdiction: Doña Ana County, NM
+    url: https://donaanacounty.org/government/board_of_county_commissioners/agendas___minutes.php
+    method: page
+    interval_minutes: 60
+    priority: 100
+    enabled: true
+    tags: [planning, zoning, incentives, minutes, project-jupiter]
+    parser_config: {watch_terms: [Project Jupiter, BorderPlex, STACK, industrial revenue bond, LEDA, data center]}
+
+  - key: dona-ana-economic-development
+    name: Doña Ana County — economic development projects
+    source_type: primary_government
+    jurisdiction: Doña Ana County, NM
+    url: https://donaanacounty.org/government/economic_development/index.php
+    method: page
+    interval_minutes: 180
+    priority: 92
+    enabled: true
+    tags: [economic-development, incentives, project-jupiter]
+    parser_config: {watch_terms: [Project Jupiter, IRB, LEDA, Santa Teresa]}
+
+  - key: dona-ana-clerk-records
+    name: Doña Ana County Clerk — recorded documents
+    source_type: property_record
+    jurisdiction: Doña Ana County, NM
+    url: https://records.donaanacounty.org/countyweb/loginDisplay.action?countyname=DonaAna
+    method: page
+    interval_minutes: 1440
+    priority: 82
+    enabled: true
+    tags: [property, deeds, site-control, project-jupiter]
+    parser_config: {watch_terms: [BorderPlex, STACK Infrastructure, Yucca Growth Infrastructure, Santa Teresa]}
+
+  - key: nm-cid-permits
+    name: New Mexico Construction Industries Division — permits
+    source_type: primary_regulatory
+    jurisdiction: New Mexico
+    url: https://www.rld.nm.gov/cid/
+    method: page
+    interval_minutes: 180
+    priority: 91
+    enabled: true
+    tags: [building-permits, electrical, mechanical, discovery]
+    parser_config: {watch_terms: [data center, Santa Teresa, Lea County, BorderPlex, Google]}
+
+  - key: lea-county-agendas
+    name: Lea County — Commission agendas and minutes
+    source_type: primary_government
+    jurisdiction: Lea County, NM
+    url: https://www.leacounty.gov/AgendaCenter/County-Commission-2
+    method: page
+    interval_minutes: 60
+    priority: 100
+    enabled: true
+    tags: [planning, zoning, incentives, discovery, google-lea]
+    parser_config: {watch_terms: [data center, Google, industrial revenue bond, LEDA, large load, power]}
+
+  - key: lea-county-resolutions
+    name: Lea County — 2026 resolutions
+    source_type: primary_government
+    jurisdiction: Lea County, NM
+    url: https://www.leacounty.gov/1378/2026-Lea-County-Resolutions
+    method: page
+    interval_minutes: 180
+    priority: 94
+    enabled: true
+    tags: [requirements, incentives, discovery, google-lea]
+    parser_config: {watch_terms: [data center, artificial intelligence, IRB, LEDA, Google]}
+
+  - key: nm-edd-news
+    name: New Mexico Economic Development Department — news
+    source_type: primary_government
+    jurisdiction: New Mexico
+    url: https://edd.newmexico.gov/pr/
+    method: page
+    interval_minutes: 180
+    priority: 88
+    enabled: true
+    tags: [economic-development, incentives, discovery]
+    parser_config: {watch_terms: [data center, digital infrastructure, AI infrastructure, LEDA]}
+
+  - key: nm-governor-news
+    name: New Mexico Governor — press releases
+    source_type: primary_government
+    jurisdiction: New Mexico
+    url: https://www.governor.state.nm.us/category/press-releases/
+    method: page
+    interval_minutes: 180
+    priority: 86
+    enabled: true
+    tags: [economic-development, company-announcement, discovery]
+    parser_config: {watch_terms: [data center, digital infrastructure, BorderPlex, Google, Meta]}
+
+  - key: pnm-regulatory
+    name: PNM — regulatory filings
+    source_type: utility
+    jurisdiction: New Mexico
+    url: https://www.pnm.com/regulatory
+    method: page
+    interval_minutes: 180
+    priority: 92
+    enabled: true
+    tags: [utility, puc, tariff, transmission, large-load]
+    parser_config: {watch_terms: [large load, data center, special service contract, transmission, substation]}
+
+  - key: el-paso-electric-regulatory
+    name: El Paso Electric — New Mexico regulatory filings
+    source_type: utility
+    jurisdiction: Southern New Mexico
+    url: https://www.epelectric.com/company/regulatory/new-mexico-regulatory-filings
+    method: page
+    interval_minutes: 180
+    priority: 95
+    enabled: true
+    tags: [utility, puc, tariff, transmission, project-jupiter]
+    parser_config: {watch_terms: [data center, large load, Santa Teresa, substation, transmission]}
+
+  - key: openai-news
+    name: OpenAI — company news
+    source_type: company
+    jurisdiction: National
+    url: https://openai.com/news/
+    method: page
+    interval_minutes: 60
+    priority: 84
+    enabled: true
+    tags: [company, stargate, tenant, discovery]
+    parser_config: {watch_terms: [Stargate, data center, New Mexico, infrastructure]}
+
+  - key: oracle-news
+    name: Oracle — newsroom
+    source_type: company
+    jurisdiction: National
+    url: https://www.oracle.com/news/
+    method: page
+    interval_minutes: 60
+    priority: 84
+    enabled: true
+    tags: [company, project-jupiter, stargate, power]
+    parser_config: {watch_terms: [Project Jupiter, data center, Stargate, Bloom Energy, New Mexico]}
+
+  - key: google-infrastructure-blog
+    name: Google — infrastructure and cloud blog
+    source_type: company
+    jurisdiction: National
+    url: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
+    method: page
+    interval_minutes: 60
+    priority: 90
+    enabled: true
+    tags: [company, hyperscaler, discovery, google-lea]
+    parser_config: {watch_terms: [data center, New Mexico, energy, utility, water]}
+
+  - key: bloom-energy-news
+    name: Bloom Energy — news releases
+    source_type: company
+    jurisdiction: National
+    url: https://www.bloomenergy.com/news/
+    method: page
+    interval_minutes: 180
+    priority: 74
+    enabled: true
+    tags: [fuel-cell, generation, contractor, project-jupiter]
+    parser_config: {watch_terms: [data center, Project Jupiter, Oracle, gigawatt]}
+
+  - key: source-new-mexico
+    name: Source New Mexico
+    source_type: local_media
+    jurisdiction: New Mexico
+    url: https://sourcenm.com/feed/
+    method: rss
+    interval_minutes: 60
+    priority: 82
+    enabled: true
+    tags: [local-news, regulation, water, litigation]
+    parser_config: {watch_terms: [data center, Project Jupiter, utility, power, Google]}
+
+  - key: kvia-data-center
+    name: KVIA ABC-7 — local news
+    source_type: local_media
+    jurisdiction: Southern New Mexico / El Paso
+    url: https://kvia.com/?s=data+center
+    method: page
+    interval_minutes: 60
+    priority: 76
+    enabled: true
+    tags: [local-news, planning, incentives, construction]
+    parser_config: {watch_terms: [Project Jupiter, Santa Teresa, data center, BorderPlex]}
+
+  - key: dcd-north-america
+    name: Data Center Dynamics — North America
+    source_type: trade_media
+    jurisdiction: National
+    url: https://www.datacenterdynamics.com/en/rss/
+    method: rss
+    interval_minutes: 60
+    priority: 72
+    enabled: true
+    tags: [trade, data-center, secondary]
+    parser_config: {watch_terms: [New Mexico, United States, data center, power, construction]}
+
+  - key: construction-dive
+    name: Construction Dive — data center coverage
+    source_type: trade_media
+    jurisdiction: National
+    url: https://www.constructiondive.com/feeds/news/
+    method: rss
+    interval_minutes: 120
+    priority: 64
+    enabled: true
+    tags: [trade, construction, contractor]
+    parser_config: {watch_terms: [data center, hyperscale, campus]}
+
+  - key: utility-dive
+    name: Utility Dive
+    source_type: trade_media
+    jurisdiction: National
+    url: https://www.utilitydive.com/feeds/news/
+    method: rss
+    interval_minutes: 120
+    priority: 70
+    enabled: true
+    tags: [trade, utility, regulatory, power]
+    parser_config: {watch_terms: [data center, large load, tariff, transmission, interconnection]}

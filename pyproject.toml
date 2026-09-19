@@ -4,15 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ai-compute-demand-dashboard"
-version = "0.1.0"
-description = "Independent AI workload, compute, capacity and tightness dashboard"
+version = "0.2.0"
+description = "Project-centric U.S. data-center development intelligence monitor"
 requires-python = ">=3.11"
 dependencies = [
   "numpy>=2.0,<3",
   "pandas>=2.2,<3",
   "PyYAML>=6,<7",
+  "psycopg[binary]>=3.2,<4",
   "requests>=2.32,<3",
 ]
+
+[project.scripts]
+dc-intel = "dc_intel.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.8"]
@@ -25,6 +29,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 ai_compute_dashboard = ["static/*.css", "static/*.js"]
+dc_intel = ["schema.sql", "static/*.css", "static/*.js"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
