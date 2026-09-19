@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from typing import Any
 
+from .legacy_import import load_legacy_portfolio
 from .resolution import compare_project
 from .source_registry import load_source_registry, source_summary
 
@@ -136,6 +137,11 @@ def build_demo_data(source_path: str = "config/sources.yml") -> dict[str, Any]:
         "relationships": [{"company": "Google", "role": "prospective developer / operator", "confidence": 96}],
     }
     projects = [jupiter, google]
+    portfolio_projects, portfolio_events, _portfolio_as_of = load_legacy_portfolio()
+    existing_slugs = {project["slug"] for project in projects} | {"project-jupiter"}
+    imported_projects = [project for project in portfolio_projects if project["slug"] not in existing_slugs]
+    imported_project_ids = {project["id"] for project in imported_projects}
+    projects.extend(imported_projects)
 
     events = [
         _event(
@@ -227,6 +233,7 @@ def build_demo_data(source_path: str = "config/sources.yml") -> dict[str, Any]:
             [{"label": "Announced investment", "value": "$5B"}, {"label": "Expected jobs", "value": "1,000"}],
         ),
     ]
+    events.extend(event for event in portfolio_events if event["project_id"] in imported_project_ids)
 
     ygi_signal = {
         "county": "Doña Ana", "state": "NM", "developer": ["Yucca Growth Infrastructure", "BorderPlex Digital Assets"],
@@ -285,12 +292,13 @@ def build_demo_data(source_path: str = "config/sources.yml") -> dict[str, Any]:
             "subtitle": "U.S. data center development intelligence",
             "generated_at": now,
             "as_of": "2026-09-18T10:30:00-04:00",
-            "mode": "New Mexico pilot — curated evidence-backed demonstration",
-            "disclaimer": "Demo records are based on linked public sources. Scores are illustrative outputs of the documented scoring model; verify live status at the source.",
+            "mode": "U.S. portfolio — evidence-linked project intelligence",
+            "disclaimer": "The national portfolio is imported from the linked project monitor and merged with the newer New Mexico records. Capacity, capital, and schedule boundaries are preserved; verify live status at each source.",
         },
         "kpis": {
             "tracked_projects": len(projects), "priority_events": sum(event["materiality"] >= 85 for event in events),
-            "new_signals": 1, "review_items": len(review_queue), "healthy_sources": sum(item["status"] == "healthy" for item in health),
+            "new_signals": sum(event["event_type"] == "new_project_discovery" for event in events),
+            "review_items": len(review_queue), "healthy_sources": sum(item["status"] == "healthy" for item in health),
             "source_count": len(health),
         },
         "projects": projects,

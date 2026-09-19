@@ -2,15 +2,15 @@
   "meta": {
     "title": "GridSignal",
     "subtitle": "U.S. data center development intelligence",
-    "generated_at": "2026-09-19T02:51:00.294561+00:00",
+    "generated_at": "2026-09-19T03:02:29.513508+00:00",
     "as_of": "2026-09-18T10:30:00-04:00",
-    "mode": "New Mexico pilot \u2014 curated evidence-backed demonstration",
-    "disclaimer": "Demo records are based on linked public sources. Scores are illustrative outputs of the documented scoring model; verify live status at the source."
+    "mode": "U.S. portfolio \u2014 evidence-linked project intelligence",
+    "disclaimer": "The national portfolio is imported from the linked project monitor and merged with the newer New Mexico records. Capacity, capital, and schedule boundaries are preserved; verify live status at each source."
   },
   "kpis": {
-    "tracked_projects": 2,
+    "tracked_projects": 25,
     "priority_events": 7,
-    "new_signals": 1,
+    "new_signals": 2,
     "review_items": 2,
     "healthy_sources": 20,
     "source_count": 24
@@ -207,6 +207,2507 @@
           "company": "Google",
           "role": "prospective developer / operator",
           "confidence": 96
+        }
+      ]
+    },
+    {
+      "id": "portfolio-meridian-arc",
+      "slug": "meridian-arc",
+      "name": "Meridian Arc",
+      "status": "Under construction",
+      "status_tone": "risk",
+      "state": "IN",
+      "county": "Sullivan",
+      "city": "New Lebanon",
+      "address": "New Lebanon, Sullivan County, IN",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Meridian Compute",
+        "Next Frontier",
+        "Fluidstack JV"
+      ],
+      "tenant": [
+        "Fluidstack"
+      ],
+      "operator": [],
+      "utility": [
+        "Hoosier Energy",
+        "WIN Energy"
+      ],
+      "parcel": [],
+      "alias": [
+        "New Lebanon AI Campus"
+      ],
+      "aliases": [
+        {
+          "name": "New Lebanon AI Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 620,
+      "it_mw": 430,
+      "acreage": null,
+      "capex_usd_b": 5.7,
+      "buildings": null,
+      "materiality": 60,
+      "confidence": 90,
+      "first_seen": "2026-04-20",
+      "last_update": "2026-09-03",
+      "summary": "A 430 MW greenfield AI campus financed in the high-yield market and fully leased to Fluidstack with Google support. The investment question is whether a very aggressive power-and-build schedule can still deliver the first 65 MW hall in July 2027.",
+      "risk": "No proven slip; July-27 first hall is the key test",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "430 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.lw.com/en/news/latham-advises-on-meridian-arc-holdco-senior-secured-notes-offering-to-finance-ai-data-center"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "620 MW",
+          "boundary": "Grid + dedicated on-site substation",
+          "source_url": "https://www.lw.com/en/news/latham-advises-on-meridian-arc-holdco-senior-secured-notes-offering-to-finance-ai-data-center"
+        },
+        {
+          "label": "Capital program",
+          "value": "$5.7B debt financing",
+          "boundary": "Bond financing / critical-IT MW; total project cost is higher than bond proceeds.",
+          "source_url": "https://www.lw.com/en/news/latham-advises-on-meridian-arc-holdco-senior-secured-notes-offering-to-finance-ai-data-center"
+        },
+        {
+          "label": "Project debt",
+          "value": "$5.70B",
+          "boundary": "$5.7B 6.25% senior secured notes due 2031",
+          "source_url": "https://www.lw.com/en/news/latham-advises-on-meridian-arc-holdco-senior-secured-notes-offering-to-finance-ai-data-center"
+        },
+        {
+          "label": "Delivery",
+          "value": "First 65 MW Jul-2027; phased into 2028",
+          "boundary": "Next milestone: 300 MW utility availability",
+          "source_url": "https://www.lw.com/en/news/latham-advises-on-meridian-arc-holdco-senior-secured-notes-offering-to-finance-ai-data-center"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Meridian Compute",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Next Frontier",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack JV",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Meridian Compute",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Meridian Arc HoldCo",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Google",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Hoosier Energy",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "WIN Energy",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-polaris-forge-1",
+      "slug": "polaris-forge-1",
+      "name": "Polaris Forge 1",
+      "status": "Partially operational / under construction",
+      "status_tone": "signal",
+      "state": "ND",
+      "county": "Dickey",
+      "city": "Ellendale",
+      "address": "Ellendale, Dickey County, ND",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Applied Digital"
+      ],
+      "tenant": [
+        "CoreWeave"
+      ],
+      "operator": [],
+      "utility": [
+        "Otter Tail Power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Ellendale AI Factory"
+      ],
+      "aliases": [
+        {
+          "name": "Ellendale AI Factory",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 400,
+      "acreage": null,
+      "capex_usd_b": 4.8,
+      "buildings": null,
+      "materiality": 55,
+      "confidence": 90,
+      "first_seen": "2026-06-16",
+      "last_update": "2026-06-30",
+      "summary": "Applied Digital\u2019s flagship North Dakota AI campus. CoreWeave has contracted all 400 MW. The first 100 MW went live in October 2025 and another 75 MW reached ready-for-service on June 30, 2026, giving this campus the strongest execution proof in the monitor.",
+      "risk": "Execution proof is strong: 175 MW live by Jun-2026",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "400 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000002/apldq226earningsrelease.htm"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$4.4\u20135.2B implied",
+          "boundary": "Applied Digital anticipated capex per critical-IT MW.",
+          "source_url": "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000002/apldq226earningsrelease.htm"
+        },
+        {
+          "label": "Project debt",
+          "value": "$3.94B across major project tranches",
+          "boundary": "$2.35B 9.25% notes for first 250 MW; $1.59B 7.0% notes for ELN-04 150 MW",
+          "source_url": "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000002/apldq226earningsrelease.htm"
+        },
+        {
+          "label": "Delivery",
+          "value": "100 MW live Oct-25; Bldg 2 2H26; Bldg 3 1H27",
+          "boundary": "Next milestone: Remaining 75 MW of Building 2 / full 150 MW delivery",
+          "source_url": "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000002/apldq226earningsrelease.htm"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Applied Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "CoreWeave",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Applied Digital",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "CoreWeave",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "enhanced SPV credit package",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Otter Tail Power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-polaris-forge-2",
+      "slug": "polaris-forge-2",
+      "name": "Polaris Forge 2",
+      "status": "Under construction",
+      "status_tone": "risk",
+      "state": "ND",
+      "county": "Cass",
+      "city": null,
+      "address": "Harwood / Cass County, ND",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Applied Digital"
+      ],
+      "tenant": [
+        "Oracle"
+      ],
+      "operator": [],
+      "utility": [
+        "Cass County Electric",
+        "Minnkota Power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Harwood AI Factory"
+      ],
+      "aliases": [
+        {
+          "name": "Harwood AI Factory",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 280,
+      "it_mw": 200,
+      "acreage": null,
+      "capex_usd_b": 3.0,
+      "buildings": null,
+      "materiality": 54,
+      "confidence": 90,
+      "first_seen": "2026-03-03",
+      "last_update": "2026-04-29",
+      "summary": "A 200 MW contracted Oracle campus north of Fargo inside a ~280\u2013300 MW initial physical design. Building construction was progressing in spring 2026, but the schedule depends on a new 345-kV line and substation. The power project\u2019s cost rose to roughly $110M and required PSC approval, making grid delivery the key watch item.",
+      "risk": "No proven delay; power infrastructure is the critical-path item",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "200 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000149315226009538/form8-k.htm"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "280 MW",
+          "boundary": "Grid; new 345-kV line + dedicated substation",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000149315226009538/form8-k.htm"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$3.0B announced",
+          "boundary": "$3B announced campus / 300 MW design basis; Applied Digital separately guides $11\u201313M per contracted critical-IT MW.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000149315226009538/form8-k.htm"
+        },
+        {
+          "label": "Project debt",
+          "value": "$2.15B",
+          "boundary": "$2.15B 6.75% senior secured notes due 2031; APLD funds dedicated power infrastructure",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000149315226009538/form8-k.htm"
+        },
+        {
+          "label": "Delivery",
+          "value": "Initial 2H26; full contracted capacity early 2027",
+          "boundary": "Next milestone: Initial capacity / energization",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000149315226009538/form8-k.htm"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Applied Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Oracle",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Applied Digital",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Investment-grade hyperscaler credit",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Cass County Electric",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Minnkota Power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-polaris-forge-3",
+      "slug": "polaris-forge-3",
+      "name": "Polaris Forge 3",
+      "status": "Early construction / permitting",
+      "status_tone": "risk",
+      "state": "ND",
+      "county": "Oliver",
+      "city": "South of Hanover / near Center",
+      "address": "South of Hanover / near Center, Oliver County, ND",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Applied Digital"
+      ],
+      "tenant": [],
+      "operator": [],
+      "utility": [
+        "Montana-Dakota Utilities",
+        "grid-connected utility power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Oliver County AI Factory"
+      ],
+      "aliases": [
+        {
+          "name": "Oliver County AI Factory",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 430,
+      "it_mw": 300,
+      "acreage": null,
+      "capex_usd_b": 3.6,
+      "buildings": null,
+      "materiality": 49,
+      "confidence": 94,
+      "first_seen": "2026-03-13",
+      "last_update": "2026-07-30",
+      "summary": "Applied Digital\u2019s third North Dakota AI campus is a 300 MW critical-IT project supported by ~430 MW of utility power. The site faced a county data-center moratorium in March 2026, but the county later moved forward with road-use agreements and building permits. That history makes local approvals\u2014not just construction pace\u2014a first-class schedule signal.",
+      "risk": "Local permitting moved forward after a moratorium scare; August-27 start remains the first major test",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "300 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://olivercountynd.org/index.asp?SEC=227AD67B-A719-4DFE-8789-8464C7889A48"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "430 MW",
+          "boundary": "~430 MW grid-connected utility power",
+          "source_url": "https://olivercountynd.org/index.asp?SEC=227AD67B-A719-4DFE-8789-8464C7889A48"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$3.3\u20133.9B benchmark",
+          "boundary": "Applied Digital portfolio capex benchmark; project-specific PF3 total capex not yet publicly disclosed.",
+          "source_url": "https://olivercountynd.org/index.asp?SEC=227AD67B-A719-4DFE-8789-8464C7889A48"
+        },
+        {
+          "label": "Project debt",
+          "value": "n/d",
+          "boundary": "Project-specific permanent financing not yet disclosed in the sources reviewed",
+          "source_url": "https://olivercountynd.org/index.asp?SEC=227AD67B-A719-4DFE-8789-8464C7889A48"
+        },
+        {
+          "label": "Delivery",
+          "value": "Initial operations Aug-2027; phased 2H27\u20132H28",
+          "boundary": "Next milestone: Foundation/shell + local permitting progression",
+          "source_url": "https://olivercountynd.org/index.asp?SEC=227AD67B-A719-4DFE-8789-8464C7889A48"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Applied Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Applied Digital",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "APLD BIS-01",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "High investment-grade hyperscaler",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Montana-Dakota Utilities",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "grid-connected utility power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-beignet-hyperion",
+      "slug": "beignet-hyperion",
+      "name": "Project Beignet",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "LA",
+      "county": "Richland",
+      "city": null,
+      "address": "Richland Parish, LA",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Meta",
+        "Blue Owl JV"
+      ],
+      "tenant": [
+        "Meta Platforms"
+      ],
+      "operator": [],
+      "utility": [
+        "Entergy Louisiana"
+      ],
+      "parcel": [],
+      "alias": [
+        "Meta Hyperion"
+      ],
+      "aliases": [
+        {
+          "name": "Meta Hyperion",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 2064,
+      "acreage": null,
+      "capex_usd_b": 28.79,
+      "buildings": null,
+      "materiality": 62,
+      "confidence": 82,
+      "first_seen": "2025-10-16",
+      "last_update": "2025-10-16",
+      "summary": "The benchmark investment-grade AI infrastructure financing: a 2.064 GW Meta campus financed through an 80/20 Blue Owl\u2013Meta JV, with $27.3B of long-dated amortizing debt.",
+      "risk": "Credit protection is unusually strong; the principal risk is execution across a 2.064 GW, nine-building campus.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "2064 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3459943"
+        },
+        {
+          "label": "Capital program",
+          "value": "$28.79B construction commitment",
+          "boundary": "$28.79B committed construction cost divided by 2.064 GW campus capacity.",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3459943"
+        },
+        {
+          "label": "Project debt",
+          "value": "$27.30B",
+          "boundary": "$27.30B amortizing senior secured debt due May 2049",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3459943"
+        },
+        {
+          "label": "Delivery",
+          "value": "Phased construction; major rent ramp around 2029",
+          "boundary": "Next milestone: Continue multi-building construction and utility build",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3459943"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Meta",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Blue Owl JV",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Meta Platforms",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Laidley LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Meta Platforms support package",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Entergy Louisiana",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-project-jacquard",
+      "slug": "project-jacquard",
+      "name": "Project Jacquard",
+      "status": "Under construction",
+      "status_tone": "risk",
+      "state": "TX + WI",
+      "county": "Multi-state portfolio",
+      "city": null,
+      "address": "Shackelford County, TX + Port Washington, WI",
+      "location_precision": "multi-site portfolio",
+      "developer": [
+        "Vantage Data Centers"
+      ],
+      "tenant": [
+        "Oracle"
+      ],
+      "operator": [],
+      "utility": [
+        "Multi-campus utility stack"
+      ],
+      "parcel": [],
+      "alias": [
+        "Vantage Frontier + Lighthouse Stargate"
+      ],
+      "aliases": [
+        {
+          "name": "Vantage Frontier + Lighthouse Stargate",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 2400,
+      "acreage": null,
+      "capex_usd_b": 38.0,
+      "buildings": null,
+      "materiality": 65,
+      "confidence": 82,
+      "first_seen": "2025-10-24",
+      "last_update": "2025-10-24",
+      "summary": "The largest Oracle/OpenAI bank-loan package in the monitor: Vantage's Texas and Wisconsin Stargate campuses funded with roughly $38B of project debt.",
+      "risk": "Syndication is substantially complete; the remaining risk is physical delivery across two enormous campuses.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "2400 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://live.tmtfinance.com/usa/awards"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$38B project debt program",
+          "boundary": "$38B program divided by ~2.4 GW combined announced campus scale; debt also funds broader project costs.",
+          "source_url": "https://live.tmtfinance.com/usa/awards"
+        },
+        {
+          "label": "Project debt",
+          "value": "$38B program ($22.75B TX award; ~$14.75B WI reported)",
+          "boundary": "$38B syndicated construction-loan program; $22.75B Project Jacquard TX financing highlighted by TMT Finance",
+          "source_url": "https://live.tmtfinance.com/usa/awards"
+        },
+        {
+          "label": "Delivery",
+          "value": "Texas initial building 2H26; broader program through 2028",
+          "boundary": "Next milestone: Texas Frontier first-building delivery",
+          "source_url": "https://live.tmtfinance.com/usa/awards"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Vantage Data Centers",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Oracle",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Vantage project SPVs",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Oracle lease economics",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Multi-campus utility stack",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-stargate-abilene",
+      "slug": "stargate-abilene",
+      "name": "Stargate Abilene",
+      "status": "Partially operational / under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Taylor",
+      "city": null,
+      "address": "Abilene / Taylor County, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Crusoe",
+        "Lancium",
+        "Primary Digital Infrastructure"
+      ],
+      "tenant": [
+        "Oracle"
+      ],
+      "operator": [],
+      "utility": [
+        "Lancium",
+        "ERCOT regional power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Lancium Clean Campus / Crusoe Site 1"
+      ],
+      "aliases": [
+        {
+          "name": "Lancium Clean Campus / Crusoe Site 1",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 1200,
+      "it_mw": 1200,
+      "acreage": null,
+      "capex_usd_b": 11.6,
+      "buildings": null,
+      "materiality": 59,
+      "confidence": 82,
+      "first_seen": "2025-10-23",
+      "last_update": "2025-10-23",
+      "summary": "The original Stargate data-center site: a Crusoe/Lancium/Primary Digital Infrastructure campus financed with roughly $10B of construction loans and leased to Oracle for OpenAI.",
+      "risk": "Two initial buildings are reported complete; the remaining risk is the pace and tenanting of the full eight-building campus.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "1200 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.itiger.com/news/2629896860"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "1200 MW",
+          "boundary": "Grid-connected campus with large transmission infrastructure",
+          "source_url": "https://www.itiger.com/news/2629896860"
+        },
+        {
+          "label": "Capital program",
+          "value": "$11.6B debt + equity package (2025)",
+          "boundary": "$11.6B announced site financing package divided by 1.2 GW campus scale.",
+          "source_url": "https://www.itiger.com/news/2629896860"
+        },
+        {
+          "label": "Project debt",
+          "value": "~$10B loans reported",
+          "boundary": "~$10B construction loans reported; 2025 package included $11.6B debt + equity",
+          "source_url": "https://www.itiger.com/news/2629896860"
+        },
+        {
+          "label": "Delivery",
+          "value": "First phase live; remaining buildings through 2026\u20132027",
+          "boundary": "Next milestone: Complete remaining Oracle-leased buildings",
+          "source_url": "https://www.itiger.com/news/2629896860"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Crusoe",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Lancium",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Primary Digital Infrastructure",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Oracle",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Project JV",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Oracle lease economics",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Lancium",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "ERCOT regional power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-sopaipilla-el-paso",
+      "slug": "sopaipilla-el-paso",
+      "name": "Sopaipilla",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "El Paso",
+      "city": "El Paso",
+      "address": "El Paso, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Meta",
+        "BlackRock JV"
+      ],
+      "tenant": [
+        "Meta Platforms"
+      ],
+      "operator": [],
+      "utility": [
+        "El Paso regional utility system"
+      ],
+      "parcel": [],
+      "alias": [
+        "Meta El Paso AI Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Meta El Paso AI Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 960,
+      "acreage": null,
+      "capex_usd_b": 14.0,
+      "buildings": null,
+      "materiality": 60,
+      "confidence": 82,
+      "first_seen": "2026-07-28",
+      "last_update": "2026-08-17",
+      "summary": "BlackRock's Meta-backed El Paso analogue to Beignet: 960 MW and $12.547B of long-dated amortizing high-grade debt.",
+      "risk": "Credit is strong, but the project carries construction and unusually visible insurance-tail risk at almost 1 GW.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "960 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://finance.yahoo.com/technology/articles/investors-dig-12-5b-data-134615348.html"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$14B project scale reported",
+          "boundary": "Approximate $14B project scale divided by 960 MW.",
+          "source_url": "https://finance.yahoo.com/technology/articles/investors-dig-12-5b-data-134615348.html"
+        },
+        {
+          "label": "Project debt",
+          "value": "$12.547B",
+          "boundary": "$12.547B 7.534% amortizing notes due Nov. 2048",
+          "source_url": "https://finance.yahoo.com/technology/articles/investors-dig-12-5b-data-134615348.html"
+        },
+        {
+          "label": "Delivery",
+          "value": "Major lease/rent commencement expected around 2028",
+          "boundary": "Next milestone: Construction + utility build",
+          "source_url": "https://finance.yahoo.com/technology/articles/investors-dig-12-5b-data-134615348.html"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Meta",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "BlackRock JV",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Meta Platforms",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Project Sopaipilla Holdings",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "project SPVs",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Meta contractual support",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "El Paso regional utility system",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-hut8-river-bend",
+      "slug": "hut8-river-bend",
+      "name": "Hut 8 River Bend",
+      "status": "Under construction / commissioning",
+      "status_tone": "signal",
+      "state": "LA",
+      "county": "St. Francisville",
+      "city": "St. Francisville",
+      "address": "St. Francisville, LA",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Hut 8"
+      ],
+      "tenant": [
+        "Fluidstack"
+      ],
+      "operator": [],
+      "utility": [
+        "Entergy Louisiana"
+      ],
+      "parcel": [],
+      "alias": [
+        "River Bend AI Data Center"
+      ],
+      "aliases": [
+        {
+          "name": "River Bend AI Data Center",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 330,
+      "it_mw": 245,
+      "acreage": null,
+      "capex_usd_b": 3.42,
+      "buildings": null,
+      "materiality": 52,
+      "confidence": 82,
+      "first_seen": "2026-04-30",
+      "last_update": "2026-04-30",
+      "summary": "A 245 MW Google-supported Fluidstack shell with a capital structure designed to eliminate post-construction refinancing risk.",
+      "risk": "Long-dated fully amortizing debt removes refinancing risk; execution focus is on final delivery and rent commencement.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "245 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.nasdaq.com/press-release/hut-8-closes-325-billion-investment-grade-senior-secured-notes-landmark-financing"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "330 MW",
+          "boundary": "330 MW utility capacity + dedicated substation",
+          "source_url": "https://www.nasdaq.com/press-release/hut-8-closes-325-billion-investment-grade-senior-secured-notes-landmark-financing"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.25B project debt / ~95% LTC",
+          "boundary": "Approximate total cost inferred from Hut 8's ~95% loan-to-cost disclosure.",
+          "source_url": "https://www.nasdaq.com/press-release/hut-8-closes-325-billion-investment-grade-senior-secured-notes-landmark-financing"
+        },
+        {
+          "label": "Project debt",
+          "value": "$3.25B",
+          "boundary": "$3.25B 6.192% fully amortizing senior secured notes due 2042",
+          "source_url": "https://www.nasdaq.com/press-release/hut-8-closes-325-billion-investment-grade-senior-secured-notes-landmark-financing"
+        },
+        {
+          "label": "Delivery",
+          "value": "Completion / lease start expected 2026",
+          "boundary": "Next milestone: Final project completion / rent commencement",
+          "source_url": "https://www.nasdaq.com/press-release/hut-8-closes-325-billion-investment-grade-senior-secured-notes-landmark-financing"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Hut 8",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Hut 8 DC LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Google lease backstop",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Entergy Louisiana",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-hut8-beacon-point",
+      "slug": "hut8-beacon-point",
+      "name": "Hut 8 Beacon Point",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Nueces",
+      "city": null,
+      "address": "Nueces County, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Hut 8"
+      ],
+      "tenant": [],
+      "operator": [],
+      "utility": [
+        "South Texas utility system"
+      ],
+      "parcel": [],
+      "alias": [
+        "Beacon Point AI Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Beacon Point AI Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 1000,
+      "it_mw": 704,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 46,
+      "confidence": 82,
+      "first_seen": "2026-06-09",
+      "last_update": "2026-06-09",
+      "summary": "Hut 8's second IG construction-bond template, now attached to a 704 MW fully commercialized campus with 1 GW of utility capacity.",
+      "risk": "Phase 1 is fully financed with IG debt; monitor the second 352 MW build and campus-wide utility ramp.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "704 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "1000 MW",
+          "boundary": "1,000 MW utility capacity planned across campus",
+          "source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data"
+        },
+        {
+          "label": "Capital program",
+          "value": "$4.25B debt finances Phase 1 only",
+          "boundary": "$4.25B notes divided by the 352 MW Phase 1 financed capacity; not total campus cost/MW.",
+          "source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data"
+        },
+        {
+          "label": "Project debt",
+          "value": "$4.25B (Phase 1)",
+          "boundary": "$4.25B 6.129% senior secured notes due 2042 for first 352 MW",
+          "source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data"
+        },
+        {
+          "label": "Delivery",
+          "value": "Phase 1 under construction; Phase 2 first hall Q2-2028",
+          "boundary": "Next milestone: Phase 1 construction / utility delivery",
+          "source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Hut 8",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Beacon Point DC LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "High-IG tenant lease",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "South Texas utility system",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-qts-project-quest",
+      "slug": "qts-project-quest",
+      "name": "Project Quest",
+      "status": "Operational",
+      "status_tone": "signal",
+      "state": "GA",
+      "county": "Atlanta / Fayetteville",
+      "city": "Atlanta / Fayetteville",
+      "address": "Atlanta / Fayetteville, GA",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "QTS",
+        "Blackstone"
+      ],
+      "tenant": [
+        "Microsoft"
+      ],
+      "operator": [],
+      "utility": [
+        "Georgia utility system"
+      ],
+      "parcel": [],
+      "alias": [
+        "QTS Fayetteville / Atlanta Portfolio"
+      ],
+      "aliases": [
+        {
+          "name": "QTS Fayetteville / Atlanta Portfolio",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 600,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 57,
+      "confidence": 78,
+      "first_seen": "2026-09-03",
+      "last_update": "2026-09-03",
+      "summary": "An operating QTS/Microsoft financing that serves as a stabilized IG reference point against the construction-heavy project universe.",
+      "risk": "Construction risk is largely gone; the remaining credit question is long-dated refinancing / residual-value risk.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "600 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.paulhastings.com/news/paul-hastings-advises-the-initial-purchasers-on-qts-data-centers-usd4-6-billion-notes-offering"
+        },
+        {
+          "label": "Capital program",
+          "value": "$4.6B project bond",
+          "boundary": "$4.6B bond divided by approximately 600+ MW across two reported facilities; capacity basis is approximate.",
+          "source_url": "https://www.paulhastings.com/news/paul-hastings-advises-the-initial-purchasers-on-qts-data-centers-usd4-6-billion-notes-offering"
+        },
+        {
+          "label": "Project debt",
+          "value": "$4.60B",
+          "boundary": "$4.6B 5.700% senior secured notes due 2036",
+          "source_url": "https://www.paulhastings.com/news/paul-hastings-advises-the-initial-purchasers-on-qts-data-centers-usd4-6-billion-notes-offering"
+        },
+        {
+          "label": "Delivery",
+          "value": "Operational",
+          "boundary": "Next milestone: Operating performance / debt seasoning",
+          "source_url": "https://www.paulhastings.com/news/paul-hastings-advises-the-initial-purchasers-on-qts-data-centers-usd4-6-billion-notes-offering"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "QTS",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Blackstone",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Microsoft",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "QTS project subsidiaries",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Microsoft tenant credit",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Georgia utility system",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-related-michigan-barn",
+      "slug": "related-michigan-barn",
+      "name": "The Barn",
+      "status": "Under construction",
+      "status_tone": "risk",
+      "state": "MI",
+      "county": "Saline Township",
+      "city": "Saline Township",
+      "address": "Saline Township, MI",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Related Digital",
+        "Blackstone"
+      ],
+      "tenant": [
+        "Oracle"
+      ],
+      "operator": [],
+      "utility": [
+        "DTE Energy"
+      ],
+      "parcel": [],
+      "alias": [
+        "Stargate Michigan / Saline Township"
+      ],
+      "aliases": [
+        {
+          "name": "Stargate Michigan / Saline Township",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 1000,
+      "it_mw": 974,
+      "acreage": null,
+      "capex_usd_b": 16.0,
+      "buildings": null,
+      "materiality": 61,
+      "confidence": 82,
+      "first_seen": "2026-04-24",
+      "last_update": "2026-06-01",
+      "summary": "A $16B Oracle/OpenAI Stargate campus financed with $14B of long-dated fixed-rate debt, providing a bond-market alternative to Jupiter/Jacquard.",
+      "risk": "Long-term bond capital is in place; the schedule is still aggressive for a near-1 GW three-building greenfield campus.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "974 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "1000 MW",
+          "boundary": "Existing DTE resources + Oracle-funded battery storage",
+          "source_url": "https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project"
+        },
+        {
+          "label": "Capital program",
+          "value": "$16B total project",
+          "boundary": "$16B announced project value divided by ~974 MW critical-IT reference capacity.",
+          "source_url": "https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project"
+        },
+        {
+          "label": "Project debt",
+          "value": "$14.0B",
+          "boundary": "$14B 7.500% senior secured project notes due 2045",
+          "source_url": "https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project"
+        },
+        {
+          "label": "Delivery",
+          "value": "Major completion target around end-2027",
+          "boundary": "Next milestone: Building shell / DTE interconnection progress",
+          "source_url": "https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Related Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Blackstone",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Oracle",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Related",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Blackstone project JV",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Oracle lease economics",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "DTE Energy",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-pr-rno-reno",
+      "slug": "pr-rno-reno",
+      "name": "PR RNO / Fleet Reno",
+      "status": "Early construction",
+      "status_tone": "risk",
+      "state": "NV",
+      "county": "Storey",
+      "city": null,
+      "address": "Storey County, NV",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Fleet Data Centers",
+        "Tract Capital"
+      ],
+      "tenant": [],
+      "operator": [],
+      "utility": [
+        "NV Energy",
+        "Sierra Pacific Power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Fleet Data Centers Storey County"
+      ],
+      "aliases": [
+        {
+          "name": "Fleet Data Centers Storey County",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 230,
+      "it_mw": 200,
+      "acreage": null,
+      "capex_usd_b": 5.151,
+      "buildings": null,
+      "materiality": 49,
+      "confidence": 82,
+      "first_seen": "2026-05-01",
+      "last_update": "2026-05-01",
+      "summary": "Fleet/Tract's 200 MW Reno-area shell combines a very large HY note deal with a long-dated IG tenant lease and meaningful schedule acceleration ambitions.",
+      "risk": "Debt is funded, but design/GMP and accelerated behind-the-meter power assumptions make schedule execution the key risk.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "200 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555431"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "230 MW",
+          "boundary": "Utility power; sponsor also pursuing BTM acceleration",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555431"
+        },
+        {
+          "label": "Capital program",
+          "value": "$5.151B total uses",
+          "boundary": "S&P total uses include construction, interest during construction, DSRA and fees; construction capex alone is $4.435B.",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555431"
+        },
+        {
+          "label": "Project debt",
+          "value": "$4.60B",
+          "boundary": "$4.6B 6.500% senior secured notes due 2031",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555431"
+        },
+        {
+          "label": "Delivery",
+          "value": "Contracted: 10 MW Nov-27; 100 MW Apr-29; full May-30",
+          "boundary": "Next milestone: Finalize GMP / prove first power path",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555431"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Fleet Data Centers",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Tract Capital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "PR RNO Property Owner 1 LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Investment-grade tenant lease",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "NV Energy",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Sierra Pacific Power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-sv-rno-reno",
+      "slug": "sv-rno-reno",
+      "name": "SV RNO / Reno",
+      "status": "Early construction",
+      "status_tone": "risk",
+      "state": "NV",
+      "county": "Storey",
+      "city": null,
+      "address": "Storey County, NV",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Special-purpose Reno developer"
+      ],
+      "tenant": [],
+      "operator": [],
+      "utility": [
+        "NV Energy",
+        "Sierra Pacific Power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Storey County AI Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Storey County AI Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 230,
+      "it_mw": 200,
+      "acreage": null,
+      "capex_usd_b": 4.33,
+      "buildings": null,
+      "materiality": 45,
+      "confidence": 78,
+      "first_seen": "2026-05-01",
+      "last_update": "2026-05-01",
+      "summary": "A 200 MW Reno shell with a 16.4-year IG tenant lease and $3.8B of 5.875% notes, positioned as a stronger-credit cousin to PR RNO.",
+      "risk": "Stronger initial credit profile than PR RNO, but it still depends on utility and/or BTM power to pull delivery forward.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "200 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555458"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "230 MW",
+          "boundary": "200 MW utility supply plus BTM acceleration strategy",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555458"
+        },
+        {
+          "label": "Capital program",
+          "value": "$4.33B project",
+          "boundary": "$4.33B project uses divided by 200 MW critical IT.",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555458"
+        },
+        {
+          "label": "Project debt",
+          "value": "$3.80B",
+          "boundary": "$3.8B 5.875% senior secured notes due 2031",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555458"
+        },
+        {
+          "label": "Delivery",
+          "value": "First 100 MW Apr-28 contracted; full Aug-29; sponsor targets Jun-28 acceleration",
+          "boundary": "Next milestone: GMP finalization / BTM power execution",
+          "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555458"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Special-purpose Reno developer",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "SV RNO Property Owner 1 LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Investment-grade tenant lease",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "NV Energy",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Sierra Pacific Power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-wulf-lake-mariner",
+      "slug": "wulf-lake-mariner",
+      "name": "WULF Compute / Lake Mariner",
+      "status": "Partially operational / under construction",
+      "status_tone": "signal",
+      "state": "NY",
+      "county": "Barker",
+      "city": "Barker",
+      "address": "Barker, NY",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "TeraWulf"
+      ],
+      "tenant": [
+        "Fluidstack",
+        "Core42"
+      ],
+      "operator": [],
+      "utility": [
+        "New York regional grid",
+        "Lake Mariner interconnection"
+      ],
+      "parcel": [],
+      "alias": [
+        "Lake Mariner AI/HPC Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Lake Mariner AI/HPC Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 522.5,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 52,
+      "confidence": 82,
+      "first_seen": "2026-09-03",
+      "last_update": "2026-09-03",
+      "summary": "TeraWulf's Lake Mariner financing is the archetypal Google-backed HY shell deal, but it now has substantial live capacity and a visible operating track record.",
+      "risk": "Meaningful capacity is already online; the remaining construction program is large but has more execution proof than greenfield peers.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "522.5 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330125000096/wulfq32025investorupdate.htm"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.2B project notes",
+          "boundary": "TeraWulf's latest illustrative critical-IT capital formation guidance; not simply bond proceeds/MW.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330125000096/wulfq32025investorupdate.htm"
+        },
+        {
+          "label": "Project debt",
+          "value": "$3.20B",
+          "boundary": "$3.2B 7.750% senior secured green notes due 2030",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330125000096/wulfq32025investorupdate.htm"
+        },
+        {
+          "label": "Delivery",
+          "value": "102 MW live by Jul-26; remaining contracted halls through early 2027",
+          "boundary": "Next milestone: CB4 / CB5 deliveries",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330125000096/wulfq32025investorupdate.htm"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "TeraWulf",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Core42",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "WULF Compute",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "project subsidiaries",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Google",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "tenant support package",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "New York regional grid",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Lake Mariner interconnection",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-flash-abernathy",
+      "slug": "flash-abernathy",
+      "name": "Flash Compute / Abernathy",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Abernathy",
+      "city": "Abernathy",
+      "address": "Abernathy, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "TeraWulf",
+        "Fluidstack JV"
+      ],
+      "tenant": [
+        "Fluidstack"
+      ],
+      "operator": [],
+      "utility": [
+        "ERCOT regional power"
+      ],
+      "parcel": [],
+      "alias": [
+        "Abernathy HPC Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Abernathy HPC Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 168,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 48,
+      "confidence": 82,
+      "first_seen": "2025-12-19",
+      "last_update": "2025-12-29",
+      "summary": "A smaller Fluidstack/Google-backed Texas shell financed with $1.3B of 7.25% notes; subsequent sponsor ownership change is the differentiating credit wrinkle.",
+      "risk": "Financing and tenant support are in place; ownership changed after issuance, so delivery and post-sale governance deserve attention.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "168 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000110465925124839/tm2534384d1_8k.htm"
+        },
+        {
+          "label": "Capital program",
+          "value": "$1.3B project notes",
+          "boundary": "$1.3B notes divided by 168 MW critical IT; excludes sponsor equity and other project costs.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000110465925124839/tm2534384d1_8k.htm"
+        },
+        {
+          "label": "Project debt",
+          "value": "$1.30B",
+          "boundary": "$1.3B 7.250% senior secured notes due 2030",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000110465925124839/tm2534384d1_8k.htm"
+        },
+        {
+          "label": "Delivery",
+          "value": "Targeted 2H-2026",
+          "boundary": "Next milestone: Initial delivery / rent commencement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000110465925124839/tm2534384d1_8k.htm"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "TeraWulf",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack JV",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Flash Compute LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "FS CS I LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Google credit enhancement",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "project support",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "ERCOT regional power",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-cipher-barber-lake",
+      "slug": "cipher-barber-lake",
+      "name": "Cipher Barber Lake",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Colorado City",
+      "city": "Colorado City",
+      "address": "Colorado City, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Cipher Digital"
+      ],
+      "tenant": [
+        "Fluidstack"
+      ],
+      "operator": [],
+      "utility": [
+        "ERCOT",
+        "local interconnection"
+      ],
+      "parcel": [],
+      "alias": [
+        "Barber Lake AI/HPC Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Barber Lake AI/HPC Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 300,
+      "it_mw": 207,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 49,
+      "confidence": 82,
+      "first_seen": "2026-09-03",
+      "last_update": "2026-09-03",
+      "summary": "Cipher's first Google-backed project-bond template: a 300 MW gross ERCOT campus approaching phased COD in late 2026 / early 2027.",
+      "risk": "Near-term delivery dates and Google-backed rent mechanics make this a useful test of how quickly construction HY can season into operating credit.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "207 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/cipherdigital_businessup.htm"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "300 MW",
+          "boundary": "300 MW approved grid interconnection",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/cipherdigital_businessup.htm"
+        },
+        {
+          "label": "Capital program",
+          "value": "$1.733B notes outstanding",
+          "boundary": "Uses ~207 MW estimated critical IT for the full 300 MW gross campus; compare cautiously with issuer disclosures.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/cipherdigital_businessup.htm"
+        },
+        {
+          "label": "Project debt",
+          "value": "$1.733B",
+          "boundary": "$1.733B 7.125% senior secured notes due 2030",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/cipherdigital_businessup.htm"
+        },
+        {
+          "label": "Delivery",
+          "value": "Phase I Sep-30-2026; Phase II Jan-31-2027",
+          "boundary": "Next milestone: Phase I rent commencement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/cipherdigital_businessup.htm"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Cipher Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Fluidstack",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Cipher Barber Lake LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Cipher Compute LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Google lease backstop",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "ERCOT",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "local interconnection",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-cipher-black-pearl",
+      "slug": "cipher-black-pearl",
+      "name": "Cipher Black Pearl",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Wink",
+      "city": "Wink",
+      "address": "Wink, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Cipher Digital"
+      ],
+      "tenant": [
+        "Amazon Web Services"
+      ],
+      "operator": [],
+      "utility": [
+        "ERCOT",
+        "West Texas interconnection"
+      ],
+      "parcel": [],
+      "alias": [
+        "Black Pearl AI/HPC Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Black Pearl AI/HPC Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 300,
+      "it_mw": 216,
+      "acreage": null,
+      "capex_usd_b": 2.052,
+      "buildings": null,
+      "materiality": 51,
+      "confidence": 82,
+      "first_seen": "2026-02-04",
+      "last_update": "2026-02-04",
+      "summary": "Cipher's Amazon-backed 216 MW critical-IT campus is one of the strongest HY shell structures, with a 6.125% coupon and parent-guaranteed lease.",
+      "risk": "Strong tenant support and construction cost-sharing reduce risk; monitor late-2026 / early-2027 rent ramp.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "216 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-inc-announces-pricing-20-billion-senior-secured/"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "300 MW",
+          "boundary": "300 MW gross utility capacity",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-inc-announces-pricing-20-billion-senior-secured/"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$2.05B max development cost benchmark",
+          "boundary": "Company disclosed maximum development cost per critical IT MW; tenant reimburses certain excess costs.",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-inc-announces-pricing-20-billion-senior-secured/"
+        },
+        {
+          "label": "Project debt",
+          "value": "$2.00B",
+          "boundary": "$2.0B 6.125% senior secured notes due 2031",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-inc-announces-pricing-20-billion-senior-secured/"
+        },
+        {
+          "label": "Delivery",
+          "value": "Initial rent Oct-2026; final ramp around Mar-2027",
+          "boundary": "Next milestone: Initial rent commencement",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-inc-announces-pricing-20-billion-senior-secured/"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Cipher Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Amazon Web Services",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Black Pearl Compute LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Cipher Black Pearl LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Amazon parent guarantee",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "ERCOT",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "West Texas interconnection",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-cipher-stingray",
+      "slug": "cipher-stingray",
+      "name": "Cipher Stingray",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Andrews",
+      "city": "Andrews",
+      "address": "Andrews, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Cipher Digital"
+      ],
+      "tenant": [
+        "Amazon Web Services"
+      ],
+      "operator": [],
+      "utility": [
+        "ERCOT",
+        "Andrews County interconnection"
+      ],
+      "parcel": [],
+      "alias": [
+        "Stingray AI/HPC Campus"
+      ],
+      "aliases": [
+        {
+          "name": "Stingray AI/HPC Campus",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 100,
+      "it_mw": 70,
+      "acreage": null,
+      "capex_usd_b": 0.735,
+      "buildings": null,
+      "materiality": 47,
+      "confidence": 82,
+      "first_seen": "2026-06-08",
+      "last_update": "2026-06-08",
+      "summary": "A compact 70 MW AWS-backed Cipher shell that priced $810M of Ba2/BB- project debt at 6.0%, the tight end of the HY construction spectrum.",
+      "risk": "Smallest Cipher shell and strongest pricing; construction schedule into spring 2027 remains the core risk.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "70 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured/"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "100 MW",
+          "boundary": "100 MW front-of-meter capacity",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured/"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$735M max dev cost benchmark",
+          "boundary": "Company disclosed maximum development cost per critical IT MW.",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured/"
+        },
+        {
+          "label": "Project debt",
+          "value": "$810M",
+          "boundary": "$810M 6.000% senior secured notes due 2031",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured/"
+        },
+        {
+          "label": "Delivery",
+          "value": "10 MW Apr-1-2027; remaining 60 MW May-1-2027",
+          "boundary": "Next milestone: First network hall",
+          "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured/"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Cipher Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Amazon Web Services",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Stingray Compute LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Cipher Stingray LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Amazon parent guarantee",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "ERCOT",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Andrews County interconnection",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-edged-atlanta-chicago",
+      "slug": "edged-atlanta-chicago",
+      "name": "Edged Compute",
+      "status": "Under construction",
+      "status_tone": "risk",
+      "state": "GA + IL",
+      "county": "Multi-state portfolio",
+      "city": null,
+      "address": "Atlanta, GA + Chicago, IL",
+      "location_precision": "multi-site portfolio",
+      "developer": [
+        "Edged",
+        "Endeavour"
+      ],
+      "tenant": [
+        "Alibaba",
+        "CoreWeave"
+      ],
+      "operator": [],
+      "utility": [
+        "Regional utilities"
+      ],
+      "parcel": [],
+      "alias": [
+        "ATL01-3 + ORD01-2"
+      ],
+      "aliases": [
+        {
+          "name": "ATL01-3 + ORD01-2",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": 114,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 52,
+      "confidence": 78,
+      "first_seen": "2026-04-29",
+      "last_update": "2026-04-29",
+      "summary": "Edged's $1.3B bond finances two separate HPC sites and tenants, making it a useful contrast to the dominant single-tenant shell structure.",
+      "risk": "Two sites, two tenants and less uniform tenant credit make this materially more complex than single-tenant Google/Amazon-backed shells.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "114 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.cahill.com/news/firm-news/2026-04-29-cahill-represents-initial-purchasers-in-edged-compute-13-billion-notes-offering"
+        },
+        {
+          "label": "Capital program",
+          "value": "$1.3B project notes",
+          "boundary": "$1.3B notes divided by 114 MW disclosed critical IT across the two financed projects.",
+          "source_url": "https://www.cahill.com/news/firm-news/2026-04-29-cahill-represents-initial-purchasers-in-edged-compute-13-billion-notes-offering"
+        },
+        {
+          "label": "Project debt",
+          "value": "$1.30B",
+          "boundary": "$1.3B 7.5% senior secured notes due 2031",
+          "source_url": "https://www.cahill.com/news/firm-news/2026-04-29-cahill-represents-initial-purchasers-in-edged-compute-13-billion-notes-offering"
+        },
+        {
+          "label": "Delivery",
+          "value": "Phased 2026\u20132027",
+          "boundary": "Next milestone: Atlanta / Chicago construction deliveries",
+          "source_url": "https://www.cahill.com/news/firm-news/2026-04-29-cahill-represents-initial-purchasers-in-edged-compute-13-billion-notes-offering"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Edged",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Endeavour",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "Alibaba",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "CoreWeave",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Edged Compute project entities",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "Tenant lease packages",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Regional utilities",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-prime-elk-grove",
+      "slug": "prime-elk-grove",
+      "name": "Prime Elk Grove",
+      "status": "Under construction",
+      "status_tone": "risk",
+      "state": "IL",
+      "county": "Chicago metro / Elk Grove Village",
+      "city": "Chicago metro / Elk Grove Village",
+      "address": "Chicago metro / Elk Grove Village, IL",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Prime Data Centers"
+      ],
+      "tenant": [
+        "CoreWeave"
+      ],
+      "operator": [],
+      "utility": [
+        "ComEd",
+        "Chicago regional system"
+      ],
+      "parcel": [],
+      "alias": [
+        "Elk Grove Village CoreWeave Build-to-Suit"
+      ],
+      "aliases": [
+        {
+          "name": "Elk Grove Village CoreWeave Build-to-Suit",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": null,
+      "it_mw": null,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 38,
+      "confidence": 78,
+      "first_seen": "2026-06-02",
+      "last_update": "2026-06-02",
+      "summary": "Prime's Chicago-area CoreWeave build-to-suit is a smaller HY shell financing and a useful pure-tenant-credit comp.",
+      "risk": "The debt is modest versus megaproject peers, but it is a pure CoreWeave single-tenant construction credit with limited public project detail.",
+      "metrics": [
+        {
+          "label": "Capital program",
+          "value": "$900M project notes",
+          "boundary": "Reliable public critical-IT capacity was not identified; do not force a $/MW comparison.",
+          "source_url": "https://www.investing.com/news/stock-market-news/coreweave-data-center-raises-900-million-in-junkbond-sale--bloomberg-93CH-4723001"
+        },
+        {
+          "label": "Project debt",
+          "value": "$900M",
+          "boundary": "$900M 7.5% five-year high-yield notes",
+          "source_url": "https://www.investing.com/news/stock-market-news/coreweave-data-center-raises-900-million-in-junkbond-sale--bloomberg-93CH-4723001"
+        },
+        {
+          "label": "Delivery",
+          "value": "Under construction",
+          "boundary": "Next milestone: Construction / tenant delivery",
+          "source_url": "https://www.investing.com/news/stock-market-news/coreweave-data-center-raises-900-million-in-junkbond-sale--bloomberg-93CH-4723001"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Prime Data Centers",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "CoreWeave",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Elk Grove Village Property LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "CoreWeave tenant credit",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "ComEd",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Chicago regional system",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-core-scientific-coreweave",
+      "slug": "core-scientific-coreweave",
+      "name": "Core Scientific Finance I",
+      "status": "Partially operational / under construction",
+      "status_tone": "signal",
+      "state": "TX + GA + NC + OK",
+      "county": "Multi-state portfolio",
+      "city": null,
+      "address": "TX + GA + NC + OK",
+      "location_precision": "multi-site portfolio",
+      "developer": [
+        "Core Scientific"
+      ],
+      "tenant": [
+        "CoreWeave"
+      ],
+      "operator": [],
+      "utility": [
+        "Multiple regional utilities"
+      ],
+      "parcel": [],
+      "alias": [
+        "CoreWeave Multi-Site Portfolio"
+      ],
+      "aliases": [
+        {
+          "name": "CoreWeave Multi-Site Portfolio",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 800,
+      "it_mw": 590,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 52,
+      "confidence": 82,
+      "first_seen": "2026-09-03",
+      "last_update": "2026-09-03",
+      "summary": "Core Scientific's $3.3B CoreWeave-backed portfolio bond sits between project finance and operating infrastructure, with 395 MW already billable.",
+      "risk": "395 MW was billable by June 2026, substantially reducing construction risk versus pure greenfield shells.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "590 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000014/core-20260630.htm"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "800 MW",
+          "boundary": "Multi-site grid portfolio",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000014/core-20260630.htm"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.3B project notes",
+          "boundary": "Debt divided by leased customer power capacity; not directly comparable to greenfield critical-IT $/MW.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000014/core-20260630.htm"
+        },
+        {
+          "label": "Project debt",
+          "value": "$3.30B",
+          "boundary": "$3.3B 7.75% senior secured notes due 2031",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000014/core-20260630.htm"
+        },
+        {
+          "label": "Delivery",
+          "value": "395 MW billable Jun-26; remaining ~195 MW through early 2027",
+          "boundary": "Next milestone: Finish remaining 195 MW",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000014/core-20260630.htm"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Core Scientific",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "CoreWeave",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Specified project subsidiaries",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "CoreWeave contract",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "parent completion guarantee from Core Scientific",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "Multiple regional utilities",
+          "role": "utility / power provider",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "id": "portfolio-galaxy-helios-ii",
+      "slug": "galaxy-helios-ii",
+      "name": "Galaxy Helios Phase II",
+      "status": "Under construction",
+      "status_tone": "signal",
+      "state": "TX",
+      "county": "Dickens",
+      "city": null,
+      "address": "Dickens County, TX",
+      "location_precision": "county / city from portfolio disclosure",
+      "developer": [
+        "Galaxy Digital"
+      ],
+      "tenant": [
+        "CoreWeave"
+      ],
+      "operator": [],
+      "utility": [
+        "ERCOT",
+        "Helios interconnection"
+      ],
+      "parcel": [],
+      "alias": [
+        "Helios AI Campus \u2014 Phase II"
+      ],
+      "aliases": [
+        {
+          "name": "Helios AI Campus \u2014 Phase II",
+          "type": "campus / financing name",
+          "confidence": 88
+        }
+      ],
+      "mw": 400,
+      "it_mw": 260,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 51,
+      "confidence": 82,
+      "first_seen": "2026-07-23",
+      "last_update": "2026-08-05",
+      "summary": "Galaxy's 260 MW CoreWeave Phase II shell priced at 9.875%, making it a key wide-spread HY comp; Phase I was delivered on schedule.",
+      "risk": "Phase I delivered on time, which is meaningful execution proof; Phase II is much larger and carries a high coupon reflecting remaining construction / tenant risk.",
+      "metrics": [
+        {
+          "label": "Critical IT capacity",
+          "value": "260 MW",
+          "boundary": "Reported portfolio capacity boundary",
+          "source_url": "https://investor.galaxy.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "400 MW",
+          "boundary": "400 MW utility capacity for financed Phase II; campus approved for far more",
+          "source_url": "https://investor.galaxy.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.507B project notes",
+          "boundary": "$3.507B notes divided by 260 MW critical IT Phase II.",
+          "source_url": "https://investor.galaxy.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured"
+        },
+        {
+          "label": "Project debt",
+          "value": "$3.507B",
+          "boundary": "$3.507B 9.875% senior secured notes due 2031",
+          "source_url": "https://investor.galaxy.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured"
+        },
+        {
+          "label": "Delivery",
+          "value": "Phase II data halls begin Q2-2027",
+          "boundary": "Next milestone: First Phase II data-hall delivery",
+          "source_url": "https://investor.galaxy.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Galaxy Digital",
+          "role": "developer",
+          "confidence": 88
+        },
+        {
+          "company": "CoreWeave",
+          "role": "tenant / customer",
+          "confidence": 88
+        },
+        {
+          "company": "Galaxy Helios Data Centers II",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "III LLC",
+          "role": "landlord / project owner",
+          "confidence": 84
+        },
+        {
+          "company": "CoreWeave tenant credit",
+          "role": "guarantor / credit support",
+          "confidence": 80
+        },
+        {
+          "company": "ERCOT",
+          "role": "utility / power provider",
+          "confidence": 78
+        },
+        {
+          "company": "Helios interconnection",
+          "role": "utility / power provider",
+          "confidence": 78
         }
       ]
     }
@@ -431,6 +2932,702 @@
         {
           "label": "Expected jobs",
           "value": "1,000"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-meridian-arc",
+      "project_id": "portfolio-meridian-arc",
+      "project_name": "Meridian Arc",
+      "occurred_at": "2026-09-03",
+      "event_type": "construction_start",
+      "headline": "Meridian Arc added from the national project portfolio",
+      "what_new": "GridSignal imported New Lebanon AI Campus in New Lebanon, Sullivan County, IN with a current status of Under construction.",
+      "why_matters": "A 430 MW greenfield AI campus financed in the high-yield market and fully leased to Fluidstack with Google support. The investment question is whether a very aggressive power-and-build schedule can still deliver the first 65 MW hall in July 2027.",
+      "implication": "Monitor 300 MW utility availability and verify changes against the linked evidence.",
+      "source_name": "Latham & Watkins",
+      "source_type": "national_media",
+      "source_url": "https://www.lw.com/en/news/latham-advises-on-meridian-arc-holdco-senior-secured-notes-offering-to-finance-ai-data-center",
+      "materiality": 60,
+      "novelty": 72,
+      "confidence": 90,
+      "evidence": "$5.7B notes finance 245 MW + 185 MW buildings and on-site substation",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "430 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "620 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$5.7B debt financing"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-polaris-forge-1",
+      "project_id": "portfolio-polaris-forge-1",
+      "project_name": "Polaris Forge 1",
+      "occurred_at": "2026-06-30",
+      "event_type": "expansion",
+      "headline": "Polaris Forge 1 added from the national project portfolio",
+      "what_new": "GridSignal imported Ellendale AI Factory in Ellendale, Dickey County, ND with a current status of Partially operational / under construction.",
+      "why_matters": "Applied Digital\u2019s flagship North Dakota AI campus. CoreWeave has contracted all 400 MW. The first 100 MW went live in October 2025 and another 75 MW reached ready-for-service on June 30, 2026, giving this campus the strongest execution proof in the monitor.",
+      "implication": "Monitor Remaining 75 MW of Building 2 / full 150 MW delivery and verify changes against the linked evidence.",
+      "source_name": "Applied Digital",
+      "source_type": "company",
+      "source_url": "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000002/apldq226earningsrelease.htm",
+      "materiality": 55,
+      "novelty": 72,
+      "confidence": 90,
+      "evidence": "First 100 MW building became operational",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "400 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$4.4\u20135.2B implied"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-polaris-forge-2",
+      "project_id": "portfolio-polaris-forge-2",
+      "project_name": "Polaris Forge 2",
+      "occurred_at": "2026-04-29",
+      "event_type": "construction_start",
+      "headline": "Polaris Forge 2 added from the national project portfolio",
+      "what_new": "GridSignal imported Harwood AI Factory in Harwood / Cass County, ND with a current status of Under construction.",
+      "why_matters": "A 200 MW contracted Oracle campus north of Fargo inside a ~280\u2013300 MW initial physical design. Building construction was progressing in spring 2026, but the schedule depends on a new 345-kV line and substation. The power project\u2019s cost rose to roughly $110M and required PSC approval, making grid delivery the key watch item.",
+      "implication": "Monitor Initial capacity / energization and verify changes against the linked evidence.",
+      "source_name": "SEC 8-K",
+      "source_type": "company",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000149315226009538/form8-k.htm",
+      "materiality": 54,
+      "novelty": 72,
+      "confidence": 90,
+      "evidence": "$2.15B notes to fund 200 MW at PF2; filing names Oracle as lessee",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "200 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "280 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$3.0B announced"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-polaris-forge-3",
+      "project_id": "portfolio-polaris-forge-3",
+      "project_name": "Polaris Forge 3",
+      "occurred_at": "2026-07-30",
+      "event_type": "construction_start",
+      "headline": "Polaris Forge 3 added from the national project portfolio",
+      "what_new": "GridSignal imported Oliver County AI Factory in South of Hanover / near Center, Oliver County, ND with a current status of Early construction / permitting.",
+      "why_matters": "Applied Digital\u2019s third North Dakota AI campus is a 300 MW critical-IT project supported by ~430 MW of utility power. The site faced a county data-center moratorium in March 2026, but the county later moved forward with road-use agreements and building permits. That history makes local approvals\u2014not just construction pace\u2014a first-class schedule signal.",
+      "implication": "Monitor Foundation/shell + local permitting progression and verify changes against the linked evidence.",
+      "source_name": "Oliver County",
+      "source_type": "national_media",
+      "source_url": "https://olivercountynd.org/index.asp?SEC=227AD67B-A719-4DFE-8789-8464C7889A48",
+      "materiality": 49,
+      "novelty": 72,
+      "confidence": 94,
+      "evidence": "Commission approved a 180-day data-center moratorium",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "300 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "430 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$3.3\u20133.9B benchmark"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-beignet-hyperion",
+      "project_id": "portfolio-beignet-hyperion",
+      "project_name": "Project Beignet",
+      "occurred_at": "2025-10-16",
+      "event_type": "construction_start",
+      "headline": "Project Beignet added from the national project portfolio",
+      "what_new": "GridSignal imported Meta Hyperion in Richland Parish, LA with a current status of Under construction.",
+      "why_matters": "The benchmark investment-grade AI infrastructure financing: a 2.064 GW Meta campus financed through an 80/20 Blue Owl\u2013Meta JV, with $27.3B of long-dated amortizing debt.",
+      "implication": "Monitor Continue multi-building construction and utility build and verify changes against the linked evidence.",
+      "source_name": "S&P Global",
+      "source_type": "national_media",
+      "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3459943",
+      "materiality": 62,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$27.3B debt assigned preliminary A+; 2.064 GW campus and $28.79B construction commitment",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "2064 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$28.79B construction commitment"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-project-jacquard",
+      "project_id": "portfolio-project-jacquard",
+      "project_name": "Project Jacquard",
+      "occurred_at": "2025-10-24",
+      "event_type": "construction_start",
+      "headline": "Project Jacquard added from the national project portfolio",
+      "what_new": "GridSignal imported Vantage Frontier + Lighthouse Stargate in Shackelford County, TX + Port Washington, WI with a current status of Under construction.",
+      "why_matters": "The largest Oracle/OpenAI bank-loan package in the monitor: Vantage's Texas and Wisconsin Stargate campuses funded with roughly $38B of project debt.",
+      "implication": "Monitor Texas Frontier first-building delivery and verify changes against the linked evidence.",
+      "source_name": "TMT Finance",
+      "source_type": "national_media",
+      "source_url": "https://live.tmtfinance.com/usa/awards",
+      "materiality": 65,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "Project Jacquard: $22.75B financing for 1.4 GW, 10-building Shackelford County campus",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "2400 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$38B project debt program"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-stargate-abilene",
+      "project_id": "portfolio-stargate-abilene",
+      "project_name": "Stargate Abilene",
+      "occurred_at": "2025-10-23",
+      "event_type": "expansion",
+      "headline": "Stargate Abilene added from the national project portfolio",
+      "what_new": "GridSignal imported Lancium Clean Campus / Crusoe Site 1 in Abilene / Taylor County, TX with a current status of Partially operational / under construction.",
+      "why_matters": "The original Stargate data-center site: a Crusoe/Lancium/Primary Digital Infrastructure campus financed with roughly $10B of construction loans and leased to Oracle for OpenAI.",
+      "implication": "Monitor Complete remaining Oracle-leased buildings and verify changes against the linked evidence.",
+      "source_name": "WSJ-derived reporting",
+      "source_type": "national_media",
+      "source_url": "https://www.itiger.com/news/2629896860",
+      "materiality": 59,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "About $10B of loans were taken out for Crusoe's Abilene Stargate build",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "1200 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "1200 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$11.6B debt + equity package (2025)"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-sopaipilla-el-paso",
+      "project_id": "portfolio-sopaipilla-el-paso",
+      "project_name": "Sopaipilla",
+      "occurred_at": "2026-08-17",
+      "event_type": "construction_start",
+      "headline": "Sopaipilla added from the national project portfolio",
+      "what_new": "GridSignal imported Meta El Paso AI Campus in El Paso, TX with a current status of Under construction.",
+      "why_matters": "BlackRock's Meta-backed El Paso analogue to Beignet: 960 MW and $12.547B of long-dated amortizing high-grade debt.",
+      "implication": "Monitor Construction + utility build and verify changes against the linked evidence.",
+      "source_name": "LCD / Yahoo Finance",
+      "source_type": "national_media",
+      "source_url": "https://finance.yahoo.com/technology/articles/investors-dig-12-5b-data-134615348.html",
+      "materiality": 60,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$12.547B of 7.534% amortizing notes due Nov. 2048; 960 MW campus",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "960 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$14B project scale reported"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-hut8-river-bend",
+      "project_id": "portfolio-hut8-river-bend",
+      "project_name": "Hut 8 River Bend",
+      "occurred_at": "2026-04-30",
+      "event_type": "construction_start",
+      "headline": "Hut 8 River Bend added from the national project portfolio",
+      "what_new": "GridSignal imported River Bend AI Data Center in St. Francisville, LA with a current status of Under construction / commissioning.",
+      "why_matters": "A 245 MW Google-supported Fluidstack shell with a capital structure designed to eliminate post-construction refinancing risk.",
+      "implication": "Monitor Final project completion / rent commencement and verify changes against the linked evidence.",
+      "source_name": "Hut 8 / Nasdaq",
+      "source_type": "company",
+      "source_url": "https://www.nasdaq.com/press-release/hut-8-closes-325-billion-investment-grade-senior-secured-notes-landmark-financing",
+      "materiality": 52,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$3.25B 6.192% BBB- notes; 245 MW critical IT",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "245 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "330 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.25B project debt / ~95% LTC"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-hut8-beacon-point",
+      "project_id": "portfolio-hut8-beacon-point",
+      "project_name": "Hut 8 Beacon Point",
+      "occurred_at": "2026-06-09",
+      "event_type": "construction_start",
+      "headline": "Hut 8 Beacon Point added from the national project portfolio",
+      "what_new": "GridSignal imported Beacon Point AI Campus in Nueces County, TX with a current status of Under construction.",
+      "why_matters": "Hut 8's second IG construction-bond template, now attached to a 704 MW fully commercialized campus with 1 GW of utility capacity.",
+      "implication": "Monitor Phase 1 construction / utility delivery and verify changes against the linked evidence.",
+      "source_name": "Hut 8",
+      "source_type": "company",
+      "source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data",
+      "materiality": 46,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$4.25B 6.129% IG notes; 352 MW Phase 1",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "704 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "1000 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$4.25B debt finances Phase 1 only"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-qts-project-quest",
+      "project_id": "portfolio-qts-project-quest",
+      "project_name": "Project Quest",
+      "occurred_at": "2026-09-03",
+      "event_type": "commencement_of_operations",
+      "headline": "Project Quest added from the national project portfolio",
+      "what_new": "GridSignal imported QTS Fayetteville / Atlanta Portfolio in Atlanta / Fayetteville, GA with a current status of Operational.",
+      "why_matters": "An operating QTS/Microsoft financing that serves as a stabilized IG reference point against the construction-heavy project universe.",
+      "implication": "Monitor Operating performance / debt seasoning and verify changes against the linked evidence.",
+      "source_name": "Paul Hastings",
+      "source_type": "national_media",
+      "source_url": "https://www.paulhastings.com/news/paul-hastings-advises-the-initial-purchasers-on-qts-data-centers-usd4-6-billion-notes-offering",
+      "materiality": 57,
+      "novelty": 72,
+      "confidence": 78,
+      "evidence": "$4.6B 5.700% senior secured notes due 2036 for QTS data-center subsidiaries",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "600 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$4.6B project bond"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-related-michigan-barn",
+      "project_id": "portfolio-related-michigan-barn",
+      "project_name": "The Barn",
+      "occurred_at": "2026-06-01",
+      "event_type": "construction_start",
+      "headline": "The Barn added from the national project portfolio",
+      "what_new": "GridSignal imported Stargate Michigan / Saline Township in Saline Township, MI with a current status of Under construction.",
+      "why_matters": "A $16B Oracle/OpenAI Stargate campus financed with $14B of long-dated fixed-rate debt, providing a bond-market alternative to Jupiter/Jacquard.",
+      "implication": "Monitor Building shell / DTE interconnection progress and verify changes against the linked evidence.",
+      "source_name": "Related Digital",
+      "source_type": "company",
+      "source_url": "https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project",
+      "materiality": 61,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$16B Oracle project financing announced; DTE power and Oracle-funded battery storage",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "974 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "1000 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$16B total project"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-pr-rno-reno",
+      "project_id": "portfolio-pr-rno-reno",
+      "project_name": "PR RNO / Fleet Reno",
+      "occurred_at": "2026-05-01",
+      "event_type": "construction_start",
+      "headline": "PR RNO / Fleet Reno added from the national project portfolio",
+      "what_new": "GridSignal imported Fleet Data Centers Storey County in Storey County, NV with a current status of Early construction.",
+      "why_matters": "Fleet/Tract's 200 MW Reno-area shell combines a very large HY note deal with a long-dated IG tenant lease and meaningful schedule acceleration ambitions.",
+      "implication": "Monitor Finalize GMP / prove first power path and verify changes against the linked evidence.",
+      "source_name": "S&P Global",
+      "source_type": "national_media",
+      "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555431",
+      "materiality": 49,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "200 MW critical IT; $5.151B uses; preliminary BB; 16.4-year IG tenant lease",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "200 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "230 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$5.151B total uses"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-sv-rno-reno",
+      "project_id": "portfolio-sv-rno-reno",
+      "project_name": "SV RNO / Reno",
+      "occurred_at": "2026-05-01",
+      "event_type": "construction_start",
+      "headline": "SV RNO / Reno added from the national project portfolio",
+      "what_new": "GridSignal imported Storey County AI Campus in Storey County, NV with a current status of Early construction.",
+      "why_matters": "A 200 MW Reno shell with a 16.4-year IG tenant lease and $3.8B of 5.875% notes, positioned as a stronger-credit cousin to PR RNO.",
+      "implication": "Monitor GMP finalization / BTM power execution and verify changes against the linked evidence.",
+      "source_name": "S&P Global",
+      "source_type": "national_media",
+      "source_url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3555458",
+      "materiality": 45,
+      "novelty": 72,
+      "confidence": 78,
+      "evidence": "$3.8B notes, 200 MW, preliminary BB+, 16.4-year IG tenant lease",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "200 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "230 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$4.33B project"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-wulf-lake-mariner",
+      "project_id": "portfolio-wulf-lake-mariner",
+      "project_name": "WULF Compute / Lake Mariner",
+      "occurred_at": "2026-09-03",
+      "event_type": "expansion",
+      "headline": "WULF Compute / Lake Mariner added from the national project portfolio",
+      "what_new": "GridSignal imported Lake Mariner AI/HPC Campus in Barker, NY with a current status of Partially operational / under construction.",
+      "why_matters": "TeraWulf's Lake Mariner financing is the archetypal Google-backed HY shell deal, but it now has substantial live capacity and a visible operating track record.",
+      "implication": "Monitor CB4 / CB5 deliveries and verify changes against the linked evidence.",
+      "source_name": "TeraWulf investor update",
+      "source_type": "company",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330125000096/wulfq32025investorupdate.htm",
+      "materiality": 52,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$3.2B 7.75% notes; 522.5 MW; Ba2/BB/BB; Google backstop",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "522.5 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.2B project notes"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-flash-abernathy",
+      "project_id": "portfolio-flash-abernathy",
+      "project_name": "Flash Compute / Abernathy",
+      "occurred_at": "2025-12-29",
+      "event_type": "construction_start",
+      "headline": "Flash Compute / Abernathy added from the national project portfolio",
+      "what_new": "GridSignal imported Abernathy HPC Campus in Abernathy, TX with a current status of Under construction.",
+      "why_matters": "A smaller Fluidstack/Google-backed Texas shell financed with $1.3B of 7.25% notes; subsequent sponsor ownership change is the differentiating credit wrinkle.",
+      "implication": "Monitor Initial delivery / rent commencement and verify changes against the linked evidence.",
+      "source_name": "SEC / TeraWulf",
+      "source_type": "company",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000110465925124839/tm2534384d1_8k.htm",
+      "materiality": 48,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$1.3B 7.25% notes finance Abernathy HPC campus",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "168 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$1.3B project notes"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-cipher-barber-lake",
+      "project_id": "portfolio-cipher-barber-lake",
+      "project_name": "Cipher Barber Lake",
+      "occurred_at": "2026-09-03",
+      "event_type": "construction_start",
+      "headline": "Cipher Barber Lake added from the national project portfolio",
+      "what_new": "GridSignal imported Barber Lake AI/HPC Campus in Colorado City, TX with a current status of Under construction.",
+      "why_matters": "Cipher's first Google-backed project-bond template: a 300 MW gross ERCOT campus approaching phased COD in late 2026 / early 2027.",
+      "implication": "Monitor Phase I rent commencement and verify changes against the linked evidence.",
+      "source_name": "Cipher investor update",
+      "source_type": "company",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/cipherdigital_businessup.htm",
+      "materiality": 49,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$1.733B 7.125% notes; Ba3/BB-; rent-based amortization",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "207 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "300 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$1.733B notes outstanding"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-cipher-black-pearl",
+      "project_id": "portfolio-cipher-black-pearl",
+      "project_name": "Cipher Black Pearl",
+      "occurred_at": "2026-02-04",
+      "event_type": "construction_start",
+      "headline": "Cipher Black Pearl added from the national project portfolio",
+      "what_new": "GridSignal imported Black Pearl AI/HPC Campus in Wink, TX with a current status of Under construction.",
+      "why_matters": "Cipher's Amazon-backed 216 MW critical-IT campus is one of the strongest HY shell structures, with a 6.125% coupon and parent-guaranteed lease.",
+      "implication": "Monitor Initial rent commencement and verify changes against the linked evidence.",
+      "source_name": "Cipher",
+      "source_type": "company",
+      "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-inc-announces-pricing-20-billion-senior-secured/",
+      "materiality": 51,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$2.0B 6.125% notes due 2031 price at par",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "216 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "300 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$2.05B max development cost benchmark"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-cipher-stingray",
+      "project_id": "portfolio-cipher-stingray",
+      "project_name": "Cipher Stingray",
+      "occurred_at": "2026-06-08",
+      "event_type": "construction_start",
+      "headline": "Cipher Stingray added from the national project portfolio",
+      "what_new": "GridSignal imported Stingray AI/HPC Campus in Andrews, TX with a current status of Under construction.",
+      "why_matters": "A compact 70 MW AWS-backed Cipher shell that priced $810M of Ba2/BB- project debt at 6.0%, the tight end of the HY construction spectrum.",
+      "implication": "Monitor First network hall and verify changes against the linked evidence.",
+      "source_name": "Cipher",
+      "source_type": "company",
+      "source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured/",
+      "materiality": 47,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$810M 6.000% notes due 2031 priced at 99.75",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "70 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "100 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "~$735M max dev cost benchmark"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-edged-atlanta-chicago",
+      "project_id": "portfolio-edged-atlanta-chicago",
+      "project_name": "Edged Compute",
+      "occurred_at": "2026-04-29",
+      "event_type": "construction_start",
+      "headline": "Edged Compute added from the national project portfolio",
+      "what_new": "GridSignal imported ATL01-3 + ORD01-2 in Atlanta, GA + Chicago, IL with a current status of Under construction.",
+      "why_matters": "Edged's $1.3B bond finances two separate HPC sites and tenants, making it a useful contrast to the dominant single-tenant shell structure.",
+      "implication": "Monitor Atlanta / Chicago construction deliveries and verify changes against the linked evidence.",
+      "source_name": "Cahill",
+      "source_type": "national_media",
+      "source_url": "https://www.cahill.com/news/firm-news/2026-04-29-cahill-represents-initial-purchasers-in-edged-compute-13-billion-notes-offering",
+      "materiality": 52,
+      "novelty": 72,
+      "confidence": 78,
+      "evidence": "$1.3B 7.5% notes finance two HPC data centers in Chicago and Atlanta",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "114 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$1.3B project notes"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-prime-elk-grove",
+      "project_id": "portfolio-prime-elk-grove",
+      "project_name": "Prime Elk Grove",
+      "occurred_at": "2026-06-02",
+      "event_type": "construction_start",
+      "headline": "Prime Elk Grove added from the national project portfolio",
+      "what_new": "GridSignal imported Elk Grove Village CoreWeave Build-to-Suit in Chicago metro / Elk Grove Village, IL with a current status of Under construction.",
+      "why_matters": "Prime's Chicago-area CoreWeave build-to-suit is a smaller HY shell financing and a useful pure-tenant-credit comp.",
+      "implication": "Monitor Construction / tenant delivery and verify changes against the linked evidence.",
+      "source_name": "Bloomberg via Investing.com",
+      "source_type": "national_media",
+      "source_url": "https://www.investing.com/news/stock-market-news/coreweave-data-center-raises-900-million-in-junkbond-sale--bloomberg-93CH-4723001",
+      "materiality": 38,
+      "novelty": 72,
+      "confidence": 78,
+      "evidence": "$900M 7.5% five-year high-yield notes; 15-year CoreWeave lease",
+      "numbers": [
+        {
+          "label": "Capital program",
+          "value": "$900M project notes"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-core-scientific-coreweave",
+      "project_id": "portfolio-core-scientific-coreweave",
+      "project_name": "Core Scientific Finance I",
+      "occurred_at": "2026-09-03",
+      "event_type": "expansion",
+      "headline": "Core Scientific Finance I added from the national project portfolio",
+      "what_new": "GridSignal imported CoreWeave Multi-Site Portfolio in TX + GA + NC + OK with a current status of Partially operational / under construction.",
+      "why_matters": "Core Scientific's $3.3B CoreWeave-backed portfolio bond sits between project finance and operating infrastructure, with 395 MW already billable.",
+      "implication": "Monitor Finish remaining 195 MW and verify changes against the linked evidence.",
+      "source_name": "Core Scientific SEC filing",
+      "source_type": "company",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000014/core-20260630.htm",
+      "materiality": 52,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$3.3B 7.75% notes; 395 MW billable vs 590 MW leased",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "590 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "800 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.3B project notes"
+        }
+      ]
+    },
+    {
+      "id": "evt-portfolio-galaxy-helios-ii",
+      "project_id": "portfolio-galaxy-helios-ii",
+      "project_name": "Galaxy Helios Phase II",
+      "occurred_at": "2026-08-05",
+      "event_type": "construction_start",
+      "headline": "Galaxy Helios Phase II added from the national project portfolio",
+      "what_new": "GridSignal imported Helios AI Campus \u2014 Phase II in Dickens County, TX with a current status of Under construction.",
+      "why_matters": "Galaxy's 260 MW CoreWeave Phase II shell priced at 9.875%, making it a key wide-spread HY comp; Phase I was delivered on schedule.",
+      "implication": "Monitor First Phase II data-hall delivery and verify changes against the linked evidence.",
+      "source_name": "Galaxy Digital",
+      "source_type": "company",
+      "source_url": "https://investor.galaxy.com/news-releases/news-release-details/galaxy-digital-inc-announces-pricing-3507-billion-senior-secured",
+      "materiality": 51,
+      "novelty": 72,
+      "confidence": 82,
+      "evidence": "$3.507B 9.875% notes finance 260 MW critical IT / 400 MW utility Phase II",
+      "numbers": [
+        {
+          "label": "Critical IT",
+          "value": "260 MW"
+        },
+        {
+          "label": "Utility / facility power",
+          "value": "400 MW"
+        },
+        {
+          "label": "Capital program",
+          "value": "$3.507B project notes"
         }
       ]
     }

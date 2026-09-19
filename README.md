@@ -2,7 +2,7 @@
 
 GridSignal is a runnable MVP for discovering U.S. data-center projects before they become national business-news stories. It monitors primary and local sources, preserves the original evidence, converts documents into a fixed event schema, and maintains one auditable record per project.
 
-The included pilot follows **Project Jupiter in Doña Ana County, New Mexico** and demonstrates a discovery investigation for **Google's unnamed Lea County announcement**. The evidence supports keeping those as separate projects: they are in different counties, have different named parties, and share no known parcel, utility, site-control, or project alias. The system records that conclusion as a scored candidate comparison instead of silently merging the records.
+The included dashboard combines the repository's **24-project national data-center portfolio** with a discovery investigation for **Google's unnamed Lea County announcement**. Project Jupiter is de-duplicated against the newer evidence-backed New Mexico record, producing **25 unique tracked projects**. The evidence supports keeping Google's Lea County signal separate from Project Jupiter: they are in different counties, have different named parties, and share no known parcel, utility, site-control, or project alias.
 
 ## What is implemented
 
@@ -19,7 +19,7 @@ The included pilot follows **Project Jupiter in Doña Ana County, New Mexico** a
 
 ## Quick start: review the New Mexico pilot
 
-The committed dashboard is already built in `docs/`. To rebuild and serve it:
+The committed dashboard is already built in `docs/`. `build-demo` imports the three portfolio datasets under `docs/data-centers/data/`, preserves their capacity and financing boundaries, and merges them with the newer New Mexico records. To rebuild and serve it:
 
 ```powershell
 .\.venv\Scripts\python.exe -m dc_intel.cli build-demo

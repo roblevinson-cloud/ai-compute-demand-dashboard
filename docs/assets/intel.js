@@ -54,7 +54,8 @@ function eventRow(event) {
 function renderOverview() {
   const top = [...D.events].sort((a,b) => b.materiality-a.materiality || b.novelty-a.novelty).slice(0,4);
   $("#topEvents").innerHTML = top.map(eventRow).join("");
-  $("#watchlist").innerHTML = D.projects.map(project => `<article class="watch-item" data-project="${esc(project.id)}"><div class="watch-top"><strong>${esc(project.name)}</strong><span class="status-pill ${esc(project.status_tone)}">${esc(project.status)}</span></div><p>${esc(project.county)}, ${esc(project.state)} · ${project.mw ? `${project.mw.toLocaleString()} MW generation` : "Scale undisclosed"}</p><div class="mini-meter"><i style="width:${project.materiality}%"></i></div></article>`).join("");
+  const watchlist = [...D.projects].sort((a,b) => b.materiality-a.materiality).slice(0,6);
+  $("#watchlist").innerHTML = watchlist.map(project => `<article class="watch-item" data-project="${esc(project.id)}"><div class="watch-top"><strong>${esc(project.name)}</strong><span class="status-pill ${esc(project.status_tone)}">${esc(project.status)}</span></div><p>${esc(project.county)}, ${esc(project.state)} · ${project.it_mw ? `${project.it_mw.toLocaleString()} MW critical IT` : project.mw ? `${project.mw.toLocaleString()} MW utility / generation` : "Scale undisclosed"}</p><div class="mini-meter"><i style="width:${project.materiality}%"></i></div></article>`).join("");
   $$(".watch-item").forEach(item => item.addEventListener("click", () => openProject(item.dataset.project)));
   const signal = D.events.find(event => event.id === "evt-google-lea") || D.events.find(event => event.event_type === "new_project_discovery");
   const match = D.review_queue.find(item => item.id === "match-google-jupiter") || D.review_queue[0];
@@ -87,14 +88,21 @@ function filteredProjects() {
   const query = $("#globalSearch").value.trim().toLowerCase();
   return D.projects.filter(project => {
     const companies = [...project.developer, ...project.tenant, ...project.operator];
+    const projectMw = Math.max(project.it_mw || 0, project.mw || 0);
     const haystack = JSON.stringify(project).toLowerCase();
-    return (!company || companies.includes(company)) && (!status || project.status === status) && (!stateValue || project.state === stateValue) && (!county || project.county === county) && (!mw || (project.mw || 0) >= mw) && project.materiality >= materiality && (!query || haystack.includes(query));
+    return (!company || companies.includes(company)) && (!status || project.status === status) && (!stateValue || project.state === stateValue) && (!county || project.county === county) && (!mw || projectMw >= mw) && project.materiality >= materiality && (!query || haystack.includes(query));
   });
 }
 
+function powerCell(project) {
+  if (project.it_mw) return `${project.it_mw.toLocaleString()} MW<br><small>critical IT${project.mw ? ` · ${project.mw.toLocaleString()} MW utility / facility` : ""}</small>`;
+  if (project.mw) return `${project.mw.toLocaleString()} MW<br><small>utility / generation boundary</small>`;
+  return `Undisclosed<br><small>—</small>`;
+}
+
 function renderProjectTable() {
-  const rows = filteredProjects();
-  $("#projectTable").innerHTML = rows.length ? rows.map(project => `<tr data-project="${esc(project.id)}"><td><span class="project-name">${esc(project.name)}<small>${esc(project.aliases.map(item => item.name).join(" · ") || "No known aliases")}</small></span></td><td>${esc(project.county)}, ${esc(project.state)}<br><small>${esc(project.location_precision)}</small></td><td>${esc(project.developer.join(", "))}<br><small>${esc(project.tenant.join(", "))}</small></td><td><span class="status-pill ${esc(project.status_tone)}">${esc(project.status)}</span></td><td>${project.mw ? `${project.mw.toLocaleString()} MW*` : "Undisclosed"}<br><small>${project.mw ? "generation boundary" : "—"}</small></td><td><span class="score-number">${project.materiality}</span></td><td>${fmtDate(project.last_update)}</td></tr>`).join("") : `<tr><td colspan="7" class="empty">No projects match these filters.</td></tr>`;
+  const rows = filteredProjects().sort((a,b) => b.materiality-a.materiality || a.name.localeCompare(b.name));
+  $("#projectTable").innerHTML = rows.length ? rows.map(project => `<tr data-project="${esc(project.id)}"><td><span class="project-name">${esc(project.name)}<small>${esc(project.aliases.map(item => item.name).join(" · ") || "No known aliases")}</small></span></td><td>${esc(project.county)}, ${esc(project.state || "—")}<br><small>${esc(project.location_precision)}</small></td><td>${esc(project.developer.join(", ") || "Not disclosed")}<br><small>${esc(project.tenant.join(", ") || "Tenant not disclosed")}</small></td><td><span class="status-pill ${esc(project.status_tone)}">${esc(project.status)}</span></td><td>${powerCell(project)}</td><td><span class="score-number">${project.materiality}</span></td><td>${fmtDate(project.last_update)}</td></tr>`).join("") : `<tr><td colspan="7" class="empty">No projects match these filters.</td></tr>`;
   $$("#projectTable tr[data-project]").forEach(row => row.addEventListener("click", () => openProject(row.dataset.project)));
 }
 
@@ -176,7 +184,7 @@ function toast(message) {
 function init() {
   $("#asOf").textContent = `As of ${fmtDate(D.meta.as_of, true)}`;
   $("#modeLabel").textContent = D.meta.mode;
-  $("#demoNote").innerHTML = `<strong>Pilot data:</strong> ${esc(D.meta.disclaimer)}`;
+  $("#demoNote").innerHTML = `<strong>Portfolio data:</strong> ${esc(D.meta.disclaimer)}`;
   renderKpis(); renderOverview(); setupProjectFilters(); renderProjectTable(); setupEventFilters(); renderEventFeed(); renderReviewQueue(); renderSources(); renderBriefs();
   $("#taxonomy").innerHTML = D.event_taxonomy.map(item => `<span>${esc(label(item))}</span>`).join("");
   setupNavigation(); setupGlobalSearch();

@@ -91,9 +91,14 @@ def test_demo_is_project_centric_and_cites_every_event():
     data = build_demo_data()
     projects = {project["id"]: project for project in data["projects"]}
 
-    assert set(projects) == {"project-jupiter", "google-lea-county"}
+    assert len(projects) == 25
+    assert {"project-jupiter", "google-lea-county", "portfolio-meridian-arc", "portfolio-galaxy-helios-ii"} <= set(projects)
+    assert len({project["slug"] for project in projects.values()}) == 25
+    assert sum(project["name"] == "Project Jupiter" for project in projects.values()) == 1
     assert projects["project-jupiter"]["mw"] == 2450
     assert projects["project-jupiter"]["it_mw"] is None
+    assert projects["portfolio-meridian-arc"]["it_mw"] == 430
+    assert projects["portfolio-meridian-arc"]["mw"] == 620
     assert all(event["project_id"] in projects for event in data["events"])
     assert all(event["source_url"].startswith("https://") for event in data["events"])
     google_match = next(item for item in data["review_queue"] if item["id"] == "match-google-jupiter")

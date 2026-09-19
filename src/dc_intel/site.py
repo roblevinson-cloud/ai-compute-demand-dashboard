@@ -44,7 +44,7 @@ TEMPLATE = r'''<!doctype html>
         <button class="nav-item" data-view="briefs"><span>▤</span>Brief archive</button>
       </nav>
       <div class="sidebar-footer">
-        <span class="live-dot"></span><div><strong>New Mexico pilot</strong><small>Hourly collection design</small></div>
+        <span class="live-dot"></span><div><strong>U.S. project portfolio</strong><small>Evidence-linked snapshot</small></div>
       </div>
     </aside>
 
