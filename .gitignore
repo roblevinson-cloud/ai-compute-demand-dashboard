@@ -1,6 +1,8 @@
 .venv/
 node_modules/
 data/raw/
+data/digests/
+.env
 __pycache__/
 .pytest_cache/
 .pytest_tmp/

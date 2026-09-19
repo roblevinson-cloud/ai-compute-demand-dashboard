@@ -1,0 +1,1012 @@
+{
+  "meta": {
+    "title": "GridSignal",
+    "subtitle": "U.S. data center development intelligence",
+    "generated_at": "2026-09-19T01:38:42.818158+00:00",
+    "as_of": "2026-09-18T10:30:00-04:00",
+    "mode": "New Mexico pilot \u2014 curated evidence-backed demonstration",
+    "disclaimer": "Demo records are based on linked public sources. Scores are illustrative outputs of the documented scoring model; verify live status at the source."
+  },
+  "kpis": {
+    "tracked_projects": 2,
+    "priority_events": 7,
+    "new_signals": 1,
+    "review_items": 2,
+    "healthy_sources": 20,
+    "source_count": 24
+  },
+  "projects": [
+    {
+      "id": "project-jupiter",
+      "slug": "project-jupiter-santa-teresa",
+      "name": "Project Jupiter",
+      "status": "construction / air permit stayed",
+      "status_tone": "risk",
+      "state": "NM",
+      "county": "Do\u00f1a Ana",
+      "city": "Santa Teresa",
+      "address": "Santa Teresa Industrial Park (parcel/address not verified)",
+      "location_precision": "county / industrial park",
+      "developer": [
+        "STACK Infrastructure",
+        "BorderPlex Digital Assets"
+      ],
+      "tenant": [
+        "OpenAI"
+      ],
+      "operator": [
+        "Oracle"
+      ],
+      "utility": [
+        "On-site YGI microgrid; El Paso Electric territory monitored"
+      ],
+      "parcel": [],
+      "alias": [
+        "YGI Microgrid",
+        "Stargate New Mexico",
+        "BorderPlex Digital Infrastructure Campus"
+      ],
+      "aliases": [
+        {
+          "name": "YGI Microgrid",
+          "type": "power facility",
+          "confidence": 98
+        },
+        {
+          "name": "Stargate New Mexico",
+          "type": "program / campus reference",
+          "confidence": 94
+        },
+        {
+          "name": "BorderPlex Digital Infrastructure Campus",
+          "type": "precursor / development name",
+          "confidence": 82
+        }
+      ],
+      "mw": 2450,
+      "it_mw": null,
+      "acreage": 1400,
+      "capex_usd_b": 165,
+      "buildings": 4,
+      "materiality": 98,
+      "confidence": 94,
+      "first_seen": "2025-02-25",
+      "last_update": "2026-09-17T14:00:00-06:00",
+      "summary": "Four-building AI campus in Do\u00f1a Ana County linked to Oracle/OpenAI Stargate, with an adjacent 2.45 GW fuel-cell microgrid proposal and an unusually large IRB authorization.",
+      "risk": "Air-permit and litigation path is active; generation MW is not the same as verified IT load.",
+      "metrics": [
+        {
+          "label": "Generation proposal",
+          "value": "2.45 GW",
+          "boundary": "On-site Bloom fuel-cell nameplate; not verified IT load",
+          "source_url": "https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/"
+        },
+        {
+          "label": "IRB authorization",
+          "value": "Up to $165B",
+          "boundary": "Bond ceiling / tax mechanism; not confirmed spend",
+          "source_url": "https://www.nmborderplex.com/project-jupiter-approved-a-transformative-leap-for-the-new-mexico-borderplex/"
+        },
+        {
+          "label": "Campus plan",
+          "value": "4 buildings",
+          "boundary": "Development plan",
+          "source_url": "https://www.nmborderplex.com/project-jupiter-approved-a-transformative-leap-for-the-new-mexico-borderplex/"
+        },
+        {
+          "label": "Long-term jobs",
+          "value": "~750",
+          "boundary": "Projection, not current employment",
+          "source_url": "https://www.nmborderplex.com/project-jupiter-approved-a-transformative-leap-for-the-new-mexico-borderplex/"
+        },
+        {
+          "label": "Air permit",
+          "value": "NSR 10883",
+          "boundary": "YGI Microgrid",
+          "source_url": "https://www.env.nm.gov/public-notices/"
+        },
+        {
+          "label": "NMED docket",
+          "value": "AQB 26-57(P)",
+          "boundary": "Permit proceeding",
+          "source_url": "https://www.env.nm.gov/opf/docketed-matters/"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "STACK Infrastructure",
+          "role": "developer",
+          "confidence": 92
+        },
+        {
+          "company": "BorderPlex Digital Assets",
+          "role": "developer",
+          "confidence": 98
+        },
+        {
+          "company": "Oracle",
+          "role": "operator / infrastructure partner",
+          "confidence": 95
+        },
+        {
+          "company": "OpenAI",
+          "role": "tenant / customer",
+          "confidence": 93
+        },
+        {
+          "company": "Bloom Energy",
+          "role": "power technology supplier",
+          "confidence": 98
+        },
+        {
+          "company": "Yucca Growth Infrastructure",
+          "role": "microgrid applicant",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "id": "google-lea-county",
+      "slug": "google-lea-county-candidate",
+      "name": "Google Lea County candidate",
+      "status": "early signal / site evaluation",
+      "status_tone": "signal",
+      "state": "NM",
+      "county": "Lea",
+      "city": null,
+      "address": "Undisclosed",
+      "location_precision": "county",
+      "developer": [
+        "Google"
+      ],
+      "tenant": [
+        "Google"
+      ],
+      "operator": [
+        "Google"
+      ],
+      "utility": [
+        "Not disclosed"
+      ],
+      "parcel": [],
+      "alias": [],
+      "aliases": [],
+      "mw": null,
+      "it_mw": null,
+      "acreage": null,
+      "capex_usd_b": null,
+      "buildings": null,
+      "materiality": 64,
+      "confidence": 87,
+      "first_seen": "2026-09-14",
+      "last_update": "2026-09-15T13:00:00-06:00",
+      "summary": "Google says it is exploring a data-center project in Lea County. Site, utility, power, acreage, schedule, and incentive structure remain undisclosed.",
+      "risk": "Pre-development signal only; no parcel, MW, utility, or formal application is yet linked.",
+      "metrics": [
+        {
+          "label": "Location",
+          "value": "Lea County, NM",
+          "boundary": "County only",
+          "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/lea-county-new-mexico/"
+        },
+        {
+          "label": "Project stage",
+          "value": "Exploring",
+          "boundary": "Company language; no construction commitment",
+          "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/lea-county-new-mexico/"
+        },
+        {
+          "label": "County framework",
+          "value": "26-FEB-057R",
+          "boundary": "General data-center requirements; project link unconfirmed",
+          "source_url": "https://www.leacounty.gov/1378/2026-Lea-County-Resolutions"
+        }
+      ],
+      "relationships": [
+        {
+          "company": "Google",
+          "role": "prospective developer / operator",
+          "confidence": 96
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-jupiter-permit-stay",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2026-09-17T17:00:00-06:00",
+      "event_type": "delay",
+      "headline": "NMED marks the Project Jupiter microgrid air-permit process stayed",
+      "what_new": "NMED's public-facing notice says the YGI Microgrid permit comment process is stayed by the New Mexico Supreme Court pending further notice.",
+      "why_matters": "A court stay is a direct critical-path risk for the 2.45 GW generation facility, even though Oracle says campus and microgrid construction scopes are separate.",
+      "implication": "Move the air-permit milestone to stayed, preserve the campus/microgrid boundary, and monitor the Supreme Court register plus NMED docket AQB 26-57(P).",
+      "source_name": "New Mexico Environment Department",
+      "source_type": "primary_regulatory",
+      "source_url": "https://www.env.nm.gov/",
+      "materiality": 99,
+      "novelty": 99,
+      "confidence": 99,
+      "evidence": "UPDATED: Stayed By New Mexico Supreme Court \u2014 Further notice will be provided when available.",
+      "numbers": [
+        {
+          "label": "Permit",
+          "value": "10883"
+        },
+        {
+          "label": "Docket",
+          "value": "AQB 26-57(P)"
+        }
+      ]
+    },
+    {
+      "id": "evt-google-lea",
+      "project_id": "google-lea-county",
+      "project_name": "Google Lea County candidate",
+      "occurred_at": "2026-09-14T14:00:00-06:00",
+      "event_type": "new_project_discovery",
+      "headline": "Google discloses an unnamed Lea County data-center exploration",
+      "what_new": "Google publicly identified Lea County but supplied no site, MW, utility, acreage, or timetable.",
+      "why_matters": "The company-level signal starts a county-wide discovery sweep before a planning or utility filing surfaces.",
+      "implication": "Treat as a separate early-stage candidate; monitor Lea County agendas, IRB/LEDA actions, NMED permits, utility filings, land records, and local reporting.",
+      "source_name": "Google",
+      "source_type": "company",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/lea-county-new-mexico/",
+      "materiality": 64,
+      "novelty": 96,
+      "confidence": 91,
+      "evidence": "Google is exploring a new data center project in Lea County, New Mexico.",
+      "numbers": [
+        {
+          "label": "Named geography",
+          "value": "Lea County, NM"
+        }
+      ]
+    },
+    {
+      "id": "evt-jupiter-permit-statement",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2026-09-14T11:00:00-06:00",
+      "event_type": "environmental_permit",
+      "headline": "Oracle separates campus construction from the adjacent microgrid permit",
+      "what_new": "Oracle stated that the data-center campus and proposed microgrid are separate facilities on adjacent sites and under separate operators.",
+      "why_matters": "This narrows the legal and permitting boundary: an air-permit event for YGI is related to Jupiter but is not automatically a permit for the campus itself.",
+      "implication": "Keep the campus and generation asset linked but model them as distinct facilities and permit scopes.",
+      "source_name": "Oracle",
+      "source_type": "company",
+      "source_url": "https://www.oracle.com/news/announcement/project-jupiter-statement-on-construction-permitting-2026-09-14/",
+      "materiality": 88,
+      "novelty": 87,
+      "confidence": 92,
+      "evidence": "The Project Jupiter data center campus and the proposed microgrid are separate facilities on separate but adjacent sites.",
+      "numbers": []
+    },
+    {
+      "id": "evt-jupiter-hearing",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2026-09-14T09:00:00-06:00",
+      "event_type": "puc_proceeding",
+      "headline": "NMED posts an amended hearing notice in YGI Microgrid docket",
+      "what_new": "NMED added an amended Sept. 14 hearing notice to the public record for permit 10883 / docket AQB 26-57(P).",
+      "why_matters": "Hearing-calendar changes can move the critical path for a 2.45 GW on-site generation plan.",
+      "implication": "Flag the permit schedule as unstable and compare each new notice with the prior hearing order.",
+      "source_name": "New Mexico Environment Department",
+      "source_type": "primary_regulatory",
+      "source_url": "https://www.env.nm.gov/public-notices/",
+      "materiality": 94,
+      "novelty": 93,
+      "confidence": 97,
+      "evidence": "Amended Notice of Hearing-9.14.2026; permit application 10883.",
+      "numbers": [
+        {
+          "label": "Permit",
+          "value": "10883"
+        },
+        {
+          "label": "Docket",
+          "value": "AQB 26-57(P)"
+        }
+      ]
+    },
+    {
+      "id": "evt-jupiter-admin-record",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2026-08-25T12:00:00-06:00",
+      "event_type": "environmental_permit",
+      "headline": "NMED publishes the draft administrative record index",
+      "what_new": "The agency posted an index and two document batches covering 180 items for the YGI permit record.",
+      "why_matters": "The document set creates a primary-source corpus for emissions, modeling, public comments, and procedural changes.",
+      "implication": "Ingest and diff the record at document level; prioritize revised modeling and hearing exhibits.",
+      "source_name": "New Mexico Environment Department",
+      "source_type": "primary_regulatory",
+      "source_url": "https://www.env.nm.gov/public-notices/",
+      "materiality": 86,
+      "novelty": 90,
+      "confidence": 98,
+      "evidence": "Draft Administrative Record, Documents 1-47 and 48-180.",
+      "numbers": [
+        {
+          "label": "Administrative-record items",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "evt-jupiter-power-revision",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2026-04-27T09:00:00-06:00",
+      "event_type": "generation_storage",
+      "headline": "Project Jupiter switches its disclosed power design to Bloom fuel cells",
+      "what_new": "Oracle and BorderPlex said the campus would use up to 2.45 GW of Bloom fuel cells, replacing earlier turbine and diesel plans.",
+      "why_matters": "A full power-architecture change affects air permitting, emissions, water, equipment procurement, and schedule risk.",
+      "implication": "Track fuel-cell delivery milestones and treat 2.45 GW as generation nameplate\u2014not IT load.",
+      "source_name": "Oracle",
+      "source_type": "company",
+      "source_url": "https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/",
+      "materiality": 98,
+      "novelty": 98,
+      "confidence": 95,
+      "evidence": "Up to 2.45 GW of Bloom Energy fuel-cell capacity.",
+      "numbers": [
+        {
+          "label": "Generation nameplate",
+          "value": "2.45 GW"
+        }
+      ]
+    },
+    {
+      "id": "evt-jupiter-stargate",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2025-09-23T08:00:00-06:00",
+      "event_type": "tenant_customer_identification",
+      "headline": "OpenAI names Do\u00f1a Ana County as a Stargate location",
+      "what_new": "OpenAI identified a Do\u00f1a Ana County, New Mexico site in its Oracle-led Stargate expansion announcement.",
+      "why_matters": "This strongly links the previously local development record to a named AI customer and national infrastructure program.",
+      "implication": "Raise entity-match confidence while retaining source-specific capacity boundaries.",
+      "source_name": "OpenAI",
+      "source_type": "company",
+      "source_url": "https://openai.com/index/five-new-stargate-sites/",
+      "materiality": 96,
+      "novelty": 95,
+      "confidence": 94,
+      "evidence": "The announcement names a site in Do\u00f1a Ana County, New Mexico.",
+      "numbers": []
+    },
+    {
+      "id": "evt-jupiter-irb",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2025-09-19T17:00:00-06:00",
+      "event_type": "incentive",
+      "headline": "Do\u00f1a Ana County approves up to $165B of Project Jupiter IRBs",
+      "what_new": "County commissioners approved an IRB authorization covering buildings, equipment, site infrastructure, and a microgrid.",
+      "why_matters": "The ceiling is exceptionally large and signals local authorization, but it must not be represented as committed capex or issued debt.",
+      "implication": "Move the project from proposal toward authorized development; continue tracking bond series and performance obligations.",
+      "source_name": "New Mexico Border Industrial Association",
+      "source_type": "primary_government",
+      "source_url": "https://www.nmborderplex.com/project-jupiter-approved-a-transformative-leap-for-the-new-mexico-borderplex/",
+      "materiality": 97,
+      "novelty": 98,
+      "confidence": 90,
+      "evidence": "Approved up to $165 billion in Industrial Revenue Bonds.",
+      "numbers": [
+        {
+          "label": "IRB ceiling",
+          "value": "$165B"
+        },
+        {
+          "label": "Planned buildings",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": "evt-borderplex-mou",
+      "project_id": "project-jupiter",
+      "project_name": "Project Jupiter",
+      "occurred_at": "2025-02-25T10:00:00-07:00",
+      "event_type": "new_project_discovery",
+      "headline": "New Mexico announces the BorderPlex digital-infrastructure campus",
+      "what_new": "The governor announced a $5B Santa Teresa campus and state MOU with BorderPlex Digital Assets.",
+      "why_matters": "This was the precursor signal linking geography, developer, power/cooling partner, jobs, and investment before Project Jupiter's later identity became public.",
+      "implication": "Create the project record and search county incentives, utility infrastructure, land, permits, and company relationships.",
+      "source_name": "Office of the Governor of New Mexico",
+      "source_type": "primary_government",
+      "source_url": "https://www.governor.state.nm.us/2025/02/25/governor-announces-partnership-with-borderplex-digital-digital-infrastructure-campus-represents-5-billion-investment-in-santa-teresa-expected-to-create-1000-jobs/",
+      "materiality": 84,
+      "novelty": 100,
+      "confidence": 94,
+      "evidence": "Digital infrastructure campus represents $5 billion investment in Santa Teresa.",
+      "numbers": [
+        {
+          "label": "Announced investment",
+          "value": "$5B"
+        },
+        {
+          "label": "Expected jobs",
+          "value": "1,000"
+        }
+      ]
+    }
+  ],
+  "review_queue": [
+    {
+      "id": "match-ygi-jupiter",
+      "signal": "YGI Microgrid / permit 10883",
+      "candidate": "Project Jupiter",
+      "status": "pending human confirmation",
+      "created_at": "2026-04-27",
+      "candidate_project_id": "project-jupiter",
+      "score": 88,
+      "recommendation": "candidate_auto_link",
+      "supporting": [
+        "County matches",
+        "State matches",
+        "Developer matches",
+        "Tenant matches",
+        "Alias matches",
+        "MW is similar"
+      ],
+      "conflicts": [],
+      "feature_scores": {
+        "parcel": 0.0,
+        "county": 18.0,
+        "state": 5.0,
+        "developer": 18.0,
+        "tenant": 13.0,
+        "utility": 0.0,
+        "alias": 27.0,
+        "mw": 7.0,
+        "acreage": 0.0
+      },
+      "next_action": "Confirm facility-level relationship: link as adjacent power facility, not as the same physical asset."
+    },
+    {
+      "id": "match-google-jupiter",
+      "signal": "Google unnamed Lea County project",
+      "candidate": "Project Jupiter",
+      "status": "triaged \u2014 keep separate",
+      "created_at": "2026-09-14",
+      "candidate_project_id": "project-jupiter",
+      "score": 0,
+      "recommendation": "likely_new_project",
+      "supporting": [
+        "State matches"
+      ],
+      "conflicts": [
+        "Different counties",
+        "Different named tenant/customer",
+        "Different named developer"
+      ],
+      "feature_scores": {
+        "parcel": 0.0,
+        "county": 0.0,
+        "state": 5.0,
+        "developer": 0.0,
+        "tenant": 0.0,
+        "utility": 0.0,
+        "alias": 0.0,
+        "mw": 0.0,
+        "acreage": 0.0
+      },
+      "next_action": "Open a separate project record and run a Lea County discovery sweep; revisit only if parcel/company evidence converges."
+    }
+  ],
+  "source_health": [
+    {
+      "key": "nm-nmed-public-notices",
+      "name": "New Mexico Environment Department \u2014 public notices",
+      "source_type": "primary_regulatory",
+      "jurisdiction": "New Mexico",
+      "status": "changed",
+      "last_checked": "2026-09-18T14:00:00Z",
+      "last_new_document": "2026-09-18T13:42:00Z",
+      "interval_minutes": 60,
+      "priority": 100,
+      "url": "https://www.env.nm.gov/public-notices/",
+      "tags": [
+        "environmental",
+        "air",
+        "water",
+        "permits",
+        "project-jupiter",
+        "discovery"
+      ]
+    },
+    {
+      "key": "nm-nmed-dockets",
+      "name": "New Mexico Environment Department \u2014 docketed matters",
+      "source_type": "primary_regulatory",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:03:00Z",
+      "last_new_document": "2026-09-18T13:42:00Z",
+      "interval_minutes": 60,
+      "priority": 100,
+      "url": "https://www.env.nm.gov/opf/docketed-matters/",
+      "tags": [
+        "docket",
+        "environmental",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "nm-aqb-actions",
+      "name": "New Mexico Air Quality Bureau \u2014 permitting actions",
+      "source_type": "primary_regulatory",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:06:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 98,
+      "url": "https://aqb-cpaur.env.nm.gov/",
+      "tags": [
+        "air",
+        "permits",
+        "project-jupiter",
+        "discovery"
+      ]
+    },
+    {
+      "key": "nm-prc-edocket",
+      "name": "New Mexico Public Regulation Commission \u2014 eDocket",
+      "source_type": "primary_regulatory",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:09:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 100,
+      "url": "https://www.nm-prc.org/case-lookup-e-docket/",
+      "tags": [
+        "puc",
+        "utility",
+        "tariffs",
+        "large-load",
+        "interconnection",
+        "discovery"
+      ]
+    },
+    {
+      "key": "nm-courts-case-lookup",
+      "name": "New Mexico Courts \u2014 public case lookup",
+      "source_type": "primary_government",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:12:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 94,
+      "url": "https://caselookup.nmcourts.gov/caselookup/",
+      "tags": [
+        "legal",
+        "litigation",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "dona-ana-agendas",
+      "name": "Do\u00f1a Ana County \u2014 agendas and minutes",
+      "source_type": "primary_government",
+      "jurisdiction": "Do\u00f1a Ana County, NM",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:15:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 100,
+      "url": "https://donaanacounty.org/government/board_of_county_commissioners/agendas___minutes.php",
+      "tags": [
+        "planning",
+        "zoning",
+        "incentives",
+        "minutes",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "dona-ana-economic-development",
+      "name": "Do\u00f1a Ana County \u2014 economic development projects",
+      "source_type": "primary_government",
+      "jurisdiction": "Do\u00f1a Ana County, NM",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:18:00Z",
+      "last_new_document": "2026-09-18T13:42:00Z",
+      "interval_minutes": 180,
+      "priority": 92,
+      "url": "https://donaanacounty.org/government/economic_development/index.php",
+      "tags": [
+        "economic-development",
+        "incentives",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "dona-ana-clerk-records",
+      "name": "Do\u00f1a Ana County Clerk \u2014 recorded documents",
+      "source_type": "property_record",
+      "jurisdiction": "Do\u00f1a Ana County, NM",
+      "status": "changed",
+      "last_checked": "2026-09-18T14:21:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 1440,
+      "priority": 82,
+      "url": "https://records.donaanacounty.org/countyweb/loginDisplay.action?countyname=DonaAna",
+      "tags": [
+        "property",
+        "deeds",
+        "site-control",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "nm-cid-permits",
+      "name": "New Mexico Construction Industries Division \u2014 permits",
+      "source_type": "primary_regulatory",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:24:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 91,
+      "url": "https://www.rld.nm.gov/cid/",
+      "tags": [
+        "building-permits",
+        "electrical",
+        "mechanical",
+        "discovery"
+      ]
+    },
+    {
+      "key": "lea-county-agendas",
+      "name": "Lea County \u2014 Commission agendas and minutes",
+      "source_type": "primary_government",
+      "jurisdiction": "Lea County, NM",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:27:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 100,
+      "url": "https://www.leacounty.gov/AgendaCenter/County-Commission-2",
+      "tags": [
+        "planning",
+        "zoning",
+        "incentives",
+        "discovery",
+        "google-lea"
+      ]
+    },
+    {
+      "key": "lea-county-resolutions",
+      "name": "Lea County \u2014 2026 resolutions",
+      "source_type": "primary_government",
+      "jurisdiction": "Lea County, NM",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:30:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 94,
+      "url": "https://www.leacounty.gov/1378/2026-Lea-County-Resolutions",
+      "tags": [
+        "requirements",
+        "incentives",
+        "discovery",
+        "google-lea"
+      ]
+    },
+    {
+      "key": "nm-edd-news",
+      "name": "New Mexico Economic Development Department \u2014 news",
+      "source_type": "primary_government",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:33:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 88,
+      "url": "https://edd.newmexico.gov/pr/",
+      "tags": [
+        "economic-development",
+        "incentives",
+        "discovery"
+      ]
+    },
+    {
+      "key": "nm-governor-news",
+      "name": "New Mexico Governor \u2014 press releases",
+      "source_type": "primary_government",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:36:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 86,
+      "url": "https://www.governor.state.nm.us/category/press-releases/",
+      "tags": [
+        "economic-development",
+        "company-announcement",
+        "discovery"
+      ]
+    },
+    {
+      "key": "pnm-regulatory",
+      "name": "PNM \u2014 regulatory filings",
+      "source_type": "utility",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:39:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 92,
+      "url": "https://www.pnm.com/regulatory",
+      "tags": [
+        "utility",
+        "puc",
+        "tariff",
+        "transmission",
+        "large-load"
+      ]
+    },
+    {
+      "key": "el-paso-electric-regulatory",
+      "name": "El Paso Electric \u2014 New Mexico regulatory filings",
+      "source_type": "utility",
+      "jurisdiction": "Southern New Mexico",
+      "status": "changed",
+      "last_checked": "2026-09-18T14:42:00Z",
+      "last_new_document": "2026-09-18T13:42:00Z",
+      "interval_minutes": 180,
+      "priority": 95,
+      "url": "https://www.epelectric.com/company/regulatory/new-mexico-regulatory-filings",
+      "tags": [
+        "utility",
+        "puc",
+        "tariff",
+        "transmission",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "openai-news",
+      "name": "OpenAI \u2014 company news",
+      "source_type": "company",
+      "jurisdiction": "National",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:45:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 84,
+      "url": "https://openai.com/news/",
+      "tags": [
+        "company",
+        "stargate",
+        "tenant",
+        "discovery"
+      ]
+    },
+    {
+      "key": "oracle-news",
+      "name": "Oracle \u2014 newsroom",
+      "source_type": "company",
+      "jurisdiction": "National",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:48:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 84,
+      "url": "https://www.oracle.com/news/",
+      "tags": [
+        "company",
+        "project-jupiter",
+        "stargate",
+        "power"
+      ]
+    },
+    {
+      "key": "google-infrastructure-blog",
+      "name": "Google \u2014 infrastructure and cloud blog",
+      "source_type": "company",
+      "jurisdiction": "National",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:51:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 90,
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
+      "tags": [
+        "company",
+        "hyperscaler",
+        "discovery",
+        "google-lea"
+      ]
+    },
+    {
+      "key": "bloom-energy-news",
+      "name": "Bloom Energy \u2014 news releases",
+      "source_type": "company",
+      "jurisdiction": "National",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:54:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 180,
+      "priority": 74,
+      "url": "https://www.bloomenergy.com/news/",
+      "tags": [
+        "fuel-cell",
+        "generation",
+        "contractor",
+        "project-jupiter"
+      ]
+    },
+    {
+      "key": "source-new-mexico",
+      "name": "Source New Mexico",
+      "source_type": "local_media",
+      "jurisdiction": "New Mexico",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:57:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 82,
+      "url": "https://sourcenm.com/feed/",
+      "tags": [
+        "local-news",
+        "regulation",
+        "water",
+        "litigation"
+      ]
+    },
+    {
+      "key": "kvia-data-center",
+      "name": "KVIA ABC-7 \u2014 local news",
+      "source_type": "local_media",
+      "jurisdiction": "Southern New Mexico / El Paso",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:00:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 76,
+      "url": "https://kvia.com/?s=data+center",
+      "tags": [
+        "local-news",
+        "planning",
+        "incentives",
+        "construction"
+      ]
+    },
+    {
+      "key": "dcd-north-america",
+      "name": "Data Center Dynamics \u2014 North America",
+      "source_type": "trade_media",
+      "jurisdiction": "National",
+      "status": "changed",
+      "last_checked": "2026-09-18T14:03:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 60,
+      "priority": 72,
+      "url": "https://www.datacenterdynamics.com/en/rss/",
+      "tags": [
+        "trade",
+        "data-center",
+        "secondary"
+      ]
+    },
+    {
+      "key": "construction-dive",
+      "name": "Construction Dive \u2014 data center coverage",
+      "source_type": "trade_media",
+      "jurisdiction": "National",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:06:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 120,
+      "priority": 64,
+      "url": "https://www.constructiondive.com/feeds/news/",
+      "tags": [
+        "trade",
+        "construction",
+        "contractor"
+      ]
+    },
+    {
+      "key": "utility-dive",
+      "name": "Utility Dive",
+      "source_type": "trade_media",
+      "jurisdiction": "National",
+      "status": "healthy",
+      "last_checked": "2026-09-18T14:09:00Z",
+      "last_new_document": "2026-09-17T18:10:00Z",
+      "interval_minutes": 120,
+      "priority": 70,
+      "url": "https://www.utilitydive.com/feeds/news/",
+      "tags": [
+        "trade",
+        "utility",
+        "regulatory",
+        "power"
+      ]
+    }
+  ],
+  "source_registry_summary": {
+    "total": 24,
+    "enabled": 24,
+    "by_type": {
+      "primary_regulatory": 5,
+      "primary_government": 7,
+      "property_record": 1,
+      "utility": 2,
+      "company": 4,
+      "local_media": 2,
+      "trade_media": 3
+    },
+    "by_jurisdiction": {
+      "New Mexico": 10,
+      "Do\u00f1a Ana County, NM": 3,
+      "Lea County, NM": 2,
+      "Southern New Mexico": 1,
+      "National": 7,
+      "Southern New Mexico / El Paso": 1
+    }
+  },
+  "briefs": [
+    {
+      "id": "brief-evening-2026-09-17",
+      "type": "Evening Brief",
+      "date": "2026-09-17",
+      "subject": "Evening Data Center Intelligence \u2014 Court stay raises Jupiter critical-path risk",
+      "summary": "NMED now marks the YGI Microgrid air-permit process stayed by the New Mexico Supreme Court. Google's unnamed Lea County disclosure remains a separate early-stage discovery signal.",
+      "event_ids": [
+        "evt-jupiter-permit-stay",
+        "evt-google-lea",
+        "evt-jupiter-permit-statement"
+      ]
+    },
+    {
+      "id": "brief-morning-2026-09-18",
+      "type": "Morning Brief",
+      "date": "2026-09-18",
+      "subject": "Morning Data Center Intelligence \u2014 Jupiter air-permit process stayed",
+      "summary": "The leading overnight development is NMED's notice that the YGI Microgrid permit process is stayed, combined with Oracle's clarification that the campus and adjacent microgrid are separate facilities.",
+      "event_ids": [
+        "evt-jupiter-permit-stay",
+        "evt-jupiter-permit-statement",
+        "evt-jupiter-hearing"
+      ]
+    }
+  ],
+  "event_taxonomy": [
+    "new_project_discovery",
+    "land_acquisition_site_control",
+    "zoning",
+    "permit",
+    "utility_service",
+    "interconnection",
+    "transmission_substation",
+    "generation_storage",
+    "puc_proceeding",
+    "incentive",
+    "water_sewer",
+    "environmental_permit",
+    "financing",
+    "tenant_customer_identification",
+    "contractor",
+    "construction_start",
+    "topping_out",
+    "equipment_delivery",
+    "energization",
+    "expansion",
+    "schedule_change",
+    "cost_change",
+    "opposition_litigation",
+    "regulatory_decision",
+    "delay",
+    "cancellation",
+    "commencement_of_operations"
+  ]
+}
