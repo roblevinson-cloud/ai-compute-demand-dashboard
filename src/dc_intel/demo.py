@@ -6,6 +6,7 @@ from typing import Any
 
 from .brief_archive import load_brief_archive
 from .legacy_import import load_legacy_portfolio
+from .research_import import load_research_backfill
 from .resolution import compare_project
 from .source_registry import load_source_registry, source_summary
 
@@ -53,6 +54,7 @@ def _event(
 def build_demo_data(
     source_path: str = "config/sources.yml",
     brief_archive_path: str | Path | None = "data/briefs.json",
+    research_path: str | Path = "data/research_backfill.json",
 ) -> dict[str, Any]:
     sources = load_source_registry(source_path)
     jupiter = {
@@ -147,6 +149,9 @@ def build_demo_data(
     imported_projects = [project for project in portfolio_projects if project["slug"] not in existing_slugs]
     imported_project_ids = {project["id"] for project in imported_projects}
     projects.extend(imported_projects)
+    research_projects, research_events = load_research_backfill(research_path)
+    existing_project_ids = {project["id"] for project in projects}
+    projects.extend(project for project in research_projects if project["id"] not in existing_project_ids)
 
     events = [
         _event(
@@ -239,6 +244,9 @@ def build_demo_data(
         ),
     ]
     events.extend(event for event in portfolio_events if event["project_id"] in imported_project_ids)
+    existing_event_ids = {event["id"] for event in events}
+    events.extend(event for event in research_events if event["id"] not in existing_event_ids)
+    events.sort(key=lambda event: str(event.get("occurred_at", "")), reverse=True)
 
     ygi_signal = {
         "county": "Doña Ana", "state": "NM", "developer": ["Yucca Growth Infrastructure", "BorderPlex Digital Assets"],
@@ -301,9 +309,9 @@ def build_demo_data(
             "title": "GridSignal",
             "subtitle": "U.S. data center development intelligence",
             "generated_at": now,
-            "as_of": "2026-09-18T10:30:00-04:00",
+            "as_of": "2026-09-19T12:00:00-04:00",
             "mode": "U.S. portfolio — evidence-linked project intelligence",
-            "disclaimer": "The national portfolio is imported from the linked project monitor and merged with the newer New Mexico records. Capacity, capital, and schedule boundaries are preserved; verify live status at each source.",
+            "disclaimer": "The national portfolio is merged with an agent-assisted source review covering Dec. 19, 2025 through Sept. 19, 2026. Each feed item links to its evidence; capacity, capital, and schedule boundaries are preserved and should be verified at source.",
         },
         "kpis": {
             "tracked_projects": len(projects), "priority_events": sum(event["materiality"] >= 85 for event in events),

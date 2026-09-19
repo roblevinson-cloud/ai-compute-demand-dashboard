@@ -38,7 +38,7 @@ function renderKpis() {
     ["New signals", D.kpis.new_signals, "Needs source sweep"],
     ["Entity reviews", D.kpis.review_items, "No silent merges"],
     ["Healthy sources", D.kpis.healthy_sources, `of ${D.kpis.source_count} monitored`],
-    ["Collection cadence", "1h", "Priority sources"],
+    ["Feed events", D.events.length, "Source-linked changes"],
   ];
   $("#kpiGrid").innerHTML = items.map(item => `<article class="kpi"><span class="kpi-label">${esc(item[0])}</span><strong>${esc(item[1])}</strong><small>${esc(item[2])}</small></article>`).join("");
 }
@@ -135,7 +135,10 @@ function renderEventFeed() {
   const from = $("#filterEventDate").value;
   const query = $("#globalSearch").value.trim().toLowerCase();
   const events = D.events.filter(event => (!type || event.event_type === type) && event.materiality >= score && (!from || event.occurred_at.slice(0,10) >= from) && (!query || JSON.stringify(event).toLowerCase().includes(query)));
-  $("#eventFeed").innerHTML = events.length ? events.map(event => `<article class="feed-card"><div class="score-stack"><div><span>M</span><strong>${event.materiality}</strong></div><div><span>N</span><strong>${event.novelty}</strong></div><div><span>C</span><strong>${event.confidence}</strong></div></div><div class="feed-main"><span class="section-label">${esc(event.project_name)} · ${fmtDate(event.occurred_at)}</span><h2>${esc(event.headline)}</h2><p>${esc(label(event.event_type))}</p><div class="feed-facts"><div><strong>WHAT CHANGED</strong> ${esc(event.what_new)}</div><div><strong>WHY IT MATTERS</strong> ${esc(event.why_matters)}</div><div><strong>IMPLICATION</strong> ${esc(event.implication)}</div></div></div><aside class="evidence-box"><span>Evidence excerpt</span><blockquote>“${esc(event.evidence)}”</blockquote><a href="${esc(event.source_url)}" target="_blank" rel="noreferrer">Open ${esc(event.source_name)} ↗</a></aside></article>`).join("") : '<div class="panel empty">No events match these filters.</div>';
+  $("#eventFeed").innerHTML = events.length ? events.map(event => {
+    const numbers = (event.numbers || []).length ? `<div class="number-strip">${event.numbers.map(item => `<span><small>${esc(item.label)}</small><strong>${esc(item.value)}</strong></span>`).join("")}</div>` : "";
+    return `<article class="feed-card"><div class="score-stack"><div><span>M</span><strong>${event.materiality}</strong></div><div><span>N</span><strong>${event.novelty}</strong></div><div><span>C</span><strong>${event.confidence}</strong></div></div><div class="feed-main"><span class="section-label">${esc(event.project_name)} · ${fmtDate(event.occurred_at)}</span><h2>${esc(event.headline)}</h2><p>${esc(label(event.event_type))}</p>${numbers}<div class="feed-facts"><div><strong>WHAT CHANGED</strong> ${esc(event.what_new)}</div><div><strong>WHY IT MATTERS</strong> ${esc(event.why_matters)}</div><div><strong>IMPLICATION</strong> ${esc(event.implication)}</div></div></div><aside class="evidence-box"><span>Evidence excerpt</span><blockquote>“${esc(event.evidence)}”</blockquote><a href="${esc(event.source_url)}" target="_blank" rel="noreferrer">Open ${esc(event.source_name)} ↗</a></aside></article>`;
+  }).join("") : '<div class="panel empty">No events match these filters.</div>';
 }
 
 function renderReviewQueue() {

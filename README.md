@@ -2,7 +2,7 @@
 
 GridSignal is a runnable MVP for discovering U.S. data-center projects before they become national business-news stories. It monitors primary and local sources, preserves the original evidence, converts documents into a fixed event schema, and maintains one auditable record per project.
 
-The included dashboard combines the repository's **24-project national data-center portfolio** with a discovery investigation for **Google's unnamed Lea County announcement**. Project Jupiter is de-duplicated against the newer evidence-backed New Mexico record, producing **25 unique tracked projects**. The evidence supports keeping Google's Lea County signal separate from Project Jupiter: they are in different counties, have different named parties, and share no known parcel, utility, site-control, or project alias.
+The included dashboard now tracks **64 projects and candidates**, **122 source-linked events**, and **251 event-level numeric facts**. It combines the repository's national portfolio with an agent-assisted retrospective review of company disclosures, utility and commission records, county and municipal filings, and local reporting from **December 19, 2025 through September 19, 2026**. Ambiguous signals remain separate candidates until evidence supports a merge.
 
 ## What is implemented
 
@@ -17,9 +17,9 @@ The included dashboard combines the repository's **24-project national data-cent
 - Responsive dashboard with project search/filtering, evidence-backed project pages, an event feed, entity review queue, source health, and report archive.
 - Tests for extraction, scoring, resolution, source configuration, demo integrity, and digest output.
 
-## Quick start: review the New Mexico pilot
+## Quick start: review the national intelligence dashboard
 
-The committed dashboard is already built in `docs/`. `build-demo` imports the three portfolio datasets under `docs/data-centers/data/`, preserves their capacity and financing boundaries, and merges them with the newer New Mexico records. To rebuild and serve it:
+The committed dashboard is already built in `docs/`. `build-demo` imports the three portfolio datasets under `docs/data-centers/data/`, expands dated source evidence into individual timeline events, and merges `data/research_backfill.json`. To rebuild and serve it:
 
 ```powershell
 .\.venv\Scripts\python.exe -m dc_intel.cli build-demo
@@ -59,7 +59,7 @@ dc-intel worker --poll-seconds 60
 
 | Command | Purpose |
 |---|---|
-| `dc-intel build-demo` | Build the evidence-backed New Mexico dashboard |
+| `dc-intel build-demo` | Build the evidence-backed national dashboard |
 | `dc-intel build-live` | Build the same dashboard from PostgreSQL records |
 | `dc-intel source-summary` | Validate and summarize the source registry |
 | `dc-intel init-db` | Apply the PostgreSQL schema idempotently |

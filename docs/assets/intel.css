@@ -160,6 +160,10 @@ h1 { margin: 5px 0 4px; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.04e
 .feed-facts { display: grid; gap: 6px; }
 .feed-facts div { font-size: 10px; line-height: 1.45; }
 .feed-facts strong { color: var(--muted); }
+.number-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+.number-strip span { display: grid; gap: 2px; min-width: 110px; padding: 8px 10px; border: 1px solid #cfe3e1; border-radius: 7px; background: #f3faf9; }
+.number-strip small { color: var(--muted); font-size: 10px; }
+.number-strip strong { color: var(--teal-dark); font-size: 14px; }
 .evidence-box { border-left: 1px solid var(--line-soft); padding-left: 16px; }
 .evidence-box span { display: block; color: var(--muted); font-size: 9px; text-transform: uppercase; }
 .evidence-box blockquote { margin: 6px 0 10px; color: #44515c; font-size: 10px; line-height: 1.5; }

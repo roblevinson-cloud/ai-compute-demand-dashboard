@@ -2,14 +2,16 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import date
 from pathlib import Path
 from typing import Any
 
 from .scoring import score_materiality
 
-
 DATA_FILES = ("projects.json", "credit_projects.json", "hy_projects.json")
 UNKNOWN_PARTIES = {"", "n/d", "none", "unknown", "undisclosed"}
+BACKFILL_START = date(2025, 12, 19)
+BACKFILL_END = date(2026, 9, 19)
 
 
 def _text(value: Any) -> str:
@@ -91,6 +93,98 @@ def _event_type(status: str) -> str:
     if "construction" in lowered:
         return "construction_start"
     return "new_project_discovery"
+
+
+def _evidence_event_type(headline: str) -> str:
+    lowered = headline.casefold()
+    if any(word in lowered for word in ("permit", "variance", "zoning", "planning commission")):
+        return "permit"
+    if any(word in lowered for word in ("substation", "transmission")):
+        return "transmission_substation"
+    if any(word in lowered for word in ("power", "utility", "load", "energ")):
+        return "utility_service"
+    if any(word in lowered for word in ("lease", "tenant", "customer", "lessee")):
+        return "tenant_customer_identification"
+    if any(word in lowered for word in ("financ", "notes", "loan", "debt", "bond", "rating")):
+        return "financing"
+    if any(word in lowered for word in ("ready-for-service", "operational", "online", "energized")):
+        return "commencement_of_operations"
+    if any(word in lowered for word in ("construction", "groundbreak", "notice to proceed")):
+        return "construction_start"
+    if any(word in lowered for word in ("delay", "withdraw", "risk", "below total project value")):
+        return "schedule_change"
+    if any(word in lowered for word in ("expand", "phase", "additional")):
+        return "expansion"
+    return "new_project_discovery"
+
+
+def _evidence_date(value: Any) -> str | None:
+    text = _text(value)
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+        parsed = date.fromisoformat(text)
+    elif re.fullmatch(r"\d{4}-\d{2}", text):
+        parsed = date.fromisoformat(text + "-01")
+    else:
+        quarter = re.fullmatch(r"(\d{4})-Q([1-4])", text, re.IGNORECASE)
+        if not quarter:
+            return None
+        year, number = int(quarter.group(1)), int(quarter.group(2))
+        parsed = date(year, number * 3, 28)
+    return parsed.isoformat() if BACKFILL_START <= parsed <= BACKFILL_END else None
+
+
+def _source_type_for_name(name: str) -> str:
+    lowered = name.casefold()
+    if any(word in lowered for word in ("sec", "county", "city", "state", "department", "commission")):
+        return "primary_government"
+    if any(word in lowered for word in ("utility", "transmission", "ercot", "pjm", "miso", "spp")):
+        return "utility"
+    if any(word in lowered for word in ("dynamics", "finance", "global", "journal", "times", "yahoo")):
+        return "trade_media"
+    return "company"
+
+
+def _numbers_from_headline(headline: str) -> list[dict[str, str]]:
+    numbers: list[dict[str, str]] = []
+    for amount, unit in re.findall(r"\$([\d.,]+)\s*([BM])\b", headline, re.IGNORECASE):
+        numbers.append({"label": "Capital / financing", "value": f"${amount}{unit.upper()}"})
+    for amount, unit in re.findall(r"\b([\d.,]+)\s*(GW|MW)\b", headline, re.IGNORECASE):
+        numbers.append({"label": "Capacity", "value": f"{amount} {unit.upper()}"})
+    return numbers
+
+
+def _evidence_events(raw: dict[str, Any], project: dict[str, Any]) -> list[dict[str, Any]]:
+    events: list[dict[str, Any]] = []
+    for index, evidence in enumerate(raw.get("evidence") or []):
+        occurred_at = _evidence_date(evidence.get("date"))
+        source_url = _text(evidence.get("url"))
+        headline = _text(evidence.get("headline"))
+        if not occurred_at or not headline or not source_url.startswith("https://"):
+            continue
+        source_name = _text(evidence.get("source")) or "Portfolio evidence"
+        event_type = _evidence_event_type(headline)
+        identifier = re.sub(r"[^a-z0-9]+", "-", headline.casefold()).strip("-")[:52]
+        materiality = min(100, max(45, int(project["materiality"]) - 4))
+        events.append({
+            "id": f"evt-history-{project['slug']}-{occurred_at}-{index}-{identifier}",
+            "project_id": project["id"],
+            "project_name": project["name"],
+            "occurred_at": occurred_at,
+            "event_type": event_type,
+            "headline": headline,
+            "what_new": headline,
+            "why_matters": project["summary"],
+            "implication": f"Update the {project['name']} timeline and monitor {raw.get('next_milestone') or 'the next disclosed milestone'}.",
+            "source_name": source_name,
+            "source_type": _source_type_for_name(source_name),
+            "source_url": source_url,
+            "materiality": materiality,
+            "novelty": 82,
+            "confidence": int(project["confidence"]),
+            "evidence": headline,
+            "numbers": _numbers_from_headline(headline),
+        })
+    return events
 
 
 def _stage_weight(status: str) -> int:
@@ -256,5 +350,6 @@ def load_legacy_portfolio(data_dir: str | Path | None = None) -> tuple[list[dict
         seen.add(slug)
         transformed, event = _transform(project, as_of)
         projects.append(transformed)
-        events.append(event)
+        evidence_events = _evidence_events(project, transformed)
+        events.extend(evidence_events or [event])
     return projects, events, as_of

@@ -33,7 +33,8 @@ def _relationship_type(value: str) -> str:
 
 def seed_demo_database(connection: Any) -> dict[str, int]:
     data = build_demo_data()
-    counts = {"projects": 0, "events": 0, "candidates": 0, "digests": 0}
+    counts = {"projects": 0, "events": 0, "facts": 0, "candidates": 0, "digests": 0}
+    projects_by_id = {project["id"]: project for project in data["projects"]}
     project_ids: dict[str, Any] = {}
     for project in data["projects"]:
         row = connection.execute("""
@@ -79,12 +80,14 @@ def seed_demo_database(connection: Any) -> dict[str, int]:
     raw_folder = Path("data/raw/demo")
     raw_folder.mkdir(parents=True, exist_ok=True)
     for event in data["events"]:
+        project = projects_by_id[event["project_id"]]
+        jurisdiction = ", ".join(value for value in (project.get("county"), project.get("state")) if value)
         source_key = f"pilot-{_key(event['source_name'])}"
         source = connection.execute("""
             INSERT INTO sources (source_key, name, source_type, jurisdiction, base_url, collection_method, schedule_minutes, priority)
-            VALUES (%s,%s,%s,'New Mexico',%s,'page',60,90)
+            VALUES (%s,%s,%s,%s,%s,'page',60,90)
             ON CONFLICT (source_key) DO UPDATE SET base_url=EXCLUDED.base_url RETURNING id
-        """, (source_key, event["source_name"], event["source_type"], event["source_url"])).fetchone()
+        """, (source_key, event["source_name"], event["source_type"], jurisdiction, event["source_url"])).fetchone()
         digest = _hash(event)
         path = raw_folder / f"{digest}.json"
         if not path.exists():
@@ -129,6 +132,24 @@ def seed_demo_database(connection: Any) -> dict[str, int]:
               }))).fetchone()
         event_ids[event["id"]] = project_event["id"]
         counts["events"] += 1
+        for number in event.get("numbers") or []:
+            field_name = _key(str(number["label"])).replace("-", "_")
+            value = str(number["value"])
+            exists = connection.execute(
+                "SELECT 1 FROM fact_claims WHERE project_id=%s AND raw_document_id=%s AND field_name=%s AND value_json=%s::jsonb",
+                (project_ids[event["project_id"]], raw["id"], field_name, json.dumps(value)),
+            ).fetchone()
+            if not exists:
+                connection.execute("""
+                    INSERT INTO fact_claims (
+                        project_id, project_event_id, raw_document_id, field_name, value_json,
+                        valid_from, confidence, evidence_quote
+                    ) VALUES (%s,%s,%s,%s,%s::jsonb,%s,%s,%s)
+                """, (
+                    project_ids[event["project_id"]], project_event["id"], raw["id"], field_name,
+                    json.dumps(value), event["occurred_at"], event["confidence"], event["evidence"],
+                ))
+                counts["facts"] += 1
 
     for project in data["projects"]:
         raw_id = raw_by_project.get(project["id"])
@@ -141,6 +162,7 @@ def seed_demo_database(connection: Any) -> dict[str, int]:
                     INSERT INTO fact_claims (project_id, raw_document_id, field_name, value_json, confidence, evidence_quote)
                     VALUES (%s,%s,%s,%s::jsonb,%s,%s)
                 """, (project_ids[project["id"]], raw_id, _key(metric["label"]).replace("-", "_"), json.dumps(metric["value"]), project["confidence"], metric["boundary"]))
+                counts["facts"] += 1
 
     for candidate in data["review_queue"]:
         signal_event = "evt-google-lea" if "google" in candidate["id"] else "evt-jupiter-power-revision"

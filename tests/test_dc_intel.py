@@ -100,9 +100,9 @@ def test_demo_is_project_centric_and_cites_every_event():
     data = build_demo_data()
     projects = {project["id"]: project for project in data["projects"]}
 
-    assert len(projects) == 25
+    assert len(projects) >= 60
     assert {"project-jupiter", "google-lea-county", "portfolio-meridian-arc", "portfolio-galaxy-helios-ii"} <= set(projects)
-    assert len({project["slug"] for project in projects.values()}) == 25
+    assert len({project["slug"] for project in projects.values()}) == len(projects)
     assert sum(project["name"] == "Project Jupiter" for project in projects.values()) == 1
     assert projects["project-jupiter"]["mw"] == 2450
     assert projects["project-jupiter"]["it_mw"] is None
@@ -112,6 +112,20 @@ def test_demo_is_project_centric_and_cites_every_event():
     assert all(event["source_url"].startswith("https://") for event in data["events"])
     google_match = next(item for item in data["review_queue"] if item["id"] == "match-google-jupiter")
     assert google_match["recommendation"] == "likely_new_project"
+
+
+def test_nine_month_research_backfill_is_substantial_and_source_linked():
+    data = build_demo_data()
+    backfill_events = [
+        event for event in data["events"]
+        if "2025-12-19" <= event["occurred_at"][:10] <= "2026-09-19"
+    ]
+
+    assert len(data["events"]) >= 120
+    assert len(backfill_events) >= 110
+    assert sum(len(event["numbers"]) for event in data["events"]) >= 240
+    assert len({event["id"] for event in data["events"]}) == len(data["events"])
+    assert all(event["source_url"].startswith("https://") for event in backfill_events)
 
 
 def test_email_digest_explains_change_and_links_evidence():
