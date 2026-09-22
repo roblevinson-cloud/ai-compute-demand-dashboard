@@ -1,5 +1,21 @@
 [
   {
+    "id": "brief-morning-2026-09-22",
+    "digest_type": "morning",
+    "type": "Morning Brief",
+    "date": "2026-09-22",
+    "subject": "Morning Brief — Data Center Development Intelligence — September 22, 2026",
+    "summary": "No new developments met the publication threshold during this reporting window. The tracked-project watchlist remains unchanged.",
+    "event_ids": [],
+    "window_start": "2026-09-21T22:00:00+00:00",
+    "window_end": "2026-09-22T10:30:00+00:00",
+    "generated_at": "2026-09-22T15:07:55+00:00",
+    "body_text": "Subject: Morning Brief — Data Center Development Intelligence — September 22, 2026\n\nTOP DEVELOPMENTS\n\nNo new developments met the publication threshold during this reporting window. The tracked-project watchlist remains unchanged.\nMethod note: scores are transparent prioritization aids, not facts. Source links are the audit record.",
+    "body_html": "<h1>Morning Brief — Data Center Development Intelligence — September 22, 2026</h1>\n<h2>Top Developments</h2>\n<p>No new developments met the publication threshold during this reporting window. The tracked-project watchlist remains unchanged.</p>\n<p><small>Scores are transparent prioritization aids, not facts. Source links are the audit record.</small></p>",
+    "text_url": "briefs/2026-09-22-morning.txt",
+    "html_url": "briefs/2026-09-22-morning.html"
+  },
+  {
     "id": "brief-morning-2026-09-21",
     "digest_type": "morning",
     "type": "Morning Brief",
