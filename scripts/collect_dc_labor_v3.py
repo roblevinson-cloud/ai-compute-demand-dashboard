@@ -19,7 +19,7 @@ DASHES = "\u2010\u2011\u2012\u2013\u2014\u2015\u2212\ufe58\ufe63\uff0d"
 # excluded unless paired with data-center context.
 DC_PATTERNS = [
     (r"\bDATA\s*CENTERS?\b|\bDATACENTER\b", 1.00),
-    (r"\bPROJECT\s+MINER\b|\bPROJECT\s+SPADE\b", 0.99),
+    (r"\bPROJECT\s+MINER\b|\bPROJECT\s+SPADE\b|\bPROJECT\s+ACCORDI[AO]N\b", 0.99),
     (r"\bQTS\b|\bEQUINIX\b|\bDATABANK\b|\bEDGECORE\b|\bVANTAGE\b", 0.98),
     (r"\bEDGED\s+DATA\b|\bSTREAM\s+DATA\b", 0.98),
     (r"\bMICROSOFT\b|\bMETA\b|\bFACEBOOK\b", 0.92),
