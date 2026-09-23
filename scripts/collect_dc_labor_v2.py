@@ -33,7 +33,7 @@ DC_TERMS = {
 PROJECT_RULES = [
     (r"PROJECT MINER", "Project Miner / Santa Teresa"),
     (r"META EL PASO|VFC META", "Meta El Paso"),
-    (r"PROJECT ACCORDIAN", "Project Accordian"),
+    (r"PROJECT ACCORDI[AO]N", "Project Accordion"),
     (r"EWD DATA CENTER", "EWD Data Center"),
     (r"QTS", "QTS"), (r"MICROSOFT", "Microsoft"),
     (r"EDGECORE|RNO1", "EdgeCore"), (r"RNO\s*2", "RNO 2"),
@@ -261,13 +261,19 @@ def call_records(segment_text: str) -> list[tuple[int, str]]:
 
 def parse_calls(text: str, observed: datetime, cfg: dict) -> list[Call]:
     rows: list[Call] = []
+    visible: set[tuple[str, str, str, str]] = set()
+    with_dc_calls: set[tuple[str, str, str, str]] = set()
     for local, city_label, mmdd, segment in segments(text):
         market = cfg.get("locals", {}).get(str(local), {}).get("market", city_label.title())
         source_date = parse_source_date(mmdd, observed)
+        identity = (local, market, city_label.title(), source_date)
+        if str(local) in cfg.get("locals", {}):
+            visible.add(identity)
         for openings, raw in call_records(segment):
             conf = dc_confidence(raw)
             if conf < 0.75:
                 continue
+            with_dc_calls.add(identity)
             hours = parse_weekly_hours(raw)
             base, incentive, per_diem = parse_money(raw)
             ot = parse_ot(raw)
@@ -279,6 +285,17 @@ def parse_calls(text: str, observed: datetime, cfg: dict) -> list[Call]:
                 confidence=conf, stress_score=stress_score(openings, hours, incentive, per_diem, ot),
                 source_url=SOURCE_URL, source_text=raw[:1200],
             ))
+    # Explicit zeroes distinguish an updated local with no DC calls from a local
+    # whose previous posting is simply absent or whose feed failed to load.
+    for local, market, city_label, source_date in sorted(visible - with_dc_calls):
+        rows.append(Call(
+            observed_at=observed.isoformat(), source_date=source_date, local=local,
+            market=market, city_label=city_label, project="No explicit DC calls",
+            openings=0, weekly_hours=None, base_hourly=None,
+            incentive_hourly=None, per_diem_daily=None, ot_multiplier=None,
+            confidence=1.0, stress_score=0.0, source_url=SOURCE_URL,
+            source_text="No explicit data-center calls on this local's dated board.",
+        ))
     return rows
 
 
@@ -434,6 +451,20 @@ def main() -> int:
     response = requests.get(SOURCE_URL, timeout=30, headers={"User-Agent": UA})
     response.raise_for_status()
     body = response.text
+    # A previous collection saved a small error page as an immutable snapshot.
+    # Validate before changing the hash or publishing any history.
+    if len(body) < 100_000:
+        raise RuntimeError(f"Where2Bro response too small: {len(body)} characters")
+    parser = TextExtractor(); parser.feed(body)
+    parsed_text = parser.text()
+    rows = parse_calls(parsed_text, observed, cfg)
+    positive_rows = sum(r.openings > 0 for r in rows)
+    visible_locals = {r.local for r in rows if r.local in cfg.get("locals", {})}
+    if positive_rows < 50 or len(visible_locals) < 15:
+        raise RuntimeError(
+            f"Where2Bro parsing incomplete: {positive_rows} DC calls across "
+            f"{len(visible_locals)} configured locals"
+        )
     digest = hashlib.sha256(body.encode()).hexdigest()
     hash_path = DATA_DIR / "last_hash.txt"
     calls_path = DATA_DIR / "calls.csv"
@@ -446,8 +477,6 @@ def main() -> int:
         hash_path.write_text(digest + "\n", encoding="utf-8")
     parsed = 0
     if needs_parse:
-        parser = TextExtractor(); parser.feed(body)
-        rows = parse_calls(parser.text(), observed, cfg)
         parsed = len(rows)
         if rows:
             append_csv(calls_path, [asdict(x) for x in rows], list(asdict(rows[0]).keys()))
