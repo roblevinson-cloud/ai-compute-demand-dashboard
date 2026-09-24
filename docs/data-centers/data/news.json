@@ -1,6 +1,19 @@
 {
-  "as_of": "2026-09-15",
+  "as_of": "2026-09-24",
   "items": [
+    {
+      "date": "2026-09-24",
+      "source": "Data Center Dynamics",
+      "tag": "CONSTRUCTION / PROJECT JUPITER",
+      "headline": "Oracle issues force majeure notice to Blue Owl following series of setbacks at Project Jupiter data center campus – report",
+      "url": "https://www.datacenterdynamics.com/en/news/oracle-issues-force-majeure-notice-to-blue-owl-following-series-of-setbacks-at-project-jupiter-data-center-campus-report/",
+      "matched_project": "Project Jupiter",
+      "match_score": 5,
+      "match_terms": [
+        "project jupiter",
+        "oracle"
+      ]
+    },
     {
       "date": "2026-09-14",
       "source": "Data Center Dynamics",
