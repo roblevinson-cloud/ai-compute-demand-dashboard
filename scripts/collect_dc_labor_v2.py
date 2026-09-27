@@ -18,6 +18,7 @@ DATA_DIR = ROOT / "data" / "dc_labor"
 RAW_DIR = DATA_DIR / "raw"
 DOCS_DIR = ROOT / "docs" / "labor"
 CONFIG_PATH = ROOT / "config" / "dc_labor_markets.json"
+PROJECT_CONTEXT_PATH = DATA_DIR / "project_context.json"
 SOURCE_URL = "https://where2bro.com/hot-spots/"
 UA = "ai-compute-demand-dashboard/2.0 (+https://github.com/roblevinson-cloud/ai-compute-demand-dashboard)"
 
@@ -96,6 +97,31 @@ class Call:
 
 def load_config() -> dict:
     return json.loads(CONFIG_PATH.read_text())
+
+
+def load_project_context() -> dict:
+    """Load durable, source-linked project context for the labor signal.
+
+    The job-call feed and the project news are intentionally stored separately:
+    the first is quantitative market data, while the second helps an analyst avoid
+    treating a change in visible calls as proof of a project delay or acceleration.
+    """
+    if not PROJECT_CONTEXT_PATH.exists():
+        return {"reviewed_at": None, "scope": "", "signals": []}
+    context = json.loads(PROJECT_CONTEXT_PATH.read_text(encoding="utf-8"))
+    signals = context.get("signals", [])
+    required = {"date", "status", "title", "summary", "labor_readthrough", "source_name", "source_url"}
+    for index, signal in enumerate(signals):
+        missing = required - signal.keys()
+        if missing:
+            raise ValueError(
+                f"Project context signal {index} is missing: {', '.join(sorted(missing))}"
+            )
+    return {
+        "reviewed_at": context.get("reviewed_at"),
+        "scope": context.get("scope", ""),
+        "signals": sorted(signals, key=lambda signal: signal["date"], reverse=True),
+    }
 
 
 def dc_confidence(text: str) -> float:
@@ -356,8 +382,17 @@ def condition_summary(rows: list[dict]) -> dict:
 
 def build_dashboard(cfg: dict) -> dict:
     calls = active_snapshot_rows(read_csv(DATA_DIR / "calls.csv"))
+    project_context = load_project_context()
     if not calls:
-        return {"generated_at": datetime.now(timezone.utc).isoformat(), "source": SOURCE_URL, "markets": [], "history": [], "drops": []}
+        return {
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "source": SOURCE_URL,
+            "markets": [],
+            "history": [],
+            "changes": [],
+            "drops": [],
+            "project_context": project_context,
+        }
     grouped: dict[tuple[str, str], list[dict]] = {}
     for r in calls:
         grouped.setdefault((r["market"], r["source_date"]), []).append(r)
@@ -439,7 +474,11 @@ def build_dashboard(cfg: dict) -> dict:
             "stress_score": "0–100 composite of openings, weekly hours, explicit hourly incentive, OT multiplier and per diem.",
             "warning": "A drop in open calls can mean hiring filled, project phase change, reporting change, or true construction deceleration."
         },
-        "markets": markets, "history": history, "changes": changes, "drops": drops,
+        "markets": markets,
+        "history": history,
+        "changes": changes,
+        "drops": drops,
+        "project_context": project_context,
     }
 
 

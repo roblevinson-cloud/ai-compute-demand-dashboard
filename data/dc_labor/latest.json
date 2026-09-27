@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:57:09.341997+00:00",
+  "generated_at": "2026-09-27T20:08:34.121340+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -31,9 +31,9 @@
       "date": "2026-09-14",
       "openings": 11,
       "intensity": 54.8,
-      "lat": 39.6128,
-      "lon": -86.3742,
-      "state": "IN",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "Meta",
@@ -46,9 +46,9 @@
       "date": "2026-09-14",
       "openings": 31,
       "intensity": 50.0,
-      "lat": 46.98,
-      "lon": -96.88,
-      "state": "ND",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "Unclassified data center",
@@ -76,9 +76,9 @@
       "date": "2026-09-14",
       "openings": 16,
       "intensity": 42.3,
-      "lat": 40.0812,
-      "lon": -82.8088,
-      "state": "OH",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "Unclassified data center",
@@ -106,9 +106,9 @@
       "date": "2026-09-21",
       "openings": 24,
       "intensity": 41.7,
-      "lat": 32.7767,
-      "lon": -96.797,
-      "state": "TX",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "QTS",
@@ -144,9 +144,9 @@
       "date": "2026-09-21",
       "openings": 7,
       "intensity": 40.8,
-      "lat": 41.3748,
-      "lon": -83.6513,
-      "state": "OH",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "Project Accordion",
@@ -198,9 +198,9 @@
       "date": "2026-09-14",
       "openings": 10,
       "intensity": 39.1,
-      "lat": 31.8559,
-      "lon": -106.6389,
-      "state": "TX/NM",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "Project Miner / Santa Teresa",
@@ -331,9 +331,9 @@
       "date": "2026-09-14",
       "openings": 9,
       "intensity": 21.0,
-      "lat": 40.0581,
-      "lon": -82.4013,
-      "state": "OH",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "Meta",
@@ -365,9 +365,9 @@
       "date": "2026-09-21",
       "openings": 0,
       "intensity": 0.0,
-      "lat": 39.4143,
-      "lon": -77.4105,
-      "state": "MD",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "No explicit DC calls",
@@ -395,9 +395,9 @@
       "date": "2026-09-14",
       "openings": 0,
       "intensity": 0.0,
-      "lat": 41.6442,
-      "lon": -93.4647,
-      "state": "IA",
+      "lat": null,
+      "lon": null,
+      "state": null,
       "projects": [
         {
           "project": "No explicit DC calls",
@@ -1674,5 +1674,38 @@
       "change_pct": -69.7,
       "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     }
-  ]
+  ],
+  "project_context": {
+    "reviewed_at": "2026-09-27",
+    "scope": "Project-level developments that materially change how the El Paso\u2013Santa Teresa electrician signal should be interpreted.",
+    "signals": [
+      {
+        "date": "2026-09-24",
+        "status": "watch",
+        "title": "Oracle sends force-majeure notice while maintaining the 2028 schedule",
+        "summary": "Oracle sent Project Jupiter's developer a force-majeure notice that could defer payments if the campus misses its 2028 in-service target. Oracle says Project Jupiter remains on its planned schedule, and Blue Owl says the notice does not change the project's financial commitments.",
+        "labor_readthrough": "This raises execution and timing risk, but it is not evidence of a construction stop. Read any Local 583 decline alongside direct contractor and site evidence.",
+        "source_name": "TechCrunch",
+        "source_url": "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center/"
+      },
+      {
+        "date": "2026-09-08",
+        "status": "construction",
+        "title": "Oracle reports nearly 1,000 New Mexico residents working onsite",
+        "summary": "Oracle says Project Jupiter is on pace to create more than 7,000 construction jobs and that nearly 1,000 New Mexico residents were already working onsite as of September 8.",
+        "labor_readthrough": "This is a broad construction-workforce measure, not an electrician count. It provides a useful counterweight to the narrower Local 583 open-call series.",
+        "source_name": "Oracle",
+        "source_url": "https://www.oracle.com/news/announcement/project-jupiter-to-provide-environmental-data-to-the-public-2026-09-08/"
+      },
+      {
+        "date": "2026-08-14",
+        "status": "delayed",
+        "title": "Green Chile pipeline in-service target moves to February 1, 2027",
+        "summary": "Transwestern told federal regulators that the pipeline intended to supply Project Jupiter's planned fuel-cell power system now targets February 1, 2027, nearly six months later than the prior August 15 target.",
+        "labor_readthrough": "Gas delivery is a critical power dependency and a dated schedule-risk checkpoint. The pipeline slip alone does not establish that current electrical construction has slowed.",
+        "source_name": "The Next Web",
+        "source_url": "https://thenextweb.com/news/oracle-project-jupiter-green-chile-pipeline-delay"
+      }
+    ]
+  }
 }

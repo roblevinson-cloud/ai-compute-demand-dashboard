@@ -13,6 +13,7 @@ The scheduled GitHub Action fetches the source every six hours. A raw HTML snaps
 - `raw/*_where2bro_hot_spots.html` — immutable source snapshots when content changes.
 - `calls.csv` — normalized data-center-related job calls, one row per parsed call.
 - `latest.json` — current market-level dashboard payload.
+- `project_context.json` — manually reviewed, source-linked Project Jupiter developments that change how the Local 583 signal should be interpreted.
 - `last_hash.txt` — content fingerprint used to prevent duplicate raw snapshots.
 
 ## Normalized call schema
@@ -30,6 +31,10 @@ The scheduled GitHub Action fetches the source every six hours. A raw HTML snaps
 5. Daily per diem / daily incentive (max 10)
 
 The score measures difficulty attracting electrical labor, not project completion or delay directly.
+
+Project-level context remains a separate input from the call series. Legal, permitting,
+financing, and infrastructure developments may change schedule risk, but they do not
+change electrician openings or the stress score unless the source board itself changes.
 
 ## Deceleration rule
 
