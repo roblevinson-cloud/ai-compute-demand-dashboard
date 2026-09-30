@@ -1,7 +1,7 @@
 {
   "source": "CPCA monthly market releases published by CADA",
   "retrieved_at": "2026-09-30",
-  "scope": "Passenger vehicles including complete vehicles and CKD kits. Original monthly releases; later revisions can make published YoY rates differ from calculated rates.",
+  "scope": "Passenger vehicles including complete vehicles and CKD kits; not the HS 8703 customs population. Original monthly releases; later revisions can change published YoY rates.",
   "records": [
     {
       "period": "2025-01",
@@ -117,31 +117,33 @@
     },
     {
       "period": "2026-05",
-      "url": "https://www.cada.cn/Trends/info_91_10514.html",
       "units": 784000,
       "reported_number": "78.4",
-      "reported_unit": "10,000 vehicles"
+      "reported_unit": "10,000 vehicles",
+      "url": "https://www.cada.cn/Trends/info_91_10514.html"
     },
     {
       "period": "2026-06",
-      "url": "https://www.cada.cn/Trends/info_91_10533.html",
       "units": 877000,
       "reported_number": "87.7",
-      "reported_unit": "10,000 vehicles"
+      "reported_unit": "10,000 vehicles",
+      "url": "https://www.cada.cn/Trends/info_91_10533.html"
     },
     {
       "period": "2026-07",
-      "url": "https://www.cada.cn/Trends/info_91_10550.html",
       "units": 918000,
       "reported_number": "91.8",
-      "reported_unit": "10,000 vehicles"
+      "reported_unit": "10,000 vehicles",
+      "url": "https://www.cada.cn/Trends/info_91_10550.html"
     },
     {
       "period": "2026-08",
-      "url": "https://www.cada.cn/Trends/info_91_10566.html",
       "units": 888000,
       "reported_number": "88.8",
-      "reported_unit": "10,000 vehicles"
+      "reported_unit": "10,000 vehicles",
+      "url": "https://www.cada.cn/Trends/info_91_10566.html"
     }
-  ]
+  ],
+  "last_attempt_utc": "2026-09-30T16:10:46.992371+00:00",
+  "refresh_errors": []
 }
