@@ -161,7 +161,7 @@ def fetch_gacc_value_pulse(session: requests.Session):
         "latest_partners": latest_partners,
         "public_partner_limit": latest_payload.get("public_partner_limit") if latest_payload else None,
         "errors": errors,
-        "note": "Monthly total USD value covers all GACC partner rows. Public destination detail is limited to the latest top 20 partners and does not expose quantity.",
+        "note": "Monthly total USD value covers all GACC partner rows. Public destination detail is limited to the returned partner count and does not expose quantity.",
     }
 
 
@@ -215,7 +215,7 @@ def fetch_mirror_month(session: requests.Session, period: str):
     out = []
     for row in rows:
         iso = str(row.get("reporterISO") or "").upper().strip()
-        if len(iso) != 3 or not iso.isalpha() or iso == "W00":
+        if len(iso) != 3 or not iso.isalpha() or iso in {"W00", "CHN"}:
             continue
         qty = clean_number(row.get("qty"))
         unit_abbr = str(row.get("qtyUnitAbbr") or "").strip().lower()
@@ -240,11 +240,14 @@ def fetch_mirror_month(session: requests.Session, period: str):
     return out
 
 
-def fetch_mirror(session: requests.Session, end: str):
+def fetch_mirror(session: requests.Session, end: str, existing_records=None):
     records = []
     coverage = []
     errors = []
-    for period in month_iter(START, end):
+    known = {r["period"] for r in (existing_records or [])}
+    recent = sorted(known)[-3:]
+    targets = [p for p in month_iter(START, end) if p not in known or p in recent]
+    for period in targets:
         try:
             rows = fetch_mirror_month(session, period)
             records.extend(rows)
@@ -274,6 +277,29 @@ def fetch_mirror(session: requests.Session, end: str):
     }
 
 
+def preserve_snapshots(existing, gacc, mirror):
+    old_gacc = existing.get("gacc", {})
+    merged = {r["period"]: r for r in old_gacc.get("monthly_value", [])}
+    merged.update({r["period"]: r for r in gacc.get("monthly_value", [])})
+    gacc["monthly_value"] = sorted(merged.values(), key=lambda r: r["period"])
+    if merged:
+        gacc["latest_period"] = max(merged)
+    if not gacc.get("latest_partners"):
+        for key in ("latest_partners", "coverage", "public_partner_limit"):
+            gacc[key] = old_gacc.get(key)
+    records = {(r["period"], r["iso3"]): r for r in existing.get("mirror", {}).get("records", []) if r["iso3"] != "CHN"}
+    records.update({(r["period"], r["iso3"]): r for r in mirror.get("records", [])})
+    mirror["records"] = sorted(records.values(), key=lambda r: (r["period"], r["iso3"]))
+    if records:
+        mirror["latest_period"] = max(p for p, iso in records)
+    coverage = []
+    for period in sorted({p for p, iso in records}):
+        rows = [r for (p, iso), r in records.items() if p == period]
+        coverage.append({"period": period, "reporter_count": len(rows), "units_reporter_count": sum(r.get("units") is not None for r in rows), "fob_reporter_count": sum(r.get("fob_value_usd") is not None for r in rows)})
+    mirror["coverage"] = coverage
+    return gacc, mirror
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", default="docs/china-auto/data/current.json")
@@ -284,9 +310,11 @@ def main():
     session = requests.Session()
     session.headers.update({"User-Agent": "roblevinson-cloud-china-auto-monitor/1.1"})
 
+    existing = json.loads(out.read_text()) if out.exists() else {}
     gacc = fetch_gacc_value_pulse(session)
     mirror_end = gacc.get("latest_period") or f"{date.today().year:04d}-{date.today().month:02d}"
-    mirror = fetch_mirror(session, mirror_end)
+    mirror = fetch_mirror(session, mirror_end, existing.get("mirror", {}).get("records", []))
+    gacc, mirror = preserve_snapshots(existing, gacc, mirror)
 
     payload = {
         "meta": {
@@ -294,7 +322,7 @@ def main():
             "core_history_note": "Complete China-reported country-month HS 8703 history remains in exports.json through the latest UN Comtrade China release.",
             "current_value_latest_period": gacc.get("latest_period"),
             "mirror_latest_period": mirror.get("latest_period"),
-            "methodology": "Current layer keeps unlike sources separate: GACC for complete aggregate USD and public top-20 destination values; partner-reported Comtrade mirror for available monthly destination units/value; Gasgoo for a cumulative top-10 passenger-vehicle unit benchmark.",
+            "methodology": "Raw source layers retained for audit; build_china_auto_series.py joins them with provenance. Public GACC destination preview is partial; mirror coverage varies.",
         },
         "gacc": gacc,
         "mirror": mirror,

@@ -6,6 +6,9 @@ on:
     paths:
       - 'scripts/china_vehicle_exports.py'
       - 'scripts/china_vehicle_current.py'
+      - 'scripts/china_vehicle_industry.py'
+      - 'scripts/build_china_auto_series.py'
+      - 'scripts/test_china_auto.py'
       - 'scripts/deploy_china_auto_frontend.py'
       - 'docs/china-auto/index.html'
       - 'docs/china-auto/current.html'
@@ -38,11 +41,17 @@ jobs:
         run: python scripts/china_vehicle_exports.py --output docs/china-auto/data/exports.json
       - name: Refresh current GACC value and destination mirror pulse
         run: python scripts/china_vehicle_current.py --output docs/china-auto/data/current.json
+      - name: Refresh monthly passenger vehicle industry units
+        run: python scripts/china_vehicle_industry.py
+      - name: Build unified monthly panel and CSV downloads
+        run: python scripts/build_china_auto_series.py
+      - name: Validate history, sources and missing-data handling
+        run: python scripts/test_china_auto.py
       - name: Commit refreshed site and snapshots
         run: |
           git config user.name "china-auto-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/china-auto/index.html docs/china-auto/current.html docs/china-auto/history.html docs/china-auto/data/exports.json docs/china-auto/data/current.json
+          git add docs/china-auto/
           git diff --cached --quiet && exit 0
           git commit -m "data: refresh China passenger vehicle monitor [skip ci]"
           for attempt in 1 2 3; do

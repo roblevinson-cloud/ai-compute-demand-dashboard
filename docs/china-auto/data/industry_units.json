@@ -1,0 +1,147 @@
+{
+  "source": "CPCA monthly market releases published by CADA",
+  "retrieved_at": "2026-09-30",
+  "scope": "Passenger vehicles including complete vehicles and CKD kits. Original monthly releases; later revisions can make published YoY rates differ from calculated rates.",
+  "records": [
+    {
+      "period": "2025-01",
+      "url": "https://www.cada.cn/Trends/info_91_10129.html",
+      "units": 380000,
+      "reported_number": "38",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-02",
+      "url": "https://www.cada.cn/Trends/info_91_10212.html",
+      "units": 349000,
+      "reported_number": "34.9",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-03",
+      "url": "https://www.cada.cn/Trends/info_91_10234.html",
+      "units": 391000,
+      "reported_number": "39.1",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-04",
+      "url": "https://www.cada.cn/Trends/info_91_10246.html",
+      "units": 423000,
+      "reported_number": "42.3",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-05",
+      "url": "https://www.cada.cn/Trends/info_91_10267.html",
+      "units": 448000,
+      "reported_number": "44.8",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-06",
+      "url": "https://www.cada.cn/Trends/info_91_10280.html",
+      "units": 480000,
+      "reported_number": "48.0",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-07",
+      "url": "https://www.cada.cn/Trends/info_91_10306.html",
+      "units": 475000,
+      "reported_number": "47.5",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-08",
+      "url": "https://npo00410y.npoall.com/news/itemid-183478.html",
+      "units": 499000,
+      "reported_number": "49.9",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-09",
+      "url": "https://www.cada.cn/Trends/info_91_10339.html",
+      "units": 528000,
+      "reported_number": "52.8",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-10",
+      "url": "https://www.cada.cn/Trends/info_91_10369.html",
+      "units": 568000,
+      "reported_number": "56.8",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-11",
+      "url": "https://www.cada.cn/Trends/info_91_10398.html",
+      "units": 601000,
+      "reported_number": "60.1",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2025-12",
+      "url": "https://www.cada.cn/Trends/info_91_10424.html",
+      "units": 588000,
+      "reported_number": "58.8",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-01",
+      "url": "https://www.cada.cn/Trends/info_91_10447.html",
+      "units": 576000,
+      "reported_number": "57.6",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-02",
+      "url": "https://www.cada.cn/Trends/info_91_10455.html",
+      "units": 555000,
+      "reported_number": "55.5",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-03",
+      "url": "https://www.cada.cn/Trends/info_91_10473.html",
+      "units": 695000,
+      "reported_number": "69.5",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-04",
+      "url": "https://www.cada.cn/Trends/info_91_10496.html",
+      "units": 769000,
+      "reported_number": "76.9",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-05",
+      "url": "https://www.cada.cn/Trends/info_91_10514.html",
+      "units": 784000,
+      "reported_number": "78.4",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-06",
+      "url": "https://www.cada.cn/Trends/info_91_10533.html",
+      "units": 877000,
+      "reported_number": "87.7",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-07",
+      "url": "https://www.cada.cn/Trends/info_91_10550.html",
+      "units": 918000,
+      "reported_number": "91.8",
+      "reported_unit": "10,000 vehicles"
+    },
+    {
+      "period": "2026-08",
+      "url": "https://www.cada.cn/Trends/info_91_10566.html",
+      "units": 888000,
+      "reported_number": "88.8",
+      "reported_unit": "10,000 vehicles"
+    }
+  ]
+}

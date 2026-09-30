@@ -2,6 +2,10 @@ name: Deploy GridSignal to GitHub Pages
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Refresh China passenger vehicle exports"]
+    types: [completed]
+    branches: [main]
   push:
     branches:
       - main
@@ -21,6 +25,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -28,6 +33,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.ref }}
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

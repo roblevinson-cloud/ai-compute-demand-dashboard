@@ -96,7 +96,8 @@ def clean_number(value):
 
 def fetch_month(session, month: str, partner_names):
     params = {
-        "reportercode": REPORTER,
+        "reporterCode": REPORTER,
+        "partner2Code": 0, "customsCode": "C00", "motCode": 0,
         "period": month.replace("-", ""),
         "flowCode": "X",
         "cmdCode": CMD,
@@ -226,10 +227,14 @@ def main():
     replacement_records, replacement_world, errors = [], [], []
     print(f"Refreshing China HS 8703: {fetch_start} through {end}")
 
-    for month in months_between(fetch_start, end):
+    existing_set = set(existing_periods)
+    targets = sorted(set(months_between(fetch_start, end)) | {p for p in months_between(START, end) if p not in existing_set})
+    successful = set()
+    for month in targets:
         try:
             rows, world = fetch_month(session, month, partner_names)
             if rows:
+                successful.add(month)
                 replacement_records.extend(rows)
                 replacement_world.append(world)
                 print(f"{month}: {len(rows)} destinations")
@@ -240,8 +245,8 @@ def main():
             print(f"{month}: ERROR {exc}")
         time.sleep(1.1)
 
-    kept = [r for r in existing if r.get("period", "") < fetch_start]
-    kept_world = [r for r in existing_world if r.get("period", "") < fetch_start]
+    kept = [r for r in existing if r.get("period") not in successful]
+    kept_world = [r for r in existing_world if r.get("period") not in successful]
     records = add_regions(kept + replacement_records)
     world_totals = kept_world + replacement_world
     records.sort(key=lambda r: (r.get("period", ""), r.get("country", "")))
