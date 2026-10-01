@@ -1,0 +1,209 @@
+{
+  "asof": "2026-10-01",
+  "monthly": [
+    {
+      "month": "2026-01-01",
+      "national_m3": 401434.0643,
+      "national_est_kt": 293.04686693900004,
+      "braskem_customs_kt": 281.003845,
+      "braskem_mom": null
+    },
+    {
+      "month": "2026-02-01",
+      "national_m3": 443672.77,
+      "national_est_kt": 323.88112209999997,
+      "braskem_customs_kt": 310.570939,
+      "braskem_mom": 0.10521953534123352
+    },
+    {
+      "month": "2026-03-01",
+      "national_m3": 457516.3743,
+      "national_est_kt": 333.986953239,
+      "braskem_customs_kt": 320.261462,
+      "braskem_mom": 0.031202285156500142
+    },
+    {
+      "month": "2026-04-01",
+      "national_m3": 294746.8786,
+      "national_est_kt": 215.16522137799998,
+      "braskem_customs_kt": 206.322815,
+      "braskem_mom": -0.3557675852987894
+    },
+    {
+      "month": "2026-05-01",
+      "national_m3": 136064.59,
+      "national_est_kt": 99.3271507,
+      "braskem_customs_kt": 95.245213,
+      "braskem_mom": -0.5383680035579196
+    },
+    {
+      "month": "2026-06-01",
+      "national_m3": 293988.4357,
+      "national_est_kt": 214.61155806099998,
+      "braskem_customs_kt": 205.791905,
+      "braskem_mom": 1.160653522817992
+    },
+    {
+      "month": "2026-07-01",
+      "national_m3": 252848.4871,
+      "national_est_kt": 184.579395583,
+      "braskem_customs_kt": 176.993941,
+      "braskem_mom": -0.1399373021985486
+    },
+    {
+      "month": "2026-08-01",
+      "national_m3": 343384.6229,
+      "national_est_kt": 250.670774717,
+      "braskem_customs_kt": 240.39366327599998,
+      "braskem_mom": 0.358202783201488
+    }
+  ],
+  "arrivals": [
+    {
+      "etb": "2026-08-05",
+      "vessel": "BARRACUDA",
+      "status": "Completed",
+      "qty_kt": 56.789231,
+      "fleet": "Third-party",
+      "etd": "2026-08-07",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-08-25",
+      "notes": "CODEBA historical search snapshot; completed discharge."
+    },
+    {
+      "etb": "2026-08-11",
+      "vessel": "BEAUTIFUL FUTURE",
+      "status": "Completed",
+      "qty_kt": 55.245144,
+      "fleet": "Future LR1",
+      "etd": "2026-08-13",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-08-25",
+      "notes": "First verified Brazilian discharge by dedicated Future fleet."
+    },
+    {
+      "etb": "2026-08-16",
+      "vessel": "PACIFIC JASPER",
+      "status": "Completed",
+      "qty_kt": 36.0,
+      "fleet": "Third-party",
+      "etd": "2026-08-17",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-08-25",
+      "notes": "Third-party tanker discharge after Beautiful Future."
+    },
+    {
+      "etb": "2026-08-23",
+      "vessel": "BAIACU",
+      "status": "Completed",
+      "qty_kt": 56.020878,
+      "fleet": "Third-party",
+      "etd": "2026-08-25",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-08-25",
+      "notes": "Third-party tanker discharge after Beautiful Future."
+    },
+    {
+      "etb": "2026-09-05",
+      "vessel": "PINE OLIA",
+      "status": "Historical schedule / unresolved",
+      "qty_kt": 27.0,
+      "fleet": "Third-party",
+      "etd": "2026-09-06",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-09-02",
+      "notes": "Updated Sep-2 CODEBA schedule: Braskem now confirmed as operator; ETB Sep-5. Checked Sep-28: no longer on current schedule; disappearance does not confirm discharge."
+    },
+    {
+      "etb": "2026-08-31",
+      "vessel": "TORM AUSTRALIA",
+      "status": "Historical schedule / unresolved",
+      "qty_kt": 36.369299,
+      "fleet": "Third-party",
+      "etd": "2026-09-02",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-09-02",
+      "notes": "CODEBA shows vessel berthed Aug-31 and discharging 36.369kt for Braskem; ETD Sep-2. Checked Sep-28: no longer on current schedule; disappearance does not confirm discharge."
+    },
+    {
+      "etb": "2026-09-04",
+      "vessel": "BRIGHT FUTURE",
+      "status": "Historical schedule / unresolved",
+      "qty_kt": 28.0,
+      "fleet": "Third-party",
+      "etd": "2026-09-05",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-09-02",
+      "notes": "New Sep-2 forward call. This is not one of Braskem's four Beautiful/Blooming/Blissful/Bold Future LR1s. Checked Sep-28: no longer on current schedule; disappearance does not confirm discharge."
+    },
+    {
+      "etb": "2026-09-09",
+      "vessel": "TWEED",
+      "status": "Historical schedule / unresolved",
+      "qty_kt": null,
+      "fleet": "Third-party",
+      "etd": "2026-09-10",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-09-02",
+      "notes": "New forward naphtha call for Braskem. CODEBA currently reports cargo quantity as 0/TBD; excluded from tonnage totals. Checked Sep-28: no longer on current schedule; disappearance does not confirm discharge."
+    },
+    {
+      "etb": "2026-09-26",
+      "vessel": "BEAUTIFUL FUTURE",
+      "status": "Berthed / Discharging",
+      "qty_kt": 56.617101,
+      "fleet": "Future LR1",
+      "etd": "2026-10-01",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-10-01",
+      "notes": "24340 / DUV 440892026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+    },
+    {
+      "etb": "2026-10-03",
+      "vessel": "BLOOMING FUTURE",
+      "status": "Scheduled",
+      "qty_kt": 28.0,
+      "fleet": "Future LR1",
+      "etd": "2026-10-04",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-10-01",
+      "notes": "24355 / DUV 462002026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+    },
+    {
+      "etb": "2026-10-05",
+      "vessel": "CEDAR EXPRESS",
+      "status": "Anchored / Awaiting berth",
+      "qty_kt": 34.097355,
+      "fleet": "Third-party",
+      "etd": "2026-10-06",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-10-01",
+      "notes": "24342 / DUV 460452026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+    },
+    {
+      "etb": "2026-10-06",
+      "vessel": "PINE OLIA",
+      "status": "Anchored / Awaiting berth",
+      "qty_kt": 27.6,
+      "fleet": "Third-party",
+      "etd": "2026-10-08",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-10-01",
+      "notes": "24336 / DUV 443822026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+    },
+    {
+      "etb": "2026-10-08",
+      "vessel": "BAIACU",
+      "status": "Scheduled",
+      "qty_kt": null,
+      "fleet": "Third-party",
+      "etd": "2026-10-10",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-10-01",
+      "notes": "24347 / DUV 454222026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified. Source reports 0/TBD; excluded from known tonnage."
+    }
+  ],
+  "density_t_m3": 0.73,
+  "national_source": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/ie/derivados/importacoes-exportacoes-derivados-2000-2025.csv",
+  "customs_source": "https://www.gov.br/anp/pt-br/assuntos/importacoes-e-exportacoes/arquivos-desembaracos/desembaraco-2026.xlsx"
+}
