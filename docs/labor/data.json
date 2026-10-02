@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T13:11:35.590386+00:00",
+  "generated_at": "2026-10-02T05:34:41.596803+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -184,20 +184,20 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-10-01",
-      "openings": 43,
-      "intensity": 37.6,
+      "date": "2026-10-02",
+      "openings": 35,
+      "intensity": 35.2,
       "lat": 39.0997,
       "lon": -94.5786,
       "state": "MO",
       "projects": [
         {
           "project": "Google",
-          "openings": 26
+          "openings": 25
         },
         {
           "project": "Meta / Facebook",
-          "openings": 16
+          "openings": 9
         },
         {
           "project": "Unclassified data center",
@@ -714,6 +714,12 @@
       "intensity": 37.6
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-02",
+      "openings": 35,
+      "intensity": 35.2
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -903,27 +909,27 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-09-30",
-      "to_date": "2026-10-01",
-      "from_openings": 45,
-      "to_openings": 43,
-      "change_openings": -2,
-      "change_pct": -4.4,
-      "from_intensity": 34.8,
-      "to_intensity": 37.6,
-      "change_intensity": 2.8,
+      "from_date": "2026-10-01",
+      "to_date": "2026-10-02",
+      "from_openings": 43,
+      "to_openings": 35,
+      "change_openings": -8,
+      "change_pct": -18.6,
+      "from_intensity": 37.6,
+      "to_intensity": 35.2,
+      "change_intensity": -2.4,
       "projects": [
         {
           "project": "Meta / Facebook",
-          "from_openings": 23,
-          "to_openings": 16,
+          "from_openings": 16,
+          "to_openings": 9,
           "change_openings": -7
         },
         {
           "project": "Google",
-          "from_openings": 21,
-          "to_openings": 26,
-          "change_openings": 5
+          "from_openings": 26,
+          "to_openings": 25,
+          "change_openings": -1
         }
       ],
       "conditions": {
