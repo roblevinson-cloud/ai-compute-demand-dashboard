@@ -1,6 +1,19 @@
 {
-  "as_of": "2026-09-24",
+  "as_of": "2026-10-05",
   "items": [
+    {
+      "date": "2026-10-05",
+      "source": "Data Center Dynamics",
+      "tag": "CONSTRUCTION / POLARIS FORGE 1",
+      "headline": "Applied Digital adds 75MW of capacity at Ellendale data center campus in North Dakota",
+      "url": "https://www.datacenterdynamics.com/en/news/applied-digital-adds-75mw-of-capacity-at-ellendale-data-center-campus-in-north-dakota/",
+      "matched_project": "Polaris Forge 1",
+      "match_score": 5,
+      "match_terms": [
+        "ellendale",
+        "applied digital"
+      ]
+    },
     {
       "date": "2026-09-24",
       "source": "Data Center Dynamics",
