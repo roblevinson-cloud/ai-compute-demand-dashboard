@@ -1,6 +1,6 @@
 {
   "source": "CPCA monthly market releases published by CADA",
-  "retrieved_at": "2026-10-04",
+  "retrieved_at": "2026-10-06",
   "scope": "Passenger vehicles including complete vehicles and CKD kits; not the HS 8703 customs population. Original monthly releases; later revisions can change published YoY rates.",
   "records": [
     {
@@ -144,6 +144,6 @@
       "url": "https://www.cada.cn/Trends/info_91_10566.html"
     }
   ],
-  "last_attempt_utc": "2026-10-04T16:54:09.602570+00:00",
+  "last_attempt_utc": "2026-10-06T18:28:44.253887+00:00",
   "refresh_errors": []
 }
