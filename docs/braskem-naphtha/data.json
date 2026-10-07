@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-01",
+  "asof": "2026-10-07",
   "monthly": [
     {
       "month": "2026-01-01",
@@ -150,57 +150,63 @@
     {
       "etb": "2026-09-26",
       "vessel": "BEAUTIFUL FUTURE",
-      "status": "Berthed / Discharging",
+      "status": "Historical schedule / unresolved",
       "qty_kt": 56.617101,
       "fleet": "Future LR1",
       "etd": "2026-10-01",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
       "source_asof": "2026-10-01",
-      "notes": "24340 / DUV 440892026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+      "notes": "24340 / DUV 440892026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified. Checked Oct-7: absent from current schedule; completion unverified. Excluded from current queue."
     },
     {
-      "etb": "2026-10-03",
+      "etb": "2026-10-13",
       "vessel": "BLOOMING FUTURE",
-      "status": "Scheduled",
+      "status": "Anchored / Awaiting berth",
       "qty_kt": 28.0,
       "fleet": "Future LR1",
-      "etd": "2026-10-04",
+      "etd": "2026-10-14",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
-      "source_asof": "2026-10-01",
-      "notes": "24355 / DUV 462002026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+      "source_asof": "2026-10-07",
+      "notes": "CODEBA fetched Oct-7. Program 24368, DUV 462002026. Planned cargo; completed discharge not verified.",
+      "program_id": "24368",
+      "duv": "462002026"
     },
     {
-      "etb": "2026-10-05",
+      "etb": "2026-10-10",
       "vessel": "CEDAR EXPRESS",
       "status": "Anchored / Awaiting berth",
       "qty_kt": 34.097355,
       "fleet": "Third-party",
-      "etd": "2026-10-06",
+      "etd": "2026-10-11",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
-      "source_asof": "2026-10-01",
-      "notes": "24342 / DUV 460452026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+      "source_asof": "2026-10-07",
+      "notes": "CODEBA fetched Oct-7. Program 24342, DUV 460452026. Planned cargo; completed discharge not verified.",
+      "program_id": "24342",
+      "duv": "460452026"
     },
     {
       "etb": "2026-10-06",
       "vessel": "PINE OLIA",
-      "status": "Anchored / Awaiting berth",
+      "status": "Historical schedule / unresolved",
       "qty_kt": 27.6,
       "fleet": "Third-party",
       "etd": "2026-10-08",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
       "source_asof": "2026-10-01",
-      "notes": "24336 / DUV 443822026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified."
+      "notes": "24336 / DUV 443822026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified. Checked Oct-7: absent from current schedule; completion unverified. Excluded from current queue."
     },
     {
-      "etb": "2026-10-08",
+      "etb": "2026-10-14",
       "vessel": "BAIACU",
-      "status": "Scheduled",
+      "status": "Anchored / Awaiting berth",
       "qty_kt": null,
       "fleet": "Third-party",
-      "etd": "2026-10-10",
+      "etd": "2026-10-15",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
-      "source_asof": "2026-10-01",
-      "notes": "24347 / DUV 454222026. CODEBA fetched Oct-1. Planned cargo; completed discharge not verified. Source reports 0/TBD; excluded from known tonnage."
+      "source_asof": "2026-10-07",
+      "notes": "CODEBA fetched Oct-7. Program 24347, DUV 454222026. Planned cargo; completed discharge not verified. Source quantity is 0/TBD.",
+      "program_id": "24347",
+      "duv": "454222026"
     }
   ],
   "density_t_m3": 0.73,
@@ -1593,5 +1599,23 @@
       }
     },
     "as_of": "2026-10-01"
+  },
+  "refresh": {
+    "checked_at": "2026-10-07",
+    "imports_through": "2026-08",
+    "national_changed": false,
+    "customs_changed": false,
+    "current_calls": 3,
+    "known_queue_kt": 62.097355,
+    "unknown_quantity_calls": 1,
+    "absent_calls": [
+      "BEAUTIFUL FUTURE",
+      "PINE OLIA"
+    ],
+    "source_sha256": {
+      "codeba.html": "4deabb338d06b538fa32a0421a11a5637ff5cd3c087e3236520e9c4f92f9a9e0",
+      "anp.csv": "74fcf2895b5c31a07d62b55e4f99f39c0e4debabd23d320c23312b5379005baf",
+      "customs.xlsx": "4c021c684c0e7656dc62188f523ad7a927cf067bb299dd38e4b0e3b210f7ffcb"
+    }
   }
 }
