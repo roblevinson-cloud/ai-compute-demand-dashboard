@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T18:20:33.093758+00:00",
+  "generated_at": "2026-10-07T05:56:54.867889+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -169,9 +169,9 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-10-06",
-      "openings": 39,
-      "intensity": 34.2,
+      "date": "2026-10-07",
+      "openings": 36,
+      "intensity": 35.3,
       "lat": 39.0997,
       "lon": -94.5786,
       "state": "MO",
@@ -179,14 +179,6 @@
         {
           "project": "Google",
           "openings": 36
-        },
-        {
-          "project": "Meta / Facebook",
-          "openings": 2
-        },
-        {
-          "project": "Unclassified data center",
-          "openings": 1
         }
       ]
     },
@@ -817,6 +809,12 @@
       "intensity": 34.2
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-07",
+      "openings": 36,
+      "intensity": 35.3
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1054,27 +1052,27 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-10-05",
-      "to_date": "2026-10-06",
-      "from_openings": 43,
-      "to_openings": 39,
-      "change_openings": -4,
-      "change_pct": -9.3,
-      "from_intensity": 36.1,
-      "to_intensity": 34.2,
-      "change_intensity": -1.9,
+      "from_date": "2026-10-06",
+      "to_date": "2026-10-07",
+      "from_openings": 39,
+      "to_openings": 36,
+      "change_openings": -3,
+      "change_pct": -7.7,
+      "from_intensity": 34.2,
+      "to_intensity": 35.3,
+      "change_intensity": 1.1,
       "projects": [
         {
-          "project": "Google",
-          "from_openings": 38,
-          "to_openings": 36,
+          "project": "Meta / Facebook",
+          "from_openings": 2,
+          "to_openings": 0,
           "change_openings": -2
         },
         {
-          "project": "Meta / Facebook",
-          "from_openings": 4,
-          "to_openings": 2,
-          "change_openings": -2
+          "project": "Unclassified data center",
+          "from_openings": 1,
+          "to_openings": 0,
+          "change_openings": -1
         }
       ],
       "conditions": {
