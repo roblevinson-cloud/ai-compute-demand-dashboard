@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T13:26:30.974863+00:00",
+  "generated_at": "2026-10-08T23:19:55.938926+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -169,16 +169,16 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-10-08",
-      "openings": 31,
-      "intensity": 34.1,
+      "date": "2026-10-09",
+      "openings": 28,
+      "intensity": 34.4,
       "lat": 39.0997,
       "lon": -94.5786,
       "state": "MO",
       "projects": [
         {
           "project": "Google",
-          "openings": 31
+          "openings": 28
         }
       ]
     },
@@ -821,6 +821,12 @@
       "intensity": 34.1
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-09",
+      "openings": 28,
+      "intensity": 34.4
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1058,21 +1064,21 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-10-07",
-      "to_date": "2026-10-08",
-      "from_openings": 36,
-      "to_openings": 31,
-      "change_openings": -5,
-      "change_pct": -13.9,
-      "from_intensity": 35.3,
-      "to_intensity": 34.1,
-      "change_intensity": -1.2,
+      "from_date": "2026-10-08",
+      "to_date": "2026-10-09",
+      "from_openings": 31,
+      "to_openings": 28,
+      "change_openings": -3,
+      "change_pct": -9.7,
+      "from_intensity": 34.1,
+      "to_intensity": 34.4,
+      "change_intensity": 0.3,
       "projects": [
         {
           "project": "Google",
-          "from_openings": 36,
-          "to_openings": 31,
-          "change_openings": -5
+          "from_openings": 31,
+          "to_openings": 28,
+          "change_openings": -3
         }
       ],
       "conditions": {
