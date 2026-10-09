@@ -638,7 +638,7 @@ ARM,Armenia,Asia,2026-04,638.0,14058418.39,comtrade_mirror,comtrade_mirror,CIF/i
 ARM,Armenia,Asia,2026-05,1156.0,26060755.97,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,22543.906548442905,0.8119122257053291,False,False,-0.6642462968341563,False,False,0.8537473595562834,False,False,1.6141158488008518,False,False
 ARM,Armenia,Asia,2026-06,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 ARM,Armenia,Asia,2026-07,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
-ARM,Armenia,Asia,2026-08,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
+ARM,Armenia,Asia,2026-08,2023.0,40861336.75,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,20198.38692535838,,False,False,1.744911804613297,False,False,,False,False,2.8987378908313457,False,False
 ATG,Antigua and Barbuda,Latin America,2020-01,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 ATG,Antigua and Barbuda,Latin America,2020-02,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 ATG,Antigua and Barbuda,Latin America,2020-03,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
