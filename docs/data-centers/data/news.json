@@ -1,6 +1,19 @@
 {
-  "as_of": "2026-10-13",
+  "as_of": "2026-10-15",
   "items": [
+    {
+      "date": "2026-10-15",
+      "source": "Data Center Dynamics",
+      "tag": "PERMIT / PROJECT JUPITER",
+      "headline": "Oracle renews attempts to secure natural gas pipeline approval for Project Jupiter data center - report",
+      "url": "https://www.datacenterdynamics.com/en/news/oracle-renews-attempts-to-secure-natural-gas-pipeline-approval-for-project-jupiter-data-center-report/",
+      "matched_project": "Project Jupiter",
+      "match_score": 5,
+      "match_terms": [
+        "project jupiter",
+        "oracle"
+      ]
+    },
     {
       "date": "2026-10-13",
       "source": "Data Center Dynamics",
