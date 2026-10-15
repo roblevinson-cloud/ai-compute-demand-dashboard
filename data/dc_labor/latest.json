@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:59:00.942360+00:00",
+  "generated_at": "2026-10-15T21:21:28.735522+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -263,21 +263,6 @@
       ]
     },
     {
-      "market": "Kansas City",
-      "date": "2026-10-15",
-      "openings": 7,
-      "intensity": 28.8,
-      "lat": 39.0997,
-      "lon": -94.5786,
-      "state": "MO",
-      "projects": [
-        {
-          "project": "Google",
-          "openings": 7
-        }
-      ]
-    },
-    {
       "market": "Indianapolis\u2013Mooresville",
       "date": "2026-10-05",
       "openings": 1,
@@ -308,6 +293,21 @@
         {
           "project": "Google",
           "openings": 1
+        }
+      ]
+    },
+    {
+      "market": "Kansas City",
+      "date": "2026-10-16",
+      "openings": 5,
+      "intensity": 25.5,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Google",
+          "openings": 5
         }
       ]
     },
@@ -845,6 +845,12 @@
       "intensity": 28.8
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-16",
+      "openings": 5,
+      "intensity": 25.5
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1082,21 +1088,21 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-10-14",
-      "to_date": "2026-10-15",
-      "from_openings": 13,
-      "to_openings": 7,
-      "change_openings": -6,
-      "change_pct": -46.2,
-      "from_intensity": 32.6,
-      "to_intensity": 28.8,
-      "change_intensity": -3.8,
+      "from_date": "2026-10-15",
+      "to_date": "2026-10-16",
+      "from_openings": 7,
+      "to_openings": 5,
+      "change_openings": -2,
+      "change_pct": -28.6,
+      "from_intensity": 28.8,
+      "to_intensity": 25.5,
+      "change_intensity": -3.3,
       "projects": [
         {
           "project": "Google",
-          "from_openings": 13,
-          "to_openings": 7,
-          "change_openings": -6
+          "from_openings": 7,
+          "to_openings": 5,
+          "change_openings": -2
         }
       ],
       "conditions": {
