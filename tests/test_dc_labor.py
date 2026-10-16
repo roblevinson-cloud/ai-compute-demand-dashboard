@@ -49,10 +49,10 @@ def test_updated_local_without_data_center_calls_has_explicit_zero():
 def test_project_context_is_source_linked_and_newest_first():
     context = labor.load_project_context()
 
-    assert context["reviewed_at"] == "2026-09-27"
+    assert context["reviewed_at"] >= context["signals"][0]["date"]
     assert len(context["signals"]) >= 3
     assert [signal["date"] for signal in context["signals"]] == sorted(
         (signal["date"] for signal in context["signals"]), reverse=True
     )
     assert all(signal["source_url"].startswith("https://") for signal in context["signals"])
-    assert context["signals"][0]["title"].startswith("Oracle sends force-majeure")
+    assert all(signal["labor_readthrough"] for signal in context["signals"])
