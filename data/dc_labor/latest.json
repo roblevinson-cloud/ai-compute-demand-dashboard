@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T21:33:54.621483+00:00",
+  "generated_at": "2026-10-23T04:46:37.927562+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -213,6 +213,21 @@
       ]
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-23",
+      "openings": 18,
+      "intensity": 32.3,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Google",
+          "openings": 18
+        }
+      ]
+    },
+    {
       "market": "Northern Virginia / DC",
       "date": "2026-10-19",
       "openings": 305,
@@ -247,25 +262,6 @@
         {
           "project": "Unclassified data center",
           "openings": 2
-        }
-      ]
-    },
-    {
-      "market": "Kansas City",
-      "date": "2026-10-22",
-      "openings": 10,
-      "intensity": 26.2,
-      "lat": 39.0997,
-      "lon": -94.5786,
-      "state": "MO",
-      "projects": [
-        {
-          "project": "Meta / Facebook",
-          "openings": 5
-        },
-        {
-          "project": "Google",
-          "openings": 5
         }
       ]
     },
@@ -964,6 +960,12 @@
       "intensity": 26.2
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-23",
+      "openings": 18,
+      "intensity": 32.3
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1249,27 +1251,27 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-10-21",
-      "to_date": "2026-10-22",
-      "from_openings": 14,
-      "to_openings": 10,
-      "change_openings": -4,
-      "change_pct": -28.6,
-      "from_intensity": 33.7,
-      "to_intensity": 26.2,
-      "change_intensity": -7.5,
+      "from_date": "2026-10-22",
+      "to_date": "2026-10-23",
+      "from_openings": 10,
+      "to_openings": 18,
+      "change_openings": 8,
+      "change_pct": 80.0,
+      "from_intensity": 26.2,
+      "to_intensity": 32.3,
+      "change_intensity": 6.1,
       "projects": [
         {
           "project": "Google",
-          "from_openings": 14,
-          "to_openings": 5,
-          "change_openings": -9
+          "from_openings": 5,
+          "to_openings": 18,
+          "change_openings": 13
         },
         {
           "project": "Meta / Facebook",
-          "from_openings": 0,
-          "to_openings": 5,
-          "change_openings": 5
+          "from_openings": 5,
+          "to_openings": 0,
+          "change_openings": -5
         }
       ],
       "conditions": {
