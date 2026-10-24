@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T10:56:44.762786+00:00",
+  "generated_at": "2026-10-24T15:55:17.706813+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -190,6 +190,25 @@
       ]
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-26",
+      "openings": 27,
+      "intensity": 34.5,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Google",
+          "openings": 17
+        },
+        {
+          "project": "Meta / Facebook",
+          "openings": 10
+        }
+      ]
+    },
+    {
       "market": "Reno",
       "date": "2026-10-26",
       "openings": 41,
@@ -232,32 +251,17 @@
       ]
     },
     {
-      "market": "Kansas City",
-      "date": "2026-10-26",
-      "openings": 18,
-      "intensity": 32.3,
-      "lat": 39.0997,
-      "lon": -94.5786,
-      "state": "MO",
-      "projects": [
-        {
-          "project": "Google",
-          "openings": 18
-        }
-      ]
-    },
-    {
       "market": "Northern Virginia / DC",
-      "date": "2026-10-19",
-      "openings": 305,
-      "intensity": 28.5,
+      "date": "2026-10-26",
+      "openings": 273,
+      "intensity": 29.4,
       "lat": 38.96,
       "lon": -77.48,
       "state": "VA",
       "projects": [
         {
           "project": "Unclassified data center",
-          "openings": 300
+          "openings": 268
         },
         {
           "project": "QTS",
@@ -1042,8 +1046,8 @@
     {
       "market": "Kansas City",
       "date": "2026-10-26",
-      "openings": 18,
-      "intensity": 32.3
+      "openings": 27,
+      "intensity": 34.5
     },
     {
       "market": "Memphis, Tn",
@@ -1200,6 +1204,12 @@
       "date": "2026-10-19",
       "openings": 305,
       "intensity": 28.5
+    },
+    {
+      "market": "Northern Virginia / DC",
+      "date": "2026-10-26",
+      "openings": 273,
+      "intensity": 29.4
     },
     {
       "market": "Racine / SE Wisconsin",
@@ -1432,6 +1442,104 @@
           "ot_multiplier": [
             2.0
           ]
+        }
+      }
+    },
+    {
+      "market": "Kansas City",
+      "from_date": "2026-10-23",
+      "to_date": "2026-10-26",
+      "from_openings": 18,
+      "to_openings": 27,
+      "change_openings": 9,
+      "change_pct": 50.0,
+      "from_intensity": 32.3,
+      "to_intensity": 34.5,
+      "change_intensity": 2.2,
+      "projects": [
+        {
+          "project": "Meta / Facebook",
+          "from_openings": 0,
+          "to_openings": 10,
+          "change_openings": 10
+        },
+        {
+          "project": "Google",
+          "from_openings": 18,
+          "to_openings": 17,
+          "change_openings": -1
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            56.0,
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            50.0,
+            56.0,
+            58.0,
+            80.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
+      "market": "Northern Virginia / DC",
+      "from_date": "2026-10-19",
+      "to_date": "2026-10-26",
+      "from_openings": 305,
+      "to_openings": 273,
+      "change_openings": -32,
+      "change_pct": -10.5,
+      "from_intensity": 28.5,
+      "to_intensity": 29.4,
+      "change_intensity": 0.9,
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "from_openings": 300,
+          "to_openings": 268,
+          "change_openings": -32
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            16.0,
+            24.0,
+            27.0,
+            32.0,
+            40.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [
+            125.0
+          ],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            16.0,
+            24.0,
+            40.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
         }
       }
     },
@@ -1874,41 +1982,6 @@
       }
     },
     {
-      "market": "Kansas City",
-      "from_date": "2026-10-23",
-      "to_date": "2026-10-26",
-      "from_openings": 18,
-      "to_openings": 18,
-      "change_openings": 0,
-      "change_pct": 0.0,
-      "from_intensity": 32.3,
-      "to_intensity": 32.3,
-      "change_intensity": 0.0,
-      "projects": [],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            56.0,
-            58.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            56.0,
-            58.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
       "market": "Memphis, Tn",
       "from_date": "2026-10-19",
       "to_date": "2026-10-26",
@@ -2163,64 +2236,6 @@
           "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Northern Virginia / DC",
-      "from_date": "2026-10-05",
-      "to_date": "2026-10-19",
-      "from_openings": 304,
-      "to_openings": 305,
-      "change_openings": 1,
-      "change_pct": 0.3,
-      "from_intensity": 31.4,
-      "to_intensity": 28.5,
-      "change_intensity": -2.9,
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "from_openings": 297,
-          "to_openings": 300,
-          "change_openings": 3
-        },
-        {
-          "project": "QTS",
-          "from_openings": 7,
-          "to_openings": 5,
-          "change_openings": -2
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            16.0,
-            24.0,
-            40.0,
-            48.0,
-            50.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [
-            125.0
-          ],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            16.0,
-            24.0,
-            27.0,
-            32.0,
-            40.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [
-            125.0
-          ],
           "ot_multiplier": []
         }
       }
