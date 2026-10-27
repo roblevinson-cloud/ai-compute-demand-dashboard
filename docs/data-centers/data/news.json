@@ -1,6 +1,18 @@
 {
-  "as_of": "2026-10-15",
+  "as_of": "2026-10-27",
   "items": [
+    {
+      "date": "2026-10-27",
+      "source": "Data Center Dynamics",
+      "tag": "CONSTRUCTION / PROJECT JUPITER",
+      "headline": "First building at Project Jupiter data center campus in New Mexico topped out",
+      "url": "https://www.datacenterdynamics.com/en/news/first-building-at-project-jupiter-data-center-campus-in-new-mexico-topped-out/",
+      "matched_project": "Project Jupiter",
+      "match_score": 4,
+      "match_terms": [
+        "project jupiter"
+      ]
+    },
     {
       "date": "2026-10-15",
       "source": "Data Center Dynamics",
