@@ -151,6 +151,34 @@
       "url": "https://www.cada.cn/Trends/info_91_10580.html"
     }
   ],
-  "last_attempt_utc": "2026-10-27T18:05:49.162332+00:00",
-  "refresh_errors": []
+  "last_attempt_utc": "2026-10-28T18:24:50.499272+00:00",
+  "refresh_errors": [
+    {
+      "url": "https://www.cada.cn/Trends/list_91_1.html",
+      "error": "504 Server Error: Gateway Timeout for url: https://www.cada.cn/Trends/list_91_1.html"
+    },
+    {
+      "url": "https://www.cada.cn/Trends/list_91_2.html",
+      "error": "504 Server Error: Gateway Timeout for url: https://www.cada.cn/Trends/list_91_2.html"
+    },
+    {
+      "url": "https://www.cada.cn/Trends/list_91_3.html",
+      "error": "504 Server Error: Gateway Timeout for url: https://www.cada.cn/Trends/list_91_3.html"
+    },
+    {
+      "period": "2026-07",
+      "url": "https://www.cada.cn/Trends/info_91_10550.html",
+      "error": "504 Server Error: Gateway Timeout for url: https://www.cada.cn/Trends/info_91_10550.html"
+    },
+    {
+      "period": "2026-08",
+      "url": "https://www.cada.cn/Trends/info_91_10566.html",
+      "error": "504 Server Error: Gateway Timeout for url: https://www.cada.cn/Trends/info_91_10566.html"
+    },
+    {
+      "period": "2026-09",
+      "url": "https://www.cada.cn/Trends/info_91_10580.html",
+      "error": "504 Server Error: Gateway Timeout for url: https://www.cada.cn/Trends/info_91_10580.html"
+    }
+  ]
 }
