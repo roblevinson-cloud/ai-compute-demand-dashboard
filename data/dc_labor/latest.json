@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T22:12:11.998312+00:00",
+  "generated_at": "2026-10-28T05:39:25.985498+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -271,20 +271,16 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-10-27",
-      "openings": 14,
-      "intensity": 25.0,
+      "date": "2026-10-28",
+      "openings": 9,
+      "intensity": 24.7,
       "lat": 39.0997,
       "lon": -94.5786,
       "state": "MO",
       "projects": [
         {
           "project": "Google",
-          "openings": 11
-        },
-        {
-          "project": "Unclassified data center",
-          "openings": 3
+          "openings": 9
         }
       ]
     },
@@ -1056,6 +1052,12 @@
       "intensity": 25.0
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-28",
+      "openings": 9,
+      "intensity": 24.7
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1389,33 +1391,27 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-10-26",
-      "to_date": "2026-10-27",
-      "from_openings": 27,
-      "to_openings": 14,
-      "change_openings": -13,
-      "change_pct": -48.1,
-      "from_intensity": 34.5,
-      "to_intensity": 25.0,
-      "change_intensity": -9.5,
+      "from_date": "2026-10-27",
+      "to_date": "2026-10-28",
+      "from_openings": 14,
+      "to_openings": 9,
+      "change_openings": -5,
+      "change_pct": -35.7,
+      "from_intensity": 25.0,
+      "to_intensity": 24.7,
+      "change_intensity": -0.3,
       "projects": [
         {
-          "project": "Meta / Facebook",
-          "from_openings": 10,
+          "project": "Unclassified data center",
+          "from_openings": 3,
           "to_openings": 0,
-          "change_openings": -10
+          "change_openings": -3
         },
         {
           "project": "Google",
-          "from_openings": 17,
-          "to_openings": 11,
-          "change_openings": -6
-        },
-        {
-          "project": "Unclassified data center",
-          "from_openings": 0,
-          "to_openings": 3,
-          "change_openings": 3
+          "from_openings": 11,
+          "to_openings": 9,
+          "change_openings": -2
         }
       ],
       "conditions": {
@@ -1423,8 +1419,7 @@
           "weekly_hours": [
             50.0,
             56.0,
-            58.0,
-            80.0
+            58.0
           ],
           "base_hourly": [],
           "incentive_hourly": [],
@@ -1434,8 +1429,7 @@
         "to": {
           "weekly_hours": [
             50.0,
-            56.0,
-            58.0
+            56.0
           ],
           "base_hourly": [],
           "incentive_hourly": [],
