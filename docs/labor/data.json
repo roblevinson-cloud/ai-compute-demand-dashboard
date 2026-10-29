@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:58:01.281588+00:00",
+  "generated_at": "2026-10-29T22:43:42.768728+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -194,21 +194,6 @@
       ]
     },
     {
-      "market": "Kansas City",
-      "date": "2026-10-29",
-      "openings": 29,
-      "intensity": 37.8,
-      "lat": 39.0997,
-      "lon": -94.5786,
-      "state": "MO",
-      "projects": [
-        {
-          "project": "Google",
-          "openings": 29
-        }
-      ]
-    },
-    {
       "market": "Reno",
       "date": "2026-10-26",
       "openings": 32,
@@ -262,6 +247,21 @@
         {
           "project": "Unclassified data center",
           "openings": 3
+        }
+      ]
+    },
+    {
+      "market": "Kansas City",
+      "date": "2026-10-30",
+      "openings": 39,
+      "intensity": 31.2,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Google",
+          "openings": 39
         }
       ]
     },
@@ -1064,6 +1064,12 @@
       "intensity": 37.8
     },
     {
+      "market": "Kansas City",
+      "date": "2026-10-30",
+      "openings": 39,
+      "intensity": 31.2
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1397,28 +1403,29 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-10-28",
-      "to_date": "2026-10-29",
-      "from_openings": 9,
-      "to_openings": 29,
-      "change_openings": 20,
-      "change_pct": 222.2,
-      "from_intensity": 24.7,
-      "to_intensity": 37.8,
-      "change_intensity": 13.1,
+      "from_date": "2026-10-29",
+      "to_date": "2026-10-30",
+      "from_openings": 29,
+      "to_openings": 39,
+      "change_openings": 10,
+      "change_pct": 34.5,
+      "from_intensity": 37.8,
+      "to_intensity": 31.2,
+      "change_intensity": -6.6,
       "projects": [
         {
           "project": "Google",
-          "from_openings": 9,
-          "to_openings": 29,
-          "change_openings": 20
+          "from_openings": 29,
+          "to_openings": 39,
+          "change_openings": 10
         }
       ],
       "conditions": {
         "from": {
           "weekly_hours": [
             50.0,
-            56.0
+            56.0,
+            58.0
           ],
           "base_hourly": [],
           "incentive_hourly": [],
