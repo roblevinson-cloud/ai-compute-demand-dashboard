@@ -1,0 +1,90 @@
+{
+  "asof": "2026-10-30",
+  "refresh": {
+    "checked_at": "2026-10-30",
+    "imports_through": "2026-09",
+    "national_changed": true,
+    "customs_changed": true,
+    "current_calls": 4,
+    "known_queue_kt": 148.041776,
+    "unknown_quantity_calls": 0,
+    "absent_calls": [
+      "BEAUTIFUL FUTURE",
+      "BLOOMING FUTURE",
+      "CEDAR EXPRESS",
+      "PINE OLIA",
+      "BAIACU"
+    ],
+    "source_sha256": {
+      "codeba.html": "6c4122758301376a5c9fbbf572859afa05e13f599914ac9937b17bdcaf80a61a",
+      "anp.csv": "e23bc2993dc359c711f0f147fb815ce00602bc8cd266d0b4c51b6bb863ff89d0",
+      "customs.xlsx": "9d4014543a77dc961688a86d768feea3d025cb0115b1064d87794b9cfd3cca08",
+      "braskem-valuation.xlsx": "11a3e212389bfffed84dcbdb13c3171375559f23f1bd01c1c13e933805808590",
+      "petrobras-3q26.pdf": "aeccf5fea6fdead13aab9bfd86df458db5cd5fa50490cd73252365099331cb17"
+    }
+  },
+  "calls": [
+    {
+      "vessel": "CIELO BIANCO",
+      "program_id": "24406",
+      "duv": "507192026",
+      "eta": "30/10/2026 23:00",
+      "etb": "07/11/2026",
+      "etd": "09/11/2026",
+      "status": "Scheduled",
+      "kg": 57595228.0,
+      "operator": "BRASKEM S.A (OPERATORA PORTUÁRIA)"
+    },
+    {
+      "vessel": "GEM LATOYA",
+      "program_id": "24395",
+      "duv": "506162026",
+      "eta": "02/11/2026 05:00",
+      "etb": "06/11/2026",
+      "etd": "07/11/2026",
+      "status": "Scheduled",
+      "kg": 19250000.0,
+      "operator": "BRASKEM S.A (OPERATORA PORTUÁRIA)"
+    },
+    {
+      "vessel": "CLYDE",
+      "program_id": "24375",
+      "duv": "483712026",
+      "eta": "14/10/2026 12:00",
+      "etb": "03/11/2026",
+      "etd": "05/11/2026",
+      "status": "Anchored / Awaiting berth",
+      "kg": 35000000.0,
+      "operator": "BRASKEM S.A (OPERATORA PORTUÁRIA)"
+    },
+    {
+      "vessel": "HAFNIA ANDREA",
+      "program_id": "24390",
+      "duv": "499842026",
+      "eta": "23/10/2026 20:00",
+      "etb": "28/10/2026",
+      "etd": "30/10/2026",
+      "status": "Berthed / Discharging",
+      "kg": 36196548.0,
+      "operator": "BRASKEM S.A (OPERATORA PORTUÁRIA)"
+    }
+  ],
+  "latest_quarter": {
+    "period": "2026 Q3",
+    "year": 2026,
+    "quarter": 3,
+    "days": 92,
+    "ethylene_kt": null,
+    "pbr_mbpd": 77,
+    "pbr_kt": 822.174178007065,
+    "consumption_kt": null,
+    "implied_kt": null,
+    "flex_implied_kt": null,
+    "customs_kt": 649.662851276,
+    "national_kt": 677.3255944000001,
+    "national_error_pct": null,
+    "customs_status": "Reported customs kg",
+    "status": "Braskem production tonnage pending; valuation book still through Q2 2026",
+    "pbr_source": "https://filemanager-cdn.mziq.com/published/25fdf098-34f5-4608-b7fa-17d60b2de47d/db8de460-958b-47fa-b5a6-d2708cbafc43"
+  }
+}

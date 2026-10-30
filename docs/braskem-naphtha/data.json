@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-12",
+  "asof": "2026-10-30",
   "monthly": [
     {
       "month": "2026-01-01",
@@ -40,22 +40,29 @@
       "month": "2026-06-01",
       "national_m3": 293988.4357,
       "national_est_kt": 214.61155806099998,
-      "braskem_customs_kt": 205.791905,
-      "braskem_mom": 1.160653522817992
+      "braskem_customs_kt": 205.79190499999999,
+      "braskem_mom": 1.1606535228179915
     },
     {
       "month": "2026-07-01",
       "national_m3": 252848.4871,
       "national_est_kt": 184.579395583,
       "braskem_customs_kt": 176.993941,
-      "braskem_mom": -0.1399373021985486
+      "braskem_mom": -0.1399373021985485
     },
     {
       "month": "2026-08-01",
-      "national_m3": 343384.6229,
-      "national_est_kt": 250.670774717,
-      "braskem_customs_kt": 240.39366327599998,
-      "braskem_mom": 0.358202783201488
+      "national_m3": 343460.69,
+      "national_est_kt": 250.7263037,
+      "braskem_customs_kt": 240.42248327599998,
+      "braskem_mom": 0.3583656136341977
+    },
+    {
+      "month": "2026-09-01",
+      "national_m3": 331534.1029,
+      "national_est_kt": 242.01989511699998,
+      "braskem_customs_kt": 232.24642699999998,
+      "braskem_mom": -0.03400703696506646
     }
   ],
   "arrivals": [
@@ -161,13 +168,13 @@
     {
       "etb": "2026-10-13",
       "vessel": "BLOOMING FUTURE",
-      "status": "Anchored / Awaiting berth",
+      "status": "Historical schedule / unresolved",
       "qty_kt": 28.0,
       "fleet": "Future LR1",
       "etd": "2026-10-14",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
       "source_asof": "2026-10-12",
-      "notes": "CODEBA Oct-12. Program 24368; DUV 462002026. Planned cargo, completion unverified.",
+      "notes": "CODEBA Oct-12. Program 24368; DUV 462002026. Planned cargo, completion unverified. Checked Oct-30: absent from current schedule; completion unverified.",
       "program_id": "24368",
       "duv": "462002026"
     },
@@ -187,26 +194,26 @@
     {
       "etb": "2026-10-15",
       "vessel": "PINE OLIA",
-      "status": "Anchored / Awaiting berth",
+      "status": "Historical schedule / unresolved",
       "qty_kt": 7.7,
       "fleet": "Third-party",
       "etd": "2026-10-15",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
       "source_asof": "2026-10-12",
-      "notes": "CODEBA Oct-12. Program 24374; DUV 443822026. Planned cargo, completion unverified. Reappeared with same DUV; planned cargo revised from 27.6kt to 7.7kt. This does not establish partial discharge.",
+      "notes": "CODEBA Oct-12. Program 24374; DUV 443822026. Planned cargo, completion unverified. Reappeared with same DUV; planned cargo revised from 27.6kt to 7.7kt. This does not establish partial discharge. Checked Oct-30: absent from current schedule; completion unverified.",
       "program_id": "24374",
       "duv": "443822026"
     },
     {
       "etb": "2026-10-17",
       "vessel": "BAIACU",
-      "status": "Anchored / Awaiting berth",
+      "status": "Historical schedule / unresolved",
       "qty_kt": 60.41476,
       "fleet": "Third-party",
       "etd": "2026-10-18",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
       "source_asof": "2026-10-12",
-      "notes": "CODEBA Oct-12. Program 24347; DUV 454222026. Planned cargo, completion unverified. Source now reports 60.414760kt; prior quantity was unknown.",
+      "notes": "CODEBA Oct-12. Program 24347; DUV 454222026. Planned cargo, completion unverified. Source now reports 60.414760kt; prior quantity was unknown. Checked Oct-30: absent from current schedule; completion unverified.",
       "program_id": "24347",
       "duv": "454222026"
     },
@@ -214,14 +221,53 @@
       "vessel": "CLYDE",
       "fleet": "Third-party",
       "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
-      "etb": "2026-10-18",
-      "etd": "2026-10-19",
-      "qty_kt": 27.6,
-      "status": "Scheduled",
-      "source_asof": "2026-10-12",
+      "etb": "2026-11-03",
+      "etd": "2026-11-05",
+      "qty_kt": 35.0,
+      "status": "Anchored / Awaiting berth",
+      "source_asof": "2026-10-30",
       "program_id": "24375",
       "duv": "483712026",
-      "notes": "CODEBA Oct-12. Program 24375; DUV 483712026. Planned cargo, completion unverified."
+      "notes": "CODEBA Oct-30. Program 24375; DUV 483712026. Planned cargo; completed discharge not verified."
+    },
+    {
+      "vessel": "CIELO BIANCO",
+      "fleet": "Third-party",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "etb": "2026-11-07",
+      "etd": "2026-11-09",
+      "qty_kt": 57.595228,
+      "status": "Scheduled",
+      "source_asof": "2026-10-30",
+      "program_id": "24406",
+      "duv": "507192026",
+      "notes": "CODEBA Oct-30. Program 24406; DUV 507192026. Planned cargo; completed discharge not verified."
+    },
+    {
+      "vessel": "GEM LATOYA",
+      "fleet": "Third-party",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "etb": "2026-11-06",
+      "etd": "2026-11-07",
+      "qty_kt": 19.25,
+      "status": "Scheduled",
+      "source_asof": "2026-10-30",
+      "program_id": "24395",
+      "duv": "506162026",
+      "notes": "CODEBA Oct-30. Program 24395; DUV 506162026. Planned cargo; completed discharge not verified."
+    },
+    {
+      "vessel": "HAFNIA ANDREA",
+      "fleet": "Third-party",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "etb": "2026-10-28",
+      "etd": "2026-10-30",
+      "qty_kt": 36.196548,
+      "status": "Berthed / Discharging",
+      "source_asof": "2026-10-30",
+      "program_id": "24390",
+      "duv": "499842026",
+      "notes": "CODEBA Oct-30. Program 24390; DUV 499842026. Planned cargo; completed discharge not verified."
     }
   ],
   "density_t_m3": 0.73,
@@ -1370,8 +1416,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "CANARIAS",
-        58528935.0
+        "Estados Unidos",
+        82865844.0
       ],
       [
         2026,
@@ -1380,8 +1426,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
-        82865844.0
+        "Canárias",
+        58528935.0
       ],
       [
         2026,
@@ -1390,7 +1436,7 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         139609066.0
       ],
       [
@@ -1400,8 +1446,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "CANARIAS",
-        36108936.0
+        "Estados Unidos",
+        114415977.0
       ],
       [
         2026,
@@ -1410,8 +1456,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
-        114415977.0
+        "Canárias",
+        36108936.0
       ],
       [
         2026,
@@ -1420,7 +1466,7 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         160046026.0
       ],
       [
@@ -1430,8 +1476,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "CANARIAS",
-        37561684.0
+        "Estados Unidos",
+        199941199.0
       ],
       [
         2026,
@@ -1440,8 +1486,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
-        199941199.0
+        "Canárias",
+        37561684.0
       ],
       [
         2026,
@@ -1450,7 +1496,7 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         82758579.0
       ],
       [
@@ -1460,8 +1506,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "CANARIAS",
-        36400790.0
+        "Estados Unidos",
+        57285344.0
       ],
       [
         2026,
@@ -1470,8 +1516,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
-        57285344.0
+        "Canárias",
+        36400790.0
       ],
       [
         2026,
@@ -1480,7 +1526,7 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         112636681.0
       ],
       [
@@ -1490,7 +1536,7 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         57965585.0
       ],
       [
@@ -1500,7 +1546,7 @@
         "42150391000170",
         "BA",
         "27101241",
-        "HOLANDA (PAISES BAIXOS)",
+        "Holanda",
         37279628.0
       ],
       [
@@ -1510,8 +1556,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "CANARIAS",
-        35073526.0
+        "Estados Unidos",
+        170718379.0
       ],
       [
         2026,
@@ -1520,8 +1566,8 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
-        170718379.0
+        "Canárias",
+        35073526.0
       ],
       [
         2026,
@@ -1530,18 +1576,18 @@
         "42150391000170",
         "BA",
         "27101241",
-        "CANARIAS",
-        36547741.0
-      ],
-      [
-        2026,
-        7,
-        "BRASKEM S.A",
-        "42150391000170",
-        "BA",
-        "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         115621163.0
+      ],
+      [
+        2026,
+        7,
+        "BRASKEM S.A",
+        "42150391000170",
+        "BA",
+        "27101241",
+        "Canárias",
+        36547741.0
       ],
       [
         2026,
@@ -1550,7 +1596,7 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ARGENTINA",
+        "Argentina",
         24825037.0
       ],
       [
@@ -1560,7 +1606,7 @@
         "42150391000170",
         "BA",
         "27101241",
-        "ESTADOS UNIDOS",
+        "Estados Unidos",
         128610440.276
       ],
       [
@@ -1570,8 +1616,8 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ARGELIA",
-        85411854.0
+        "Argélia",
+        85440674.0
       ],
       [
         2026,
@@ -1580,8 +1626,38 @@
         "42150391003862",
         "RS",
         "27101241",
-        "ARGENTINA",
+        "Argentina",
         26371369.0
+      ],
+      [
+        2026,
+        9,
+        "BRASKEM S.A",
+        "42150391000170",
+        "BA",
+        "27101241",
+        "Estados Unidos",
+        171723650.0
+      ],
+      [
+        2026,
+        9,
+        "BRASKEM S.A",
+        "42150391000170",
+        "BA",
+        "27101241",
+        "Canárias",
+        34097355.0
+      ],
+      [
+        2026,
+        9,
+        "BRASKEM S.A",
+        "42150391003862",
+        "RS",
+        "27101241",
+        "Argentina",
+        26425422.0
       ]
     ],
     "metrics": {
@@ -1613,24 +1689,47 @@
         "sum_observed_kt": 8425.430324261
       }
     },
-    "as_of": "2026-10-01"
+    "as_of": "2026-10-30",
+    "latest_reported_quarter": {
+      "period": "2026 Q3",
+      "year": 2026,
+      "quarter": 3,
+      "days": 92,
+      "ethylene_kt": null,
+      "pbr_mbpd": 77,
+      "pbr_kt": 822.174178007065,
+      "consumption_kt": null,
+      "implied_kt": null,
+      "flex_implied_kt": null,
+      "customs_kt": 649.662851276,
+      "national_kt": 677.3255944000001,
+      "national_error_pct": null,
+      "customs_status": "Reported customs kg",
+      "status": "Braskem production tonnage pending; valuation book still through Q2 2026",
+      "pbr_source": "https://filemanager-cdn.mziq.com/published/25fdf098-34f5-4608-b7fa-17d60b2de47d/db8de460-958b-47fa-b5a6-d2708cbafc43"
+    }
   },
   "refresh": {
-    "checked_at": "2026-10-12",
-    "imports_through": "2026-08",
-    "national_changed": false,
-    "customs_changed": false,
+    "checked_at": "2026-10-30",
+    "imports_through": "2026-09",
+    "national_changed": true,
+    "customs_changed": true,
     "current_calls": 4,
-    "known_queue_kt": 123.71476,
+    "known_queue_kt": 148.041776,
     "unknown_quantity_calls": 0,
     "absent_calls": [
       "BEAUTIFUL FUTURE",
-      "CEDAR EXPRESS"
+      "BLOOMING FUTURE",
+      "CEDAR EXPRESS",
+      "PINE OLIA",
+      "BAIACU"
     ],
     "source_sha256": {
-      "codeba.html": "2f1da2c822ba73b232a15dbe6d5c395cc74fa07bfecdf40fe996a0734d75e17d",
-      "anp.csv": "74fcf2895b5c31a07d62b55e4f99f39c0e4debabd23d320c23312b5379005baf",
-      "customs.xlsx": "4c021c684c0e7656dc62188f523ad7a927cf067bb299dd38e4b0e3b210f7ffcb"
+      "codeba.html": "6c4122758301376a5c9fbbf572859afa05e13f599914ac9937b17bdcaf80a61a",
+      "anp.csv": "e23bc2993dc359c711f0f147fb815ce00602bc8cd266d0b4c51b6bb863ff89d0",
+      "customs.xlsx": "9d4014543a77dc961688a86d768feea3d025cb0115b1064d87794b9cfd3cca08",
+      "braskem-valuation.xlsx": "11a3e212389bfffed84dcbdb13c3171375559f23f1bd01c1c13e933805808590",
+      "petrobras-3q26.pdf": "aeccf5fea6fdead13aab9bfd86df458db5cd5fa50490cd73252365099331cb17"
     }
   }
 }
