@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T14:10:08.041207+00:00",
+  "generated_at": "2026-11-03T23:20:55.124135+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -274,16 +274,20 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-11-03",
-      "openings": 13,
-      "intensity": 23.8,
+      "date": "2026-11-04",
+      "openings": 9,
+      "intensity": 21.1,
       "lat": 39.0997,
       "lon": -94.5786,
       "state": "MO",
       "projects": [
         {
           "project": "Google",
-          "openings": 13
+          "openings": 6
+        },
+        {
+          "project": "Meta / Facebook",
+          "openings": 3
         }
       ]
     },
@@ -1169,6 +1173,12 @@
       "intensity": 23.8
     },
     {
+      "market": "Kansas City",
+      "date": "2026-11-04",
+      "openings": 9,
+      "intensity": 21.1
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1556,21 +1566,27 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-11-02",
-      "to_date": "2026-11-03",
-      "from_openings": 25,
-      "to_openings": 13,
-      "change_openings": -12,
-      "change_pct": -48.0,
-      "from_intensity": 28.6,
-      "to_intensity": 23.8,
-      "change_intensity": -4.8,
+      "from_date": "2026-11-03",
+      "to_date": "2026-11-04",
+      "from_openings": 13,
+      "to_openings": 9,
+      "change_openings": -4,
+      "change_pct": -30.8,
+      "from_intensity": 23.8,
+      "to_intensity": 21.1,
+      "change_intensity": -2.7,
       "projects": [
         {
           "project": "Google",
-          "from_openings": 25,
-          "to_openings": 13,
-          "change_openings": -12
+          "from_openings": 13,
+          "to_openings": 6,
+          "change_openings": -7
+        },
+        {
+          "project": "Meta / Facebook",
+          "from_openings": 0,
+          "to_openings": 3,
+          "change_openings": 3
         }
       ],
       "conditions": {
