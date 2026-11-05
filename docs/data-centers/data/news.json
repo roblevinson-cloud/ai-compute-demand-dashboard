@@ -1,6 +1,19 @@
 {
-  "as_of": "2026-10-27",
+  "as_of": "2026-11-05",
   "items": [
+    {
+      "date": "2026-11-05",
+      "source": "Data Center Dynamics",
+      "tag": "DEVELOPMENT / WULF COMPUTE / LAKE MARINER",
+      "headline": "Google to serve as credit backstop for TeraWulf data center in Kentucky",
+      "url": "https://www.datacenterdynamics.com/en/news/google-to-serve-as-credit-backstop-for-terawulf-data-center-in-kentucky/",
+      "matched_project": "WULF Compute / Lake Mariner",
+      "match_score": 4,
+      "match_terms": [
+        "terawulf",
+        "google"
+      ]
+    },
     {
       "date": "2026-10-27",
       "source": "Data Center Dynamics",
