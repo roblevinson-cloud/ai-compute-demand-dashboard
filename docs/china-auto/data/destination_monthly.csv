@@ -7691,8 +7691,8 @@ KAZ,Kazakhstan,Other,2026-03,22129.0,49066069.47,comtrade_mirror,comtrade_mirror
 KAZ,Kazakhstan,Other,2026-04,30712.0,66312599.81,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,2159.175560367283,0.3878620814316056,False,False,1.2584013530406648,False,False,0.35149606492415053,False,False,-0.5620417992270335,False,False
 KAZ,Kazakhstan,Other,2026-05,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 KAZ,Kazakhstan,Other,2026-06,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
-KAZ,Kazakhstan,Other,2026-07,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
-KAZ,Kazakhstan,Other,2026-08,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
+KAZ,Kazakhstan,Other,2026-07,9551.0,77172671.34,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,8080.061913935714,,False,False,-0.6083087270341208,False,False,,False,False,-0.43876180862114134,False,False
+KAZ,Kazakhstan,Other,2026-08,10126.0,127397666.56,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,12581.24299427217,0.06020312009213691,False,False,-0.47983767401243127,False,False,0.6508132263391986,False,False,0.15537550196551564,False,False
 KAZ,Kazakhstan,Other,2026-09,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 KEN,Kenya,Other,2020-01,7.0,12760.0,comtrade_china,comtrade_china,FOB,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,1822.857142857143,,False,False,,False,False,,False,False,,False,False
 KEN,Kenya,Other,2020-02,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
@@ -8988,7 +8988,7 @@ LVA,Latvia,Other,2026-04,116.0,786372.737,comtrade_mirror,comtrade_mirror,CIF/im
 LVA,Latvia,Other,2026-05,285.0,526322.409,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,1846.745294736842,1.456896551724138,False,False,22.75,False,False,-0.33069601190917175,False,False,1.0863580481077668,False,False
 LVA,Latvia,Other,2026-06,82.0,1157628.108,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,14117.415951219513,-0.712280701754386,False,False,-0.842911877394636,False,False,1.1994657422994126,False,False,1.1746384608103866,False,False
 LVA,Latvia,Other,2026-07,100.0,989925.045,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,9899.25045,0.2195121951219512,False,False,-0.13793103448275867,False,False,-0.1448678222661124,False,False,1.2730742861905848,False,False
-LVA,Latvia,Other,2026-08,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
+LVA,Latvia,Other,2026-08,455.0,4175423.655,comtrade_mirror,comtrade_mirror,CIF/import value,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,9176.755285714285,3.55,False,False,36.916666666666664,False,False,3.217918999109675,False,False,18.932133151451698,False,False
 LVA,Latvia,Other,2026-09,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 MAC,"China, Macao SAR",Other,2020-01,1.0,65151.0,comtrade_china,comtrade_china,FOB,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,65151.0,,False,False,,False,False,,False,False,,False,False
 MAC,"China, Macao SAR",Other,2020-02,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
