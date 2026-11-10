@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T07:14:58.742117+00:00",
+  "generated_at": "2026-11-10T19:41:59.213363+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -186,21 +186,6 @@
       ]
     },
     {
-      "market": "Des Moines\u2013Altoona",
-      "date": "2026-11-02",
-      "openings": 35,
-      "intensity": 39.5,
-      "lat": 41.6442,
-      "lon": -93.4647,
-      "state": "IA",
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "openings": 35
-        }
-      ]
-    },
-    {
       "market": "South Bend, In",
       "date": "2026-09-08",
       "openings": 3,
@@ -212,6 +197,21 @@
         {
           "project": "Unclassified data center",
           "openings": 3
+        }
+      ]
+    },
+    {
+      "market": "Des Moines\u2013Altoona",
+      "date": "2026-11-10",
+      "openings": 24,
+      "intensity": 33.4,
+      "lat": 41.6442,
+      "lon": -93.4647,
+      "state": "IA",
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "openings": 24
         }
       ]
     },
@@ -795,6 +795,12 @@
       "date": "2026-11-02",
       "openings": 35,
       "intensity": 39.5
+    },
+    {
+      "market": "Des Moines\u2013Altoona",
+      "date": "2026-11-10",
+      "openings": 24,
+      "intensity": 33.4
     },
     {
       "market": "El Paso\u2013Santa Teresa",
@@ -1749,6 +1755,46 @@
       }
     },
     {
+      "market": "Des Moines\u2013Altoona",
+      "from_date": "2026-11-02",
+      "to_date": "2026-11-10",
+      "from_openings": 35,
+      "to_openings": 24,
+      "change_openings": -11,
+      "change_pct": -31.4,
+      "from_intensity": 39.5,
+      "to_intensity": 33.4,
+      "change_intensity": -6.1,
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "from_openings": 35,
+          "to_openings": 24,
+          "change_openings": -11
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            50.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            50.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
       "market": "Northern Virginia / DC",
       "from_date": "2026-11-02",
       "to_date": "2026-11-10",
@@ -1959,46 +2005,6 @@
           "ot_multiplier": [
             2.0
           ]
-        }
-      }
-    },
-    {
-      "market": "Des Moines\u2013Altoona",
-      "from_date": "2026-10-26",
-      "to_date": "2026-11-02",
-      "from_openings": 26,
-      "to_openings": 35,
-      "change_openings": 9,
-      "change_pct": 34.6,
-      "from_intensity": 51.0,
-      "to_intensity": 39.5,
-      "change_intensity": -11.5,
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "from_openings": 26,
-          "to_openings": 35,
-          "change_openings": 9
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            58.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            50.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
         }
       }
     },
