@@ -14900,8 +14900,8 @@ TUR,Türkiye,Middle East,2026-03,,,,,,,,False,not_reported,,,False,False,,False,
 TUR,Türkiye,Middle East,2026-04,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 TUR,Türkiye,Middle East,2026-05,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 TUR,Türkiye,Middle East,2026-06,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
-TUR,Türkiye,Middle East,2026-07,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
-TUR,Türkiye,Middle East,2026-08,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
+TUR,Türkiye,Middle East,2026-07,4396.0,50439578.0,comtrade_mirror,comtrade_mirror,FOB,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,11473.971337579618,,False,False,-0.5050106969935818,False,False,,False,False,-0.5458556591697798,False,False
+TUR,Türkiye,Middle East,2026-08,1760.0,19840898.0,comtrade_mirror,comtrade_mirror,FOB,https://comtradeplus.un.org/TradeFlow,https://comtradeplus.un.org/TradeFlow,False,reported,11273.2375,-0.5996360327570518,False,False,-0.8458979073636284,False,False,-0.6066402855313342,False,False,-0.7902333361382011,False,False
 TUR,Türkiye,Middle East,2026-09,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 TUV,Tuvalu,Other,2020-01,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
 TUV,Tuvalu,Other,2020-02,,,,,,,,False,not_reported,,,False,False,,False,False,,False,False,,False,False
