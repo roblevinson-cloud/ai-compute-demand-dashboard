@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T06:24:25.362946+00:00",
+  "generated_at": "2026-11-16T21:59:00.254506+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -300,6 +300,25 @@
       ]
     },
     {
+      "market": "Kansas City",
+      "date": "2026-11-17",
+      "openings": 14,
+      "intensity": 29.5,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "openings": 8
+        },
+        {
+          "project": "Google",
+          "openings": 6
+        }
+      ]
+    },
+    {
       "market": "Northern Virginia / DC",
       "date": "2026-11-16",
       "openings": 257,
@@ -334,21 +353,6 @@
         {
           "project": "Aligned",
           "openings": 18
-        }
-      ]
-    },
-    {
-      "market": "Kansas City",
-      "date": "2026-11-16",
-      "openings": 9,
-      "intensity": 25.1,
-      "lat": 39.0997,
-      "lon": -94.5786,
-      "state": "MO",
-      "projects": [
-        {
-          "project": "Google",
-          "openings": 9
         }
       ]
     },
@@ -1354,6 +1358,12 @@
       "intensity": 25.1
     },
     {
+      "market": "Kansas City",
+      "date": "2026-11-17",
+      "openings": 14,
+      "intensity": 29.5
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1806,6 +1816,53 @@
   ],
   "changes": [
     {
+      "market": "Kansas City",
+      "from_date": "2026-11-16",
+      "to_date": "2026-11-17",
+      "from_openings": 9,
+      "to_openings": 14,
+      "change_openings": 5,
+      "change_pct": 55.6,
+      "from_intensity": 25.1,
+      "to_intensity": 29.5,
+      "change_intensity": 4.4,
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "from_openings": 0,
+          "to_openings": 8,
+          "change_openings": 8
+        },
+        {
+          "project": "Google",
+          "from_openings": 9,
+          "to_openings": 6,
+          "change_openings": -3
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            56.0,
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
       "market": "Austin, Tx",
       "from_date": "2026-11-02",
       "to_date": "2026-11-16",
@@ -2049,48 +2106,6 @@
         "to": {
           "weekly_hours": [
             60.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Kansas City",
-      "from_date": "2026-11-12",
-      "to_date": "2026-11-16",
-      "from_openings": 13,
-      "to_openings": 9,
-      "change_openings": -4,
-      "change_pct": -30.8,
-      "from_intensity": 31.5,
-      "to_intensity": 25.1,
-      "change_intensity": -6.4,
-      "projects": [
-        {
-          "project": "Google",
-          "from_openings": 13,
-          "to_openings": 9,
-          "change_openings": -4
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            56.0,
-            58.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            56.0,
-            58.0
           ],
           "base_hourly": [],
           "incentive_hourly": [],
