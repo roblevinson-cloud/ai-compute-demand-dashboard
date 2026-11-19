@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T20:28:44.828093+00:00",
+  "generated_at": "2026-11-19T20:33:08.403935+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -206,6 +206,21 @@
       ]
     },
     {
+      "market": "Kansas City",
+      "date": "2026-11-19",
+      "openings": 18,
+      "intensity": 40.4,
+      "lat": 39.0997,
+      "lon": -94.5786,
+      "state": "MO",
+      "projects": [
+        {
+          "project": "Google",
+          "openings": 18
+        }
+      ]
+    },
+    {
       "market": "St Louis, Mo",
       "date": "2026-11-16",
       "openings": 6,
@@ -391,21 +406,6 @@
         {
           "project": "Meta El Paso",
           "openings": 2
-        }
-      ]
-    },
-    {
-      "market": "Kansas City",
-      "date": "2026-11-18",
-      "openings": 4,
-      "intensity": 16.6,
-      "lat": 39.0997,
-      "lon": -94.5786,
-      "state": "MO",
-      "projects": [
-        {
-          "project": "Google",
-          "openings": 4
         }
       ]
     },
@@ -1366,6 +1366,12 @@
       "intensity": 16.6
     },
     {
+      "market": "Kansas City",
+      "date": "2026-11-19",
+      "openings": 18,
+      "intensity": 40.4
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1819,27 +1825,21 @@
   "changes": [
     {
       "market": "Kansas City",
-      "from_date": "2026-11-17",
-      "to_date": "2026-11-18",
-      "from_openings": 14,
-      "to_openings": 4,
-      "change_openings": -10,
-      "change_pct": -71.4,
-      "from_intensity": 29.5,
-      "to_intensity": 16.6,
-      "change_intensity": -12.9,
+      "from_date": "2026-11-18",
+      "to_date": "2026-11-19",
+      "from_openings": 4,
+      "to_openings": 18,
+      "change_openings": 14,
+      "change_pct": 350.0,
+      "from_intensity": 16.6,
+      "to_intensity": 40.4,
+      "change_intensity": 23.8,
       "projects": [
         {
-          "project": "Unclassified data center",
-          "from_openings": 8,
-          "to_openings": 0,
-          "change_openings": -8
-        },
-        {
           "project": "Google",
-          "from_openings": 6,
-          "to_openings": 4,
-          "change_openings": -2
+          "from_openings": 4,
+          "to_openings": 18,
+          "change_openings": 14
         }
       ],
       "conditions": {
@@ -2958,15 +2958,6 @@
       "from_openings": 24,
       "to_openings": 0,
       "change_pct": -100.0,
-      "flag": "Potential deceleration \u2014 verify direct local board / project phase"
-    },
-    {
-      "market": "Kansas City",
-      "from_date": "2026-11-17",
-      "to_date": "2026-11-18",
-      "from_openings": 14,
-      "to_openings": 4,
-      "change_pct": -71.4,
       "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     }
   ],
