@@ -151,12 +151,6 @@
       "url": "https://www.cada.cn/Trends/info_91_10580.html"
     }
   ],
-  "last_attempt_utc": "2026-11-19T11:32:41.909909+00:00",
-  "refresh_errors": [
-    {
-      "period": "2025-08",
-      "url": "https://npo00410y.npoall.com/news/itemid-183478.html",
-      "error": "503 Server Error: Service Unavailable for url: https://npo00410y.npoall.com/news/itemid-183478.html"
-    }
-  ]
+  "last_attempt_utc": "2026-11-19T11:37:20.944032+00:00",
+  "refresh_errors": []
 }
