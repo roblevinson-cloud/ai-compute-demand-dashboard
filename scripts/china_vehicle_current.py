@@ -5,6 +5,7 @@ import json
 import math
 import time
 from datetime import date, datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 
 import requests
@@ -14,7 +15,7 @@ try:
 except Exception:
     coco = None
 
-CHINA_DATA = "https://chinadata.live/api/v2/trade/hs/8703"
+CHINA_DATA = "https://chinadata.live/china-trade/hs/8703/"
 COMTRADE = "https://comtradeapi.un.org/public/v1/preview/C/M/HS"
 CHINA_CODE = 156
 START = "2024-01"
@@ -100,32 +101,57 @@ def period_from_obj(obj):
     return None
 
 
+class TradeBootstrapParser(HTMLParser):
+    """Read the exact public chart payload without using the site's private API."""
+
+    def __init__(self):
+        super().__init__()
+        self.active = False
+        self.chunks = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "script":
+            self.active = dict(attrs).get("id") == "hs-runtime-bootstrap"
+
+    def handle_data(self, data):
+        if self.active:
+            self.chunks.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "script":
+            self.active = False
+
+
+def parse_gacc_page(text):
+    parser = TradeBootstrapParser()
+    parser.feed(text)
+    payload = json.loads("".join(parser.chunks))
+    if (payload.get("success") is not True or payload.get("flow") != "export"
+            or str(payload.get("hs_code")) != "8703"
+            or not payload.get("monthly")):
+        raise ValueError("Public HS 8703 page has no verified export chart payload")
+    return payload
+
+
 def fetch_gacc_value_pulse(session: requests.Session):
-    current_year = date.today().year
     monthly_by_period = {}
     latest_payload = None
     errors = []
 
-    for year in range(2025, current_year + 1):
-        try:
-            payload = get_json(
-                session,
-                CHINA_DATA,
-                params={"flow": "export", "period": str(year), "limit": 20},
-            )
-            if not payload.get("success", True):
-                raise RuntimeError(payload.get("error") or f"China Data Portal returned success=false for {year}")
-            for row in payload.get("monthly") or []:
-                period = period_from_obj(row)
-                value = clean_number(row.get("value_usd"))
-                if period and value is not None:
-                    monthly_by_period[period] = {"period": period, "value_usd": value}
-            cov = payload.get("coverage") or {}
-            if cov.get("latest_month"):
-                latest_payload = payload
-        except Exception as exc:
-            errors.append({"year": year, "error": str(exc)})
-        time.sleep(1.0)
+    try:
+        response = session.get(CHINA_DATA, timeout=90)
+        response.raise_for_status()
+        payload = parse_gacc_page(response.text)
+        for row in payload["monthly"]:
+            period = period_from_obj(row)
+            value = clean_number(row.get("value_usd"))
+            if period and period >= "2025-01" and value is not None:
+                monthly_by_period[period] = {"period": period, "value_usd": value}
+        if not monthly_by_period:
+            raise ValueError("Public chart contains no current monthly export values")
+        latest_payload = payload
+    except Exception as exc:
+        errors.append({"url": CHINA_DATA, "error": str(exc)})
 
     # If monthly rows were omitted for some response shape, use the latest object.
     if latest_payload:
@@ -152,14 +178,14 @@ def fetch_gacc_value_pulse(session: requests.Session):
             })
 
     return {
-        "source": "GACC via China Data Portal public HS4 API",
+        "source": "GACC via China Data Portal public HS4 chart payload",
         "source_url": "https://chinadata.live/china-trade/hs/8703/",
         "hs_code": "8703",
         "latest_period": latest_period,
         "coverage": coverage,
         "monthly_value": monthly,
         "latest_partners": latest_partners,
-        "public_partner_limit": latest_payload.get("public_partner_limit") if latest_payload else None,
+        "public_partner_limit": len(latest_partners) if latest_payload else None,
         "errors": errors,
         "note": "Monthly total USD value covers all GACC partner rows. Public destination detail is limited to the returned partner count and does not expose quantity.",
     }

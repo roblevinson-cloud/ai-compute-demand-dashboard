@@ -12,6 +12,8 @@ Rebuilt 30 September 2026. The monitor displays one calendar-month series from J
 
 Primary source links: [UN Comtrade](https://comtradeplus.un.org/TradeFlow), [GACC via China Data Portal](https://chinadata.live/china-trade/hs/8703/), [CADA / CPCA releases](https://www.cada.cn/Trends/list_91_1.html). `industry_units.json` and the world CSV contain the exact release URL for each new monthly volume observation. August 2025 uses CADA's association account on NPOall. These are original monthly releases, rounded to the source's precision; subsequent industry revisions can make the published YoY percentage differ from a ratio of the stored observations. No values are inferred from YoY rates or interpolated.
 
+The customs-value collector reads the exact monthly export values embedded in the public China Data Portal chart (`hs-runtime-bootstrap`). The former `/api/v2/trade/hs/8703` endpoint no longer serves this dataset. The collector validates the HS code, export direction and monthly payload before accepting observations; an unavailable or changed page preserves saved values and records the error.
+
 ## Rules
 
 - China-reported country data takes priority. Where absent, use the destination's report for that exact country and calendar month. There is no rebasing, scaling, seasonal adjustment, interpolation or annual-to-month allocation.

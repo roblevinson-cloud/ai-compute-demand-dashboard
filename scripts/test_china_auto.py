@@ -3,7 +3,7 @@ import json
 import unittest
 from pathlib import Path
 from build_china_auto_series import build, months, unique_index
-from china_vehicle_current import preserve_snapshots
+from china_vehicle_current import preserve_snapshots, parse_gacc_page
 from china_vehicle_industry import parse_units
 
 DATA=Path(__file__).resolve().parents[1]/'docs/china-auto/data'
@@ -45,6 +45,13 @@ class ChinaAutoTests(unittest.TestCase):
   self.assertEqual(parse_units('7月汽车出口（含整车与CKD）69.4万辆。7月乘用车出口（含整车与CKD）47.5万辆。','2025-07')['units'],475000)
   self.assertEqual(parse_units('2025年1-2月汽车整车出口97万辆。2月乘用车出口（含整车与CKD）34.9万辆。','2025-02')['units'],349000)
   with self.assertRaises(ValueError):parse_units('7月新能源车出口20万辆。','2025-07')
+ def test_public_customs_chart_payload_validation(self):
+  payload={'success':True,'hs_code':'8703','flow':'export','monthly':[{'month':'2026-09','value_usd':17059590525}]}
+  def page(p):return '<script id="hs-runtime-bootstrap" type="application/json">'+json.dumps(p)+'</script>'
+  self.assertEqual(parse_gacc_page(page(payload)),payload)
+  for change in ({'flow':'import'},{'hs_code':'8704'},{'success':False},{'monthly':[]}):
+   with self.assertRaises(ValueError):parse_gacc_page(page({**payload,**change}))
+  with self.assertRaises(ValueError):parse_gacc_page('<html>Chart unavailable</html>')
  def test_historical_missing_world_quantity_is_flagged_subtotal(self):
   r=next(r for r in self.d['world'] if r['period']=='2020-09')
   self.assertEqual(r['units_status'],'reported_subtotal_lower_bound');self.assertAlmostEqual(r['units'],178729.013)
