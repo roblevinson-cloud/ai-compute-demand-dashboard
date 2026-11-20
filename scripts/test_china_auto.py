@@ -14,7 +14,7 @@ class ChinaAutoTests(unittest.TestCase):
   cls.h=json.loads((DATA/'exports.json').read_text());cls.c=json.loads((DATA/'current.json').read_text());cls.i=json.loads((DATA/'industry_units.json').read_text());cls.d=build(cls.h,cls.c,cls.i)
  def test_contiguous_world_history(self):
   self.assertEqual(self.d['periods'],list(months('2020-01',self.d['meta']['latest_period'])))
-  self.assertTrue(all(r['value_usd'] is not None for r in self.d['world']))
+  self.assertTrue(all(r['value_usd'] is not None for r in self.d['world'] if r['period']<='2026-09'))
   # Complete at this release; future missing units must remain explicit rather than fabricated.
   rows=[r for r in self.d['world'] if r['period']<='2026-08']
   self.assertEqual(len(rows),80);self.assertTrue(all(r['units'] is not None for r in rows))
@@ -22,6 +22,14 @@ class ChinaAutoTests(unittest.TestCase):
   w={r['period']:r for r in self.d['world']}
   for r in self.h['world_totals']:
    self.assertEqual(w[r['period']]['value_usd'],r['value_usd'])
+ def test_industry_month_ahead_of_customs_is_retained(self):
+  i=copy.deepcopy(self.i)
+  i['records'].append({'period':'2027-01','units':900000,'url':'https://www.cada.cn/'})
+  d=build(self.h,self.c,i)
+  self.assertEqual(d['meta']['latest_period'],'2027-01')
+  r=d['world'][-1]
+  self.assertEqual(r['units'],900000)
+  self.assertIsNone(r['value_usd']);self.assertIsNone(r['unit_value_usd'])
  def test_source_join_and_scope(self):
   w={r['period']:r for r in self.d['world']}
   self.assertEqual(w['2025-01']['units_source'],'cpca');self.assertTrue(w['2025-01']['units_mom_source_break'])

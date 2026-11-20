@@ -1,0 +1,8 @@
+country,iso3,period,before_units,before_value_usd,before_status,after_units,after_value_usd,after_status,units_yoy,qty_estimated,value_basis
+Czechia,CZE,2026-09,,,not_reported,6181.0,57875734.0,reported,0.5190464487589088,False,FOB
+Estonia,EST,2026-09,,,not_reported,287.0,5859114.9,reported,3.2205882352941178,False,CIF/import value
+Croatia,HRV,2026-08,,,not_reported,220.0,3911879.0,reported,0.2716763005780347,False,CIF/import value
+Japan,JPN,2026-07,7593.0,194413879.848,reported,7593.0,194414396.412,reported,1.314939024390244,False,CIF/import value
+Japan,JPN,2026-08,5406.0,129818936.006,reported,5406.0,129819276.177,reported,0.4770491803278689,False,CIF/import value
+Japan,JPN,2026-09,,,not_reported,5180.0,119011294.062,reported,0.725516322451699,False,CIF/import value
+El Salvador,SLV,2026-09,,,not_reported,193.676,4092943.24,reported,1.9216473072861664,True,CIF/import value

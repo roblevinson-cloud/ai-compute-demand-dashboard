@@ -66,7 +66,7 @@ def build(hist,cur,industry):
  mr=unique_index([r for r in cur['mirror']['records'] if r['iso3'] not in ('CHN','W00')],lambda r:(r['period'],r['iso3']))
  gv=unique_index(cur['gacc']['monthly_value'],lambda r:r['period'])
  cv=unique_index(industry.get('records',[]),lambda r:r['period'])
- latest=max(list(hw)+list(gv)+[p for p,i in mr])
+ latest=max(list(hw)+list(gv)+list(cv)+[p for p,i in mr])
  periods=list(months('2020-01',latest))
  # Do not use partial destination sums when a published world total exists.
  world=[]
@@ -149,7 +149,8 @@ def build(hist,cur,industry):
 
 def main():
  payload=build(read('exports.json'),read('current.json'),read('industry_units.json',{'records':[]}))
- if payload['meta']['value_months']!=payload['meta']['months']:raise ValueError('Global monthly value has gaps')
+ latest_value=max(r['period'] for r in payload['world'] if r['value_usd'] is not None)
+ if any(r['value_usd'] is None for r in payload['world'] if r['period']<=latest_value):raise ValueError('Global monthly value has interior gaps')
  write_csv('world_monthly.csv',payload['world']);write_csv('destination_monthly.csv',payload['records']);write_csv('coverage.csv',payload['coverage']);write_csv('source_overlap.csv',payload['overlap'])
  columns=['period','iso3','units','value_usd','units_source','value_source','value_basis','qty_estimated','status','unit_value_usd']
  compact={**payload,'record_columns':columns,'records':[[r.get(k) for k in columns] for r in payload['records']]}
