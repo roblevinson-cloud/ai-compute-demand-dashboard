@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T07:33:37.412989+00:00",
+  "generated_at": "2026-11-23T23:51:12.849995+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -93,35 +93,35 @@
     {
       "market": "Atlanta",
       "date": "2026-11-23",
-      "openings": 294,
-      "intensity": 43.0,
+      "openings": 267,
+      "intensity": 43.5,
       "lat": 33.749,
       "lon": -84.388,
       "state": "GA",
       "projects": [
         {
           "project": "QTS",
-          "openings": 219
-        },
-        {
-          "project": "Equinix",
-          "openings": 32
+          "openings": 209
         },
         {
           "project": "Switch",
-          "openings": 19
+          "openings": 21
+        },
+        {
+          "project": "Equinix",
+          "openings": 20
         },
         {
           "project": "DataBank",
-          "openings": 13
+          "openings": 12
         },
         {
           "project": "Unclassified data center",
-          "openings": 9
+          "openings": 4
         },
         {
           "project": "Vantage",
-          "openings": 2
+          "openings": 1
         }
       ]
     },
@@ -564,8 +564,8 @@
     {
       "market": "Atlanta",
       "date": "2026-11-23",
-      "openings": 294,
-      "intensity": 43.0
+      "openings": 267,
+      "intensity": 43.5
     },
     {
       "market": "Austin, Tx",
@@ -2538,6 +2538,84 @@
       }
     },
     {
+      "market": "Atlanta",
+      "from_date": "2026-11-16",
+      "to_date": "2026-11-23",
+      "from_openings": 294,
+      "to_openings": 267,
+      "change_openings": -27,
+      "change_pct": -9.2,
+      "from_intensity": 43.0,
+      "to_intensity": 43.5,
+      "change_intensity": 0.5,
+      "projects": [
+        {
+          "project": "Equinix",
+          "from_openings": 32,
+          "to_openings": 20,
+          "change_openings": -12
+        },
+        {
+          "project": "QTS",
+          "from_openings": 219,
+          "to_openings": 209,
+          "change_openings": -10
+        },
+        {
+          "project": "Unclassified data center",
+          "from_openings": 9,
+          "to_openings": 4,
+          "change_openings": -5
+        },
+        {
+          "project": "Switch",
+          "from_openings": 19,
+          "to_openings": 21,
+          "change_openings": 2
+        },
+        {
+          "project": "DataBank",
+          "from_openings": 13,
+          "to_openings": 12,
+          "change_openings": -1
+        },
+        {
+          "project": "Vantage",
+          "from_openings": 2,
+          "to_openings": 1,
+          "change_openings": -1
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            40.0,
+            48.0,
+            50.0,
+            56.0,
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            40.0,
+            48.0,
+            50.0,
+            56.0,
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
       "market": "Milwaukee / SE Wisconsin",
       "from_date": "2026-11-16",
       "to_date": "2026-11-23",
@@ -2578,47 +2656,6 @@
           "base_hourly": [
             10.0
           ],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Atlanta",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 294,
-      "to_openings": 294,
-      "change_openings": 0,
-      "change_pct": 0.0,
-      "from_intensity": 43.0,
-      "to_intensity": 43.0,
-      "change_intensity": 0.0,
-      "projects": [],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            40.0,
-            48.0,
-            50.0,
-            56.0,
-            58.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            40.0,
-            48.0,
-            50.0,
-            56.0,
-            58.0
-          ],
-          "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
           "ot_multiplier": []
