@@ -1,6 +1,19 @@
 {
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-25",
   "items": [
+    {
+      "date": "2026-11-25",
+      "source": "Data Center Dynamics",
+      "tag": "POWER / POLARIS FORGE 2",
+      "headline": "Applied Digital brings online 25MW data hall at Polaris Forge 2 data center in North Dakota",
+      "url": "https://www.datacenterdynamics.com/en/news/applied-digital-brings-online-25mw-data-hall-at-polaris-forge-2-data-center-in-north-dakota/",
+      "matched_project": "Polaris Forge 2",
+      "match_score": 7,
+      "match_terms": [
+        "polaris forge 2",
+        "applied digital"
+      ]
+    },
     {
       "date": "2026-11-05",
       "source": "Data Center Dynamics",
