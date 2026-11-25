@@ -1,0 +1,101 @@
+{
+  "asof": "2026-11-24",
+  "summary": {
+    "q1_monthly_average_kt": 303.94541533333336,
+    "q2_monthly_average_kt": 169.11997766666667,
+    "q3_monthly_average_kt": 216.64361675866667,
+    "aug_oct_monthly_average_kt": 250.50863809199998,
+    "aug_oct_annualized_mt": 3.006103657104,
+    "aug_oct_vs_q1": -0.17581044011711733,
+    "aug_oct_vs_q2": 0.48124805565992523,
+    "october_mom": 0.1981579370907507,
+    "status": "Recovery strengthening; sustained expansion unproven"
+  },
+  "refresh": {
+    "checked_at": "2026-11-24",
+    "published_at": "2026-11-25",
+    "imports_through": "2026-10",
+    "customs_through": "2026-10",
+    "national_through": "2026-09",
+    "national_changed": false,
+    "customs_changed": true,
+    "current_calls": 4,
+    "braskem_confirmed_calls": 3,
+    "known_queue_kt": 114.15322499999999,
+    "unconfirmed_operator_kt": 17.5,
+    "unknown_quantity_calls": 0,
+    "absent_calls": [
+      "HAFNIA ANDREA",
+      "GEM LATOYA",
+      "CLYDE (DUV 483712026)"
+    ],
+    "source_workbook": "Braskem_Naphtha_Arrival_Monitor_Updated_2026-11-24.xlsx",
+    "source_sha256": {
+      "Braskem_Naphtha_Arrival_Monitor_Updated_2026-11-24.xlsx": "647ef64b1a74606cea33e94944debb3f995bbfaa9908b1ff2e20dcccd58a67be"
+    },
+    "notes": "Publishes the November 24 workbook analysis. Port schedule is dated November 24, not a new November 25 check. Departed scheduled calls remain unresolved. Clyde DUV 554782026 has operator TBN and is excluded from confirmed Braskem planned tonnage.",
+    "september_revision_kt": 0.2679990000000032
+  },
+  "current_schedule": [
+    {
+      "vessel": "CIELO BIANCO",
+      "fleet": "Third-party",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "etb": "2026-11-26",
+      "etd": "2026-11-27",
+      "qty_kt": 57.595228,
+      "status": "Anchored / Awaiting berth",
+      "source_asof": "2026-11-24",
+      "program_id": "24431",
+      "duv": "507192026",
+      "notes": "Same DUV 507192026; program 24431. ETB now Nov-26 vs Nov-7 previously. Planned quantity unchanged; no completion confirmed.",
+      "braskem_confirmed": true,
+      "operator": "BRASKEM S.A."
+    },
+    {
+      "etb": "2026-11-23",
+      "vessel": "BEAUTIFUL FUTURE",
+      "status": "Berthed / Discharging",
+      "qty_kt": 28.957997,
+      "fleet": "Future LR1",
+      "etd": "2026-11-24",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-11-24",
+      "notes": "Program 24417; DUV 532612026. New call, not September call. Planned quantity; completion unverified.",
+      "braskem_confirmed": true,
+      "operator": "BRASKEM S.A.",
+      "program_id": "24417",
+      "duv": "532612026"
+    },
+    {
+      "etb": "2026-12-02",
+      "vessel": "TWEED",
+      "status": "Anchored / Awaiting berth",
+      "qty_kt": 27.6,
+      "fleet": "Third-party",
+      "etd": "2026-12-03",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-11-24",
+      "notes": "Program 24442; DUV 536202026. Planned cargo; completion unverified.",
+      "braskem_confirmed": true,
+      "operator": "BRASKEM S.A.",
+      "program_id": "24442",
+      "duv": "536202026"
+    },
+    {
+      "etb": "2026-11-29",
+      "vessel": "CLYDE",
+      "status": "Scheduled",
+      "qty_kt": 17.5,
+      "fleet": "Unconfirmed",
+      "etd": "2026-11-30",
+      "source": "https://codeba.gov.br/eficiente/sites/portalcodeba/pt-br/porto_aratu.php?secao=tportos_aratu",
+      "source_asof": "2026-11-24",
+      "notes": "Program 24438; DUV 554782026. Separate from early-November call. Excluded from Braskem-confirmed queue.",
+      "braskem_confirmed": false,
+      "operator": "TBN - TO BE NOMINATED",
+      "program_id": "24438",
+      "duv": "554782026"
+    }
+  ]
+}
