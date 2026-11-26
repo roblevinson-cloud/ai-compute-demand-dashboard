@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T21:39:21.997233+00:00",
+  "generated_at": "2026-11-26T08:12:53.511889+00:00",
   "source": "https://where2bro.com/hot-spots/",
   "methodology": {
     "scope": "Explicitly identifiable data-center-related electrician calls only; conservative by design.",
@@ -9,8 +9,8 @@
   "markets": [
     {
       "market": "Indianapolis\u2013Mooresville",
-      "date": "2026-11-23",
-      "openings": 98,
+      "date": "2026-11-30",
+      "openings": 90,
       "intensity": 60.0,
       "lat": 39.6128,
       "lon": -86.3742,
@@ -18,7 +18,7 @@
       "projects": [
         {
           "project": "Google",
-          "openings": 98
+          "openings": 90
         }
       ]
     },
@@ -57,42 +57,8 @@
       ]
     },
     {
-      "market": "Fargo\u2013Harwood",
-      "date": "2026-11-23",
-      "openings": 23,
-      "intensity": 52.7,
-      "lat": 46.98,
-      "lon": -96.88,
-      "state": "ND",
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "openings": 23
-        }
-      ]
-    },
-    {
-      "market": "Dallas\u2013Fort Worth",
-      "date": "2026-11-23",
-      "openings": 46,
-      "intensity": 43.8,
-      "lat": 32.7767,
-      "lon": -96.797,
-      "state": "TX",
-      "projects": [
-        {
-          "project": "QTS",
-          "openings": 45
-        },
-        {
-          "project": "DataBank",
-          "openings": 1
-        }
-      ]
-    },
-    {
       "market": "Atlanta",
-      "date": "2026-11-23",
+      "date": "2026-11-30",
       "openings": 267,
       "intensity": 43.5,
       "lat": 33.749,
@@ -126,23 +92,57 @@
       ]
     },
     {
-      "market": "Milwaukee / SE Wisconsin",
-      "date": "2026-11-23",
-      "openings": 84,
-      "intensity": 40.8,
-      "lat": 43.0389,
-      "lon": -87.9065,
-      "state": "WI",
+      "market": "Dallas\u2013Fort Worth",
+      "date": "2026-11-30",
+      "openings": 28,
+      "intensity": 42.1,
+      "lat": 32.7767,
+      "lon": -96.797,
+      "state": "TX",
       "projects": [
         {
-          "project": "Port Washington Data Center",
-          "openings": 84
+          "project": "QTS",
+          "openings": 28
+        }
+      ]
+    },
+    {
+      "market": "Cedar Rapids",
+      "date": "2026-11-30",
+      "openings": 28,
+      "intensity": 41.9,
+      "lat": 41.9779,
+      "lon": -91.6656,
+      "state": "IA",
+      "projects": [
+        {
+          "project": "QTS",
+          "openings": 15
+        },
+        {
+          "project": "EWD Data Center",
+          "openings": 13
+        }
+      ]
+    },
+    {
+      "market": "Albuquerque / Rio Rancho",
+      "date": "2026-11-30",
+      "openings": 29,
+      "intensity": 41.2,
+      "lat": 35.159,
+      "lon": -106.68,
+      "state": "NM",
+      "projects": [
+        {
+          "project": "Meta / Facebook",
+          "openings": 29
         }
       ]
     },
     {
       "market": "Racine / SE Wisconsin",
-      "date": "2026-11-23",
+      "date": "2026-11-30",
       "openings": 90,
       "intensity": 40.5,
       "lat": 42.7261,
@@ -152,21 +152,6 @@
         {
           "project": "Microsoft",
           "openings": 90
-        }
-      ]
-    },
-    {
-      "market": "Albuquerque / Rio Rancho",
-      "date": "2026-11-23",
-      "openings": 30,
-      "intensity": 39.7,
-      "lat": 35.159,
-      "lon": -106.68,
-      "state": "NM",
-      "projects": [
-        {
-          "project": "Meta / Facebook",
-          "openings": 30
         }
       ]
     },
@@ -187,35 +172,46 @@
     },
     {
       "market": "Des Moines\u2013Altoona",
-      "date": "2026-11-23",
-      "openings": 34,
-      "intensity": 39.0,
+      "date": "2026-11-30",
+      "openings": 32,
+      "intensity": 38.4,
       "lat": 41.6442,
       "lon": -93.4647,
       "state": "IA",
       "projects": [
         {
           "project": "Unclassified data center",
-          "openings": 34
+          "openings": 32
         }
       ]
     },
     {
-      "market": "Cedar Rapids",
-      "date": "2026-11-23",
-      "openings": 23,
-      "intensity": 38.7,
-      "lat": 41.9779,
-      "lon": -91.6656,
-      "state": "IA",
+      "market": "Milwaukee / SE Wisconsin",
+      "date": "2026-11-30",
+      "openings": 101,
+      "intensity": 37.6,
+      "lat": 43.0389,
+      "lon": -87.9065,
+      "state": "WI",
       "projects": [
         {
-          "project": "QTS",
-          "openings": 17
-        },
+          "project": "Port Washington Data Center",
+          "openings": 101
+        }
+      ]
+    },
+    {
+      "market": "Fargo\u2013Harwood",
+      "date": "2026-11-30",
+      "openings": 2,
+      "intensity": 36.0,
+      "lat": 46.98,
+      "lon": -96.88,
+      "state": "ND",
+      "projects": [
         {
-          "project": "EWD Data Center",
-          "openings": 6
+          "project": "Unclassified data center",
+          "openings": 2
         }
       ]
     },
@@ -235,135 +231,86 @@
       ]
     },
     {
-      "market": "Toledo\u2013Bowling Green",
-      "date": "2026-11-23",
-      "openings": 3,
-      "intensity": 33.9,
-      "lat": 41.3748,
-      "lon": -83.6513,
-      "state": "OH",
-      "projects": [
-        {
-          "project": "Project Accordion",
-          "openings": 3
-        }
-      ]
-    },
-    {
       "market": "Northern Virginia / DC",
-      "date": "2026-11-23",
-      "openings": 323,
-      "intensity": 32.5,
+      "date": "2026-11-30",
+      "openings": 318,
+      "intensity": 32.2,
       "lat": 38.96,
       "lon": -77.48,
       "state": "VA",
       "projects": [
         {
           "project": "Unclassified data center",
-          "openings": 308
+          "openings": 295
         },
         {
           "project": "QTS",
           "openings": 15
-        }
-      ]
-    },
-    {
-      "market": "Baltimore\u2013Frederick",
-      "date": "2026-11-23",
-      "openings": 43,
-      "intensity": 26.2,
-      "lat": 39.4143,
-      "lon": -77.4105,
-      "state": "MD",
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "openings": 23
         },
         {
-          "project": "Aligned",
-          "openings": 20
-        }
-      ]
-    },
-    {
-      "market": "Salt Lake City",
-      "date": "2026-11-23",
-      "openings": 15,
-      "intensity": 26.0,
-      "lat": 40.7608,
-      "lon": -111.891,
-      "state": "UT",
-      "projects": [
-        {
-          "project": "Meta / Facebook",
+          "project": "DataBank",
           "openings": 8
-        },
+        }
+      ]
+    },
+    {
+      "market": "Reno",
+      "date": "2026-11-30",
+      "openings": 44,
+      "intensity": 30.8,
+      "lat": 39.5296,
+      "lon": -119.8138,
+      "state": "NV",
+      "projects": [
         {
-          "project": "QTS",
-          "openings": 6
+          "project": "EdgeCore",
+          "openings": 19
         },
         {
           "project": "Unclassified data center",
-          "openings": 1
+          "openings": 16
+        },
+        {
+          "project": "Bighorn Data Center",
+          "openings": 7
+        },
+        {
+          "project": "Vantage",
+          "openings": 2
         }
       ]
     },
     {
       "market": "Austin, Tx",
-      "date": "2026-11-23",
-      "openings": 18,
-      "intensity": 23.8,
+      "date": "2026-11-30",
+      "openings": 11,
+      "intensity": 27.7,
       "lat": null,
       "lon": null,
       "state": null,
       "projects": [
         {
           "project": "Unclassified data center",
-          "openings": 18
+          "openings": 11
         }
       ]
     },
     {
-      "market": "Reno",
-      "date": "2026-11-23",
-      "openings": 10,
-      "intensity": 23.2,
-      "lat": 39.5296,
-      "lon": -119.8138,
-      "state": "NV",
+      "market": "Baltimore\u2013Frederick",
+      "date": "2026-11-30",
+      "openings": 34,
+      "intensity": 23.0,
+      "lat": 39.4143,
+      "lon": -77.4105,
+      "state": "MD",
       "projects": [
+        {
+          "project": "Aligned",
+          "openings": 19
+        },
         {
           "project": "Unclassified data center",
-          "openings": 5
-        },
-        {
-          "project": "Vantage",
-          "openings": 2
-        },
-        {
-          "project": "Bighorn Data Center",
-          "openings": 2
-        },
-        {
-          "project": "EdgeCore",
-          "openings": 1
-        }
-      ]
-    },
-    {
-      "market": "Boise",
-      "date": "2026-11-23",
-      "openings": 10,
-      "intensity": 21.4,
-      "lat": 43.615,
-      "lon": -116.2023,
-      "state": "ID",
-      "projects": [
-        {
-          "project": "Meta",
-          "openings": 10
+          "openings": 15
         }
       ]
     },
@@ -384,7 +331,7 @@
     },
     {
       "market": "Kansas City",
-      "date": "2026-11-25",
+      "date": "2026-11-27",
       "openings": 3,
       "intensity": 13.9,
       "lat": 39.0997,
@@ -413,23 +360,23 @@
       ]
     },
     {
-      "market": "Newark\u2013New Albany",
-      "date": "2026-11-23",
-      "openings": 2,
-      "intensity": 11.0,
-      "lat": 40.0581,
-      "lon": -82.4013,
-      "state": "OH",
+      "market": "Boise",
+      "date": "2026-11-30",
+      "openings": 0,
+      "intensity": 0.0,
+      "lat": 43.615,
+      "lon": -116.2023,
+      "state": "ID",
       "projects": [
         {
-          "project": "Vantage",
-          "openings": 2
+          "project": "No explicit DC calls",
+          "openings": 0
         }
       ]
     },
     {
       "market": "Columbus\u2013New Albany",
-      "date": "2026-11-23",
+      "date": "2026-11-30",
       "openings": 0,
       "intensity": 0.0,
       "lat": 40.0812,
@@ -450,6 +397,51 @@
       "lat": 39.48,
       "lon": -91.0,
       "state": "MO",
+      "projects": [
+        {
+          "project": "No explicit DC calls",
+          "openings": 0
+        }
+      ]
+    },
+    {
+      "market": "Newark\u2013New Albany",
+      "date": "2026-11-30",
+      "openings": 0,
+      "intensity": 0.0,
+      "lat": 40.0581,
+      "lon": -82.4013,
+      "state": "OH",
+      "projects": [
+        {
+          "project": "No explicit DC calls",
+          "openings": 0
+        }
+      ]
+    },
+    {
+      "market": "Salt Lake City",
+      "date": "2026-11-30",
+      "openings": 0,
+      "intensity": 0.0,
+      "lat": 40.7608,
+      "lon": -111.891,
+      "state": "UT",
+      "projects": [
+        {
+          "project": "No explicit DC calls",
+          "openings": 0
+        }
+      ]
+    },
+    {
+      "market": "Toledo\u2013Bowling Green",
+      "date": "2026-11-27",
+      "openings": 0,
+      "intensity": 0.0,
+      "lat": 41.3748,
+      "lon": -83.6513,
+      "state": "OH",
       "projects": [
         {
           "project": "No explicit DC calls",
@@ -506,6 +498,12 @@
       "date": "2026-11-23",
       "openings": 30,
       "intensity": 39.7
+    },
+    {
+      "market": "Albuquerque / Rio Rancho",
+      "date": "2026-11-30",
+      "openings": 29,
+      "intensity": 41.2
     },
     {
       "market": "Atlanta",
@@ -568,6 +566,12 @@
       "intensity": 43.5
     },
     {
+      "market": "Atlanta",
+      "date": "2026-11-30",
+      "openings": 267,
+      "intensity": 43.5
+    },
+    {
       "market": "Austin, Tx",
       "date": "2026-10-05",
       "openings": 1,
@@ -604,6 +608,12 @@
       "intensity": 23.8
     },
     {
+      "market": "Austin, Tx",
+      "date": "2026-11-30",
+      "openings": 11,
+      "intensity": 27.7
+    },
+    {
       "market": "Baltimore\u2013Frederick",
       "date": "2026-09-21",
       "openings": 0,
@@ -638,6 +648,12 @@
       "date": "2026-11-23",
       "openings": 43,
       "intensity": 26.2
+    },
+    {
+      "market": "Baltimore\u2013Frederick",
+      "date": "2026-11-30",
+      "openings": 34,
+      "intensity": 23.0
     },
     {
       "market": "Boise",
@@ -700,6 +716,12 @@
       "intensity": 21.4
     },
     {
+      "market": "Boise",
+      "date": "2026-11-30",
+      "openings": 0,
+      "intensity": 0.0
+    },
+    {
       "market": "Cedar Rapids",
       "date": "2026-08-31",
       "openings": 85,
@@ -760,6 +782,12 @@
       "intensity": 38.7
     },
     {
+      "market": "Cedar Rapids",
+      "date": "2026-11-30",
+      "openings": 28,
+      "intensity": 41.9
+    },
+    {
       "market": "Columbus\u2013New Albany",
       "date": "2026-08-31",
       "openings": 2,
@@ -810,6 +838,12 @@
     {
       "market": "Columbus\u2013New Albany",
       "date": "2026-11-23",
+      "openings": 0,
+      "intensity": 0.0
+    },
+    {
+      "market": "Columbus\u2013New Albany",
+      "date": "2026-11-30",
       "openings": 0,
       "intensity": 0.0
     },
@@ -886,6 +920,12 @@
       "intensity": 43.8
     },
     {
+      "market": "Dallas\u2013Fort Worth",
+      "date": "2026-11-30",
+      "openings": 28,
+      "intensity": 42.1
+    },
+    {
       "market": "Denver, Co",
       "date": "2026-10-19",
       "openings": 1,
@@ -950,6 +990,12 @@
       "date": "2026-11-23",
       "openings": 34,
       "intensity": 39.0
+    },
+    {
+      "market": "Des Moines\u2013Altoona",
+      "date": "2026-11-30",
+      "openings": 32,
+      "intensity": 38.4
     },
     {
       "market": "El Paso\u2013Santa Teresa",
@@ -1060,6 +1106,12 @@
       "intensity": 52.7
     },
     {
+      "market": "Fargo\u2013Harwood",
+      "date": "2026-11-30",
+      "openings": 2,
+      "intensity": 36.0
+    },
+    {
       "market": "Hannibal / New Florence",
       "date": "2026-09-02",
       "openings": 31,
@@ -1159,6 +1211,12 @@
       "market": "Indianapolis\u2013Mooresville",
       "date": "2026-11-23",
       "openings": 98,
+      "intensity": 60.0
+    },
+    {
+      "market": "Indianapolis\u2013Mooresville",
+      "date": "2026-11-30",
+      "openings": 90,
       "intensity": 60.0
     },
     {
@@ -1450,6 +1508,12 @@
       "intensity": 13.9
     },
     {
+      "market": "Kansas City",
+      "date": "2026-11-27",
+      "openings": 3,
+      "intensity": 13.9
+    },
+    {
       "market": "Memphis, Tn",
       "date": "2026-09-14",
       "openings": 6,
@@ -1552,6 +1616,12 @@
       "intensity": 40.8
     },
     {
+      "market": "Milwaukee / SE Wisconsin",
+      "date": "2026-11-30",
+      "openings": 101,
+      "intensity": 37.6
+    },
+    {
       "market": "Nashville, Tn",
       "date": "2026-11-02",
       "openings": 9,
@@ -1622,6 +1692,12 @@
       "date": "2026-11-23",
       "openings": 2,
       "intensity": 11.0
+    },
+    {
+      "market": "Newark\u2013New Albany",
+      "date": "2026-11-30",
+      "openings": 0,
+      "intensity": 0.0
     },
     {
       "market": "Northern Virginia / DC",
@@ -1696,6 +1772,12 @@
       "intensity": 32.5
     },
     {
+      "market": "Northern Virginia / DC",
+      "date": "2026-11-30",
+      "openings": 318,
+      "intensity": 32.2
+    },
+    {
       "market": "Racine / SE Wisconsin",
       "date": "2026-08-31",
       "openings": 58,
@@ -1752,6 +1834,12 @@
     {
       "market": "Racine / SE Wisconsin",
       "date": "2026-11-23",
+      "openings": 90,
+      "intensity": 40.5
+    },
+    {
+      "market": "Racine / SE Wisconsin",
+      "date": "2026-11-30",
       "openings": 90,
       "intensity": 40.5
     },
@@ -1816,6 +1904,12 @@
       "intensity": 23.2
     },
     {
+      "market": "Reno",
+      "date": "2026-11-30",
+      "openings": 44,
+      "intensity": 30.8
+    },
+    {
       "market": "Salt Lake City",
       "date": "2026-08-31",
       "openings": 14,
@@ -1868,6 +1962,12 @@
       "date": "2026-11-23",
       "openings": 15,
       "intensity": 26.0
+    },
+    {
+      "market": "Salt Lake City",
+      "date": "2026-11-30",
+      "openings": 0,
+      "intensity": 0.0
     },
     {
       "market": "South Bend, In",
@@ -1940,56 +2040,88 @@
       "date": "2026-11-23",
       "openings": 3,
       "intensity": 33.9
+    },
+    {
+      "market": "Toledo\u2013Bowling Green",
+      "date": "2026-11-27",
+      "openings": 0,
+      "intensity": 0.0
     }
   ],
   "changes": [
     {
-      "market": "Kansas City",
-      "from_date": "2026-11-24",
-      "to_date": "2026-11-25",
-      "from_openings": 3,
-      "to_openings": 3,
-      "change_openings": 0,
-      "change_pct": 0.0,
-      "from_intensity": 13.9,
-      "to_intensity": 13.9,
-      "change_intensity": 0.0,
-      "projects": [],
+      "market": "Reno",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 10,
+      "to_openings": 44,
+      "change_openings": 34,
+      "change_pct": 340.0,
+      "from_intensity": 23.2,
+      "to_intensity": 30.8,
+      "change_intensity": 7.6,
+      "projects": [
+        {
+          "project": "EdgeCore",
+          "from_openings": 1,
+          "to_openings": 19,
+          "change_openings": 18
+        },
+        {
+          "project": "Unclassified data center",
+          "from_openings": 5,
+          "to_openings": 16,
+          "change_openings": 11
+        },
+        {
+          "project": "Bighorn Data Center",
+          "from_openings": 2,
+          "to_openings": 7,
+          "change_openings": 5
+        }
+      ],
       "conditions": {
         "from": {
-          "weekly_hours": [],
-          "base_hourly": [],
-          "incentive_hourly": [],
+          "weekly_hours": [
+            50.0
+          ],
+          "base_hourly": [
+            10.0
+          ],
+          "incentive_hourly": [
+            10.0
+          ],
           "per_diem_daily": [],
           "ot_multiplier": []
         },
         "to": {
-          "weekly_hours": [],
-          "base_hourly": [],
-          "incentive_hourly": [],
+          "weekly_hours": [
+            50.0
+          ],
+          "base_hourly": [
+            10.0,
+            57.39
+          ],
+          "incentive_hourly": [
+            10.0
+          ],
           "per_diem_daily": [],
           "ot_multiplier": []
         }
       }
     },
     {
-      "market": "Indianapolis\u2013Mooresville",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 30,
-      "to_openings": 98,
-      "change_openings": 68,
-      "change_pct": 226.7,
-      "from_intensity": 51.6,
-      "to_intensity": 60.0,
-      "change_intensity": 8.4,
+      "market": "Boise",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 10,
+      "to_openings": 0,
+      "change_openings": -10,
+      "change_pct": -100.0,
+      "from_intensity": 21.4,
+      "to_intensity": 0.0,
+      "change_intensity": -21.4,
       "projects": [
-        {
-          "project": "Google",
-          "from_openings": 20,
-          "to_openings": 98,
-          "change_openings": 78
-        },
         {
           "project": "Meta",
           "from_openings": 10,
@@ -1999,54 +2131,45 @@
       ],
       "conditions": {
         "from": {
-          "weekly_hours": [
-            50.0,
-            60.0
-          ],
-          "base_hourly": [
-            10.0
-          ],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": [
-            2.0
-          ]
-        },
-        "to": {
-          "weekly_hours": [
-            50.0
-          ],
+          "weekly_hours": [],
           "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
-          "ot_multiplier": [
-            2.0
-          ]
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
         }
       }
     },
     {
-      "market": "Boise",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 5,
-      "to_openings": 10,
-      "change_openings": 5,
-      "change_pct": 100.0,
-      "from_intensity": 14.3,
-      "to_intensity": 21.4,
-      "change_intensity": 7.1,
+      "market": "Newark\u2013New Albany",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 2,
+      "to_openings": 0,
+      "change_openings": -2,
+      "change_pct": -100.0,
+      "from_intensity": 11.0,
+      "to_intensity": 0.0,
+      "change_intensity": -11.0,
       "projects": [
         {
-          "project": "Meta",
-          "from_openings": 5,
-          "to_openings": 10,
-          "change_openings": 5
+          "project": "Vantage",
+          "from_openings": 2,
+          "to_openings": 0,
+          "change_openings": -2
         }
       ],
       "conditions": {
         "from": {
-          "weekly_hours": [],
+          "weekly_hours": [
+            40.0
+          ],
           "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
@@ -2062,25 +2185,31 @@
       }
     },
     {
-      "market": "Columbus\u2013New Albany",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 21,
+      "market": "Salt Lake City",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 15,
       "to_openings": 0,
-      "change_openings": -21,
+      "change_openings": -15,
       "change_pct": -100.0,
-      "from_intensity": 31.5,
+      "from_intensity": 26.0,
       "to_intensity": 0.0,
-      "change_intensity": -31.5,
+      "change_intensity": -26.0,
       "projects": [
         {
-          "project": "Unclassified data center",
-          "from_openings": 20,
+          "project": "Meta / Facebook",
+          "from_openings": 8,
           "to_openings": 0,
-          "change_openings": -20
+          "change_openings": -8
         },
         {
-          "project": "Google",
+          "project": "QTS",
+          "from_openings": 6,
+          "to_openings": 0,
+          "change_openings": -6
+        },
+        {
+          "project": "Unclassified data center",
           "from_openings": 1,
           "to_openings": 0,
           "change_openings": -1
@@ -2088,159 +2217,16 @@
       ],
       "conditions": {
         "from": {
-          "weekly_hours": [
-            0.0,
-            40.0
-          ],
+          "weekly_hours": [],
           "base_hourly": [],
-          "incentive_hourly": [],
+          "incentive_hourly": [
+            20.0
+          ],
           "per_diem_daily": [],
-          "ot_multiplier": [
-            2.0
-          ]
+          "ot_multiplier": []
         },
         "to": {
           "weekly_hours": [],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Toledo\u2013Bowling Green",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 15,
-      "to_openings": 3,
-      "change_openings": -12,
-      "change_pct": -80.0,
-      "from_intensity": 47.7,
-      "to_intensity": 33.9,
-      "change_intensity": -13.8,
-      "projects": [
-        {
-          "project": "Project Accordion",
-          "from_openings": 15,
-          "to_openings": 3,
-          "change_openings": -12
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            60.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            60.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Reno",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 37,
-      "to_openings": 10,
-      "change_openings": -27,
-      "change_pct": -73.0,
-      "from_intensity": 22.3,
-      "to_intensity": 23.2,
-      "change_intensity": 0.9,
-      "projects": [
-        {
-          "project": "Bighorn Data Center",
-          "from_openings": 16,
-          "to_openings": 2,
-          "change_openings": -14
-        },
-        {
-          "project": "Unclassified data center",
-          "from_openings": 14,
-          "to_openings": 5,
-          "change_openings": -9
-        },
-        {
-          "project": "EdgeCore",
-          "from_openings": 5,
-          "to_openings": 1,
-          "change_openings": -4
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            50.0
-          ],
-          "base_hourly": [
-            10.0
-          ],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            50.0
-          ],
-          "base_hourly": [
-            10.0
-          ],
-          "incentive_hourly": [
-            10.0
-          ],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Albuquerque / Rio Rancho",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 18,
-      "to_openings": 30,
-      "change_openings": 12,
-      "change_pct": 66.7,
-      "from_intensity": 34.8,
-      "to_intensity": 39.7,
-      "change_intensity": 4.9,
-      "projects": [
-        {
-          "project": "Meta / Facebook",
-          "from_openings": 18,
-          "to_openings": 30,
-          "change_openings": 12
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            50.0,
-            60.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            50.0,
-            60.0
-          ],
           "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
@@ -2250,21 +2236,21 @@
     },
     {
       "market": "Fargo\u2013Harwood",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 58,
-      "to_openings": 23,
-      "change_openings": -35,
-      "change_pct": -60.3,
-      "from_intensity": 53.3,
-      "to_intensity": 52.7,
-      "change_intensity": -0.6,
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 23,
+      "to_openings": 2,
+      "change_openings": -21,
+      "change_pct": -91.3,
+      "from_intensity": 52.7,
+      "to_intensity": 36.0,
+      "change_intensity": -16.7,
       "projects": [
         {
           "project": "Unclassified data center",
-          "from_openings": 58,
-          "to_openings": 23,
-          "change_openings": -35
+          "from_openings": 23,
+          "to_openings": 2,
+          "change_openings": -21
         }
       ],
       "conditions": {
@@ -2297,144 +2283,40 @@
       }
     },
     {
-      "market": "Northern Virginia / DC",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 257,
-      "to_openings": 323,
-      "change_openings": 66,
-      "change_pct": 25.7,
-      "from_intensity": 28.0,
-      "to_intensity": 32.5,
-      "change_intensity": 4.5,
+      "market": "Dallas\u2013Fort Worth",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 46,
+      "to_openings": 28,
+      "change_openings": -18,
+      "change_pct": -39.1,
+      "from_intensity": 43.8,
+      "to_intensity": 42.1,
+      "change_intensity": -1.7,
       "projects": [
         {
-          "project": "Unclassified data center",
-          "from_openings": 255,
-          "to_openings": 308,
-          "change_openings": 53
-        },
-        {
           "project": "QTS",
-          "from_openings": 0,
-          "to_openings": 15,
-          "change_openings": 15
+          "from_openings": 45,
+          "to_openings": 28,
+          "change_openings": -17
         },
         {
           "project": "DataBank",
-          "from_openings": 2,
+          "from_openings": 1,
           "to_openings": 0,
-          "change_openings": -2
+          "change_openings": -1
         }
       ],
       "conditions": {
         "from": {
           "weekly_hours": [
-            24.0,
-            32.0,
-            40.0
+            48.0,
+            50.0
           ],
           "base_hourly": [
-            8.0
+            40.65
           ],
-          "incentive_hourly": [
-            8.0
-          ],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            24.0,
-            40.0
-          ],
-          "base_hourly": [],
           "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Baltimore\u2013Frederick",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 36,
-      "to_openings": 43,
-      "change_openings": 7,
-      "change_pct": 19.4,
-      "from_intensity": 26.2,
-      "to_intensity": 26.2,
-      "change_intensity": 0.0,
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "from_openings": 18,
-          "to_openings": 23,
-          "change_openings": 5
-        },
-        {
-          "project": "Aligned",
-          "from_openings": 18,
-          "to_openings": 20,
-          "change_openings": 2
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Cedar Rapids",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 20,
-      "to_openings": 23,
-      "change_openings": 3,
-      "change_pct": 15.0,
-      "from_intensity": 40.5,
-      "to_intensity": 38.7,
-      "change_intensity": -1.8,
-      "projects": [
-        {
-          "project": "QTS",
-          "from_openings": 12,
-          "to_openings": 17,
-          "change_openings": 5
-        },
-        {
-          "project": "EWD Data Center",
-          "from_openings": 8,
-          "to_openings": 6,
-          "change_openings": -2
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            40.0,
-            50.0,
-            60.0
-          ],
-          "base_hourly": [
-            10.0
-          ],
-          "incentive_hourly": [
-            10.0
-          ],
           "per_diem_daily": [],
           "ot_multiplier": [
             2.0
@@ -2442,6 +2324,108 @@
         },
         "to": {
           "weekly_hours": [
+            48.0,
+            50.0
+          ],
+          "base_hourly": [
+            40.65
+          ],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": [
+            2.0
+          ]
+        }
+      }
+    },
+    {
+      "market": "Austin, Tx",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 18,
+      "to_openings": 11,
+      "change_openings": -7,
+      "change_pct": -38.9,
+      "from_intensity": 23.8,
+      "to_intensity": 27.7,
+      "change_intensity": 3.9,
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "from_openings": 18,
+          "to_openings": 11,
+          "change_openings": -7
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            40.0,
+            48.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [
+            2.0
+          ],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            48.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [
+            2.0
+          ],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
+      "market": "Cedar Rapids",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 23,
+      "to_openings": 28,
+      "change_openings": 5,
+      "change_pct": 21.7,
+      "from_intensity": 38.7,
+      "to_intensity": 41.9,
+      "change_intensity": 3.2,
+      "projects": [
+        {
+          "project": "EWD Data Center",
+          "from_openings": 6,
+          "to_openings": 13,
+          "change_openings": 7
+        },
+        {
+          "project": "QTS",
+          "from_openings": 17,
+          "to_openings": 15,
+          "change_openings": -2
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            40.0,
+            50.0,
+            60.0
+          ],
+          "base_hourly": [
+            10.0
+          ],
+          "incentive_hourly": [
+            10.0
+          ],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
             40.0,
             50.0,
             60.0
@@ -2458,161 +2442,40 @@
       }
     },
     {
-      "market": "Des Moines\u2013Altoona",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 39,
+      "market": "Baltimore\u2013Frederick",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 43,
       "to_openings": 34,
-      "change_openings": -5,
-      "change_pct": -12.8,
-      "from_intensity": 38.4,
-      "to_intensity": 39.0,
-      "change_intensity": 0.6,
+      "change_openings": -9,
+      "change_pct": -20.9,
+      "from_intensity": 26.2,
+      "to_intensity": 23.0,
+      "change_intensity": -3.2,
       "projects": [
         {
           "project": "Unclassified data center",
-          "from_openings": 39,
-          "to_openings": 34,
-          "change_openings": -5
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            50.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            50.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Austin, Tx",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 16,
-      "to_openings": 18,
-      "change_openings": 2,
-      "change_pct": 12.5,
-      "from_intensity": 31.0,
-      "to_intensity": 23.8,
-      "change_intensity": -7.2,
-      "projects": [
-        {
-          "project": "Unclassified data center",
-          "from_openings": 16,
-          "to_openings": 18,
-          "change_openings": 2
-        }
-      ],
-      "conditions": {
-        "from": {
-          "weekly_hours": [
-            48.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [
-            2.0
-          ],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        },
-        "to": {
-          "weekly_hours": [
-            40.0,
-            48.0
-          ],
-          "base_hourly": [],
-          "incentive_hourly": [
-            2.0
-          ],
-          "per_diem_daily": [],
-          "ot_multiplier": []
-        }
-      }
-    },
-    {
-      "market": "Atlanta",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 294,
-      "to_openings": 267,
-      "change_openings": -27,
-      "change_pct": -9.2,
-      "from_intensity": 43.0,
-      "to_intensity": 43.5,
-      "change_intensity": 0.5,
-      "projects": [
-        {
-          "project": "Equinix",
-          "from_openings": 32,
-          "to_openings": 20,
-          "change_openings": -12
+          "from_openings": 23,
+          "to_openings": 15,
+          "change_openings": -8
         },
         {
-          "project": "QTS",
-          "from_openings": 219,
-          "to_openings": 209,
-          "change_openings": -10
-        },
-        {
-          "project": "Unclassified data center",
-          "from_openings": 9,
-          "to_openings": 4,
-          "change_openings": -5
-        },
-        {
-          "project": "Switch",
-          "from_openings": 19,
-          "to_openings": 21,
-          "change_openings": 2
-        },
-        {
-          "project": "DataBank",
-          "from_openings": 13,
-          "to_openings": 12,
-          "change_openings": -1
-        },
-        {
-          "project": "Vantage",
-          "from_openings": 2,
-          "to_openings": 1,
+          "project": "Aligned",
+          "from_openings": 20,
+          "to_openings": 19,
           "change_openings": -1
         }
       ],
       "conditions": {
         "from": {
-          "weekly_hours": [
-            40.0,
-            48.0,
-            50.0,
-            56.0,
-            58.0
-          ],
+          "weekly_hours": [],
           "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
           "ot_multiplier": []
         },
         "to": {
-          "weekly_hours": [
-            40.0,
-            48.0,
-            50.0,
-            56.0,
-            58.0
-          ],
+          "weekly_hours": [],
           "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
@@ -2622,28 +2485,29 @@
     },
     {
       "market": "Milwaukee / SE Wisconsin",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 80,
-      "to_openings": 84,
-      "change_openings": 4,
-      "change_pct": 5.0,
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 84,
+      "to_openings": 101,
+      "change_openings": 17,
+      "change_pct": 20.2,
       "from_intensity": 40.8,
-      "to_intensity": 40.8,
-      "change_intensity": 0.0,
+      "to_intensity": 37.6,
+      "change_intensity": -3.2,
       "projects": [
         {
           "project": "Port Washington Data Center",
-          "from_openings": 80,
-          "to_openings": 84,
-          "change_openings": 4
+          "from_openings": 84,
+          "to_openings": 101,
+          "change_openings": 17
         }
       ],
       "conditions": {
         "from": {
           "weekly_hours": [
             50.0,
-            54.0
+            54.0,
+            58.0
           ],
           "base_hourly": [
             10.0
@@ -2668,54 +2532,30 @@
       }
     },
     {
-      "market": "Dallas\u2013Fort Worth",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 46,
-      "to_openings": 46,
-      "change_openings": 0,
-      "change_pct": 0.0,
-      "from_intensity": 41.7,
-      "to_intensity": 43.8,
-      "change_intensity": 2.1,
+      "market": "Indianapolis\u2013Mooresville",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 98,
+      "to_openings": 90,
+      "change_openings": -8,
+      "change_pct": -8.2,
+      "from_intensity": 60.0,
+      "to_intensity": 60.0,
+      "change_intensity": 0.0,
       "projects": [
         {
-          "project": "QTS",
-          "from_openings": 32,
-          "to_openings": 45,
-          "change_openings": 13
-        },
-        {
-          "project": "Stream Data Centers",
-          "from_openings": 10,
-          "to_openings": 0,
-          "change_openings": -10
-        },
-        {
-          "project": "Aligned",
-          "from_openings": 2,
-          "to_openings": 0,
-          "change_openings": -2
-        },
-        {
-          "project": "Unclassified data center",
-          "from_openings": 1,
-          "to_openings": 0,
-          "change_openings": -1
+          "project": "Google",
+          "from_openings": 98,
+          "to_openings": 90,
+          "change_openings": -8
         }
       ],
       "conditions": {
         "from": {
           "weekly_hours": [
-            36.0,
-            40.0,
-            48.0,
-            50.0,
-            72.0
+            50.0
           ],
-          "base_hourly": [
-            40.65
-          ],
+          "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
           "ot_multiplier": [
@@ -2724,12 +2564,9 @@
         },
         "to": {
           "weekly_hours": [
-            48.0,
             50.0
           ],
-          "base_hourly": [
-            40.65
-          ],
+          "base_hourly": [],
           "incentive_hourly": [],
           "per_diem_daily": [],
           "ot_multiplier": [
@@ -2739,47 +2576,37 @@
       }
     },
     {
-      "market": "Newark\u2013New Albany",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 2,
-      "to_openings": 2,
-      "change_openings": 0,
-      "change_pct": 0.0,
-      "from_intensity": 24.5,
-      "to_intensity": 11.0,
-      "change_intensity": -13.5,
+      "market": "Des Moines\u2013Altoona",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 34,
+      "to_openings": 32,
+      "change_openings": -2,
+      "change_pct": -5.9,
+      "from_intensity": 39.0,
+      "to_intensity": 38.4,
+      "change_intensity": -0.6,
       "projects": [
         {
           "project": "Unclassified data center",
-          "from_openings": 2,
-          "to_openings": 0,
+          "from_openings": 34,
+          "to_openings": 32,
           "change_openings": -2
-        },
-        {
-          "project": "Vantage",
-          "from_openings": 0,
-          "to_openings": 2,
-          "change_openings": 2
         }
       ],
       "conditions": {
         "from": {
           "weekly_hours": [
-            40.0
+            50.0
           ],
           "base_hourly": [],
           "incentive_hourly": [],
-          "per_diem_daily": [
-            70.0
-          ],
-          "ot_multiplier": [
-            2.0
-          ]
+          "per_diem_daily": [],
+          "ot_multiplier": []
         },
         "to": {
           "weekly_hours": [
-            40.0
+            50.0
           ],
           "base_hourly": [],
           "incentive_hourly": [],
@@ -2789,9 +2616,173 @@
       }
     },
     {
+      "market": "Albuquerque / Rio Rancho",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 30,
+      "to_openings": 29,
+      "change_openings": -1,
+      "change_pct": -3.3,
+      "from_intensity": 39.7,
+      "to_intensity": 41.2,
+      "change_intensity": 1.5,
+      "projects": [
+        {
+          "project": "Meta / Facebook",
+          "from_openings": 30,
+          "to_openings": 29,
+          "change_openings": -1
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            50.0,
+            60.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            50.0,
+            60.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
+      "market": "Northern Virginia / DC",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 323,
+      "to_openings": 318,
+      "change_openings": -5,
+      "change_pct": -1.5,
+      "from_intensity": 32.5,
+      "to_intensity": 32.2,
+      "change_intensity": -0.3,
+      "projects": [
+        {
+          "project": "Unclassified data center",
+          "from_openings": 308,
+          "to_openings": 295,
+          "change_openings": -13
+        },
+        {
+          "project": "DataBank",
+          "from_openings": 0,
+          "to_openings": 8,
+          "change_openings": 8
+        }
+      ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            24.0,
+            40.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            24.0,
+            40.0
+          ],
+          "base_hourly": [
+            8.0
+          ],
+          "incentive_hourly": [
+            8.0
+          ],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
+      "market": "Atlanta",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 267,
+      "to_openings": 267,
+      "change_openings": 0,
+      "change_pct": 0.0,
+      "from_intensity": 43.5,
+      "to_intensity": 43.5,
+      "change_intensity": 0.0,
+      "projects": [],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            40.0,
+            48.0,
+            50.0,
+            56.0,
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [
+            40.0,
+            48.0,
+            50.0,
+            56.0,
+            58.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
+      "market": "Columbus\u2013New Albany",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 0,
+      "to_openings": 0,
+      "change_openings": 0,
+      "change_pct": null,
+      "from_intensity": 0.0,
+      "to_intensity": 0.0,
+      "change_intensity": 0.0,
+      "projects": [],
+      "conditions": {
+        "from": {
+          "weekly_hours": [],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
       "market": "Racine / SE Wisconsin",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
       "from_openings": 90,
       "to_openings": 90,
       "change_openings": 0,
@@ -2826,36 +2817,55 @@
       }
     },
     {
-      "market": "Salt Lake City",
-      "from_date": "2026-11-02",
-      "to_date": "2026-11-23",
-      "from_openings": 0,
-      "to_openings": 15,
-      "change_openings": 15,
-      "change_pct": null,
-      "from_intensity": 0.0,
-      "to_intensity": 26.0,
-      "change_intensity": 26.0,
+      "market": "Toledo\u2013Bowling Green",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-27",
+      "from_openings": 3,
+      "to_openings": 0,
+      "change_openings": -3,
+      "change_pct": -100.0,
+      "from_intensity": 33.9,
+      "to_intensity": 0.0,
+      "change_intensity": -33.9,
       "projects": [
         {
-          "project": "Meta / Facebook",
-          "from_openings": 0,
-          "to_openings": 8,
-          "change_openings": 8
-        },
-        {
-          "project": "QTS",
-          "from_openings": 0,
-          "to_openings": 6,
-          "change_openings": 6
-        },
-        {
-          "project": "Unclassified data center",
-          "from_openings": 0,
-          "to_openings": 1,
-          "change_openings": 1
+          "project": "Project Accordion",
+          "from_openings": 3,
+          "to_openings": 0,
+          "change_openings": -3
         }
       ],
+      "conditions": {
+        "from": {
+          "weekly_hours": [
+            60.0
+          ],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        },
+        "to": {
+          "weekly_hours": [],
+          "base_hourly": [],
+          "incentive_hourly": [],
+          "per_diem_daily": [],
+          "ot_multiplier": []
+        }
+      }
+    },
+    {
+      "market": "Kansas City",
+      "from_date": "2026-11-25",
+      "to_date": "2026-11-27",
+      "from_openings": 3,
+      "to_openings": 3,
+      "change_openings": 0,
+      "change_pct": 0.0,
+      "from_intensity": 13.9,
+      "to_intensity": 13.9,
+      "change_intensity": 0.0,
+      "projects": [],
       "conditions": {
         "from": {
           "weekly_hours": [],
@@ -2867,9 +2877,7 @@
         "to": {
           "weekly_hours": [],
           "base_hourly": [],
-          "incentive_hourly": [
-            20.0
-          ],
+          "incentive_hourly": [],
           "per_diem_daily": [],
           "ot_multiplier": []
         }
@@ -3100,10 +3108,10 @@
   ],
   "drops": [
     {
-      "market": "Columbus\u2013New Albany",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 21,
+      "market": "Boise",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 10,
       "to_openings": 0,
       "change_pct": -100.0,
       "flag": "Potential deceleration \u2014 verify direct local board / project phase"
@@ -3118,30 +3126,21 @@
       "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     },
     {
-      "market": "Toledo\u2013Bowling Green",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
+      "market": "Salt Lake City",
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
       "from_openings": 15,
-      "to_openings": 3,
-      "change_pct": -80.0,
-      "flag": "Potential deceleration \u2014 verify direct local board / project phase"
-    },
-    {
-      "market": "Reno",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 37,
-      "to_openings": 10,
-      "change_pct": -73.0,
+      "to_openings": 0,
+      "change_pct": -100.0,
       "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     },
     {
       "market": "Fargo\u2013Harwood",
-      "from_date": "2026-11-16",
-      "to_date": "2026-11-23",
-      "from_openings": 58,
-      "to_openings": 23,
-      "change_pct": -60.3,
+      "from_date": "2026-11-23",
+      "to_date": "2026-11-30",
+      "from_openings": 23,
+      "to_openings": 2,
+      "change_pct": -91.3,
       "flag": "Potential deceleration \u2014 verify direct local board / project phase"
     }
   ],
