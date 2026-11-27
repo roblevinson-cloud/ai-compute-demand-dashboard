@@ -1,6 +1,19 @@
 {
-  "as_of": "2026-11-25",
+  "as_of": "2026-11-27",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "Data Center Dynamics",
+      "tag": "CONSTRUCTION / GALAXY HELIOS PHASE II",
+      "headline": "Galaxy Digital files for next phase of development at Helios data center campus in Texas",
+      "url": "https://www.datacenterdynamics.com/en/news/galaxy-digital-files-for-next-phase-of-development-at-helios-data-center-campus-in-texas/",
+      "matched_project": "Galaxy Helios Phase II",
+      "match_score": 5,
+      "match_terms": [
+        "galaxy digital",
+        "coreweave"
+      ]
+    },
     {
       "date": "2026-11-25",
       "source": "Data Center Dynamics",
